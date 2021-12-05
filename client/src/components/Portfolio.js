@@ -27,12 +27,14 @@ const Portfolio = (props) =>{
         });
 
     return(
-        <Container fluid>
-            <Row>
-                {cardList}
-            </Row>
-        </Container>
-        
+        <div>
+            <h1>Portfolio</h1>
+            <Container fluid>
+                <Row>
+                    {cardList}
+                </Row>
+            </Container>
+        </div>
     )
 }
 
