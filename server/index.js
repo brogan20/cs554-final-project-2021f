@@ -1,5 +1,6 @@
 const { ApolloServer, gql } = require('apollo-server');
 const lodash = require('lodash');
+const userData = require('./dataFunctions/user')
 
 const typeDefs = gql`
   type Query {
@@ -8,7 +9,7 @@ const typeDefs = gql`
 
   type User {
     _id: String
-    username: String
+    userName: String
     cardCollection: [Card]
     wallet: Int
   }
@@ -50,7 +51,16 @@ const typeDefs = gql`
 
 
 const resolvers = {
-
+  Query: {
+    user: async (_, args) => {
+      return userData.getUser(args.userName);
+    }
+  },
+  Mutation: {
+    addUser: async (_, args) => {
+      return userData.createUser(args.userName);
+    }
+  }
 };
 
 const server = new ApolloServer({ typeDefs, resolvers });
