@@ -53,7 +53,7 @@ const getUser = async function(userName){
 	const user = await usersCollection.findOne({userName: userName});
 
 	if(user == null) {
-		throw({code: 400, message: "getUser: a user with that display name does not exist"});
+		throw({code: 404, message: "getUser: a user with that display name does not exist"});
 	}
     else{
 		return user;
@@ -79,7 +79,7 @@ const addCard = async function(cardName, isHolo, userName){
 	const user = await usersCollection.findOne({userName: userName});
 
 	if(user == null) {
-		throw({code: 400, message: "addCard: a user with that display name does not exist"});
+		throw({code: 404, message: "addCard: a user with that display name does not exist"});
 	}
 
 	newCard = {
@@ -112,7 +112,7 @@ const addFunds = async function(userName, toAdd){
 	const user = await usersCollection.findOne({userName: userName});
 
 	if(user == null) {
-		throw({code: 400, message: "addFunds: a user with that display name does not exist"});
+		throw({code: 404, message: "addFunds: a user with that display name does not exist"});
 	}
 
 	let newBalance = user.wallet + toAdd;
