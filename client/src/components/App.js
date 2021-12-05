@@ -1,22 +1,39 @@
 import logo from '../logo.svg';
 import '../App.css';
-import login from './login';
-import signup from './signup';
-import { BrowserRouter as Router, Route } from 'react-router-dom';
+import Login from './login';
+import Portfolio from './Portfolio';
+import '../styles/bootstrap/dist/css/bootstrap.min.css';
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import {
+  ApolloClient,
+  HttpLink,
+  InMemoryCache,
+  ApolloProvider
+} from '@apollo/client';
+const client = new ApolloClient({
+  cache: new InMemoryCache(),
+  link: new HttpLink({
+    uri: 'http://localhost:4000'
+  })
+})
+
 
 function App() {
   return (
-    <Router>
-    <div className="App">
-      <header>
-
-      </header>
-      <div>
-        <Route exact path="/login" component={login}/>
-        <Route exact path="/signup" component={signup}/>
+    <ApolloProvider client={client}>
+      <BrowserRouter>
+      <div className="App">
+        <header>
+        </header>
+        <div>
+          <Routes>
+            <Route exact path="/login" element={<Login/>}/>
+            <Route exact path ="/portfolio" element={<Portfolio/>}/>
+          </Routes>
+        </div>
       </div>
-    </div>
-    </Router>
+      </BrowserRouter>
+    </ApolloProvider>
   );
 }
 
