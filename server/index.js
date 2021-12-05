@@ -15,30 +15,18 @@ const typeDefs = gql`
   }
 
   type Card {
-    _id: String
-    _ardID: String
-    cardName: String
-    pic: Int
-	count: Int
-  }
-  
-  type Waif {
-    _id: String
-    characterName: String
-	cardName: String
-	description: String
-	currentMeanPrice: Int
-	popularityRank: Int
-    miniPic: Int
+    _id: String,
+    cardName: String,
+    isHolo: Bool
   }
   
   type Listing {
     _id: String
     cardID: String
-	cardName: String
-	sellerName: String
-	buyoutPrice: Int
-	bidPrice: Int
+	  cardName: String
+	  sellerName: String
+	  buyoutPrice: Int
+	  bidPrice: Int
     expirationDate: Int
   }
   
