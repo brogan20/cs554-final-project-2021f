@@ -9,8 +9,6 @@ const typeDefs = gql`
   type User {
     _id: String
     username: String
-	email: String
-	password: String
     cardCollection: [Card]
     wallet: Int
   }
@@ -46,8 +44,6 @@ const typeDefs = gql`
   type Mutation {
     addUser(
       username: String!
-      email: String!
-      password: String!
     ): User
   }
 `;
