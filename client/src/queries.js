@@ -9,7 +9,7 @@ const GET_PORTFOLIO = gql`
             isHolo
         }
     }
-`
+`;
 
 let queries = {
     GET_PORTFOLIO
