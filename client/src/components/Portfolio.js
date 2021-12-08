@@ -6,7 +6,8 @@ import { Container, Col, Row, Spinner } from 'react-bootstrap';
 const Portfolio = (props) =>{
     // commenting out until functions are made
     // const { loading, error, data } = useQuery();
-    let data = [{id: 25, name: 'pikachu', image: 'some url', isHolo: false}];
+    let data = [{id: 25, name: 'pikachu', image: 'some url', isHolo: false},
+                {id: 1, name: 'bulbasaur', image: 'some url', isHolo: false}];
     let loading = false;
     let cardList = null; 
 
@@ -29,6 +30,7 @@ const Portfolio = (props) =>{
     return(
         <div>
             <h1>Portfolio</h1>
+            <p>{data.length} cards in collection</p>
             <Container fluid>
                 <Row>
                     {cardList}

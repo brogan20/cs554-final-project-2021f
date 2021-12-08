@@ -6,9 +6,8 @@ const gulpSASS = require('gulp-sass');
 const rename = require('gulp-rename');
 
 const sassFiles = [
-    './src/styles/variables.scss',
-    './src/styles/custom.scss',
-    './src/styles/bootstrap/scss/_variables.scss'
+    './src/styles/scss/custom.scss',
+    './src/styles/bootstrap/scss/bootstrap.scss'
 ];
 
 gulp.task('sass', function(done){

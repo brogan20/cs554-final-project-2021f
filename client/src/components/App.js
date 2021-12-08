@@ -2,7 +2,7 @@ import logo from '../logo.svg';
 import '../App.css';
 import Login from './login';
 import Portfolio from './Portfolio';
-import '../styles/bootstrap/dist/css/bootstrap.min.css';
+import '../css/styles.min.css';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import {
   ApolloClient,

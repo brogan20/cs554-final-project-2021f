@@ -1,4 +1,8 @@
-@import "./src/styles/bootstrap/scss/bootstrap";
+$card-border-color: #febb46 !default;
+
+//
+// Type Colors
+//
 
 $bug: #A8B820;
 $bug-dark: #6D7815;
@@ -71,3 +75,24 @@ $steel-light: #D1D1E0;
 $water: #6890F0;
 $water-dark: #445E9C;
 $water-light: #9DB7F5;
+
+$type-colors: (
+    "bug": $bug,
+    "dark": $dark,
+    "dragon": $dragon,
+    "electric": $electric,
+    "fairy": $fairy,
+    "fighting": $fighting,
+    "fire": $fire,
+    "flying": $flying,
+    "ghost": $ghost,
+    "grass": $grass,
+    "ground": $ground,
+    "ice": $ice,
+    "normal": $normal,
+    "poison": $poison,
+    "psychic": $psychic,
+    "rock": $rock,
+    "steel": $steel,
+    "water": $water
+) !default;

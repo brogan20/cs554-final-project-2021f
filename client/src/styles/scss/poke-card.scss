@@ -1,0 +1,22 @@
+.poke-card {
+    border: 5px solid #febb46;
+    box-shadow:
+    0 0 5px 0px rgba(255,255,255,0),
+    20px 55px 35px -20px rgba(0, 0, 0, 0.5);
+}
+
+.poke-card-body {
+    pointer-events: none;
+}
+
+.card-img{
+    background-color: white;
+    border: 5px solid $card-border-color;
+    box-shadow: 2px 4px 10px black;
+}
+
+@each $type, $value in $type-colors{
+    .poke-card-#{$type} {
+        @include card-variant($value);
+    }
+}

@@ -1,0 +1,9 @@
+@mixin card-variant(
+    $background,
+    $border: $card-border-color,
+    $color: color-contrast($background),
+){
+    color: $color;
+    border-color: $border;
+    background-color: $background;
+}
