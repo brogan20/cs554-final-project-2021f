@@ -125,7 +125,7 @@ const changePokemonScore = async function(pokemonName, didWin) {
         }
 	}
     else{
-        let upin
+        let upin;
         if(didWin) {
             upin = await popularityCollection.updateOne({pokeName: pokemonName}, {$set: {pokeWins: (pokemon.pokeWins + 1)}});
         }
