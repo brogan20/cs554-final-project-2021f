@@ -1,6 +1,7 @@
 const { ApolloServer, gql } = require('apollo-server');
 const lodash = require('lodash');
-const userData = require('./dataFunctions/user')
+const userData = require('./dataFunctions/user');
+const popularityData = require('./dataFunctions/popularity')
 
 const typeDefs = gql`
   type Query {
@@ -20,7 +21,7 @@ const typeDefs = gql`
     pokemonID: String
     pokemonName: String
     imageLink: String
-    isShiny: Bool
+    isShiny: Boolean
   }
   
   type Mutation {
