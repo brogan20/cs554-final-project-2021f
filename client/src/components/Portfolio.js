@@ -1,7 +1,8 @@
 import React from "react";
 import { useQuery } from '@apollo/client';
 import PokeCard from "./PokeCard";
-import { Container, Col, Row, Spinner } from 'react-bootstrap';
+import { Link } from 'react-router-dom';
+import { Button, Container, Col, Row, Spinner } from 'react-bootstrap';
 
 const Portfolio = (props) =>{
     // commenting out until functions are made
@@ -26,11 +27,12 @@ const Portfolio = (props) =>{
                 </Col>
             )
         });
-
+        
     return(
         <div>
             <h1>Portfolio</h1>
             <p>{data.length} cards in collection</p>
+            <Link to="/store"><Button>Get More Cards</Button></Link>
             <Container fluid>
                 <Row>
                     {cardList}

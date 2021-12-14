@@ -1,6 +1,10 @@
 .poke-card {
   border: 5px solid #febb46;
+  transition: transform 0.2s ease-in;
   box-shadow: 0 0 5px 0px rgba(255, 255, 255, 0), 20px 55px 35px -20px rgba(0, 0, 0, 0.5); }
+
+.poke-card-active {
+  transition: none; }
 
 .poke-card-body {
   pointer-events: none; }

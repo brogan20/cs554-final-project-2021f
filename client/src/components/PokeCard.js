@@ -41,12 +41,14 @@ const PokeCard = ({pokemon}) =>{
         var lp = (px - 50)/1.5;
         var tp = (py - 50)/1.5;
         var tx = (lp/1.5) * .5;
-        var ty = (tp/1.5) * -1;
+        var ty = (tp/2) * -1.2;
         var tf = `transform: rotateX(${ty}deg) rotateY(${tx}deg)`
         cardRef.current.style = tf;
+        cardRef.current.classList.add("poke-card-active");
     }
 
     const resetCard = (e) => {
+        cardRef.current.classList.remove("poke-card-active");
         cardRef.current.style="";
     }
 
@@ -59,6 +61,9 @@ const PokeCard = ({pokemon}) =>{
             <Card.Body className="poke-card-body">
                 <Card.Title>{pokemon.name}</Card.Title>
                 <Card.Img src={sprite} draggable="false"/>
+                <Card.Text>
+                    Test Text
+                </Card.Text>
             </Card.Body>
         </Card>
     )
