@@ -80,6 +80,7 @@ const getBet = async function(betID) {
             const nowDate = new Date().getTime();
             if(nowDate < battle.timeStamp){
                 let timeToWait = battle.timeStamp - nowDate;
+                timeToWait = timeToWait / 1000;
                 return({code: 400, message: "You cannot access this battle's results yet, please check again later", timeTillResult: timeToWait});
             }
             else{
