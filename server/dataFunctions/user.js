@@ -6,7 +6,7 @@ const { usersCollection } = require('../config/mongoCollections');
 const removeAll = async function() {
 	const usersCollection = await users();
 	usersCollection.deleteMany({});
-	return({code: 200, message: "removeAll: successfully nuked database"});
+	return({code: 200, message: "removeAll: successfully nuked users database"});
 }
 
 const createUser = async function(userName) {
@@ -21,12 +21,12 @@ const createUser = async function(userName) {
 	
 	const nameExist = await usersCollection.findOne({userName: userName});
 	if(nameExist != null) {
-		throw({code: 400, message: "createUser: a user with that display name already exists"});
+		throw({code: 400, message: "createUser: a user with that username already exists"});
 	}
 	
 	let newUser = {
 		userName: userName,
-        cardCollection: [],
+        pokemonCollection: [],
         wallet: 0
 	};
 	
@@ -60,18 +60,24 @@ const getUser = async function(userName){
 	}
 }
 
-const addCard = async function(cardName, isHolo, userName){
-	if(arguments.length != 3 || cardName == undefined || isHolo == undefined || userName == undefined) {
-		throw({code: 400, message: "addCard: you are missing cardName, isHolo, or userName"});
+const addPokemon = async function(pokemonID, pokemonName, imageLink,  isShiny, userName){		//should I be passed pokemonName and imageLink? or would it be prefered I just get ID and I make a call for
+	if(arguments.length != 5 || pokemonName == undefined || isShiny == undefined || userName == undefined) {
+		throw({code: 400, message: "addPokemon: you are missing pokemonID, pokemonName, imageLink, isShiny, or userName"});
 	}
-	if(typeof cardName !== 'string' || cardName.trim() == "") {
-		throw({code: 400, message: "addCard: cardName must be a string that isn't empty or just spaces"});
+	if(typeof pokemonID !== 'string' || pokemonID.trim() == "") {
+		throw({code: 400, message: "addPokemon: pokemonID must be a string that isn't empty or just spaces"});
+	}
+	if(typeof pokemonName !== 'string' || pokemonName.trim() == "") {
+		throw({code: 400, message: "addPokemon: pokemonName must be a string that isn't empty or just spaces"});
+	}
+	if(typeof imageLink !== 'string' || imageLink.trim() == "") {
+		throw({code: 400, message: "addPokemon: imageLink must be a string that isn't empty or just spaces"});
 	}
 	if(typeof userName !== 'string' || userName.trim() == "") {
-		throw({code: 400, message: "addCard: userName must be a string that isn't empty or just spaces"});
+		throw({code: 400, message: "addPokemon: userName must be a string that isn't empty or just spaces"});
 	}
 	if(typeof isHolo !== 'boolean') {
-		throw({code: 400, message: "addCard: isHolo must be a boolean"});
+		throw({code: 400, message: "addPokemon: isShiny must be a boolean"});
 	}
 
 	const usersCollection = await users();
@@ -79,15 +85,17 @@ const addCard = async function(cardName, isHolo, userName){
 	const user = await usersCollection.findOne({userName: userName});
 
 	if(user == null) {
-		throw({code: 404, message: "addCard: a user with that display name does not exist"});
+		throw({code: 404, message: "addPokemon: a user with that display name does not exist"});
 	}
 
-	newCard = {
-		cardName: cardName,
-		isHolo: isHolo
+	newPokemon = {
+		pokemonID: pokemonID,
+		pokemonName: pokemonName,
+		imageLink: imageLink,
+		isShiny: isShiny
 	};
 
-	const upin = await usersCollection.updateOne({userName: userName}, {$push: {cardCollection: { newCard }}});
+	const upin = await usersCollection.updateOne({userName: userName}, {$push: {pokemonCollection: { newPokemon }}});
 	if (upin === 0) {
 		throw({code: 500, message: "addCard: unable to add that card to the database"});
 	}
@@ -130,6 +138,6 @@ module.exports = {
 	removeAll,
 	createUser,
 	getUser,
-	addCard,
+	addPokemon,
 	addFunds
 }
