@@ -1,23 +1,28 @@
 import React from "react";
 import { useQuery } from '@apollo/client';
-import PokeCard from "./PokeCard";
-import { Container, Col, Row, Spinner } from 'react-bootstrap';
+import { Container, Col, Row, Spinner, Card } from 'react-bootstrap';
 
 const Ranking = (props) =>{
   // commenting out until functions are made
   // const { loading, error, data } = useQuery();
-  let data = [
+  let data = [ // sorted by most popular to least popular
     {
       id: 25,
       name: 'pikachu',
       image: 'some url',
-      isHolo: false
+      isHolo: false,
+      ranking: 2000,
+      totalWins: 20420,
+      totalLosses: 20310,
     },
     {
       id: 1,
       name: 'bulbasaur',
       image: 'some url',
-      isHolo: false
+      isHolo: false,
+      ranking: 1999,
+      totalWins: 20420,
+      totalLosses: 20310,
     }];
   // src: https://thewebdev.info/2021/04/24/how-to-add-an-ordinal-suffix-to-a-javascript-number/
   const ordinal = (number) => {
@@ -31,6 +36,7 @@ const Ranking = (props) =>{
       other: "th"
     };
     const suffix = suffixes[ordinalRules.select(number)];
+    console.log(number)
     return (number + suffix);
   }
 
@@ -44,11 +50,10 @@ const Ranking = (props) =>{
 
   return(
     <div>
-      <h1>Portfolio</h1>
-      <p>{data.length} cards in collection</p>
+      <h1>Pokemon Rankings</h1>
       <Container fluid>
         <Row>
-          {data.map(p, i => (
+          {data.map((p, i) => (
             <Col xs={2}>
               <Card>
                 <Card.Img
@@ -58,7 +63,7 @@ const Ranking = (props) =>{
                 <Card.Body>
                   <Card.Title>{p.name}</Card.Title>
                   <Card.Text>
-                    {ordinal(p + 1)} most popular
+                    {i ? `${ordinal(i + 1)} ` : ""}Most Popular
                   </Card.Text>
                 </Card.Body>
               </Card>
