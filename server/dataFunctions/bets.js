@@ -84,10 +84,11 @@ const getBet = async function(betID) {
             if(nowDate < battle.timeStamp){
                 let timeToWait = battle.timeStamp - nowDate;
                 timeToWait = timeToWait / 1000;
-                return({code: 400, message: "You cannot access this battle's results yet, please check again later", timeTillResult: timeToWait});
+                battle.winner = "To Be Determined";
+                return({code: 200, battleInfo: battle, timeTillResult: timeToWait});
             }
             else{
-                return battle;
+                return({code: 200, battleInfo: battle, timeTillResult: 0});
             }
         }
     }
