@@ -9,25 +9,18 @@ const typeDefs = gql`
 
   type User {
     _id: String
+    token: String
     userName: String
-    cardCollection: [Card]
+    pokemonCollection: [Pokemon]
     wallet: Int
   }
 
-  type Card {
-    _id: String,
-    cardName: String,
-    isHolo: Bool
-  }
-  
-  type Listing {
+  type Pokemon {
     _id: String
-    cardID: String
-	  cardName: String
-	  sellerName: String
-	  buyoutPrice: Int
-	  bidPrice: Int
-    expirationDate: Int
+    pokemonID: String
+    pokemonName: String
+    imageLink: String
+    isShiny: Bool
   }
   
   type Mutation {
