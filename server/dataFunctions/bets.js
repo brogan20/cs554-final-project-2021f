@@ -2,6 +2,7 @@ const mongoCollections = require('../config/mongoCollections');
 const bets = mongoCollections.betsCollection;
 const {ObjectId} = require('mongodb');
 const { betsCollection } = require('../config/mongoCollections');
+const popularityData = require('./popularity');
 const timePerBattle = 60000;//in milliseconds 
 
 const removeAll = async function() {
@@ -10,8 +11,8 @@ const removeAll = async function() {
 	return({code: 200, message: "removeAll: successfully nuked bets database"});
 }
 
-const createBet = async function(trainerOne, trainerTwo, pokemonOne, pokemonTwo, winner) {
-	if(arguments.length != 5 || trainerOne == undefined || trainerTwo == undefined || pokemonOne == undefined || pokemonTwo == undefined || winner == undefined) {
+const createBet = async function(trainerOne, trainerTwo, pokemonOne, pokemonTwo) {
+	if(arguments.length != 4 || trainerOne == undefined || trainerTwo == undefined || pokemonOne == undefined || pokemonTwo == undefined) {
 		throw({code: 400, message: "createBet: you are missing one of trainerOne, trainerTwo, pokemonOne, pokemonTwo, winner"});
 	}
 	if(typeof trainerOne !== 'string' || trainerOne.trim() == "") {
@@ -26,12 +27,14 @@ const createBet = async function(trainerOne, trainerTwo, pokemonOne, pokemonTwo,
     if(typeof pokemonTwo !== 'string' || pokemonTwo.trim() == "") {
 		throw({code: 400, message: "createBet: pokemonTwo must be a string that isn't empty or just spaces"});
 	}
-    if(typeof winner !== 'string' || winner.trim() == "") {
-		throw({code: 400, message: "createBet: winner must be a string that isn't empty or just spaces"});
-	}
-    if(winner != trainerOne && winner != trainerTwo) {
-		throw({code: 400, message: "createBet: winner must be one of the two trainers"});
-	}
+
+    let winner = trainerOne;
+    let pokemonOnePop = await popularityData.getPokemonPopularity(pokemonOne);
+    let pokemonTwoPop = await popularityData.getPokemonPopularity(pokemonTwo);
+
+    if(pokemonTwoPop > pokemonOnePop) {
+        winner = trainerTwo;
+    }
 	
 	const betsCollection = await bets();
     const nowDate = new Date().getTime();

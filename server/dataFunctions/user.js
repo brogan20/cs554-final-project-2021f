@@ -9,6 +9,8 @@ const removeAll = async function() {
 	return({code: 200, message: "removeAll: successfully nuked users database"});
 }
 
+//Add in a win loss record for each trainer???
+
 const createUser = async function(userName) {
 	if(arguments.length != 1 || userName == undefined) {
 		throw({code: 400, message: "createUser: you are missing userName"});
