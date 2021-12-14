@@ -145,5 +145,6 @@ module.exports = {
 	removeAll,
     initDatabase,
     getPokemonPopularity,
-    changePokemonPopularity
+    changePokemonPopularity,
+    changePokemonScore
 }
