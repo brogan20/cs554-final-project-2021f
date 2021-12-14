@@ -50,8 +50,7 @@ const Ranking = (props) =>{
 
   return(
     <div>
-      <h1>Portfolio</h1>
-      <p>{data.length} cards in collection</p>
+      <h1>Pokemon Rankings</h1>
       <Container fluid>
         <Row>
           {data.map((p, i) => (
