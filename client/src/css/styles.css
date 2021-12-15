@@ -1,6 +1,5 @@
 .poke-card {
   border: 5px solid #febb46;
-  transition: transform 0.2s ease-in;
   box-shadow: 0 0 5px 0px rgba(255, 255, 255, 0), 20px 55px 35px -20px rgba(0, 0, 0, 0.5); }
 
 .poke-card-active {
@@ -124,10 +123,16 @@
   color: black;
   text-decoration: none; }
 
-.bet-grid {
-  justify-content: center;
-  align-items: center;
-  pointer-events: none; }
+.bet-button {
+  background-color: lightgray;
+  box-shadow: none;
+  border: none; }
+
+.bet-button:hover {
+  background-color: gray; }
+
+.bet-button-selected {
+  background-color: gray; }
 
 /*!
  * Bootstrap v5.0.2 (https://getbootstrap.com/)
