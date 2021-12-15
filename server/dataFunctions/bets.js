@@ -28,6 +28,9 @@ const createBet = async function(trainerOne, trainerTwo, pokemonOne, pokemonTwo)
 		throw({code: 400, message: "createBet: pokemonTwo must be a string that isn't empty or just spaces"});
 	}
 
+    pokemonOne = pokemonOne.toLowerCase();
+    pokemonTwo = pokemonTwo.toLowerCase();
+
     let winner = trainerOne;
     let pokemonOnePop = await popularityData.getPokemonPopularity(pokemonOne);
     let pokemonTwoPop = await popularityData.getPokemonPopularity(pokemonTwo);
@@ -54,7 +57,7 @@ const createBet = async function(trainerOne, trainerTwo, pokemonOne, pokemonTwo)
 		throw({code: 500, message: "createBet: unable to add that bet"});
 	}
 	else{
-        let ret = await this.get(inin.instertedID.toString());
+        let ret = await inIn.insertedId.toString();
 		return ret;
 	}
 }
@@ -84,10 +87,11 @@ const getBet = async function(betID) {
             if(nowDate < battle.timeStamp){
                 let timeToWait = battle.timeStamp - nowDate;
                 timeToWait = timeToWait / 1000;
-                return({code: 400, message: "You cannot access this battle's results yet, please check again later", timeTillResult: timeToWait});
+                battle.winner = "To Be Determined";
+                return({code: 200, battleInfo: battle, timeTillResult: timeToWait});
             }
             else{
-                return battle;
+                return({code: 200, battleInfo: battle, timeTillResult: 0});
             }
         }
     }
