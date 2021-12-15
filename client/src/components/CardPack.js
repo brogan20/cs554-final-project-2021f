@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import PokeCard from './PokeCard';
 import { useQuery } from '@apollo/client';
 import { Grid, makeStyles } from '@material-ui/core';
+import queries from '../queries';
 
 const useStyles = makeStyles({
   grid: {
@@ -13,14 +14,8 @@ const useStyles = makeStyles({
 const CardPack = () => {
   const classes = useStyles();
   const [ cardData, setCardData ] = useState(undefined);
-  const { loading, error, popularData } = useQuery(
-    queries.GET_POPULAR,
-    {
-      fetchPolicy: 'cache-and-network'
-    }
-  );
   const { load, err, pokemonData } = useQuery(
-    queries.GET_ALL_POKEMON,
+    queries.GET_PORTFOLIO,
     {
       fetchPolicy: 'cache-and-network'
     }
@@ -33,7 +28,7 @@ const CardPack = () => {
         try{
           let result=new Array();
           let popular=0;
-          let popularNum = Math.floor(Math.random(100))+1;
+          let popularNum=Math.floor(Math.random(100))+1;
           if(popularNum==1){
             popular=3;
           }
@@ -46,40 +41,52 @@ const CardPack = () => {
           else{
             popular=0;
           }
-          let popularIds=new Array();
-          for(let poke in popularData){
-            popularIds.push(poke.id);
-          }
-          let ids=new Array();
           for(let i=0; i<3; i++){
             if(popular>0){
-              let random=Math.floor(Math.random(popularIds.length));
-              ids.push(popularIds[random]);
-              popular--;
+              popular: while(popular>0){
+                const random=Math.floor(Math.random(898))+1;
+                const res = await axios.get(`https://pokeapi.co/api/v2/pokemon/${random}/`);
+                const pokemon=pokemonData.find(p => p.name==res.results.name);
+                if(pokemon.pokepop>=750){
+                  const holo=Math.floor(Math.random(100));
+                  if(holo<=1){
+                    pokemon.isHolo=true;
+                    result.push(pokemon);
+                  }
+                  else{
+                    pokemon.isHolo=false;
+                    result.push(pokemon);
+                  }
+                  popular--;
+                  break;
+                }
+                else{
+                  continue popular;
+                }
+              }
             }
             else{
               random: while(popular==0){
-                let rand=Math.floor(Math.random(898))+1;
-                if(popularIds.includes(rand)){
+                const rand=Math.floor(Math.random(898))+1;
+                const res = await axios.get(`https://pokeapi.co/api/v2/pokemon/${rand}/`);
+                const pokemon=pokemonData.find(p => p.name==res.results.name);
+                if(pokemon.pokepop>=750){
                   continue random;
                 }
                 else{
-                  ids.push(rand);
+                  const holo=Math.floor(Math.random(100));
+                  if(holo<=1){
+                    pokemon.isHolo=true;
+                    result.push(pokemon);
+                  }
+                  else{
+                    pokemon.isHolo=false;
+                    result.push(pokemon);
+                  }
                   break;
                 }
               }
             }
-          }
-          for(let k=0; k<3; k++){
-            const pokemon=pokemonData.find(p => p.id==ids[k]);
-            const holo=Math.floor(Math.random(100));
-            if(holo<=1){
-              pokemon.isHolo=true;
-            }
-            else{
-              pokemon.isHolo=false;
-            }
-            result.push(pokemon);
           }
           console.log(result);
           setCardData(result);

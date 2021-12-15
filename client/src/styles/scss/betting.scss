@@ -20,8 +20,16 @@
     text-decoration: none;
 }
 
-.bet-grid {
-    justify-content: center;
-    align-items: center;
-    pointer-events: none;
+.bet-button {
+    background-color: lightgray;
+    box-shadow: none;
+    border: none;
+}
+
+.bet-button:hover {
+    background-color: gray;
+}
+
+.bet-button-selected {
+    background-color: gray;
 }

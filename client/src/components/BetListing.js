@@ -19,13 +19,6 @@ const BetListing = ({ battle }) => {
   };
   const [timeLeft, setTimeLeft] = useState(getTimeLeft(battle.timestamp));
   const [ expired, setExpired ] = useState(false);
-
-  // useEffect(() => {
-  //   const timer = setTimeout(() => {
-  //     console.log('This will run after 1 second!')
-  //   }, 1000);
-  //   return () => clearTimeout(timer);
-  // });
   
   useEffect(() => {
     const interval = setInterval(() => {
@@ -42,7 +35,7 @@ const BetListing = ({ battle }) => {
 
   return (
     <Link className="bet-listing" to={`/betting/${battle.id}`}>
-      <Container className="bet-grid" fluid>
+      <Container fluid>
         <Row className="row justify-content-center">
           <Col xs={2}>
             <p>{battle.player1.displayName}'s</p>
