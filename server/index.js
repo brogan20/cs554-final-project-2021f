@@ -6,13 +6,16 @@ const battleData = require('./dataFunctions/battles');
 
 const typeDefs = gql`
   type Query {
-    user: User
-    portfolio: [Pokemon]
+    user(
+      userName: String!
+    ): User
+    portfolio(
+      userName: String!
+    ): [Pokemon]
   }
 
   type User {
     _id: String
-    token: String
     userName: String
     pokemonCollection: [Pokemon]
     wallet: Int
@@ -29,7 +32,7 @@ const typeDefs = gql`
   type Mutation {
     addUser(
       username: String!
-    ): User
+      ): User
   }
 `;
 
@@ -63,3 +66,7 @@ const server = new ApolloServer({ typeDefs, resolvers });
 server.listen().then(({ url }) => {
   console.log(`🚀  Server ready at ${url} 🚀`);
 });
+
+// time=setInterval(function(){
+//   console.log("hi");  //code to run here, to update bets and stuff, kinda lame but whatever
+//   },3000);
