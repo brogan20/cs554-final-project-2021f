@@ -7,7 +7,7 @@ const battleData = require('./dataFunctions/battles');
 const typeDefs = gql`
   type Query {
     user: User
-    portfolio: [Pokemon]
+    portfolio(userName: String!): [Pokemon]
   }
 
   type User {
@@ -46,8 +46,10 @@ const resolvers = {
         user = await userData.getUser(userName);
       }
       catch(e){
+        console.log("Had an error");
         // i'll let you handle error handling
       }
+      console.log(user.pokemonCollection);
       return user.pokemonCollection;
     }
   },

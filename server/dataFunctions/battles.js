@@ -1,7 +1,7 @@
 const mongoCollections = require('../config/mongoCollections');
 const battles = mongoCollections.battleCollection;
 const {ObjectId} = require('mongodb');
-const { battleCollection } = require('../config/mongoCollections');
+// const { battleCollection } = require('../config/mongoCollections');
 const popularityData = require('./popularity');
 const timePerBattle = 60000;//in milliseconds 
 
