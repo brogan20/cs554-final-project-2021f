@@ -2,7 +2,7 @@ const { ApolloServer, gql } = require('apollo-server');
 const lodash = require('lodash');
 const userData = require('./dataFunctions/user');
 const popularityData = require('./dataFunctions/popularity');
-const battleData = require('./dataFunctions/bets');
+const battleData = require('./dataFunctions/battles');
 
 const typeDefs = gql`
   type Query {
