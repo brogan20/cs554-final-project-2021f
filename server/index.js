@@ -49,7 +49,7 @@ const resolvers = {
         user = await userData.getUser(userName);
       }
       catch(e){
-        // i'll let you handle error handling
+        throw e;
       }
       return user.pokemonCollection;
     }
