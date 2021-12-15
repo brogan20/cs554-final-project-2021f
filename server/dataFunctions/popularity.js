@@ -10,9 +10,10 @@ const removeAll = async function() {
 	return({code: 200, message: "removeAll: successfully nuked popularity database"});
 }
 
-const initDatabase = async function() {
+const initPopularity = async function() {
     const popularityCollection = await popularity();
-    const inIn = await popularityCollection.insertMany(pokemonStartingValues);
+
+    const inIn = await popularityCollection.insertMany(pokemonStartingValues.theGoods);
 
 	if(inIn.insertCount === 0) {
 		throw({code: 500, message: "initDatabase: unable to add starting data for pokemon"});
@@ -26,9 +27,11 @@ const getPokemonPopularity = async function(pokemonName) {
     if(arguments.length != 1 || pokemonName == undefined) {
 		throw({code: 400, message: "getPokemonPopularity: you are missing pokemonName"});
 	}
-	if(typeof userName !== 'string' || userName.trim() == "") {
+	if(typeof pokemonName !== 'string' || pokemonName.trim() == "") {
 		throw({code: 400, message: "getPokemonPopularity: pokemonName must be a string that isn't empty or just spaces"});
 	}
+
+    pokemonName = pokemonName.toLowerCase();
 
     const popularityCollection = await popularity();
 
@@ -53,12 +56,14 @@ const changePokemonPopularity = async function(pokemonName, toChange) {
     if(arguments.length != 2 || pokemonName == undefined) {
 		throw({code: 400, message: "changePokemonPopularity: you are missing pokemonName or toChange"});
 	}
-	if(typeof userName !== 'string' || userName.trim() == "") {
+	if(typeof pokemonName !== 'string' || pokemonName.trim() == "") {
 		throw({code: 400, message: "changePokemonPopularity: pokemonName must be a string that isn't empty or just spaces"});
 	}
-    if(typeof toAdd !== 'number' || toAdd != 0) {
+    if(typeof toChange !== 'number' || toChange == 0) {
 		throw({code: 400, message: "changePokemonPopularity: toChange must be a number an cannot be zero"});
 	}
+
+    pokemonName = pokemonName.toLowerCase();
 
     let finalPop = toChange;
 
@@ -97,12 +102,14 @@ const changePokemonScore = async function(pokemonName, didWin) {
     if(arguments.length != 2 || pokemonName == undefined) {
 		throw({code: 400, message: "changePokemonScore: you are missing pokemonName or didWin"});
 	}
-	if(typeof userName !== 'string' || userName.trim() == "") {
+	if(typeof pokemonName !== 'string' || pokemonName.trim() == "") {
 		throw({code: 400, message: "changePokemonScore: pokemonName must be a string that isn't empty or just spaces"});
 	}
     if(typeof didWin !== 'bool') {
 		throw({code: 400, message: "changePokemonScore: didWin must be a boolean"});
 	}
+
+    pokemonName = pokemonName.toLowerCase();
 
     const popularityCollection = await popularity();
 
@@ -143,7 +150,7 @@ const changePokemonScore = async function(pokemonName, didWin) {
 
 module.exports = {
 	removeAll,
-    initDatabase,
+    initPopularity,
     getPokemonPopularity,
     changePokemonPopularity,
     changePokemonScore

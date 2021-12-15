@@ -1,4312 +1,4312 @@
 let theGoods = 
 [
     {
-        pokeName: "Greninja",
-        pokePop: 999,
-        pokeWins: 0,
-        pokeLosses: 0
+        pokename: "greninja",
+        pokepop: 999,
+        pokewins: 0,
+        pokelosses: 0
     },
     {
-        pokeName: "Arceus",
-        pokePop: 998,
-        pokeWins: 0,
-        pokeLosses: 0
+        pokename: "arceus",
+        pokepop: 998,
+        pokewins: 0,
+        pokelosses: 0
     },
     {
-        pokeName: "Mew",
-        pokePop: 997,
-        pokeWins: 0,
-        pokeLosses: 0
+        pokename: "mew",
+        pokepop: 997,
+        pokewins: 0,
+        pokelosses: 0
     },
     {
-        pokeName: "Pikachu",
-        pokePop: 996,
-        pokeWins: 0,
-        pokeLosses: 0
+        pokename: "pikachu",
+        pokepop: 996,
+        pokewins: 0,
+        pokelosses: 0
     },
     {
-        pokeName: "Sylveon",
-        pokePop: 995,
-        pokeWins: 0,
-        pokeLosses: 0
+        pokename: "sylveon",
+        pokepop: 995,
+        pokewins: 0,
+        pokelosses: 0
     },
     {
-        pokeName: "Genesect",
-        pokePop: 994,
-        pokeWins: 0,
-        pokeLosses: 0
+        pokename: "genesect",
+        pokepop: 994,
+        pokewins: 0,
+        pokelosses: 0
     },
     {
-        pokeName: "Rayquaza",
-        pokePop: 993,
-        pokeWins: 0,
-        pokeLosses: 0
+        pokename: "rayquaza",
+        pokepop: 993,
+        pokewins: 0,
+        pokelosses: 0
     },
     {
-        pokeName: "Zygarde",
-        pokePop: 992,
-        pokeWins: 0,
-        pokeLosses: 0
+        pokename: "zygarde",
+        pokepop: 992,
+        pokewins: 0,
+        pokelosses: 0
     },
     {
-        pokeName: "Charizard",
-        pokePop: 991,
-        pokeWins: 0,
-        pokeLosses: 0
+        pokename: "charizard",
+        pokepop: 991,
+        pokewins: 0,
+        pokelosses: 0
     },
     {
-        pokeName: "Meloetta",
-        pokePop: 990,
-        pokeWins: 0,
-        pokeLosses: 0
+        pokename: "meloetta",
+        pokepop: 990,
+        pokewins: 0,
+        pokelosses: 0
     },
     {
-        pokeName: "Mewtwo",
-        pokePop: 989,
-        pokeWins: 0,
-        pokeLosses: 0
+        pokename: "mewtwo",
+        pokepop: 989,
+        pokewins: 0,
+        pokelosses: 0
     },
     {
-        pokeName: "Eevee",
-        pokePop: 988,
-        pokeWins: 0,
-        pokeLosses: 0
+        pokename: "eevee",
+        pokepop: 988,
+        pokewins: 0,
+        pokelosses: 0
     },
     {
-        pokeName: "Jirachi",
-        pokePop: 987,
-        pokeWins: 0,
-        pokeLosses: 0
+        pokename: "jirachi",
+        pokepop: 987,
+        pokewins: 0,
+        pokelosses: 0
     },
     {
-        pokeName: "Darkrai",
-        pokePop: 986,
-        pokeWins: 0,
-        pokeLosses: 0
+        pokename: "darkrai",
+        pokepop: 986,
+        pokewins: 0,
+        pokelosses: 0
     },
     {
-        pokeName: "Lucario",
-        pokePop: 985,
-        pokeWins: 0,
-        pokeLosses: 0
+        pokename: "lucario",
+        pokepop: 985,
+        pokewins: 0,
+        pokelosses: 0
     },
     {
-        pokeName: "Diancie",
-        pokePop: 984,
-        pokeWins: 0,
-        pokeLosses: 0
+        pokename: "diancie",
+        pokepop: 984,
+        pokewins: 0,
+        pokelosses: 0
     },
     {
-        pokeName: "Hoopa",
-        pokePop: 983,
-        pokeWins: 0,
-        pokeLosses: 0
+        pokename: "hoopa",
+        pokepop: 983,
+        pokewins: 0,
+        pokelosses: 0
     },
     {
-        pokeName: "Keldeo",
-        pokePop: 982,
-        pokeWins: 0,
-        pokeLosses: 0
+        pokename: "keldeo",
+        pokepop: 982,
+        pokewins: 0,
+        pokelosses: 0
     },
     {
-        pokeName: "Victini",
-        pokePop: 981,
-        pokeWins: 0,
-        pokeLosses: 0
+        pokename: "victini",
+        pokepop: 981,
+        pokewins: 0,
+        pokelosses: 0
     },
     {
-        pokeName: "Manaphy",
-        pokePop: 980,
-        pokeWins: 0,
-        pokeLosses: 0
+        pokename: "manaphy",
+        pokepop: 980,
+        pokewins: 0,
+        pokelosses: 0
     },
     {
-        pokeName: "Reshiram",
-        pokePop: 979,
-        pokeWins: 0,
-        pokeLosses: 0
+        pokename: "reshiram",
+        pokepop: 979,
+        pokewins: 0,
+        pokelosses: 0
     },
     {
-        pokeName: "Kyogre",
-        pokePop: 978,
-        pokeWins: 0,
-        pokeLosses: 0
+        pokename: "kyogre",
+        pokepop: 978,
+        pokewins: 0,
+        pokelosses: 0
     },
     {
-        pokeName: "Kyurem",
-        pokePop: 977,
-        pokeWins: 0,
-        pokeLosses: 0
+        pokename: "kyurem",
+        pokepop: 977,
+        pokewins: 0,
+        pokelosses: 0
     },
     {
-        pokeName: "Coil",
-        pokePop: 976,
-        pokeWins: 0,
-        pokeLosses: 0
+        pokename: "coil",
+        pokepop: 976,
+        pokewins: 0,
+        pokelosses: 0
     },
     {
-        pokeName: "Shaymin",
-        pokePop: 975,
-        pokeWins: 0,
-        pokeLosses: 0
+        pokename: "shaymin",
+        pokepop: 975,
+        pokewins: 0,
+        pokelosses: 0
     },
     {
-        pokeName: "Yveltal",
-        pokePop: 974,
-        pokeWins: 0,
-        pokeLosses: 0
+        pokename: "yveltal",
+        pokepop: 974,
+        pokewins: 0,
+        pokelosses: 0
     },
     {
-        pokeName: "Giratina",
-        pokePop: 973,
-        pokeWins: 0,
-        pokeLosses: 0
+        pokename: "giratina",
+        pokepop: 973,
+        pokewins: 0,
+        pokelosses: 0
     },
     {
-        pokeName: "Lugia",
-        pokePop: 972,
-        pokeWins: 0,
-        pokeLosses: 0
+        pokename: "lugia",
+        pokepop: 972,
+        pokewins: 0,
+        pokelosses: 0
     },
     {
-        pokeName: "Groudon",
-        pokePop: 971,
-        pokeWins: 0,
-        pokeLosses: 0
+        pokename: "groudon",
+        pokepop: 971,
+        pokewins: 0,
+        pokelosses: 0
     },
     {
-        pokeName: "Dialga",
-        pokePop: 970,
-        pokeWins: 0,
-        pokeLosses: 0
+        pokename: "dialga",
+        pokepop: 970,
+        pokewins: 0,
+        pokelosses: 0
     },
     {
-        pokeName: "Dedenne",
-        pokePop: 969,
-        pokeWins: 0,
-        pokeLosses: 0
+        pokename: "dedenne",
+        pokepop: 969,
+        pokewins: 0,
+        pokelosses: 0
     },
     {
-        pokeName: "Archeops",
-        pokePop: 968,
-        pokeWins: 0,
-        pokeLosses: 0
+        pokename: "archeops",
+        pokepop: 968,
+        pokewins: 0,
+        pokelosses: 0
     },
     {
-        pokeName: "Zekrom",
-        pokePop: 967,
-        pokeWins: 0,
-        pokeLosses: 0
+        pokename: "zekrom",
+        pokepop: 967,
+        pokewins: 0,
+        pokelosses: 0
     },
     {
-        pokeName: "Suicune",
-        pokePop: 966,
-        pokeWins: 0,
-        pokeLosses: 0
+        pokename: "suicune",
+        pokepop: 966,
+        pokewins: 0,
+        pokelosses: 0
     },
     {
-        pokeName: "Gengar",
-        pokePop: 965,
-        pokeWins: 0,
-        pokeLosses: 0
+        pokename: "gengar",
+        pokepop: 965,
+        pokewins: 0,
+        pokelosses: 0
     },
     {
-        pokeName: "Ho-Oh",
-        pokePop: 964,
-        pokeWins: 0,
-        pokeLosses: 0
+        pokename: "ho-oh",
+        pokepop: 964,
+        pokewins: 0,
+        pokelosses: 0
     },
     {
-        pokeName: "Xerneas",
-        pokePop: 963,
-        pokeWins: 0,
-        pokeLosses: 0
+        pokename: "xerneas",
+        pokepop: 963,
+        pokewins: 0,
+        pokelosses: 0
     },
     {
-        pokeName: "Gardevoir",
-        pokePop: 962,
-        pokeWins: 0,
-        pokeLosses: 0
+        pokename: "gardevoir",
+        pokepop: 962,
+        pokewins: 0,
+        pokelosses: 0
     },
     {
-        pokeName: "Celebi",
-        pokePop: 961,
-        pokeWins: 0,
-        pokeLosses: 0
+        pokename: "celebi",
+        pokepop: 961,
+        pokewins: 0,
+        pokelosses: 0
     },
     {
-        pokeName: "Piplup",
-        pokePop: 960,
-        pokeWins: 0,
-        pokeLosses: 0
+        pokename: "piplup",
+        pokepop: 960,
+        pokewins: 0,
+        pokelosses: 0
     },
     {
-        pokeName: "Palkia",
-        pokePop: 959,
-        pokeWins: 0,
-        pokeLosses: 0
+        pokename: "palkia",
+        pokepop: 959,
+        pokewins: 0,
+        pokelosses: 0
     },
     {
-        pokeName: "Garchomp",
-        pokePop: 958,
-        pokeWins: 0,
-        pokeLosses: 0
+        pokename: "garchomp",
+        pokepop: 958,
+        pokewins: 0,
+        pokelosses: 0
     },
     {
-        pokeName: "Regigigas",
-        pokePop: 957,
-        pokeWins: 0,
-        pokeLosses: 0
+        pokename: "regigigas",
+        pokepop: 957,
+        pokewins: 0,
+        pokelosses: 0
     },
     {
-        pokeName: "Azelf",
-        pokePop: 956,
-        pokeWins: 0,
-        pokeLosses: 0
+        pokename: "azelf",
+        pokepop: 956,
+        pokewins: 0,
+        pokelosses: 0
     },
     {
-        pokeName: "Blaziken",
-        pokePop: 955,
-        pokeWins: 0,
-        pokeLosses: 0
+        pokename: "blaziken",
+        pokepop: 955,
+        pokewins: 0,
+        pokelosses: 0
     },
     {
-        pokeName: "Landorus",
-        pokePop: 954,
-        pokeWins: 0,
-        pokeLosses: 0
+        pokename: "landorus",
+        pokepop: 954,
+        pokewins: 0,
+        pokelosses: 0
     },
     {
-        pokeName: "Glaceon",
-        pokePop: 953,
-        pokeWins: 0,
-        pokeLosses: 0
+        pokename: "glaceon",
+        pokepop: 953,
+        pokewins: 0,
+        pokelosses: 0
     },
     {
-        pokeName: "Latias",
-        pokePop: 952,
-        pokeWins: 0,
-        pokeLosses: 0
+        pokename: "latias",
+        pokepop: 952,
+        pokewins: 0,
+        pokelosses: 0
     },
     {
-        pokeName: "Pudding",
-        pokePop: 951,
-        pokeWins: 0,
-        pokeLosses: 0
+        pokename: "pudding",
+        pokepop: 951,
+        pokewins: 0,
+        pokelosses: 0
     },
     {
-        pokeName: "Deoxys",
-        pokePop: 950,
-        pokeWins: 0,
-        pokeLosses: 0
+        pokename: "deoxys",
+        pokepop: 950,
+        pokewins: 0,
+        pokelosses: 0
     },
     {
-        pokeName: "Mijumaru",
-        pokePop: 949,
-        pokeWins: 0,
-        pokeLosses: 0
+        pokename: "mijumaru",
+        pokepop: 949,
+        pokewins: 0,
+        pokelosses: 0
     },
     {
-        pokeName: "Snorlax",
-        pokePop: 948,
-        pokeWins: 0,
-        pokeLosses: 0
+        pokename: "snorlax",
+        pokepop: 948,
+        pokewins: 0,
+        pokelosses: 0
     },
     {
-        pokeName: "Freezer",
-        pokePop: 947,
-        pokeWins: 0,
-        pokeLosses: 0
+        pokename: "freezer",
+        pokepop: 947,
+        pokewins: 0,
+        pokelosses: 0
     },
     {
-        pokeName: "Absol",
-        pokePop: 946,
-        pokeWins: 0,
-        pokeLosses: 0
+        pokename: "absol",
+        pokepop: 946,
+        pokewins: 0,
+        pokelosses: 0
     },
     {
-        pokeName: "Latios",
-        pokePop: 945,
-        pokeWins: 0,
-        pokeLosses: 0
+        pokename: "latios",
+        pokepop: 945,
+        pokewins: 0,
+        pokelosses: 0
     },
     {
-        pokeName: "Zoroark",
-        pokePop: 944,
-        pokeWins: 0,
-        pokeLosses: 0
+        pokename: "zoroark",
+        pokepop: 944,
+        pokewins: 0,
+        pokelosses: 0
     },
     {
-        pokeName: "Ditto",
-        pokePop: 943,
-        pokeWins: 0,
-        pokeLosses: 0
+        pokename: "ditto",
+        pokepop: 943,
+        pokewins: 0,
+        pokelosses: 0
     },
     {
-        pokeName: "Fennekin",
-        pokePop: 942,
-        pokeWins: 0,
-        pokeLosses: 0
+        pokename: "fennekin",
+        pokepop: 942,
+        pokewins: 0,
+        pokelosses: 0
     },
     {
-        pokeName: "Dragonite",
-        pokePop: 941,
-        pokeWins: 0,
-        pokeLosses: 0
+        pokename: "dragonite",
+        pokepop: 941,
+        pokewins: 0,
+        pokelosses: 0
     },
     {
-        pokeName: "Hydreigon",
-        pokePop: 940,
-        pokeWins: 0,
-        pokeLosses: 0
+        pokename: "hydreigon",
+        pokepop: 940,
+        pokewins: 0,
+        pokelosses: 0
     },
     {
-        pokeName: "Sceptile",
-        pokePop: 939,
-        pokeWins: 0,
-        pokeLosses: 0
+        pokename: "sceptile",
+        pokepop: 939,
+        pokewins: 0,
+        pokelosses: 0
     },
     {
-        pokeName: "Leafeon",
-        pokePop: 938,
-        pokeWins: 0,
-        pokeLosses: 0
+        pokename: "leafeon",
+        pokepop: 938,
+        pokewins: 0,
+        pokelosses: 0
     },
     {
-        pokeName: "Salamence",
-        pokePop: 936,
-        pokeWins: 0,
-        pokeLosses: 0
+        pokename: "salamence",
+        pokepop: 936,
+        pokewins: 0,
+        pokelosses: 0
     },
     {
-        pokeName: "Flygon",
-        pokePop: 935,
-        pokeWins: 0,
-        pokeLosses: 0
+        pokename: "flygon",
+        pokepop: 935,
+        pokewins: 0,
+        pokelosses: 0
     },
     {
-        pokeName: "Espeon",
-        pokePop: 934,
-        pokeWins: 0,
-        pokeLosses: 0
+        pokename: "espeon",
+        pokepop: 934,
+        pokewins: 0,
+        pokelosses: 0
     },
     {
-        pokeName: "Fire",
-        pokePop: 933,
-        pokeWins: 0,
-        pokeLosses: 0
+        pokename: "fire",
+        pokepop: 933,
+        pokewins: 0,
+        pokelosses: 0
     },
     {
-        pokeName: "Goomy",
-        pokePop: 932,
-        pokeWins: 0,
-        pokeLosses: 0
+        pokename: "goomy",
+        pokepop: 932,
+        pokewins: 0,
+        pokelosses: 0
     },
     {
-        pokeName: "Pichu",
-        pokePop: 931,
-        pokeWins: 0,
-        pokeLosses: 0
+        pokename: "pichu",
+        pokepop: 931,
+        pokewins: 0,
+        pokelosses: 0
     },
     {
-        pokeName: "Infernape",
-        pokePop: 930,
-        pokeWins: 0,
-        pokeLosses: 0
+        pokename: "infernape",
+        pokepop: 930,
+        pokewins: 0,
+        pokelosses: 0
     },
     {
-        pokeName: "Raichu",
-        pokePop: 929,
-        pokeWins: 0,
-        pokeLosses: 0
+        pokename: "raichu",
+        pokepop: 929,
+        pokewins: 0,
+        pokelosses: 0
     },
     {
-        pokeName: "Metagross",
-        pokePop: 928,
-        pokeWins: 0,
-        pokeLosses: 0
+        pokename: "metagross",
+        pokepop: 928,
+        pokewins: 0,
+        pokelosses: 0
     },
     {
-        pokeName: "Froakie",
-        pokePop: 927,
-        pokeWins: 0,
-        pokeLosses: 0
+        pokename: "froakie",
+        pokepop: 927,
+        pokewins: 0,
+        pokelosses: 0
     },
     {
-        pokeName: "Cresselia",
-        pokePop: 926,
-        pokeWins: 0,
-        pokeLosses: 0
+        pokename: "cresselia",
+        pokepop: 926,
+        pokewins: 0,
+        pokelosses: 0
     },
     {
-        pokeName: "Kamex",
-        pokePop: 925,
-        pokeWins: 0,
-        pokeLosses: 0
+        pokename: "kamex",
+        pokepop: 925,
+        pokewins: 0,
+        pokelosses: 0
     },
     {
-        pokeName: "Blackie",
-        pokePop: 924,
-        pokeWins: 0,
-        pokeLosses: 0
+        pokename: "blackie",
+        pokepop: 924,
+        pokewins: 0,
+        pokelosses: 0
     },
     {
-        pokeName: "Emolga",
-        pokePop: 923,
-        pokeWins: 0,
-        pokeLosses: 0
+        pokename: "emolga",
+        pokepop: 923,
+        pokewins: 0,
+        pokelosses: 0
     },
     {
-        pokeName: "Arbok",
-        pokePop: 922,
-        pokeWins: 0,
-        pokeLosses: 0
+        pokename: "arbok",
+        pokepop: 922,
+        pokewins: 0,
+        pokelosses: 0
     },
     {
-        pokeName: "Milotic",
-        pokePop: 921,
-        pokeWins: 0,
-        pokeLosses: 0
+        pokename: "milotic",
+        pokepop: 921,
+        pokewins: 0,
+        pokelosses: 0
     },
     {
-        pokeName: "Laplace",
-        pokePop: 920,
-        pokeWins: 0,
-        pokeLosses: 0
+        pokename: "laplace",
+        pokepop: 920,
+        pokewins: 0,
+        pokelosses: 0
     },
     {
-        pokeName: "Swampert",
-        pokePop: 919,
-        pokeWins: 0,
-        pokeLosses: 0
+        pokename: "swampert",
+        pokepop: 919,
+        pokewins: 0,
+        pokelosses: 0
     },
     {
-        pokeName: "Meowth",
-        pokePop: 918,
-        pokeWins: 0,
-        pokeLosses: 0
+        pokename: "meowth",
+        pokepop: 918,
+        pokewins: 0,
+        pokelosses: 0
     },
     {
-        pokeName: "Beautifly",
-        pokePop: 917,
-        pokeWins: 0,
-        pokeLosses: 0
+        pokename: "beautifly",
+        pokepop: 917,
+        pokewins: 0,
+        pokelosses: 0
     },
     {
-        pokeName: "Mawile",
-        pokePop: 916,
-        pokeWins: 0,
-        pokeLosses: 0
+        pokename: "mawile",
+        pokepop: 916,
+        pokewins: 0,
+        pokelosses: 0
     },
     {
-        pokeName: "Noivern",
-        pokePop: 915,
-        pokeWins: 0,
-        pokeLosses: 0
+        pokename: "noivern",
+        pokepop: 915,
+        pokewins: 0,
+        pokelosses: 0
     },
     {
-        pokeName: "Luxray",
-        pokePop: 914,
-        pokeWins: 0,
-        pokeLosses: 0
+        pokename: "luxray",
+        pokepop: 914,
+        pokewins: 0,
+        pokelosses: 0
     },
     {
-        pokeName: "Ampharos",
-        pokePop: 913,
-        pokeWins: 0,
-        pokeLosses: 0
+        pokename: "ampharos",
+        pokepop: 913,
+        pokewins: 0,
+        pokelosses: 0
     },
     {
-        pokeName: "Archen",
-        pokePop: 912,
-        pokeWins: 0,
-        pokeLosses: 0
+        pokename: "archen",
+        pokepop: 912,
+        pokewins: 0,
+        pokelosses: 0
     },
     {
-        pokeName: "Venusaur",
-        pokePop: 862,
-        pokeWins: 0,
-        pokeLosses: 0
+        pokename: "venusaur",
+        pokepop: 862,
+        pokewins: 0,
+        pokelosses: 0
     },
     {
-        pokeName: "Armaldo",
-        pokePop: 910,
-        pokeWins: 0,
-        pokeLosses: 0
+        pokename: "armaldo",
+        pokepop: 910,
+        pokewins: 0,
+        pokelosses: 0
     },
     {
-        pokeName: "Magikarp",
-        pokePop: 909,
-        pokeWins: 0,
-        pokeLosses: 0
+        pokename: "magikarp",
+        pokepop: 909,
+        pokewins: 0,
+        pokelosses: 0
     },
     {
-        pokeName: "Chandelure",
-        pokePop: 908,
-        pokeWins: 0,
-        pokeLosses: 0
+        pokename: "chandelure",
+        pokepop: 908,
+        pokewins: 0,
+        pokelosses: 0
     },
     {
-        pokeName: "Torchic",
-        pokePop: 907,
-        pokeWins: 0,
-        pokeLosses: 0
+        pokename: "torchic",
+        pokepop: 907,
+        pokewins: 0,
+        pokelosses: 0
     },
     {
-        pokeName: "Thundurus",
-        pokePop: 906,
-        pokeWins: 0,
-        pokeLosses: 0
+        pokename: "thundurus",
+        pokepop: 906,
+        pokewins: 0,
+        pokelosses: 0
     },
     {
-        pokeName: "Booster",
-        pokePop: 905,
-        pokeWins: 0,
-        pokeLosses: 0
+        pokename: "booster",
+        pokepop: 905,
+        pokewins: 0,
+        pokelosses: 0
     },
     {
-        pokeName: "Polygon",
-        pokePop: 904,
-        pokeWins: 0,
-        pokeLosses: 0
+        pokename: "polygon",
+        pokepop: 904,
+        pokewins: 0,
+        pokelosses: 0
     },
     {
-        pokeName: "Chespin",
-        pokePop: 903,
-        pokeWins: 0,
-        pokeLosses: 0
+        pokename: "chespin",
+        pokepop: 903,
+        pokewins: 0,
+        pokelosses: 0
     },
     {
-        pokeName: "Raikou",
-        pokePop: 902,
-        pokeWins: 0,
-        pokeLosses: 0
+        pokename: "raikou",
+        pokepop: 902,
+        pokewins: 0,
+        pokelosses: 0
     },
     {
-        pokeName: "Machamp",
-        pokePop: 901,
-        pokeWins: 0,
-        pokeLosses: 0
+        pokename: "machamp",
+        pokepop: 901,
+        pokewins: 0,
+        pokelosses: 0
     },
     {
-        pokeName: "Mudkip",
-        pokePop: 900,
-        pokeWins: 0,
-        pokeLosses: 0
+        pokename: "mudkip",
+        pokepop: 900,
+        pokewins: 0,
+        pokelosses: 0
     },
     {
-        pokeName: "Gallade",
-        pokePop: 899,
-        pokeWins: 0,
-        pokeLosses: 0
+        pokename: "gallade",
+        pokepop: 899,
+        pokewins: 0,
+        pokelosses: 0
     },
     {
-        pokeName: "Arbo",
-        pokePop: 898,
-        pokeWins: 0,
-        pokeLosses: 0
+        pokename: "arbo",
+        pokepop: 898,
+        pokewins: 0,
+        pokelosses: 0
     },
     {
-        pokeName: "Asanan",
-        pokePop: 897,
-        pokeWins: 0,
-        pokeLosses: 0
+        pokename: "asanan",
+        pokepop: 897,
+        pokewins: 0,
+        pokelosses: 0
     },
     {
-        pokeName: "Ninetales",
-        pokePop: 896,
-        pokeWins: 0,
-        pokeLosses: 0
+        pokename: "ninetales",
+        pokepop: 896,
+        pokewins: 0,
+        pokelosses: 0
     },
     {
-        pokeName: "Snivy",
-        pokePop: 895,
-        pokeWins: 0,
-        pokeLosses: 0
+        pokename: "snivy",
+        pokepop: 895,
+        pokewins: 0,
+        pokelosses: 0
     },
     {
-        pokeName: "Wobbuffet",
-        pokePop: 894,
-        pokeWins: 0,
-        pokeLosses: 0
+        pokename: "wobbuffet",
+        pokepop: 894,
+        pokewins: 0,
+        pokelosses: 0
     },
     {
-        pokeName: "Gilgard",
-        pokePop: 893,
-        pokeWins: 0,
-        pokeLosses: 0
+        pokename: "gilgard",
+        pokepop: 893,
+        pokewins: 0,
+        pokelosses: 0
     },
     {
-        pokeName: "Altaria",
-        pokePop: 892,
-        pokeWins: 0,
-        pokeLosses: 0
+        pokename: "altaria",
+        pokepop: 892,
+        pokewins: 0,
+        pokelosses: 0
     },
     {
-        pokeName: "Vaporeon",
-        pokePop: 891,
-        pokeWins: 0,
-        pokeLosses: 0
+        pokename: "vaporeon",
+        pokepop: 891,
+        pokewins: 0,
+        pokelosses: 0
     },
     {
-        pokeName: "Talonflame",
-        pokePop: 890,
-        pokeWins: 0,
-        pokeLosses: 0
+        pokename: "talonflame",
+        pokepop: 890,
+        pokewins: 0,
+        pokelosses: 0
     },
     {
-        pokeName: "Braixen",
-        pokePop: 889,
-        pokeWins: 0,
-        pokeLosses: 0
+        pokename: "braixen",
+        pokepop: 889,
+        pokewins: 0,
+        pokelosses: 0
     },
     {
-        pokeName: "Cyndaquil",
-        pokePop: 888,
-        pokeWins: 0,
-        pokeLosses: 0
+        pokename: "cyndaquil",
+        pokepop: 888,
+        pokewins: 0,
+        pokelosses: 0
     },
     {
-        pokeName: "Sanders",
-        pokePop: 887,
-        pokeWins: 0,
-        pokeLosses: 0
+        pokename: "sanders",
+        pokepop: 887,
+        pokewins: 0,
+        pokelosses: 0
     },
     {
-        pokeName: "Squirtle",
-        pokePop: 886,
-        pokeWins: 0,
-        pokeLosses: 0
+        pokename: "squirtle",
+        pokepop: 886,
+        pokewins: 0,
+        pokelosses: 0
     },
     {
-        pokeName: "Accelgor",
-        pokePop: 885,
-        pokeWins: 0,
-        pokeLosses: 0
+        pokename: "accelgor",
+        pokepop: 885,
+        pokewins: 0,
+        pokelosses: 0
     },
     {
-        pokeName: "Greggle",
-        pokePop: 884,
-        pokeWins: 0,
-        pokeLosses: 0
+        pokename: "greggle",
+        pokepop: 884,
+        pokewins: 0,
+        pokelosses: 0
     },
     {
-        pokeName: "Entei",
-        pokePop: 883,
-        pokeWins: 0,
-        pokeLosses: 0
+        pokename: "entei",
+        pokepop: 883,
+        pokewins: 0,
+        pokelosses: 0
     },
     {
-        pokeName: "Hassam",
-        pokePop: 882,
-        pokeWins: 0,
-        pokeLosses: 0
+        pokename: "hassam",
+        pokepop: 882,
+        pokewins: 0,
+        pokelosses: 0
     },
     {
-        pokeName: "Meowstic",
-        pokePop: 881,
-        pokeWins: 0,
-        pokeLosses: 0
+        pokename: "meowstic",
+        pokepop: 881,
+        pokewins: 0,
+        pokelosses: 0
     },
     {
-        pokeName: "Durant",
-        pokePop: 880,
-        pokeWins: 0,
-        pokeLosses: 0
+        pokename: "durant",
+        pokepop: 880,
+        pokewins: 0,
+        pokelosses: 0
     },
     {
-        pokeName: "Empoleon",
-        pokePop: 879,
-        pokeWins: 0,
-        pokeLosses: 0
+        pokename: "empoleon",
+        pokepop: 879,
+        pokewins: 0,
+        pokelosses: 0
     },
     {
-        pokeName: "Chikorita",
-        pokePop: 878,
-        pokeWins: 0,
-        pokeLosses: 0
+        pokename: "chikorita",
+        pokepop: 878,
+        pokewins: 0,
+        pokelosses: 0
     },
     {
-        pokeName: "Samurott",
-        pokePop: 877,
-        pokeWins: 0,
-        pokeLosses: 0
+        pokename: "samurott",
+        pokepop: 877,
+        pokewins: 0,
+        pokelosses: 0
     },
     {
-        pokeName: "Pachirisu",
-        pokePop: 876,
-        pokeWins: 0,
-        pokeLosses: 0
+        pokename: "pachirisu",
+        pokepop: 876,
+        pokewins: 0,
+        pokelosses: 0
     },
     {
-        pokeName: "Charmander",
-        pokePop: 875,
-        pokeWins: 0,
-        pokeLosses: 0
+        pokename: "charmander",
+        pokepop: 875,
+        pokewins: 0,
+        pokelosses: 0
     },
     {
-        pokeName: "Windy",
-        pokePop: 874,
-        pokeWins: 0,
-        pokeLosses: 0
+        pokename: "windy",
+        pokepop: 874,
+        pokewins: 0,
+        pokelosses: 0
     },
     {
-        pokeName: "Stunfisk",
-        pokePop: 873,
-        pokeWins: 0,
-        pokeLosses: 0
+        pokename: "stunfisk",
+        pokepop: 873,
+        pokewins: 0,
+        pokelosses: 0
     },
     {
-        pokeName: "Delphox",
-        pokePop: 872,
-        pokeWins: 0,
-        pokeLosses: 0
+        pokename: "delphox",
+        pokepop: 872,
+        pokewins: 0,
+        pokelosses: 0
     },
     {
-        pokeName: "Rotom",
-        pokePop: 871,
-        pokeWins: 0,
-        pokeLosses: 0
+        pokename: "rotom",
+        pokepop: 871,
+        pokewins: 0,
+        pokelosses: 0
     },
     {
-        pokeName: "Aurorus",
-        pokePop: 870,
-        pokeWins: 0,
-        pokeLosses: 0
+        pokename: "aurorus",
+        pokepop: 870,
+        pokewins: 0,
+        pokelosses: 0
     },
     {
-        pokeName: "Pancham",
-        pokePop: 869,
-        pokeWins: 0,
-        pokeLosses: 0
+        pokename: "pancham",
+        pokepop: 869,
+        pokewins: 0,
+        pokelosses: 0
     },
     {
-        pokeName: "Garula",
-        pokePop: 868,
-        pokeWins: 0,
-        pokeLosses: 0
+        pokename: "garula",
+        pokepop: 868,
+        pokewins: 0,
+        pokelosses: 0
     },
     {
-        pokeName: "Wailord",
-        pokePop: 867,
-        pokeWins: 0,
-        pokeLosses: 0
+        pokename: "wailord",
+        pokepop: 867,
+        pokewins: 0,
+        pokelosses: 0
     },
     {
-        pokeName: "Typhlosion",
-        pokePop: 866,
-        pokeWins: 0,
-        pokeLosses: 0
+        pokename: "typhlosion",
+        pokepop: 866,
+        pokewins: 0,
+        pokelosses: 0
     },
     {
-        pokeName: "Polygon-Z",
-        pokePop: 865,
-        pokeWins: 0,
-        pokeLosses: 0
+        pokename: "polygon-z",
+        pokepop: 865,
+        pokewins: 0,
+        pokelosses: 0
     },
     {
-        pokeName: "Jaroda",
-        pokePop: 864,
-        pokeWins: 0,
-        pokeLosses: 0
+        pokename: "jaroda",
+        pokepop: 864,
+        pokewins: 0,
+        pokelosses: 0
     },
     {
-        pokeName: "Haxorus",
-        pokePop: 863,
-        pokeWins: 0,
-        pokeLosses: 0
+        pokename: "haxorus",
+        pokepop: 863,
+        pokewins: 0,
+        pokelosses: 0
     },
     {
-        pokeName: "Cinccino",
-        pokePop: 861,
-        pokeWins: 0,
-        pokeLosses: 0
+        pokename: "cinccino",
+        pokepop: 861,
+        pokewins: 0,
+        pokelosses: 0
     },
     {
-        pokeName: "Tyranitar",
-        pokePop: 860,
-        pokeWins: 0,
-        pokeLosses: 0
+        pokename: "tyranitar",
+        pokepop: 860,
+        pokewins: 0,
+        pokelosses: 0
     },
     {
-        pokeName: "Kodak",
-        pokePop: 859,
-        pokeWins: 0,
-        pokeLosses: 0
+        pokename: "kodak",
+        pokepop: 859,
+        pokewins: 0,
+        pokelosses: 0
     },
     {
-        pokeName: "Hawlucha",
-        pokePop: 858,
-        pokeWins: 0,
-        pokeLosses: 0
+        pokename: "hawlucha",
+        pokepop: 858,
+        pokewins: 0,
+        pokelosses: 0
     },
     {
-        pokeName: "Spiritomb",
-        pokePop: 857,
-        pokeWins: 0,
-        pokeLosses: 0
+        pokename: "spiritomb",
+        pokepop: 857,
+        pokewins: 0,
+        pokelosses: 0
     },
     {
-        pokeName: "Goodra",
-        pokePop: 856,
-        pokeWins: 0,
-        pokeLosses: 0
+        pokename: "goodra",
+        pokepop: 856,
+        pokewins: 0,
+        pokelosses: 0
     },
     {
-        pokeName: "Phione",
-        pokePop: 855,
-        pokeWins: 0,
-        pokeLosses: 0
+        pokename: "phione",
+        pokepop: 855,
+        pokewins: 0,
+        pokelosses: 0
     },
     {
-        pokeName: "Weavile",
-        pokePop: 854,
-        pokeWins: 0,
-        pokeLosses: 0
+        pokename: "weavile",
+        pokepop: 854,
+        pokewins: 0,
+        pokelosses: 0
     },
     {
-        pokeName: "Audino",
-        pokePop: 853,
-        pokeWins: 0,
-        pokeLosses: 0
+        pokename: "audino",
+        pokepop: 853,
+        pokewins: 0,
+        pokelosses: 0
     },
     {
-        pokeName: "Zorua",
-        pokePop: 852,
-        pokeWins: 0,
-        pokeLosses: 0
+        pokename: "zorua",
+        pokepop: 852,
+        pokewins: 0,
+        pokelosses: 0
     },
     {
-        pokeName: "Vulpix",
-        pokePop: 851,
-        pokeWins: 0,
-        pokeLosses: 0
+        pokename: "vulpix",
+        pokepop: 851,
+        pokewins: 0,
+        pokelosses: 0
     },
     {
-        pokeName: "Sableye",
-        pokePop: 850,
-        pokeWins: 0,
-        pokeLosses: 0
+        pokename: "sableye",
+        pokepop: 850,
+        pokewins: 0,
+        pokelosses: 0
     },
     {
-        pokeName: "Whimsicott",
-        pokePop: 849,
-        pokeWins: 0,
-        pokeLosses: 0
+        pokename: "whimsicott",
+        pokepop: 849,
+        pokewins: 0,
+        pokelosses: 0
     },
     {
-        pokeName: "Banette",
-        pokePop: 848,
-        pokeWins: 0,
-        pokeLosses: 0
+        pokename: "banette",
+        pokepop: 848,
+        pokewins: 0,
+        pokelosses: 0
     },
     {
-        pokeName: "Minun",
-        pokePop: 847,
-        pokeWins: 0,
-        pokeLosses: 0
+        pokename: "minun",
+        pokepop: 847,
+        pokewins: 0,
+        pokelosses: 0
     },
     {
-        pokeName: "Torterra",
-        pokePop: 846,
-        pokeWins: 0,
-        pokeLosses: 0
+        pokename: "torterra",
+        pokepop: 846,
+        pokewins: 0,
+        pokelosses: 0
     },
     {
-        pokeName: "Amalus",
-        pokePop: 845,
-        pokeWins: 0,
-        pokeLosses: 0
+        pokename: "amalus",
+        pokepop: 845,
+        pokewins: 0,
+        pokelosses: 0
     },
     {
-        pokeName: "Slowpoke",
-        pokePop: 844,
-        pokeWins: 0,
-        pokeLosses: 0
+        pokename: "slowpoke",
+        pokepop: 844,
+        pokewins: 0,
+        pokelosses: 0
     },
     {
-        pokeName: "Tornadus",
-        pokePop: 843,
-        pokeWins: 0,
-        pokeLosses: 0
+        pokename: "tornadus",
+        pokepop: 843,
+        pokewins: 0,
+        pokelosses: 0
     },
     {
-        pokeName: "Frogadier",
-        pokePop: 842,
-        pokeWins: 0,
-        pokeLosses: 0
+        pokename: "frogadier",
+        pokepop: 842,
+        pokewins: 0,
+        pokelosses: 0
     },
     {
-        pokeName: "Togekiss",
-        pokePop: 841,
-        pokeWins: 0,
-        pokeLosses: 0
+        pokename: "togekiss",
+        pokepop: 841,
+        pokewins: 0,
+        pokelosses: 0
     },
     {
-        pokeName: "Tepig",
-        pokePop: 840,
-        pokeWins: 0,
-        pokeLosses: 0
+        pokename: "tepig",
+        pokepop: 840,
+        pokewins: 0,
+        pokelosses: 0
     },
     {
-        pokeName: "Shedinja",
-        pokePop: 839,
-        pokeWins: 0,
-        pokeLosses: 0
+        pokename: "shedinja",
+        pokepop: 839,
+        pokewins: 0,
+        pokelosses: 0
     },
     {
-        pokeName: "Turtwig",
-        pokePop: 838,
-        pokeWins: 0,
-        pokeLosses: 0
+        pokename: "turtwig",
+        pokepop: 838,
+        pokewins: 0,
+        pokelosses: 0
     },
     {
-        pokeName: "Mimilop",
-        pokePop: 837,
-        pokeWins: 0,
-        pokeLosses: 0
+        pokename: "mimilop",
+        pokepop: 837,
+        pokewins: 0,
+        pokelosses: 0
     },
     {
-        pokeName: "Espurr",
-        pokePop: 836,
-        pokeWins: 0,
-        pokeLosses: 0
+        pokename: "espurr",
+        pokepop: 836,
+        pokewins: 0,
+        pokelosses: 0
     },
     {
-        pokeName: "Inkay",
-        pokePop: 835,
-        pokeWins: 0,
-        pokeLosses: 0
+        pokename: "inkay",
+        pokepop: 835,
+        pokewins: 0,
+        pokelosses: 0
     },
     {
-        pokeName: "Staraptor",
-        pokePop: 834,
-        pokeWins: 0,
-        pokeLosses: 0
+        pokename: "staraptor",
+        pokepop: 834,
+        pokewins: 0,
+        pokelosses: 0
     },
     {
-        pokeName: "Marill",
-        pokePop: 833,
-        pokeWins: 0,
-        pokeLosses: 0
+        pokename: "marill",
+        pokepop: 833,
+        pokewins: 0,
+        pokelosses: 0
     },
     {
-        pokeName: "Dragonair",
-        pokePop: 832,
-        pokeWins: 0,
-        pokeLosses: 0
+        pokename: "dragonair",
+        pokepop: 832,
+        pokewins: 0,
+        pokelosses: 0
     },
     {
-        pokeName: "Regice",
-        pokePop: 831,
-        pokeWins: 0,
-        pokeLosses: 0
+        pokename: "regice",
+        pokepop: 831,
+        pokewins: 0,
+        pokelosses: 0
     },
     {
-        pokeName: "Cubchoo",
-        pokePop: 830,
-        pokeWins: 0,
-        pokeLosses: 0
+        pokename: "cubchoo",
+        pokepop: 830,
+        pokewins: 0,
+        pokelosses: 0
     },
     {
-        pokeName: "Totodile",
-        pokePop: 829,
-        pokeWins: 0,
-        pokeLosses: 0
+        pokename: "totodile",
+        pokepop: 829,
+        pokewins: 0,
+        pokelosses: 0
     },
     {
-        pokeName: "Unown (F)",
-        pokePop: 828,
-        pokeWins: 0,
-        pokeLosses: 0
+        pokename: "unown (f)",
+        pokepop: 828,
+        pokewins: 0,
+        pokelosses: 0
     },
     {
-        pokeName: "Togepi",
-        pokePop: 827,
-        pokeWins: 0,
-        pokeLosses: 0
+        pokename: "togepi",
+        pokepop: 827,
+        pokewins: 0,
+        pokelosses: 0
     },
     {
-        pokeName: "Buneary",
-        pokePop: 826,
-        pokeWins: 0,
-        pokeLosses: 0
+        pokename: "buneary",
+        pokepop: 826,
+        pokewins: 0,
+        pokelosses: 0
     },
     {
-        pokeName: "Lilligant",
-        pokePop: 825,
-        pokeWins: 0,
-        pokeLosses: 0
+        pokename: "lilligant",
+        pokepop: 825,
+        pokewins: 0,
+        pokelosses: 0
     },
     {
-        pokeName: "Aggron",
-        pokePop: 824,
-        pokeWins: 0,
-        pokeLosses: 0
+        pokename: "aggron",
+        pokepop: 824,
+        pokewins: 0,
+        pokelosses: 0
     },
     {
-        pokeName: "Quagsire",
-        pokePop: 823,
-        pokeWins: 0,
-        pokeLosses: 0
+        pokename: "quagsire",
+        pokepop: 823,
+        pokewins: 0,
+        pokelosses: 0
     },
     {
-        pokeName: "Volcarona",
-        pokePop: 822,
-        pokeWins: 0,
-        pokeLosses: 0
+        pokename: "volcarona",
+        pokepop: 822,
+        pokewins: 0,
+        pokelosses: 0
     },
     {
-        pokeName: "Froslass",
-        pokePop: 821,
-        pokeWins: 0,
-        pokeLosses: 0
+        pokename: "froslass",
+        pokepop: 821,
+        pokewins: 0,
+        pokelosses: 0
     },
     {
-        pokeName: "Heatran",
-        pokePop: 820,
-        pokeWins: 0,
-        pokeLosses: 0
+        pokename: "heatran",
+        pokepop: 820,
+        pokewins: 0,
+        pokelosses: 0
     },
     {
-        pokeName: "Tyrantrum",
-        pokePop: 819,
-        pokeWins: 0,
-        pokeLosses: 0
+        pokename: "tyrantrum",
+        pokepop: 819,
+        pokewins: 0,
+        pokelosses: 0
     },
     {
-        pokeName: "Pippi",
-        pokePop: 818,
-        pokeWins: 0,
-        pokeLosses: 0
+        pokename: "pippi",
+        pokepop: 818,
+        pokewins: 0,
+        pokelosses: 0
     },
     {
-        pokeName: "Feraligatr",
-        pokePop: 817,
-        pokeWins: 0,
-        pokeLosses: 0
+        pokename: "feraligatr",
+        pokepop: 817,
+        pokewins: 0,
+        pokelosses: 0
     },
     {
-        pokeName: "Bisharp",
-        pokePop: 816,
-        pokeWins: 0,
-        pokeLosses: 0
+        pokename: "bisharp",
+        pokepop: 816,
+        pokewins: 0,
+        pokelosses: 0
     },
     {
-        pokeName: "Gombe",
-        pokePop: 815,
-        pokeWins: 0,
-        pokeLosses: 0
+        pokename: "gombe",
+        pokepop: 815,
+        pokewins: 0,
+        pokelosses: 0
     },
     {
-        pokeName: "Scraggy",
-        pokePop: 814,
-        pokeWins: 0,
-        pokeLosses: 0
+        pokename: "scraggy",
+        pokepop: 814,
+        pokewins: 0,
+        pokelosses: 0
     },
     {
-        pokeName: "Heracross",
-        pokePop: 813,
-        pokeWins: 0,
-        pokeLosses: 0
+        pokename: "heracross",
+        pokepop: 813,
+        pokewins: 0,
+        pokelosses: 0
     },
     {
-        pokeName: "Wooper",
-        pokePop: 812,
-        pokeWins: 0,
-        pokeLosses: 0
+        pokename: "wooper",
+        pokepop: 812,
+        pokewins: 0,
+        pokelosses: 0
     },
     {
-        pokeName: "Politoed",
-        pokePop: 811,
-        pokeWins: 0,
-        pokeLosses: 0
+        pokename: "politoed",
+        pokepop: 811,
+        pokewins: 0,
+        pokelosses: 0
     },
     {
-        pokeName: "Cobalion",
-        pokePop: 810,
-        pokeWins: 0,
-        pokeLosses: 0
+        pokename: "cobalion",
+        pokepop: 810,
+        pokewins: 0,
+        pokelosses: 0
     },
     {
-        pokeName: "Furret",
-        pokePop: 809,
-        pokeWins: 0,
-        pokeLosses: 0
+        pokename: "furret",
+        pokepop: 809,
+        pokewins: 0,
+        pokelosses: 0
     },
     {
-        pokeName: "Crobat",
-        pokePop: 808,
-        pokeWins: 0,
-        pokeLosses: 0
+        pokename: "crobat",
+        pokepop: 808,
+        pokewins: 0,
+        pokelosses: 0
     },
     {
-        pokeName: "Emboar",
-        pokePop: 807,
-        pokeWins: 0,
-        pokeLosses: 0
+        pokename: "emboar",
+        pokepop: 807,
+        pokewins: 0,
+        pokelosses: 0
     },
     {
-        pokeName: "Minccino",
-        pokePop: 806,
-        pokeWins: 0,
-        pokeLosses: 0
+        pokename: "minccino",
+        pokepop: 806,
+        pokewins: 0,
+        pokelosses: 0
     },
     {
-        pokeName: "Dunsparce",
-        pokePop: 805,
-        pokeWins: 0,
-        pokeLosses: 0
+        pokename: "dunsparce",
+        pokepop: 805,
+        pokewins: 0,
+        pokelosses: 0
     },
     {
-        pokeName: "Pidgeottwo",
-        pokePop: 804,
-        pokeWins: 0,
-        pokeLosses: 0
+        pokename: "pidgeottwo",
+        pokepop: 804,
+        pokewins: 0,
+        pokelosses: 0
     },
     {
-        pokeName: "Gyarados",
-        pokePop: 803,
-        pokeWins: 0,
-        pokeLosses: 0
+        pokename: "gyarados",
+        pokepop: 803,
+        pokewins: 0,
+        pokelosses: 0
     },
     {
-        pokeName: "Py",
-        pokePop: 802,
-        pokeWins: 0,
-        pokeLosses: 0
+        pokename: "py",
+        pokepop: 802,
+        pokewins: 0,
+        pokelosses: 0
     },
     {
-        pokeName: "Plusle",
-        pokePop: 801,
-        pokeWins: 0,
-        pokeLosses: 0
+        pokename: "plusle",
+        pokepop: 801,
+        pokewins: 0,
+        pokelosses: 0
     },
     {
-        pokeName: "Azumarill",
-        pokePop: 800,
-        pokeWins: 0,
-        pokeLosses: 0
+        pokename: "azumarill",
+        pokepop: 800,
+        pokewins: 0,
+        pokelosses: 0
     },
     {
-        pokeName: "Skitty",
-        pokePop: 799,
-        pokeWins: 0,
-        pokeLosses: 0
+        pokename: "skitty",
+        pokepop: 799,
+        pokewins: 0,
+        pokelosses: 0
     },
     {
-        pokeName: "Electivire",
-        pokePop: 798,
-        pokeWins: 0,
-        pokeLosses: 0
+        pokename: "electivire",
+        pokepop: 798,
+        pokewins: 0,
+        pokelosses: 0
     },
     {
-        pokeName: "Teddiursa",
-        pokePop: 797,
-        pokeWins: 0,
-        pokeLosses: 0
+        pokename: "teddiursa",
+        pokepop: 797,
+        pokewins: 0,
+        pokelosses: 0
     },
     {
-        pokeName: "Braviary",
-        pokePop: 796,
-        pokeWins: 0,
-        pokeLosses: 0
+        pokename: "braviary",
+        pokepop: 796,
+        pokewins: 0,
+        pokelosses: 0
     },
     {
-        pokeName: "Reuniclus",
-        pokePop: 795,
-        pokeWins: 0,
-        pokeLosses: 0
+        pokename: "reuniclus",
+        pokepop: 795,
+        pokewins: 0,
+        pokelosses: 0
     },
     {
-        pokeName: "Guardy",
-        pokePop: 794,
-        pokeWins: 0,
-        pokeLosses: 0
+        pokename: "guardy",
+        pokepop: 794,
+        pokewins: 0,
+        pokelosses: 0
     },
     {
-        pokeName: "Helger",
-        pokePop: 793,
-        pokeWins: 0,
-        pokeLosses: 0
+        pokename: "helger",
+        pokepop: 793,
+        pokewins: 0,
+        pokelosses: 0
     },
     {
-        pokeName: "Chimchar",
-        pokePop: 792,
-        pokeWins: 0,
-        pokeLosses: 0
+        pokename: "chimchar",
+        pokepop: 792,
+        pokewins: 0,
+        pokelosses: 0
     },
     {
-        pokeName: "Mesprit",
-        pokePop: 791,
-        pokeWins: 0,
-        pokeLosses: 0
+        pokename: "mesprit",
+        pokepop: 791,
+        pokewins: 0,
+        pokelosses: 0
     },
     {
-        pokeName: "Steelix",
-        pokePop: 790,
-        pokeWins: 0,
-        pokeLosses: 0
+        pokename: "steelix",
+        pokepop: 790,
+        pokewins: 0,
+        pokelosses: 0
     },
     {
-        pokeName: "Noibat",
-        pokePop: 789,
-        pokeWins: 0,
-        pokeLosses: 0
+        pokename: "noibat",
+        pokepop: 789,
+        pokewins: 0,
+        pokelosses: 0
     },
     {
-        pokeName: "Lucky",
-        pokePop: 788,
-        pokeWins: 0,
-        pokeLosses: 0
+        pokename: "lucky",
+        pokepop: 788,
+        pokewins: 0,
+        pokelosses: 0
     },
     {
-        pokeName: "Pendler",
-        pokePop: 787,
-        pokeWins: 0,
-        pokeLosses: 0
+        pokename: "pendler",
+        pokepop: 787,
+        pokewins: 0,
+        pokelosses: 0
     },
     {
-        pokeName: "Misdreavus",
-        pokePop: 786,
-        pokeWins: 0,
-        pokeLosses: 0
+        pokename: "misdreavus",
+        pokepop: 786,
+        pokewins: 0,
+        pokelosses: 0
     },
     {
-        pokeName: "Treecko",
-        pokePop: 785,
-        pokeWins: 0,
-        pokeLosses: 0
+        pokename: "treecko",
+        pokepop: 785,
+        pokewins: 0,
+        pokelosses: 0
     },
     {
-        pokeName: "Virizion",
-        pokePop: 784,
-        pokeWins: 0,
-        pokeLosses: 0
+        pokename: "virizion",
+        pokepop: 784,
+        pokewins: 0,
+        pokelosses: 0
     },
     {
-        pokeName: "Spheal",
-        pokePop: 783,
-        pokeWins: 0,
-        pokeLosses: 0
+        pokename: "spheal",
+        pokepop: 783,
+        pokewins: 0,
+        pokelosses: 0
     },
     {
-        pokeName: "Krookodile",
-        pokePop: 782,
-        pokeWins: 0,
-        pokeLosses: 0
+        pokename: "krookodile",
+        pokepop: 782,
+        pokewins: 0,
+        pokelosses: 0
     },
     {
-        pokeName: "Spear",
-        pokePop: 781,
-        pokeWins: 0,
-        pokeLosses: 0
+        pokename: "spear",
+        pokepop: 781,
+        pokewins: 0,
+        pokelosses: 0
     },
     {
-        pokeName: "Registeel",
-        pokePop: 780,
-        pokeWins: 0,
-        pokeLosses: 0
+        pokename: "registeel",
+        pokepop: 780,
+        pokewins: 0,
+        pokelosses: 0
     },
     {
-        pokeName: "Machop",
-        pokePop: 779,
-        pokeWins: 0,
-        pokeLosses: 0
+        pokename: "machop",
+        pokepop: 779,
+        pokewins: 0,
+        pokelosses: 0
     },
     {
-        pokeName: "Meganium",
-        pokePop: 778,
-        pokeWins: 0,
-        pokeLosses: 0
+        pokename: "meganium",
+        pokepop: 778,
+        pokewins: 0,
+        pokelosses: 0
     },
     {
-        pokeName: "Riolu",
-        pokePop: 777,
-        pokeWins: 0,
-        pokeLosses: 0
+        pokename: "riolu",
+        pokepop: 777,
+        pokewins: 0,
+        pokelosses: 0
     },
     {
-        pokeName: "Phantump",
-        pokePop: 776,
-        pokeWins: 0,
-        pokeLosses: 0
+        pokename: "phantump",
+        pokepop: 776,
+        pokewins: 0,
+        pokelosses: 0
     },
     {
-        pokeName: "Deerling (Harunogata)",
-        pokePop: 775,
-        pokeWins: 0,
-        pokeLosses: 0
+        pokename: "deerling (harunogata)",
+        pokepop: 775,
+        pokewins: 0,
+        pokelosses: 0
     },
     {
-        pokeName: "Slowbro",
-        pokePop: 774,
-        pokeWins: 0,
-        pokeLosses: 0
+        pokename: "slowbro",
+        pokepop: 774,
+        pokewins: 0,
+        pokelosses: 0
     },
     {
-        pokeName: "Houdin",
-        pokePop: 773,
-        pokeWins: 0,
-        pokeLosses: 0
+        pokename: "houdin",
+        pokepop: 773,
+        pokewins: 0,
+        pokelosses: 0
     },
     {
-        pokeName: "Leybold",
-        pokePop: 772,
-        pokeWins: 0,
-        pokeLosses: 0
+        pokename: "leybold",
+        pokepop: 772,
+        pokewins: 0,
+        pokelosses: 0
     },
     {
-        pokeName: "Pot pot",
-        pokePop: 771,
-        pokeWins: 0,
-        pokeLosses: 0
+        pokename: "pot pot",
+        pokepop: 771,
+        pokewins: 0,
+        pokelosses: 0
     },
     {
-        pokeName: "Breloom",
-        pokePop: 770,
-        pokeWins: 0,
-        pokeLosses: 0
+        pokename: "breloom",
+        pokepop: 770,
+        pokewins: 0,
+        pokelosses: 0
     },
     {
-        pokeName: "Caterpie",
-        pokePop: 769,
-        pokeWins: 0,
-        pokeLosses: 0
+        pokename: "caterpie",
+        pokepop: 769,
+        pokewins: 0,
+        pokelosses: 0
     },
     {
-        pokeName: "Vivillon (Hanazono)",
-        pokePop: 768,
-        pokeWins: 0,
-        pokeLosses: 0
+        pokename: "vivillon (hanazono)",
+        pokepop: 768,
+        pokewins: 0,
+        pokelosses: 0
     },
     {
-        pokeName: "Seaking",
-        pokePop: 767,
-        pokeWins: 0,
-        pokeLosses: 0
+        pokename: "seaking",
+        pokepop: 767,
+        pokewins: 0,
+        pokelosses: 0
     },
     {
-        pokeName: "Swirlix",
-        pokePop: 766,
-        pokeWins: 0,
-        pokeLosses: 0
+        pokename: "swirlix",
+        pokepop: 766,
+        pokewins: 0,
+        pokelosses: 0
     },
     {
-        pokeName: "Farfetch'd",
-        pokePop: 765,
-        pokeWins: 0,
-        pokeLosses: 0
+        pokename: "farfetch'd",
+        pokepop: 765,
+        pokewins: 0,
+        pokelosses: 0
     },
     {
-        pokeName: "Holby",
-        pokePop: 764,
-        pokeWins: 0,
-        pokeLosses: 0
+        pokename: "holby",
+        pokepop: 764,
+        pokewins: 0,
+        pokelosses: 0
     },
     {
-        pokeName: "Gulpin",
-        pokePop: 763,
-        pokeWins: 0,
-        pokeLosses: 0
+        pokename: "gulpin",
+        pokepop: 763,
+        pokewins: 0,
+        pokelosses: 0
     },
     {
-        pokeName: "Gliscor",
-        pokePop: 762,
-        pokeWins: 0,
-        pokeLosses: 0
+        pokename: "gliscor",
+        pokepop: 762,
+        pokewins: 0,
+        pokelosses: 0
     },
     {
-        pokeName: "Carracosta",
-        pokePop: 761,
-        pokeWins: 0,
-        pokeLosses: 0
+        pokename: "carracosta",
+        pokepop: 761,
+        pokewins: 0,
+        pokelosses: 0
     },
     {
-        pokeName: "Slurpuff",
-        pokePop: 760,
-        pokeWins: 0,
-        pokeLosses: 0
+        pokename: "slurpuff",
+        pokepop: 760,
+        pokewins: 0,
+        pokelosses: 0
     },
     {
-        pokeName: "Klefki",
-        pokePop: 759,
-        pokeWins: 0,
-        pokeLosses: 0
+        pokename: "klefki",
+        pokepop: 759,
+        pokewins: 0,
+        pokelosses: 0
     },
     {
-        pokeName: "Roserade",
-        pokePop: 758,
-        pokeWins: 0,
-        pokeLosses: 0
+        pokename: "roserade",
+        pokepop: 758,
+        pokewins: 0,
+        pokelosses: 0
     },
     {
-        pokeName: "Jynx",
-        pokePop: 757,
-        pokeWins: 0,
-        pokeLosses: 0
+        pokename: "jynx",
+        pokepop: 757,
+        pokewins: 0,
+        pokelosses: 0
     },
     {
-        pokeName: "Graena",
-        pokePop: 756,
-        pokeWins: 0,
-        pokeLosses: 0
+        pokename: "graena",
+        pokepop: 756,
+        pokewins: 0,
+        pokelosses: 0
     },
     {
-        pokeName: "Glalie",
-        pokePop: 755,
-        pokeWins: 0,
-        pokeLosses: 0
+        pokename: "glalie",
+        pokepop: 755,
+        pokewins: 0,
+        pokelosses: 0
     },
     {
-        pokeName: "Delcatty",
-        pokePop: 754,
-        pokeWins: 0,
-        pokeLosses: 0
+        pokename: "delcatty",
+        pokepop: 754,
+        pokewins: 0,
+        pokelosses: 0
     },
     {
-        pokeName: "Uxie",
-        pokePop: 753,
-        pokeWins: 0,
-        pokeLosses: 0
+        pokename: "uxie",
+        pokepop: 753,
+        pokewins: 0,
+        pokelosses: 0
     },
     {
-        pokeName: "Marshtomp",
-        pokePop: 752,
-        pokeWins: 0,
-        pokeLosses: 0
+        pokename: "marshtomp",
+        pokepop: 752,
+        pokewins: 0,
+        pokelosses: 0
     },
     {
-        pokeName: "Regirock",
-        pokePop: 751,
-        pokeWins: 0,
-        pokeLosses: 0
+        pokename: "regirock",
+        pokepop: 751,
+        pokewins: 0,
+        pokelosses: 0
     },
     {
-        pokeName: "Butterfree",
-        pokePop: 750,
-        pokeWins: 0,
-        pokeLosses: 0
+        pokename: "butterfree",
+        pokepop: 750,
+        pokewins: 0,
+        pokelosses: 0
     },
     {
-        pokeName: "Bay leaf",
-        pokePop: 749,
-        pokeWins: 0,
-        pokeLosses: 0
+        pokename: "bay leaf",
+        pokepop: 749,
+        pokewins: 0,
+        pokelosses: 0
     },
     {
-        pokeName: "Chesnaught",
-        pokePop: 748,
-        pokeWins: 0,
-        pokeLosses: 0
+        pokename: "chesnaught",
+        pokepop: 748,
+        pokewins: 0,
+        pokelosses: 0
     },
     {
-        pokeName: "Fletchling",
-        pokePop: 747,
-        pokeWins: 0,
-        pokeLosses: 0
+        pokename: "fletchling",
+        pokepop: 747,
+        pokewins: 0,
+        pokelosses: 0
     },
     {
-        pokeName: "Quilava",
-        pokePop: 746,
-        pokeWins: 0,
-        pokeLosses: 0
+        pokename: "quilava",
+        pokepop: 746,
+        pokewins: 0,
+        pokelosses: 0
     },
     {
-        pokeName: "Mismagius",
-        pokePop: 745,
-        pokeWins: 0,
-        pokeLosses: 0
+        pokename: "mismagius",
+        pokepop: 745,
+        pokewins: 0,
+        pokelosses: 0
     },
     {
-        pokeName: "Nidoking",
-        pokePop: 744,
-        pokeWins: 0,
-        pokeLosses: 0
+        pokename: "nidoking",
+        pokepop: 744,
+        pokewins: 0,
+        pokelosses: 0
     },
     {
-        pokeName: "Klinklang",
-        pokePop: 743,
-        pokeWins: 0,
-        pokeLosses: 0
+        pokename: "klinklang",
+        pokepop: 743,
+        pokewins: 0,
+        pokelosses: 0
     },
     {
-        pokeName: "Ludicolo",
-        pokePop: 742,
-        pokeWins: 0,
-        pokeLosses: 0
+        pokename: "ludicolo",
+        pokepop: 742,
+        pokewins: 0,
+        pokelosses: 0
     },
     {
-        pokeName: "Dusknoir",
-        pokePop: 741,
-        pokeWins: 0,
-        pokeLosses: 0
+        pokename: "dusknoir",
+        pokepop: 741,
+        pokewins: 0,
+        pokelosses: 0
     },
     {
-        pokeName: "Ariados",
-        pokePop: 740,
-        pokeWins: 0,
-        pokeLosses: 0
+        pokename: "ariados",
+        pokepop: 740,
+        pokewins: 0,
+        pokelosses: 0
     },
     {
-        pokeName: "Onix",
-        pokePop: 739,
-        pokeWins: 0,
-        pokeLosses: 0
+        pokename: "onix",
+        pokepop: 739,
+        pokewins: 0,
+        pokelosses: 0
     },
     {
-        pokeName: "Skarmory",
-        pokePop: 738,
-        pokeWins: 0,
-        pokeLosses: 0
+        pokename: "skarmory",
+        pokepop: 738,
+        pokewins: 0,
+        pokelosses: 0
     },
     {
-        pokeName: "Polygon2",
-        pokePop: 737,
-        pokeWins: 0,
-        pokeLosses: 0
+        pokename: "polygon2",
+        pokepop: 737,
+        pokewins: 0,
+        pokelosses: 0
     },
     {
-        pokeName: "Jumpluff",
-        pokePop: 736,
-        pokeWins: 0,
-        pokeLosses: 0
+        pokename: "jumpluff",
+        pokepop: 736,
+        pokewins: 0,
+        pokelosses: 0
     },
     {
-        pokeName: "Buizel",
-        pokePop: 735,
-        pokeWins: 0,
-        pokeLosses: 0
+        pokename: "buizel",
+        pokepop: 735,
+        pokewins: 0,
+        pokelosses: 0
     },
     {
-        pokeName: "Aerodactyl",
-        pokePop: 734,
-        pokeWins: 0,
-        pokeLosses: 0
+        pokename: "aerodactyl",
+        pokepop: 734,
+        pokewins: 0,
+        pokelosses: 0
     },
     {
-        pokeName: "Eelektross",
-        pokePop: 733,
-        pokeWins: 0,
-        pokeLosses: 0
+        pokename: "eelektross",
+        pokepop: 733,
+        pokewins: 0,
+        pokelosses: 0
     },
     {
-        pokeName: "Litwick",
-        pokePop: 732,
-        pokeWins: 0,
-        pokeLosses: 0
+        pokename: "litwick",
+        pokepop: 732,
+        pokewins: 0,
+        pokelosses: 0
     },
     {
-        pokeName: "Shinx",
-        pokePop: 731,
-        pokeWins: 0,
-        pokeLosses: 0
+        pokename: "shinx",
+        pokepop: 731,
+        pokewins: 0,
+        pokelosses: 0
     },
     {
-        pokeName: "Wigglytuff",
-        pokePop: 730,
-        pokeWins: 0,
-        pokeLosses: 0
+        pokename: "wigglytuff",
+        pokepop: 730,
+        pokewins: 0,
+        pokelosses: 0
     },
     {
-        pokeName: "Gallop",
-        pokePop: 729,
-        pokeWins: 0,
-        pokeLosses: 0
+        pokename: "gallop",
+        pokepop: 729,
+        pokewins: 0,
+        pokelosses: 0
     },
     {
-        pokeName: "Axew",
-        pokePop: 728,
-        pokeWins: 0,
-        pokeLosses: 0
+        pokename: "axew",
+        pokepop: 728,
+        pokewins: 0,
+        pokelosses: 0
     },
     {
-        pokeName: "Pyroar",
-        pokePop: 727,
-        pokeWins: 0,
-        pokeLosses: 0
+        pokename: "pyroar",
+        pokepop: 727,
+        pokewins: 0,
+        pokelosses: 0
     },
     {
-        pokeName: "Grovyle",
-        pokePop: 726,
-        pokeWins: 0,
-        pokeLosses: 0
+        pokename: "grovyle",
+        pokepop: 726,
+        pokewins: 0,
+        pokelosses: 0
     },
     {
-        pokeName: "Lizard",
-        pokePop: 725,
-        pokeWins: 0,
-        pokeLosses: 0
+        pokename: "lizard",
+        pokepop: 725,
+        pokewins: 0,
+        pokelosses: 0
     },
     {
-        pokeName: "Dratini",
-        pokePop: 724,
-        pokeWins: 0,
-        pokeLosses: 0
+        pokename: "dratini",
+        pokepop: 724,
+        pokewins: 0,
+        pokelosses: 0
     },
     {
-        pokeName: "Combusken",
-        pokePop: 723,
-        pokeWins: 0,
-        pokeLosses: 0
+        pokename: "combusken",
+        pokepop: 723,
+        pokewins: 0,
+        pokelosses: 0
     },
     {
-        pokeName: "Muk",
-        pokePop: 722,
-        pokeWins: 0,
-        pokeLosses: 0
+        pokename: "muk",
+        pokepop: 722,
+        pokewins: 0,
+        pokelosses: 0
     },
     {
-        pokeName: "Surskit",
-        pokePop: 721,
-        pokeWins: 0,
-        pokeLosses: 0
+        pokename: "surskit",
+        pokepop: 721,
+        pokewins: 0,
+        pokelosses: 0
     },
     {
-        pokeName: "Sharpedo",
-        pokePop: 720,
-        pokeWins: 0,
-        pokeLosses: 0
+        pokename: "sharpedo",
+        pokepop: 720,
+        pokewins: 0,
+        pokelosses: 0
     },
     {
-        pokeName: "Bonsly",
-        pokePop: 719,
-        pokeWins: 0,
-        pokeLosses: 0
+        pokename: "bonsly",
+        pokepop: 719,
+        pokewins: 0,
+        pokelosses: 0
     },
     {
-        pokeName: "Happiny",
-        pokePop: 718,
-        pokeWins: 0,
-        pokeLosses: 0
+        pokename: "happiny",
+        pokepop: 718,
+        pokewins: 0,
+        pokelosses: 0
     },
     {
-        pokeName: "Spinda",
-        pokePop: 717,
-        pokeWins: 0,
-        pokeLosses: 0
+        pokename: "spinda",
+        pokepop: 717,
+        pokewins: 0,
+        pokelosses: 0
     },
     {
-        pokeName: "Rhyperior",
-        pokePop: 716,
-        pokeWins: 0,
-        pokeLosses: 0
+        pokename: "rhyperior",
+        pokepop: 716,
+        pokewins: 0,
+        pokelosses: 0
     },
     {
-        pokeName: "Joltik",
-        pokePop: 715,
-        pokeWins: 0,
-        pokeLosses: 0
+        pokename: "joltik",
+        pokepop: 715,
+        pokewins: 0,
+        pokelosses: 0
     },
     {
-        pokeName: "Golurk",
-        pokePop: 714,
-        pokeWins: 0,
-        pokeLosses: 0
+        pokename: "golurk",
+        pokepop: 714,
+        pokewins: 0,
+        pokelosses: 0
     },
     {
-        pokeName: "Bellossom",
-        pokePop: 713,
-        pokeWins: 0,
-        pokeLosses: 0
+        pokename: "bellossom",
+        pokepop: 713,
+        pokewins: 0,
+        pokelosses: 0
     },
     {
-        pokeName: "Ferrothorn",
-        pokePop: 712,
-        pokeWins: 0,
-        pokeLosses: 0
+        pokename: "ferrothorn",
+        pokepop: 712,
+        pokewins: 0,
+        pokelosses: 0
     },
     {
-        pokeName: "Tritodon (Nishi no Umi)",
-        pokePop: 711,
-        pokeWins: 0,
-        pokeLosses: 0
+        pokename: "tritodon (nishi no umi)",
+        pokepop: 711,
+        pokewins: 0,
+        pokelosses: 0
     },
     {
-        pokeName: "Geodude",
-        pokePop: 710,
-        pokeWins: 0,
-        pokeLosses: 0
+        pokename: "geodude",
+        pokepop: 710,
+        pokewins: 0,
+        pokelosses: 0
     },
     {
-        pokeName: "Swellow",
-        pokePop: 709,
-        pokeWins: 0,
-        pokeLosses: 0
+        pokename: "swellow",
+        pokepop: 709,
+        pokewins: 0,
+        pokelosses: 0
     },
     {
-        pokeName: "Zangoose",
-        pokePop: 708,
-        pokeWins: 0,
-        pokeLosses: 0
+        pokename: "zangoose",
+        pokepop: 708,
+        pokewins: 0,
+        pokelosses: 0
     },
     {
-        pokeName: "Xatu",
-        pokePop: 707,
-        pokeWins: 0,
-        pokeLosses: 0
+        pokename: "xatu",
+        pokepop: 707,
+        pokewins: 0,
+        pokelosses: 0
     },
     {
-        pokeName: "Igglybuff",
-        pokePop: 706,
-        pokeWins: 0,
-        pokeLosses: 0
+        pokename: "igglybuff",
+        pokepop: 706,
+        pokewins: 0,
+        pokelosses: 0
     },
     {
-        pokeName: "Doble",
-        pokePop: 705,
-        pokeWins: 0,
-        pokeLosses: 0
+        pokename: "doble",
+        pokepop: 705,
+        pokewins: 0,
+        pokelosses: 0
     },
     {
-        pokeName: "Lillipup",
-        pokePop: 704,
-        pokeWins: 0,
-        pokeLosses: 0
+        pokename: "lillipup",
+        pokepop: 704,
+        pokewins: 0,
+        pokelosses: 0
     },
     {
-        pokeName: "Magneton",
-        pokePop: 703,
-        pokeWins: 0,
-        pokeLosses: 0
+        pokename: "magneton",
+        pokepop: 703,
+        pokewins: 0,
+        pokelosses: 0
     },
     {
-        pokeName: "Lantern",
-        pokePop: 702,
-        pokeWins: 0,
-        pokeLosses: 0
+        pokename: "lantern",
+        pokepop: 702,
+        pokewins: 0,
+        pokelosses: 0
     },
     {
-        pokeName: "Kingler",
-        pokePop: 701,
-        pokeWins: 0,
-        pokeLosses: 0
+        pokename: "kingler",
+        pokepop: 701,
+        pokewins: 0,
+        pokelosses: 0
     },
     {
-        pokeName: "Starmie",
-        pokePop: 700,
-        pokeWins: 0,
-        pokeLosses: 0
+        pokename: "starmie",
+        pokepop: 700,
+        pokewins: 0,
+        pokelosses: 0
     },
     {
-        pokeName: "Larvitar",
-        pokePop: 699,
-        pokeWins: 0,
-        pokeLosses: 0
+        pokename: "larvitar",
+        pokepop: 699,
+        pokewins: 0,
+        pokelosses: 0
     },
     {
-        pokeName: "Ruriri",
-        pokePop: 698,
-        pokeWins: 0,
-        pokeLosses: 0
+        pokename: "ruriri",
+        pokepop: 698,
+        pokewins: 0,
+        pokelosses: 0
     },
     {
-        pokeName: "Slowking",
-        pokePop: 697,
-        pokeWins: 0,
-        pokeLosses: 0
+        pokename: "slowking",
+        pokepop: 697,
+        pokewins: 0,
+        pokelosses: 0
     },
     {
-        pokeName: "Magnezone",
-        pokePop: 696,
-        pokeWins: 0,
-        pokeLosses: 0
+        pokename: "magnezone",
+        pokepop: 696,
+        pokewins: 0,
+        pokelosses: 0
     },
     {
-        pokeName: "Slaking",
-        pokePop: 695,
-        pokeWins: 0,
-        pokeLosses: 0
+        pokename: "slaking",
+        pokepop: 695,
+        pokewins: 0,
+        pokelosses: 0
     },
     {
-        pokeName: "Heliolisk",
-        pokePop: 694,
-        pokeWins: 0,
-        pokeLosses: 0
+        pokename: "heliolisk",
+        pokepop: 694,
+        pokewins: 0,
+        pokelosses: 0
     },
     {
-        pokeName: "Ponyta",
-        pokePop: 693,
-        pokeWins: 0,
-        pokeLosses: 0
+        pokename: "ponyta",
+        pokepop: 693,
+        pokewins: 0,
+        pokelosses: 0
     },
     {
-        pokeName: "Budew",
-        pokePop: 692,
-        pokeWins: 0,
-        pokeLosses: 0
+        pokename: "budew",
+        pokepop: 692,
+        pokewins: 0,
+        pokelosses: 0
     },
     {
-        pokeName: "Helioptile",
-        pokePop: 691,
-        pokeWins: 0,
-        pokeLosses: 0
+        pokename: "helioptile",
+        pokepop: 691,
+        pokewins: 0,
+        pokelosses: 0
     },
     {
-        pokeName: "Avalugg",
-        pokePop: 690,
-        pokeWins: 0,
-        pokeLosses: 0
+        pokename: "avalugg",
+        pokepop: 690,
+        pokewins: 0,
+        pokelosses: 0
     },
     {
-        pokeName: "Dugong",
-        pokePop: 689,
-        pokeWins: 0,
-        pokeLosses: 0
+        pokename: "dugong",
+        pokepop: 689,
+        pokewins: 0,
+        pokelosses: 0
     },
     {
-        pokeName: "Abomasnow",
-        pokePop: 688,
-        pokeWins: 0,
-        pokeLosses: 0
+        pokename: "abomasnow",
+        pokepop: 688,
+        pokewins: 0,
+        pokelosses: 0
     },
     {
-        pokeName: "Tympole",
-        pokePop: 687,
-        pokeWins: 0,
-        pokeLosses: 0
+        pokename: "tympole",
+        pokepop: 687,
+        pokewins: 0,
+        pokelosses: 0
     },
     {
-        pokeName: "Terrakion",
-        pokePop: 686,
-        pokeWins: 0,
-        pokeLosses: 0
+        pokename: "terrakion",
+        pokepop: 686,
+        pokewins: 0,
+        pokelosses: 0
     },
     {
-        pokeName: "Diglett",
-        pokePop: 685,
-        pokeWins: 0,
-        pokeLosses: 0
+        pokename: "diglett",
+        pokepop: 685,
+        pokewins: 0,
+        pokelosses: 0
     },
     {
-        pokeName: "Masquerain",
-        pokePop: 684,
-        pokeWins: 0,
-        pokeLosses: 0
+        pokename: "masquerain",
+        pokepop: 684,
+        pokewins: 0,
+        pokelosses: 0
     },
     {
-        pokeName: "Bidoof",
-        pokePop: 683,
-        pokeWins: 0,
-        pokeLosses: 0
+        pokename: "bidoof",
+        pokepop: 683,
+        pokewins: 0,
+        pokelosses: 0
     },
     {
-        pokeName: "Munna",
-        pokePop: 682,
-        pokeWins: 0,
-        pokeLosses: 0
+        pokename: "munna",
+        pokepop: 682,
+        pokewins: 0,
+        pokelosses: 0
     },
     {
-        pokeName: "Swadloon",
-        pokePop: 681,
-        pokeWins: 0,
-        pokeLosses: 0
+        pokename: "swadloon",
+        pokepop: 681,
+        pokewins: 0,
+        pokelosses: 0
     },
     {
-        pokeName: "Florges (Akaihana)",
-        pokePop: 680,
-        pokeWins: 0,
-        pokeLosses: 0
+        pokename: "florges (akaihana)",
+        pokepop: 680,
+        pokewins: 0,
+        pokelosses: 0
     },
     {
-        pokeName: "Roselia",
-        pokePop: 679,
-        pokeWins: 0,
-        pokeLosses: 0
+        pokename: "roselia",
+        pokepop: 679,
+        pokewins: 0,
+        pokelosses: 0
     },
     {
-        pokeName: "Octane",
-        pokePop: 678,
-        pokeWins: 0,
-        pokeLosses: 0
+        pokename: "octane",
+        pokepop: 678,
+        pokewins: 0,
+        pokelosses: 0
     },
     {
-        pokeName: "Kirlia",
-        pokePop: 677,
-        pokeWins: 0,
-        pokeLosses: 0
+        pokename: "kirlia",
+        pokepop: 677,
+        pokewins: 0,
+        pokelosses: 0
     },
     {
-        pokeName: "Dewott",
-        pokePop: 676,
-        pokeWins: 0,
-        pokeLosses: 0
+        pokename: "dewott",
+        pokepop: 676,
+        pokewins: 0,
+        pokelosses: 0
     },
     {
-        pokeName: "Malmine",
-        pokePop: 675,
-        pokeWins: 0,
-        pokeLosses: 0
+        pokename: "malmine",
+        pokepop: 675,
+        pokewins: 0,
+        pokelosses: 0
     },
     {
-        pokeName: "Karakara",
-        pokePop: 674,
-        pokeWins: 0,
-        pokeLosses: 0
+        pokename: "karakara",
+        pokepop: 674,
+        pokewins: 0,
+        pokelosses: 0
     },
     {
-        pokeName: "Swinub",
-        pokePop: 673,
-        pokeWins: 0,
-        pokeLosses: 0
+        pokename: "swinub",
+        pokepop: 673,
+        pokewins: 0,
+        pokelosses: 0
     },
     {
-        pokeName: "Chimecho",
-        pokePop: 672,
-        pokeWins: 0,
-        pokeLosses: 0
+        pokename: "chimecho",
+        pokepop: 672,
+        pokewins: 0,
+        pokelosses: 0
     },
     {
-        pokeName: "Mienshao",
-        pokePop: 671,
-        pokeWins: 0,
-        pokeLosses: 0
+        pokename: "mienshao",
+        pokepop: 671,
+        pokewins: 0,
+        pokelosses: 0
     },
     {
-        pokeName: "Floette (Akaihana)",
-        pokePop: 670,
-        pokeWins: 0,
-        pokeLosses: 0
+        pokename: "floette (akaihana)",
+        pokepop: 670,
+        pokewins: 0,
+        pokelosses: 0
     },
     {
-        pokeName: "Sandslash",
-        pokePop: 669,
-        pokeWins: 0,
-        pokeLosses: 0
+        pokename: "sandslash",
+        pokepop: 669,
+        pokewins: 0,
+        pokelosses: 0
     },
     {
-        pokeName: "Strike",
-        pokePop: 668,
-        pokeWins: 0,
-        pokeLosses: 0
+        pokename: "strike",
+        pokepop: 668,
+        pokewins: 0,
+        pokelosses: 0
     },
     {
-        pokeName: "Gigalith",
-        pokePop: 667,
-        pokeWins: 0,
-        pokeLosses: 0
+        pokename: "gigalith",
+        pokepop: 667,
+        pokewins: 0,
+        pokelosses: 0
     },
     {
-        pokeName: "Dugtrio",
-        pokePop: 666,
-        pokeWins: 0,
-        pokeLosses: 0
+        pokename: "dugtrio",
+        pokepop: 666,
+        pokewins: 0,
+        pokelosses: 0
     },
     {
-        pokeName: "Hold",
-        pokePop: 665,
-        pokeWins: 0,
-        pokeLosses: 0
+        pokename: "hold",
+        pokepop: 665,
+        pokewins: 0,
+        pokelosses: 0
     },
     {
-        pokeName: "Trevenant",
-        pokePop: 664,
-        pokeWins: 0,
-        pokeLosses: 0
+        pokename: "trevenant",
+        pokepop: 664,
+        pokewins: 0,
+        pokelosses: 0
     },
     {
-        pokeName: "Poppo",
-        pokePop: 663,
-        pokeWins: 0,
-        pokeLosses: 0
+        pokename: "poppo",
+        pokepop: 663,
+        pokewins: 0,
+        pokelosses: 0
     },
     {
-        pokeName: "Druddigon",
-        pokePop: 662,
-        pokeWins: 0,
-        pokeLosses: 0
+        pokename: "druddigon",
+        pokepop: 662,
+        pokewins: 0,
+        pokelosses: 0
     },
     {
-        pokeName: "Rampardos",
-        pokePop: 661,
-        pokeWins: 0,
-        pokeLosses: 0
+        pokename: "rampardos",
+        pokepop: 661,
+        pokewins: 0,
+        pokelosses: 0
     },
     {
-        pokeName: "Anorith",
-        pokePop: 660,
-        pokeWins: 0,
-        pokeLosses: 0
+        pokename: "anorith",
+        pokepop: 660,
+        pokewins: 0,
+        pokelosses: 0
     },
     {
-        pokeName: "Tropius",
-        pokePop: 659,
-        pokeWins: 0,
-        pokeLosses: 0
+        pokename: "tropius",
+        pokepop: 659,
+        pokewins: 0,
+        pokelosses: 0
     },
     {
-        pokeName: "Blissey",
-        pokePop: 658,
-        pokeWins: 0,
-        pokeLosses: 0
+        pokename: "blissey",
+        pokepop: 658,
+        pokewins: 0,
+        pokelosses: 0
     },
     {
-        pokeName: "Honchkrow",
-        pokePop: 657,
-        pokeWins: 0,
-        pokeLosses: 0
+        pokename: "honchkrow",
+        pokepop: 657,
+        pokewins: 0,
+        pokelosses: 0
     },
     {
-        pokeName: "Wartortle",
-        pokePop: 656,
-        pokeWins: 0,
-        pokeLosses: 0
+        pokename: "wartortle",
+        pokepop: 656,
+        pokewins: 0,
+        pokelosses: 0
     },
     {
-        pokeName: "Oddish",
-        pokePop: 655,
-        pokeWins: 0,
-        pokeLosses: 0
+        pokename: "oddish",
+        pokepop: 655,
+        pokewins: 0,
+        pokelosses: 0
     },
     {
-        pokeName: "Phanpy",
-        pokePop: 654,
-        pokeWins: 0,
-        pokeLosses: 0
+        pokename: "phanpy",
+        pokepop: 654,
+        pokewins: 0,
+        pokelosses: 0
     },
     {
-        pokeName: "Darumaka",
-        pokePop: 653,
-        pokeWins: 0,
-        pokeLosses: 0
+        pokename: "darumaka",
+        pokepop: 653,
+        pokewins: 0,
+        pokelosses: 0
     },
     {
-        pokeName: "Hitmonlee",
-        pokePop: 652,
-        pokeWins: 0,
-        pokeLosses: 0
+        pokename: "hitmonlee",
+        pokepop: 652,
+        pokewins: 0,
+        pokelosses: 0
     },
     {
-        pokeName: "Kingdra",
-        pokePop: 651,
-        pokeWins: 0,
-        pokeLosses: 0
+        pokename: "kingdra",
+        pokepop: 651,
+        pokewins: 0,
+        pokelosses: 0
     },
     {
-        pokeName: "Purrloin",
-        pokePop: 650,
-        pokeWins: 0,
-        pokeLosses: 0
+        pokename: "purrloin",
+        pokepop: 650,
+        pokewins: 0,
+        pokelosses: 0
     },
     {
-        pokeName: "Croconaw",
-        pokePop: 649,
-        pokeWins: 0,
-        pokeLosses: 0
+        pokename: "croconaw",
+        pokepop: 649,
+        pokewins: 0,
+        pokelosses: 0
     },
     {
-        pokeName: "Wurmple",
-        pokePop: 648,
-        pokeWins: 0,
-        pokeLosses: 0
+        pokename: "wurmple",
+        pokepop: 648,
+        pokewins: 0,
+        pokelosses: 0
     },
     {
-        pokeName: "Lotad",
-        pokePop: 647,
-        pokeWins: 0,
-        pokeLosses: 0
+        pokename: "lotad",
+        pokepop: 647,
+        pokewins: 0,
+        pokelosses: 0
     },
     {
-        pokeName: "Usokki",
-        pokePop: 646,
-        pokeWins: 0,
-        pokeLosses: 0
+        pokename: "usokki",
+        pokepop: 646,
+        pokewins: 0,
+        pokelosses: 0
     },
     {
-        pokeName: "Finneon",
-        pokePop: 645,
-        pokeWins: 0,
-        pokeLosses: 0
+        pokename: "finneon",
+        pokepop: 645,
+        pokewins: 0,
+        pokelosses: 0
     },
     {
-        pokeName: "Flabebe (Akaihana)",
-        pokePop: 644,
-        pokeWins: 0,
-        pokeLosses: 0
+        pokename: "flabebe (akaihana)",
+        pokepop: 644,
+        pokewins: 0,
+        pokelosses: 0
     },
     {
-        pokeName: "Sand",
-        pokePop: 643,
-        pokeWins: 0,
-        pokeLosses: 0
+        pokename: "sand",
+        pokepop: 643,
+        pokewins: 0,
+        pokelosses: 0
     },
     {
-        pokeName: "Gogoat",
-        pokePop: 642,
-        pokeWins: 0,
-        pokeLosses: 0
+        pokename: "gogoat",
+        pokepop: 642,
+        pokewins: 0,
+        pokelosses: 0
     },
     {
-        pokeName: "Tyrunt",
-        pokePop: 641,
-        pokeWins: 0,
-        pokeLosses: 0
+        pokename: "tyrunt",
+        pokepop: 641,
+        pokewins: 0,
+        pokelosses: 0
     },
     {
-        pokeName: "Sigilyph",
-        pokePop: 640,
-        pokeWins: 0,
-        pokeLosses: 0
+        pokename: "sigilyph",
+        pokepop: 640,
+        pokewins: 0,
+        pokelosses: 0
     },
     {
-        pokeName: "Mime",
-        pokePop: 639,
-        pokeWins: 0,
-        pokeLosses: 0
+        pokename: "mime",
+        pokepop: 639,
+        pokewins: 0,
+        pokelosses: 0
     },
     {
-        pokeName: "Hitmontop",
-        pokePop: 638,
-        pokeWins: 0,
-        pokeLosses: 0
+        pokename: "hitmontop",
+        pokepop: 638,
+        pokewins: 0,
+        pokelosses: 0
     },
     {
-        pokeName: "Pumpkaboo (normal size)",
-        pokePop: 637,
-        pokeWins: 0,
-        pokeLosses: 0
+        pokename: "pumpkaboo (normal size)",
+        pokepop: 637,
+        pokewins: 0,
+        pokelosses: 0
     },
     {
-        pokeName: "Ghost",
-        pokePop: 636,
-        pokeWins: 0,
-        pokeLosses: 0
+        pokename: "ghost",
+        pokepop: 636,
+        pokewins: 0,
+        pokelosses: 0
     },
     {
-        pokeName: "Rhyhorn",
-        pokePop: 635,
-        pokeWins: 0,
-        pokeLosses: 0
+        pokename: "rhyhorn",
+        pokepop: 635,
+        pokewins: 0,
+        pokelosses: 0
     },
     {
-        pokeName: "Mokoko",
-        pokePop: 634,
-        pokeWins: 0,
-        pokeLosses: 0
+        pokename: "mokoko",
+        pokepop: 634,
+        pokewins: 0,
+        pokelosses: 0
     },
     {
-        pokeName: "Corsola",
-        pokePop: 633,
-        pokeWins: 0,
-        pokeLosses: 0
+        pokename: "corsola",
+        pokepop: 633,
+        pokewins: 0,
+        pokelosses: 0
     },
     {
-        pokeName: "Miltank",
-        pokePop: 632,
-        pokeWins: 0,
-        pokeLosses: 0
+        pokename: "miltank",
+        pokepop: 632,
+        pokewins: 0,
+        pokelosses: 0
     },
     {
-        pokeName: "Ninjask",
-        pokePop: 631,
-        pokeWins: 0,
-        pokeLosses: 0
+        pokename: "ninjask",
+        pokepop: 631,
+        pokewins: 0,
+        pokelosses: 0
     },
     {
-        pokeName: "Spoink",
-        pokePop: 630,
-        pokeWins: 0,
-        pokeLosses: 0
+        pokename: "spoink",
+        pokepop: 630,
+        pokewins: 0,
+        pokelosses: 0
     },
     {
-        pokeName: "Floatzel",
-        pokePop: 629,
-        pokeWins: 0,
-        pokeLosses: 0
+        pokename: "floatzel",
+        pokepop: 629,
+        pokewins: 0,
+        pokelosses: 0
     },
     {
-        pokeName: "Sawk",
-        pokePop: 628,
-        pokeWins: 0,
-        pokeLosses: 0
+        pokename: "sawk",
+        pokepop: 628,
+        pokewins: 0,
+        pokelosses: 0
     },
     {
-        pokeName: "Doublade",
-        pokePop: 627,
-        pokeWins: 0,
-        pokeLosses: 0
+        pokename: "doublade",
+        pokepop: 627,
+        pokewins: 0,
+        pokelosses: 0
     },
     {
-        pokeName: "Aipom",
-        pokePop: 626,
-        pokeWins: 0,
-        pokeLosses: 0
+        pokename: "aipom",
+        pokepop: 626,
+        pokewins: 0,
+        pokelosses: 0
     },
     {
-        pokeName: "Bronzong",
-        pokePop: 625,
-        pokeWins: 0,
-        pokeLosses: 0
+        pokename: "bronzong",
+        pokepop: 625,
+        pokewins: 0,
+        pokelosses: 0
     },
     {
-        pokeName: "Magmortar",
-        pokePop: 624,
-        pokeWins: 0,
-        pokeLosses: 0
+        pokename: "magmortar",
+        pokepop: 624,
+        pokewins: 0,
+        pokelosses: 0
     },
     {
-        pokeName: "Linoone",
-        pokePop: 623,
-        pokeWins: 0,
-        pokeLosses: 0
+        pokename: "linoone",
+        pokepop: 623,
+        pokewins: 0,
+        pokelosses: 0
     },
     {
-        pokeName: "Castform",
-        pokePop: 622,
-        pokeWins: 0,
-        pokeLosses: 0
+        pokename: "castform",
+        pokepop: 622,
+        pokewins: 0,
+        pokelosses: 0
     },
     {
-        pokeName: "Seismitoad",
-        pokePop: 621,
-        pokeWins: 0,
-        pokeLosses: 0
+        pokename: "seismitoad",
+        pokepop: 621,
+        pokewins: 0,
+        pokelosses: 0
     },
     {
-        pokeName: "Malamar",
-        pokePop: 620,
-        pokeWins: 0,
-        pokeLosses: 0
+        pokename: "malamar",
+        pokepop: 620,
+        pokewins: 0,
+        pokelosses: 0
     },
     {
-        pokeName: "Muckle",
-        pokePop: 619,
-        pokeWins: 0,
-        pokeLosses: 0
+        pokename: "muckle",
+        pokepop: 619,
+        pokewins: 0,
+        pokelosses: 0
     },
     {
-        pokeName: "Combee",
-        pokePop: 618,
-        pokeWins: 0,
-        pokeLosses: 0
+        pokename: "combee",
+        pokepop: 618,
+        pokewins: 0,
+        pokelosses: 0
     },
     {
-        pokeName: "Fearow",
-        pokePop: 617,
-        pokeWins: 0,
-        pokeLosses: 0
+        pokename: "fearow",
+        pokepop: 617,
+        pokewins: 0,
+        pokelosses: 0
     },
     {
-        pokeName: "Weezing",
-        pokePop: 616,
-        pokeWins: 0,
-        pokeLosses: 0
+        pokename: "weezing",
+        pokepop: 616,
+        pokewins: 0,
+        pokelosses: 0
     },
     {
-        pokeName: "Kairos",
-        pokePop: 615,
-        pokeWins: 0,
-        pokeLosses: 0
+        pokename: "kairos",
+        pokepop: 615,
+        pokewins: 0,
+        pokelosses: 0
     },
     {
-        pokeName: "Tynamo",
-        pokePop: 614,
-        pokeWins: 0,
-        pokeLosses: 0
+        pokename: "tynamo",
+        pokepop: 614,
+        pokewins: 0,
+        pokelosses: 0
     },
     {
-        pokeName: "Casey",
-        pokePop: 613,
-        pokeWins: 0,
-        pokeLosses: 0
+        pokename: "casey",
+        pokepop: 613,
+        pokewins: 0,
+        pokelosses: 0
     },
     {
-        pokeName: "Kabutops",
-        pokePop: 612,
-        pokeWins: 0,
-        pokeLosses: 0
+        pokename: "kabutops",
+        pokepop: 612,
+        pokewins: 0,
+        pokelosses: 0
     },
     {
-        pokeName: "Dwebble",
-        pokePop: 611,
-        pokeWins: 0,
-        pokeLosses: 0
+        pokename: "dwebble",
+        pokepop: 611,
+        pokewins: 0,
+        pokelosses: 0
     },
     {
-        pokeName: "Vanilluxe",
-        pokePop: 610,
-        pokeWins: 0,
-        pokeLosses: 0
+        pokename: "vanilluxe",
+        pokepop: 610,
+        pokewins: 0,
+        pokelosses: 0
     },
     {
-        pokeName: "Cradily",
-        pokePop: 609,
-        pokeWins: 0,
-        pokeLosses: 0
+        pokename: "cradily",
+        pokepop: 609,
+        pokewins: 0,
+        pokelosses: 0
     },
     {
-        pokeName: "Drifloon",
-        pokePop: 608,
-        pokeWins: 0,
-        pokeLosses: 0
+        pokename: "drifloon",
+        pokepop: 608,
+        pokewins: 0,
+        pokelosses: 0
     },
     {
-        pokeName: "Foongus",
-        pokePop: 607,
-        pokeWins: 0,
-        pokeLosses: 0
+        pokename: "foongus",
+        pokepop: 607,
+        pokewins: 0,
+        pokelosses: 0
     },
     {
-        pokeName: "Litleo",
-        pokePop: 606,
-        pokeWins: 0,
-        pokeLosses: 0
+        pokename: "litleo",
+        pokepop: 606,
+        pokewins: 0,
+        pokelosses: 0
     },
     {
-        pokeName: "Mamoswine",
-        pokePop: 605,
-        pokeWins: 0,
-        pokeLosses: 0
+        pokename: "mamoswine",
+        pokepop: 605,
+        pokewins: 0,
+        pokelosses: 0
     },
     {
-        pokeName: "Illumise",
-        pokePop: 604,
-        pokeWins: 0,
-        pokeLosses: 0
+        pokename: "illumise",
+        pokepop: 604,
+        pokewins: 0,
+        pokelosses: 0
     },
     {
-        pokeName: "Pansage",
-        pokePop: 603,
-        pokeWins: 0,
-        pokeLosses: 0
+        pokename: "pansage",
+        pokepop: 603,
+        pokewins: 0,
+        pokelosses: 0
     },
     {
-        pokeName: "Pixie",
-        pokePop: 602,
-        pokeWins: 0,
-        pokeLosses: 0
+        pokename: "pixie",
+        pokepop: 602,
+        pokewins: 0,
+        pokelosses: 0
     },
     {
-        pokeName: "Smoochum",
-        pokePop: 601,
-        pokeWins: 0,
-        pokeLosses: 0
+        pokename: "smoochum",
+        pokepop: 601,
+        pokewins: 0,
+        pokelosses: 0
     },
     {
-        pokeName: "Cofagrigus",
-        pokePop: 600,
-        pokeWins: 0,
-        pokeLosses: 0
+        pokename: "cofagrigus",
+        pokepop: 600,
+        pokewins: 0,
+        pokelosses: 0
     },
     {
-        pokeName: "Carbink",
-        pokePop: 599,
-        pokeWins: 0,
-        pokeLosses: 0
+        pokename: "carbink",
+        pokepop: 599,
+        pokewins: 0,
+        pokelosses: 0
     },
     {
-        pokeName: "Hitmonchan",
-        pokePop: 598,
-        pokeWins: 0,
-        pokeLosses: 0
+        pokename: "hitmonchan",
+        pokepop: 598,
+        pokewins: 0,
+        pokelosses: 0
     },
     {
-        pokeName: "Geelance",
-        pokePop: 597,
-        pokeWins: 0,
-        pokeLosses: 0
+        pokename: "geelance",
+        pokepop: 597,
+        pokewins: 0,
+        pokelosses: 0
     },
     {
-        pokeName: "Chatot",
-        pokePop: 596,
-        pokeWins: 0,
-        pokeLosses: 0
+        pokename: "chatot",
+        pokepop: 596,
+        pokewins: 0,
+        pokelosses: 0
     },
     {
-        pokeName: "Sentret",
-        pokePop: 595,
-        pokeWins: 0,
-        pokeLosses: 0
+        pokename: "sentret",
+        pokepop: 595,
+        pokewins: 0,
+        pokelosses: 0
     },
     {
-        pokeName: "Drews",
-        pokePop: 594,
-        pokeWins: 0,
-        pokeLosses: 0
+        pokename: "drews",
+        pokepop: 594,
+        pokewins: 0,
+        pokelosses: 0
     },
     {
-        pokeName: "Kadabra",
-        pokePop: 593,
-        pokeWins: 0,
-        pokeLosses: 0
+        pokename: "kadabra",
+        pokepop: 593,
+        pokewins: 0,
+        pokelosses: 0
     },
     {
-        pokeName: "Cocodora",
-        pokePop: 592,
-        pokeWins: 0,
-        pokeLosses: 0
+        pokename: "cocodora",
+        pokepop: 592,
+        pokewins: 0,
+        pokelosses: 0
     },
     {
-        pokeName: "Liepard",
-        pokePop: 591,
-        pokeWins: 0,
-        pokeLosses: 0
+        pokename: "liepard",
+        pokepop: 591,
+        pokewins: 0,
+        pokelosses: 0
     },
     {
-        pokeName: "Loebsin",
-        pokePop: 590,
-        pokeWins: 0,
-        pokeLosses: 0
+        pokename: "loebsin",
+        pokepop: 590,
+        pokewins: 0,
+        pokelosses: 0
     },
     {
-        pokeName: "Wynaut",
-        pokePop: 589,
-        pokeWins: 0,
-        pokeLosses: 0
+        pokename: "wynaut",
+        pokepop: 589,
+        pokewins: 0,
+        pokelosses: 0
     },
     {
-        pokeName: "Transel",
-        pokePop: 588,
-        pokeWins: 0,
-        pokeLosses: 0
+        pokename: "transel",
+        pokepop: 588,
+        pokewins: 0,
+        pokelosses: 0
     },
     {
-        pokeName: "Kecleon",
-        pokePop: 587,
-        pokeWins: 0,
-        pokeLosses: 0
+        pokename: "kecleon",
+        pokepop: 587,
+        pokewins: 0,
+        pokelosses: 0
     },
     {
-        pokeName: "Ralts",
-        pokePop: 586,
-        pokeWins: 0,
-        pokeLosses: 0
+        pokename: "ralts",
+        pokepop: 586,
+        pokewins: 0,
+        pokelosses: 0
     },
     {
-        pokeName: "Swablu",
-        pokePop: 585,
-        pokeWins: 0,
-        pokeLosses: 0
+        pokename: "swablu",
+        pokepop: 585,
+        pokewins: 0,
+        pokelosses: 0
     },
     {
-        pokeName: "Iwa Palace",
-        pokePop: 584,
-        pokeWins: 0,
-        pokeLosses: 0
+        pokename: "iwa palace",
+        pokepop: 584,
+        pokewins: 0,
+        pokelosses: 0
     },
     {
-        pokeName: "Golem",
-        pokePop: 583,
-        pokeWins: 0,
-        pokeLosses: 0
+        pokename: "golem",
+        pokepop: 583,
+        pokewins: 0,
+        pokelosses: 0
     },
     {
-        pokeName: "Poliwhirl",
-        pokePop: 582,
-        pokeWins: 0,
-        pokeLosses: 0
+        pokename: "poliwhirl",
+        pokepop: 582,
+        pokewins: 0,
+        pokelosses: 0
     },
     {
-        pokeName: "Shiftry",
-        pokePop: 581,
-        pokeWins: 0,
-        pokeLosses: 0
+        pokename: "shiftry",
+        pokepop: 581,
+        pokewins: 0,
+        pokelosses: 0
     },
     {
-        pokeName: "Escavalier",
-        pokePop: 580,
-        pokeWins: 0,
-        pokeLosses: 0
+        pokename: "escavalier",
+        pokepop: 580,
+        pokewins: 0,
+        pokelosses: 0
     },
     {
-        pokeName: "Bloster",
-        pokePop: 579,
-        pokeWins: 0,
-        pokeLosses: 0
+        pokename: "bloster",
+        pokepop: 579,
+        pokewins: 0,
+        pokelosses: 0
     },
     {
-        pokeName: "Poliwag",
-        pokePop: 578,
-        pokeWins: 0,
-        pokeLosses: 0
+        pokename: "poliwag",
+        pokepop: 578,
+        pokewins: 0,
+        pokelosses: 0
     },
     {
-        pokeName: "Pangoro",
-        pokePop: 577,
-        pokeWins: 0,
-        pokeLosses: 0
+        pokename: "pangoro",
+        pokepop: 577,
+        pokewins: 0,
+        pokelosses: 0
     },
     {
-        pokeName: "Zigzagoon",
-        pokePop: 576,
-        pokeWins: 0,
-        pokeLosses: 0
+        pokename: "zigzagoon",
+        pokepop: 576,
+        pokewins: 0,
+        pokelosses: 0
     },
     {
-        pokeName: "Luxio",
-        pokePop: 575,
-        pokeWins: 0,
-        pokeLosses: 0
+        pokename: "luxio",
+        pokepop: 575,
+        pokewins: 0,
+        pokelosses: 0
     },
     {
-        pokeName: "Scrafty",
-        pokePop: 574,
-        pokeWins: 0,
-        pokeLosses: 0
+        pokename: "scrafty",
+        pokepop: 574,
+        pokewins: 0,
+        pokelosses: 0
     },
     {
-        pokeName: "Ledian",
-        pokePop: 573,
-        pokeWins: 0,
-        pokeLosses: 0
+        pokename: "ledian",
+        pokepop: 573,
+        pokewins: 0,
+        pokelosses: 0
     },
     {
-        pokeName: "Krokorok",
-        pokePop: 572,
-        pokeWins: 0,
-        pokeLosses: 0
+        pokename: "krokorok",
+        pokepop: 572,
+        pokewins: 0,
+        pokelosses: 0
     },
     {
-        pokeName: "Vanillite",
-        pokePop: 571,
-        pokeWins: 0,
-        pokeLosses: 0
+        pokename: "vanillite",
+        pokepop: 571,
+        pokewins: 0,
+        pokelosses: 0
     },
     {
-        pokeName: "Girafarig",
-        pokePop: 570,
-        pokeWins: 0,
-        pokeLosses: 0
+        pokename: "girafarig",
+        pokepop: 570,
+        pokewins: 0,
+        pokelosses: 0
     },
     {
-        pokeName: "Corphish",
-        pokePop: 569,
-        pokeWins: 0,
-        pokeLosses: 0
+        pokename: "corphish",
+        pokepop: 569,
+        pokewins: 0,
+        pokelosses: 0
     },
     {
-        pokeName: "Barbaracle",
-        pokePop: 568,
-        pokeWins: 0,
-        pokeLosses: 0
+        pokename: "barbaracle",
+        pokepop: 568,
+        pokewins: 0,
+        pokelosses: 0
     },
     {
-        pokeName: "Primeape",
-        pokePop: 567,
-        pokeWins: 0,
-        pokeLosses: 0
+        pokename: "primeape",
+        pokepop: 567,
+        pokewins: 0,
+        pokelosses: 0
     },
     {
-        pokeName: "Cloyster",
-        pokePop: 566,
-        pokeWins: 0,
-        pokeLosses: 0
+        pokename: "cloyster",
+        pokepop: 566,
+        pokewins: 0,
+        pokelosses: 0
     },
     {
-        pokeName: "Toxicroak",
-        pokePop: 565,
-        pokeWins: 0,
-        pokeLosses: 0
+        pokename: "toxicroak",
+        pokepop: 565,
+        pokewins: 0,
+        pokelosses: 0
     },
     {
-        pokeName: "Sewaddle",
-        pokePop: 564,
-        pokeWins: 0,
-        pokeLosses: 0
+        pokename: "sewaddle",
+        pokepop: 564,
+        pokewins: 0,
+        pokelosses: 0
     },
     {
-        pokeName: "Cocoon",
-        pokePop: 563,
-        pokeWins: 0,
-        pokeLosses: 0
+        pokename: "cocoon",
+        pokepop: 563,
+        pokewins: 0,
+        pokelosses: 0
     },
     {
-        pokeName: "Medicham",
-        pokePop: 562,
-        pokeWins: 0,
-        pokeLosses: 0
+        pokename: "medicham",
+        pokepop: 562,
+        pokewins: 0,
+        pokelosses: 0
     },
     {
-        pokeName: "Walrein",
-        pokePop: 561,
-        pokeWins: 0,
-        pokeLosses: 0
+        pokename: "walrein",
+        pokepop: 561,
+        pokewins: 0,
+        pokelosses: 0
     },
     {
-        pokeName: "Mareep",
-        pokePop: 560,
-        pokeWins: 0,
-        pokeLosses: 0
+        pokename: "mareep",
+        pokepop: 560,
+        pokewins: 0,
+        pokelosses: 0
     },
     {
-        pokeName: "Wailmer",
-        pokePop: 559,
-        pokeWins: 0,
-        pokeLosses: 0
+        pokename: "wailmer",
+        pokepop: 559,
+        pokewins: 0,
+        pokelosses: 0
     },
     {
-        pokeName: "Cherubi",
-        pokePop: 558,
-        pokeWins: 0,
-        pokeLosses: 0
+        pokename: "cherubi",
+        pokepop: 558,
+        pokewins: 0,
+        pokelosses: 0
     },
     {
-        pokeName: "Dragalge",
-        pokePop: 557,
-        pokeWins: 0,
-        pokeLosses: 0
+        pokename: "dragalge",
+        pokepop: 557,
+        pokewins: 0,
+        pokelosses: 0
     },
     {
-        pokeName: "Delibird",
-        pokePop: 556,
-        pokeWins: 0,
-        pokeLosses: 0
+        pokename: "delibird",
+        pokepop: 556,
+        pokewins: 0,
+        pokelosses: 0
     },
     {
-        pokeName: "Clamperl",
-        pokePop: 555,
-        pokeWins: 0,
-        pokeLosses: 0
+        pokename: "clamperl",
+        pokepop: 555,
+        pokewins: 0,
+        pokelosses: 0
     },
     {
-        pokeName: "Darmanitan",
-        pokePop: 554,
-        pokeWins: 0,
-        pokeLosses: 0
+        pokename: "darmanitan",
+        pokepop: 554,
+        pokewins: 0,
+        pokelosses: 0
     },
     {
-        pokeName: "Rufflet",
-        pokePop: 553,
-        pokeWins: 0,
-        pokeLosses: 0
+        pokename: "rufflet",
+        pokepop: 553,
+        pokewins: 0,
+        pokelosses: 0
     },
     {
-        pokeName: "Gourgeist (normal size)",
-        pokePop: 552,
-        pokeWins: 0,
-        pokeLosses: 0
+        pokename: "gourgeist (normal size)",
+        pokepop: 552,
+        pokewins: 0,
+        pokelosses: 0
     },
     {
-        pokeName: "Gible",
-        pokePop: 551,
-        pokeWins: 0,
-        pokeLosses: 0
+        pokename: "gible",
+        pokepop: 551,
+        pokewins: 0,
+        pokelosses: 0
     },
     {
-        pokeName: "Herdier",
-        pokePop: 550,
-        pokeWins: 0,
-        pokeLosses: 0
+        pokename: "herdier",
+        pokepop: 550,
+        pokewins: 0,
+        pokelosses: 0
     },
     {
-        pokeName: "Klink",
-        pokePop: 549,
-        pokeWins: 0,
-        pokeLosses: 0
+        pokename: "klink",
+        pokepop: 549,
+        pokewins: 0,
+        pokelosses: 0
     },
     {
-        pokeName: "Rattata",
-        pokePop: 548,
-        pokeWins: 0,
-        pokeLosses: 0
+        pokename: "rattata",
+        pokepop: 548,
+        pokewins: 0,
+        pokelosses: 0
     },
     {
-        pokeName: "Raticate",
-        pokePop: 547,
-        pokeWins: 0,
-        pokeLosses: 0
+        pokename: "raticate",
+        pokepop: 547,
+        pokewins: 0,
+        pokelosses: 0
     },
     {
-        pokeName: "Mothim",
-        pokePop: 546,
-        pokeWins: 0,
-        pokeLosses: 0
+        pokename: "mothim",
+        pokepop: 546,
+        pokewins: 0,
+        pokelosses: 0
     },
     {
-        pokeName: "Vespiquen",
-        pokePop: 545,
-        pokeWins: 0,
-        pokeLosses: 0
+        pokename: "vespiquen",
+        pokepop: 545,
+        pokewins: 0,
+        pokelosses: 0
     },
     {
-        pokeName: "Drapion",
-        pokePop: 544,
-        pokeWins: 0,
-        pokeLosses: 0
+        pokename: "drapion",
+        pokepop: 544,
+        pokewins: 0,
+        pokelosses: 0
     },
     {
-        pokeName: "Fletchinder",
-        pokePop: 543,
-        pokeWins: 0,
-        pokeLosses: 0
+        pokename: "fletchinder",
+        pokepop: 543,
+        pokewins: 0,
+        pokelosses: 0
     },
     {
-        pokeName: "Gorky",
-        pokePop: 542,
-        pokeWins: 0,
-        pokeLosses: 0
+        pokename: "gorky",
+        pokepop: 542,
+        pokewins: 0,
+        pokelosses: 0
     },
     {
-        pokeName: "Exeggutor",
-        pokePop: 541,
-        pokeWins: 0,
-        pokeLosses: 0
+        pokename: "exeggutor",
+        pokepop: 541,
+        pokewins: 0,
+        pokelosses: 0
     },
     {
-        pokeName: "Rhydon",
-        pokePop: 540,
-        pokeWins: 0,
-        pokeLosses: 0
+        pokename: "rhydon",
+        pokepop: 540,
+        pokewins: 0,
+        pokelosses: 0
     },
     {
-        pokeName: "Gothitelle",
-        pokePop: 539,
-        pokeWins: 0,
-        pokeLosses: 0
+        pokename: "gothitelle",
+        pokepop: 539,
+        pokewins: 0,
+        pokelosses: 0
     },
     {
-        pokeName: "Mr Mime",
-        pokePop: 538,
-        pokeWins: 0,
-        pokeLosses: 0
+        pokename: "mr mime",
+        pokepop: 538,
+        pokewins: 0,
+        pokelosses: 0
     },
     {
-        pokeName: "Glameow",
-        pokePop: 537,
-        pokeWins: 0,
-        pokeLosses: 0
+        pokename: "glameow",
+        pokepop: 537,
+        pokewins: 0,
+        pokelosses: 0
     },
     {
-        pokeName: "Tentacruel",
-        pokePop: 536,
-        pokeWins: 0,
-        pokeLosses: 0
+        pokename: "tentacruel",
+        pokepop: 536,
+        pokewins: 0,
+        pokelosses: 0
     },
     {
-        pokeName: "Natu",
-        pokePop: 535,
-        pokeWins: 0,
-        pokeLosses: 0
+        pokename: "natu",
+        pokepop: 535,
+        pokewins: 0,
+        pokelosses: 0
     },
     {
-        pokeName: "Ringma",
-        pokePop: 534,
-        pokeWins: 0,
-        pokeLosses: 0
+        pokename: "ringma",
+        pokepop: 534,
+        pokewins: 0,
+        pokelosses: 0
     },
     {
-        pokeName: "Unilan",
-        pokePop: 533,
-        pokeWins: 0,
-        pokeLosses: 0
+        pokename: "unilan",
+        pokepop: 533,
+        pokewins: 0,
+        pokelosses: 0
     },
     {
-        pokeName: "Weedle",
-        pokePop: 532,
-        pokeWins: 0,
-        pokeLosses: 0
+        pokename: "weedle",
+        pokepop: 532,
+        pokewins: 0,
+        pokelosses: 0
     },
     {
-        pokeName: "Rafflesia",
-        pokePop: 531,
-        pokeWins: 0,
-        pokeLosses: 0
+        pokename: "rafflesia",
+        pokepop: 531,
+        pokewins: 0,
+        pokelosses: 0
     },
     {
-        pokeName: "Shuppet",
-        pokePop: 530,
-        pokeWins: 0,
-        pokeLosses: 0
+        pokename: "shuppet",
+        pokepop: 530,
+        pokewins: 0,
+        pokelosses: 0
     },
     {
-        pokeName: "Lumineon",
-        pokePop: 529,
-        pokeWins: 0,
-        pokeLosses: 0
+        pokename: "lumineon",
+        pokepop: 529,
+        pokewins: 0,
+        pokelosses: 0
     },
     {
-        pokeName: "Patrat",
-        pokePop: 528,
-        pokeWins: 0,
-        pokeLosses: 0
+        pokename: "patrat",
+        pokepop: 528,
+        pokewins: 0,
+        pokelosses: 0
     },
     {
-        pokeName: "Victreebel",
-        pokePop: 527,
-        pokeWins: 0,
-        pokeLosses: 0
+        pokename: "victreebel",
+        pokepop: 527,
+        pokewins: 0,
+        pokelosses: 0
     },
     {
-        pokeName: "Tauros",
-        pokePop: 526,
-        pokeWins: 0,
-        pokeLosses: 0
+        pokename: "tauros",
+        pokepop: 526,
+        pokewins: 0,
+        pokelosses: 0
     },
     {
-        pokeName: "Zebstrika",
-        pokePop: 525,
-        pokeWins: 0,
-        pokeLosses: 0
+        pokename: "zebstrika",
+        pokepop: 525,
+        pokewins: 0,
+        pokelosses: 0
     },
     {
-        pokeName: "Scatterbug",
-        pokePop: 524,
-        pokeWins: 0,
-        pokeLosses: 0
+        pokename: "scatterbug",
+        pokepop: 524,
+        pokewins: 0,
+        pokelosses: 0
     },
     {
-        pokeName: "Ivysaur",
-        pokePop: 523,
-        pokeWins: 0,
-        pokeLosses: 0
+        pokename: "ivysaur",
+        pokepop: 523,
+        pokewins: 0,
+        pokelosses: 0
     },
     {
-        pokeName: "Spinarak",
-        pokePop: 522,
-        pokeWins: 0,
-        pokeLosses: 0
+        pokename: "spinarak",
+        pokepop: 522,
+        pokewins: 0,
+        pokelosses: 0
     },
     {
-        pokeName: "Throh",
-        pokePop: 521,
-        pokeWins: 0,
-        pokeLosses: 0
+        pokename: "throh",
+        pokepop: 521,
+        pokewins: 0,
+        pokelosses: 0
     },
     {
-        pokeName: "Cacnea",
-        pokePop: 520,
-        pokeWins: 0,
-        pokeLosses: 0
+        pokename: "cacnea",
+        pokepop: 520,
+        pokewins: 0,
+        pokelosses: 0
     },
     {
-        pokeName: "Chingling",
-        pokePop: 519,
-        pokeWins: 0,
-        pokeLosses: 0
+        pokename: "chingling",
+        pokepop: 519,
+        pokewins: 0,
+        pokelosses: 0
     },
     {
-        pokeName: "Yanmega",
-        pokePop: 518,
-        pokeWins: 0,
-        pokeLosses: 0
+        pokename: "yanmega",
+        pokepop: 518,
+        pokewins: 0,
+        pokelosses: 0
     },
     {
-        pokeName: "Janoby",
-        pokePop: 517,
-        pokeWins: 0,
-        pokeLosses: 0
+        pokename: "janoby",
+        pokepop: 517,
+        pokewins: 0,
+        pokelosses: 0
     },
     {
-        pokeName: "Deino",
-        pokePop: 516,
-        pokeWins: 0,
-        pokeLosses: 0
+        pokename: "deino",
+        pokepop: 516,
+        pokewins: 0,
+        pokelosses: 0
     },
     {
-        pokeName: "Poliwrath",
-        pokePop: 515,
-        pokeWins: 0,
-        pokeLosses: 0
+        pokename: "poliwrath",
+        pokepop: 515,
+        pokewins: 0,
+        pokelosses: 0
     },
     {
-        pokeName: "Exeggcute",
-        pokePop: 514,
-        pokeWins: 0,
-        pokeLosses: 0
+        pokename: "exeggcute",
+        pokepop: 514,
+        pokewins: 0,
+        pokelosses: 0
     },
     {
-        pokeName: "Whiscash",
-        pokePop: 513,
-        pokeWins: 0,
-        pokeLosses: 0
+        pokename: "whiscash",
+        pokepop: 513,
+        pokewins: 0,
+        pokelosses: 0
     },
     {
-        pokeName: "Cryogonal",
-        pokePop: 512,
-        pokeWins: 0,
-        pokeLosses: 0
+        pokename: "cryogonal",
+        pokepop: 512,
+        pokewins: 0,
+        pokelosses: 0
     },
     {
-        pokeName: "Heatmor",
-        pokePop: 511,
-        pokeWins: 0,
-        pokeLosses: 0
+        pokename: "heatmor",
+        pokepop: 511,
+        pokewins: 0,
+        pokelosses: 0
     },
     {
-        pokeName: "Beheeyem",
-        pokePop: 510,
-        pokeWins: 0,
-        pokeLosses: 0
+        pokename: "beheeyem",
+        pokepop: 510,
+        pokewins: 0,
+        pokelosses: 0
     },
     {
-        pokeName: "Quilladin",
-        pokePop: 509,
-        pokeWins: 0,
-        pokeLosses: 0
+        pokename: "quilladin",
+        pokepop: 509,
+        pokewins: 0,
+        pokelosses: 0
     },
     {
-        pokeName: "Compan",
-        pokePop: 508,
-        pokeWins: 0,
-        pokeLosses: 0
+        pokename: "compan",
+        pokepop: 508,
+        pokewins: 0,
+        pokelosses: 0
     },
     {
-        pokeName: "Lickitung",
-        pokePop: 507,
-        pokeWins: 0,
-        pokeLosses: 0
+        pokename: "lickitung",
+        pokepop: 507,
+        pokewins: 0,
+        pokelosses: 0
     },
     {
-        pokeName: "Omanyte",
-        pokePop: 506,
-        pokeWins: 0,
-        pokeLosses: 0
+        pokename: "omanyte",
+        pokepop: 506,
+        pokewins: 0,
+        pokelosses: 0
     },
     {
-        pokeName: "Hoothoot",
-        pokePop: 505,
-        pokeWins: 0,
-        pokeLosses: 0
+        pokename: "hoothoot",
+        pokepop: 505,
+        pokewins: 0,
+        pokelosses: 0
     },
     {
-        pokeName: "Cherrim",
-        pokePop: 504,
-        pokeWins: 0,
-        pokeLosses: 0
+        pokename: "cherrim",
+        pokepop: 504,
+        pokewins: 0,
+        pokelosses: 0
     },
     {
-        pokeName: "Drifblim",
-        pokePop: 503,
-        pokeWins: 0,
-        pokeLosses: 0
+        pokename: "drifblim",
+        pokepop: 503,
+        pokewins: 0,
+        pokelosses: 0
     },
     {
-        pokeName: "Tangrowth",
-        pokePop: 502,
-        pokeWins: 0,
-        pokeLosses: 0
+        pokename: "tangrowth",
+        pokepop: 502,
+        pokewins: 0,
+        pokelosses: 0
     },
     {
-        pokeName: "Seadra",
-        pokePop: 501,
-        pokeWins: 0,
-        pokeLosses: 0
+        pokename: "seadra",
+        pokepop: 501,
+        pokewins: 0,
+        pokelosses: 0
     },
     {
-        pokeName: "Don Juan",
-        pokePop: 500,
-        pokeWins: 0,
-        pokeLosses: 0
+        pokename: "don juan",
+        pokepop: 500,
+        pokewins: 0,
+        pokelosses: 0
     },
     {
-        pokeName: "Carnivine",
-        pokePop: 499,
-        pokeWins: 0,
-        pokeLosses: 0
+        pokename: "carnivine",
+        pokepop: 499,
+        pokewins: 0,
+        pokelosses: 0
     },
     {
-        pokeName: "Pignite",
-        pokePop: 498,
-        pokeWins: 0,
-        pokeLosses: 0
+        pokename: "pignite",
+        pokepop: 498,
+        pokewins: 0,
+        pokelosses: 0
     },
     {
-        pokeName: "Bellsprout",
-        pokePop: 497,
-        pokeWins: 0,
-        pokeLosses: 0
+        pokename: "bellsprout",
+        pokepop: 497,
+        pokewins: 0,
+        pokelosses: 0
     },
     {
-        pokeName: "Sunkern",
-        pokePop: 496,
-        pokeWins: 0,
-        pokeLosses: 0
+        pokename: "sunkern",
+        pokepop: 496,
+        pokewins: 0,
+        pokelosses: 0
     },
     {
-        pokeName: "Piloswine",
-        pokePop: 495,
-        pokeWins: 0,
-        pokeLosses: 0
+        pokename: "piloswine",
+        pokepop: 495,
+        pokewins: 0,
+        pokelosses: 0
     },
     {
-        pokeName: "Shroomish",
-        pokePop: 494,
-        pokeWins: 0,
-        pokeLosses: 0
+        pokename: "shroomish",
+        pokepop: 494,
+        pokewins: 0,
+        pokelosses: 0
     },
     {
-        pokeName: "Trapinch",
-        pokePop: 493,
-        pokeWins: 0,
-        pokeLosses: 0
+        pokename: "trapinch",
+        pokepop: 493,
+        pokewins: 0,
+        pokelosses: 0
     },
     {
-        pokeName: "Dusclops",
-        pokePop: 492,
-        pokeWins: 0,
-        pokeLosses: 0
+        pokename: "dusclops",
+        pokepop: 492,
+        pokewins: 0,
+        pokelosses: 0
     },
     {
-        pokeName: "Unfezant",
-        pokePop: 491,
-        pokeWins: 0,
-        pokeLosses: 0
+        pokename: "unfezant",
+        pokepop: 491,
+        pokewins: 0,
+        pokelosses: 0
     },
     {
-        pokeName: "Spritzee",
-        pokePop: 490,
-        pokeWins: 0,
-        pokeLosses: 0
+        pokename: "spritzee",
+        pokepop: 490,
+        pokewins: 0,
+        pokelosses: 0
     },
     {
-        pokeName: "Gloom",
-        pokePop: 489,
-        pokeWins: 0,
-        pokeLosses: 0
+        pokename: "gloom",
+        pokepop: 489,
+        pokewins: 0,
+        pokelosses: 0
     },
     {
-        pokeName: "Horsea",
-        pokePop: 488,
-        pokeWins: 0,
-        pokeLosses: 0
+        pokename: "horsea",
+        pokepop: 488,
+        pokewins: 0,
+        pokelosses: 0
     },
     {
-        pokeName: "Ambipom",
-        pokePop: 487,
-        pokeWins: 0,
-        pokeLosses: 0
+        pokename: "ambipom",
+        pokepop: 487,
+        pokewins: 0,
+        pokelosses: 0
     },
     {
-        pokeName: "Pidove",
-        pokePop: 486,
-        pokeWins: 0,
-        pokeLosses: 0
+        pokename: "pidove",
+        pokepop: 486,
+        pokewins: 0,
+        pokelosses: 0
     },
     {
-        pokeName: "Maractus",
-        pokePop: 485,
-        pokeWins: 0,
-        pokeLosses: 0
+        pokename: "maractus",
+        pokepop: 485,
+        pokewins: 0,
+        pokelosses: 0
     },
     {
-        pokeName: "Gothita",
-        pokePop: 484,
-        pokeWins: 0,
-        pokeLosses: 0
+        pokename: "gothita",
+        pokepop: 484,
+        pokewins: 0,
+        pokelosses: 0
     },
     {
-        pokeName: "Galvantula",
-        pokePop: 483,
-        pokeWins: 0,
-        pokeLosses: 0
+        pokename: "galvantula",
+        pokepop: 483,
+        pokewins: 0,
+        pokelosses: 0
     },
     {
-        pokeName: "Clauncher",
-        pokePop: 482,
-        pokeWins: 0,
-        pokeLosses: 0
+        pokename: "clauncher",
+        pokepop: 482,
+        pokewins: 0,
+        pokelosses: 0
     },
     {
-        pokeName: "Buber",
-        pokePop: 481,
-        pokeWins: 0,
-        pokeLosses: 0
+        pokename: "buber",
+        pokepop: 481,
+        pokewins: 0,
+        pokelosses: 0
     },
     {
-        pokeName: "Noctowl",
-        pokePop: 480,
-        pokeWins: 0,
-        pokeLosses: 0
+        pokename: "noctowl",
+        pokepop: 480,
+        pokewins: 0,
+        pokelosses: 0
     },
     {
-        pokeName: "Mantine",
-        pokePop: 479,
-        pokeWins: 0,
-        pokeLosses: 0
+        pokename: "mantine",
+        pokepop: 479,
+        pokewins: 0,
+        pokelosses: 0
     },
     {
-        pokeName: "Elekid",
-        pokePop: 478,
-        pokeWins: 0,
-        pokeLosses: 0
+        pokename: "elekid",
+        pokepop: 478,
+        pokewins: 0,
+        pokelosses: 0
     },
     {
-        pokeName: "Gorebyss",
-        pokePop: 477,
-        pokeWins: 0,
-        pokeLosses: 0
+        pokename: "gorebyss",
+        pokepop: 477,
+        pokewins: 0,
+        pokelosses: 0
     },
     {
-        pokeName: "Prinplup",
-        pokePop: 476,
-        pokeWins: 0,
-        pokeLosses: 0
+        pokename: "prinplup",
+        pokepop: 476,
+        pokewins: 0,
+        pokelosses: 0
     },
     {
-        pokeName: "Skiddo",
-        pokePop: 475,
-        pokeWins: 0,
-        pokeLosses: 0
+        pokename: "skiddo",
+        pokepop: 475,
+        pokewins: 0,
+        pokelosses: 0
     },
     {
-        pokeName: "Bergmite",
-        pokePop: 474,
-        pokeWins: 0,
-        pokeLosses: 0
+        pokename: "bergmite",
+        pokepop: 474,
+        pokewins: 0,
+        pokelosses: 0
     },
     {
-        pokeName: "Tangela",
-        pokePop: 473,
-        pokeWins: 0,
-        pokeLosses: 0
+        pokename: "tangela",
+        pokepop: 473,
+        pokewins: 0,
+        pokelosses: 0
     },
     {
-        pokeName: "Camerupt",
-        pokePop: 472,
-        pokeWins: 0,
-        pokeLosses: 0
+        pokename: "camerupt",
+        pokepop: 472,
+        pokewins: 0,
+        pokelosses: 0
     },
     {
-        pokeName: "Luvdisc",
-        pokePop: 471,
-        pokeWins: 0,
-        pokeLosses: 0
+        pokename: "luvdisc",
+        pokepop: 471,
+        pokewins: 0,
+        pokelosses: 0
     },
     {
-        pokeName: "Stoutland",
-        pokePop: 470,
-        pokeWins: 0,
-        pokeLosses: 0
+        pokename: "stoutland",
+        pokepop: 470,
+        pokewins: 0,
+        pokelosses: 0
     },
     {
-        pokeName: "Cacturne",
-        pokePop: 469,
-        pokeWins: 0,
-        pokeLosses: 0
+        pokename: "cacturne",
+        pokepop: 469,
+        pokewins: 0,
+        pokelosses: 0
     },
     {
-        pokeName: "Bibarel",
-        pokePop: 468,
-        pokeWins: 0,
-        pokeLosses: 0
+        pokename: "bibarel",
+        pokepop: 468,
+        pokewins: 0,
+        pokelosses: 0
     },
     {
-        pokeName: "Lickilicky",
-        pokePop: 467,
-        pokeWins: 0,
-        pokeLosses: 0
+        pokename: "lickilicky",
+        pokepop: 467,
+        pokewins: 0,
+        pokelosses: 0
     },
     {
-        pokeName: "Ducklett",
-        pokePop: 466,
-        pokeWins: 0,
-        pokeLosses: 0
+        pokename: "ducklett",
+        pokepop: 466,
+        pokewins: 0,
+        pokelosses: 0
     },
     {
-        pokeName: "Beartic",
-        pokePop: 465,
-        pokeWins: 0,
-        pokeLosses: 0
+        pokename: "beartic",
+        pokepop: 465,
+        pokewins: 0,
+        pokelosses: 0
     },
     {
-        pokeName: "Larvesta",
-        pokePop: 464,
-        pokeWins: 0,
-        pokeLosses: 0
+        pokename: "larvesta",
+        pokepop: 464,
+        pokewins: 0,
+        pokelosses: 0
     },
     {
-        pokeName: "Golduck",
-        pokePop: 463,
-        pokeWins: 0,
-        pokeLosses: 0
+        pokename: "golduck",
+        pokepop: 463,
+        pokewins: 0,
+        pokelosses: 0
     },
     {
-        pokeName: "Pelipper",
-        pokePop: 462,
-        pokeWins: 0,
-        pokeLosses: 0
+        pokename: "pelipper",
+        pokepop: 462,
+        pokewins: 0,
+        pokelosses: 0
     },
     {
-        pokeName: "Garbodor",
-        pokePop: 461,
-        pokeWins: 0,
-        pokeLosses: 0
+        pokename: "garbodor",
+        pokepop: 461,
+        pokewins: 0,
+        pokelosses: 0
     },
     {
-        pokeName: "Sawsbuck (Harunogata)",
-        pokePop: 460,
-        pokeWins: 0,
-        pokeLosses: 0
+        pokename: "sawsbuck (harunogata)",
+        pokepop: 460,
+        pokewins: 0,
+        pokelosses: 0
     },
     {
-        pokeName: "Nidoqueen",
-        pokePop: 459,
-        pokeWins: 0,
-        pokeLosses: 0
+        pokename: "nidoqueen",
+        pokepop: 459,
+        pokewins: 0,
+        pokelosses: 0
     },
     {
-        pokeName: "Lunatone",
-        pokePop: 458,
-        pokeWins: 0,
-        pokeLosses: 0
+        pokename: "lunatone",
+        pokepop: 458,
+        pokewins: 0,
+        pokelosses: 0
     },
     {
-        pokeName: "Lampent",
-        pokePop: 457,
-        pokeWins: 0,
-        pokeLosses: 0
+        pokename: "lampent",
+        pokepop: 457,
+        pokewins: 0,
+        pokelosses: 0
     },
     {
-        pokeName: "Poochyena",
-        pokePop: 456,
-        pokeWins: 0,
-        pokeLosses: 0
+        pokename: "poochyena",
+        pokepop: 456,
+        pokewins: 0,
+        pokelosses: 0
     },
     {
-        pokeName: "Metang",
-        pokePop: 455,
-        pokeWins: 0,
-        pokeLosses: 0
+        pokename: "metang",
+        pokepop: 455,
+        pokewins: 0,
+        pokelosses: 0
     },
     {
-        pokeName: "Electabuzz",
-        pokePop: 454,
-        pokeWins: 0,
-        pokeLosses: 0
+        pokename: "electabuzz",
+        pokepop: 454,
+        pokewins: 0,
+        pokelosses: 0
     },
     {
-        pokeName: "Lileep",
-        pokePop: 453,
-        pokeWins: 0,
-        pokeLosses: 0
+        pokename: "lileep",
+        pokepop: 453,
+        pokewins: 0,
+        pokelosses: 0
     },
     {
-        pokeName: "Gabite",
-        pokePop: 452,
-        pokeWins: 0,
-        pokeLosses: 0
+        pokename: "gabite",
+        pokepop: 452,
+        pokewins: 0,
+        pokelosses: 0
     },
     {
-        pokeName: "Palpitoad",
-        pokePop: 451,
-        pokeWins: 0,
-        pokeLosses: 0
+        pokename: "palpitoad",
+        pokepop: 451,
+        pokewins: 0,
+        pokelosses: 0
     },
     {
-        pokeName: "Petilil",
-        pokePop: 450,
-        pokeWins: 0,
-        pokeLosses: 0
+        pokename: "petilil",
+        pokepop: 450,
+        pokewins: 0,
+        pokelosses: 0
     },
     {
-        pokeName: "Jellicent",
-        pokePop: 449,
-        pokeWins: 0,
-        pokeLosses: 0
+        pokename: "jellicent",
+        pokepop: 449,
+        pokewins: 0,
+        pokelosses: 0
     },
     {
-        pokeName: "Persian",
-        pokePop: 448,
-        pokeWins: 0,
-        pokeLosses: 0
+        pokename: "persian",
+        pokepop: 448,
+        pokewins: 0,
+        pokelosses: 0
     },
     {
-        pokeName: "Sleeper",
-        pokePop: 447,
-        pokeWins: 0,
-        pokeLosses: 0
+        pokename: "sleeper",
+        pokepop: 447,
+        pokewins: 0,
+        pokelosses: 0
     },
     {
-        pokeName: "Club",
-        pokePop: 446,
-        pokeWins: 0,
-        pokeLosses: 0
+        pokename: "club",
+        pokepop: 446,
+        pokewins: 0,
+        pokelosses: 0
     },
     {
-        pokeName: "Omastar",
-        pokePop: 445,
-        pokeWins: 0,
-        pokeLosses: 0
+        pokename: "omastar",
+        pokepop: 445,
+        pokewins: 0,
+        pokelosses: 0
     },
     {
-        pokeName: "Aromatisse",
-        pokePop: 444,
-        pokeWins: 0,
-        pokeLosses: 0
+        pokename: "aromatisse",
+        pokepop: 444,
+        pokewins: 0,
+        pokelosses: 0
     },
     {
-        pokeName: "Rattle",
-        pokePop: 443,
-        pokeWins: 0,
-        pokeLosses: 0
+        pokename: "rattle",
+        pokepop: 443,
+        pokewins: 0,
+        pokelosses: 0
     },
     {
-        pokeName: "Murkrow",
-        pokePop: 442,
-        pokeWins: 0,
-        pokeLosses: 0
+        pokename: "murkrow",
+        pokepop: 442,
+        pokewins: 0,
+        pokelosses: 0
     },
     {
-        pokeName: "Swalot",
-        pokePop: 441,
-        pokeWins: 0,
-        pokeLosses: 0
+        pokename: "swalot",
+        pokepop: 441,
+        pokewins: 0,
+        pokelosses: 0
     },
     {
-        pokeName: "Crawdaunt",
-        pokePop: 440,
-        pokeWins: 0,
-        pokeLosses: 0
+        pokename: "crawdaunt",
+        pokepop: 440,
+        pokewins: 0,
+        pokelosses: 0
     },
     {
-        pokeName: "Amoonguss",
-        pokePop: 439,
-        pokeWins: 0,
-        pokeLosses: 0
+        pokename: "amoonguss",
+        pokepop: 439,
+        pokewins: 0,
+        pokelosses: 0
     },
     {
-        pokeName: "Weepinbell",
-        pokePop: 438,
-        pokeWins: 0,
-        pokeLosses: 0
+        pokename: "weepinbell",
+        pokepop: 438,
+        pokewins: 0,
+        pokelosses: 0
     },
     {
-        pokeName: "Chinchou",
-        pokePop: 437,
-        pokeWins: 0,
-        pokeLosses: 0
+        pokename: "chinchou",
+        pokepop: 437,
+        pokewins: 0,
+        pokelosses: 0
     },
     {
-        pokeName: "Exploud",
-        pokePop: 436,
-        pokeWins: 0,
-        pokeLosses: 0
+        pokename: "exploud",
+        pokepop: 436,
+        pokewins: 0,
+        pokelosses: 0
     },
     {
-        pokeName: "Ledyba",
-        pokePop: 435,
-        pokeWins: 0,
-        pokeLosses: 0
+        pokename: "ledyba",
+        pokepop: 435,
+        pokewins: 0,
+        pokelosses: 0
     },
     {
-        pokeName: "Monferno",
-        pokePop: 434,
-        pokeWins: 0,
-        pokeLosses: 0
+        pokename: "monferno",
+        pokepop: 434,
+        pokewins: 0,
+        pokelosses: 0
     },
     {
-        pokeName: "Bastiodon",
-        pokePop: 433,
-        pokeWins: 0,
-        pokeLosses: 0
+        pokename: "bastiodon",
+        pokepop: 433,
+        pokewins: 0,
+        pokelosses: 0
     },
     {
-        pokeName: "Leavanny",
-        pokePop: 432,
-        pokeWins: 0,
-        pokeLosses: 0
+        pokename: "leavanny",
+        pokepop: 432,
+        pokewins: 0,
+        pokelosses: 0
     },
     {
-        pokeName: "Swanna",
-        pokePop: 431,
-        pokeWins: 0,
-        pokeLosses: 0
+        pokename: "swanna",
+        pokepop: 431,
+        pokewins: 0,
+        pokelosses: 0
     },
     {
-        pokeName: "Zubat",
-        pokePop: 430,
-        pokeWins: 0,
-        pokeLosses: 0
+        pokename: "zubat",
+        pokepop: 430,
+        pokewins: 0,
+        pokelosses: 0
     },
     {
-        pokeName: "Voltorb",
-        pokePop: 429,
-        pokeWins: 0,
-        pokeLosses: 0
+        pokename: "voltorb",
+        pokepop: 429,
+        pokewins: 0,
+        pokelosses: 0
     },
     {
-        pokeName: "Hoppip",
-        pokePop: 428,
-        pokeWins: 0,
-        pokeLosses: 0
+        pokename: "hoppip",
+        pokepop: 428,
+        pokewins: 0,
+        pokelosses: 0
     },
     {
-        pokeName: "Grotle",
-        pokePop: 427,
-        pokeWins: 0,
-        pokeLosses: 0
+        pokename: "grotle",
+        pokepop: 427,
+        pokewins: 0,
+        pokelosses: 0
     },
     {
-        pokeName: "Burmy",
-        pokePop: 426,
-        pokeWins: 0,
-        pokeLosses: 0
+        pokename: "burmy",
+        pokepop: 426,
+        pokewins: 0,
+        pokelosses: 0
     },
     {
-        pokeName: "Sliggoo",
-        pokePop: 425,
-        pokeWins: 0,
-        pokeLosses: 0
+        pokename: "sliggoo",
+        pokepop: 425,
+        pokewins: 0,
+        pokelosses: 0
     },
     {
-        pokeName: "Gorse",
-        pokePop: 424,
-        pokeWins: 0,
-        pokeLosses: 0
+        pokename: "gorse",
+        pokepop: 424,
+        pokewins: 0,
+        pokelosses: 0
     },
     {
-        pokeName: "Togetic",
-        pokePop: 423,
-        pokeWins: 0,
-        pokeLosses: 0
+        pokename: "togetic",
+        pokepop: 423,
+        pokewins: 0,
+        pokelosses: 0
     },
     {
-        pokeName: "Stantler",
-        pokePop: 422,
-        pokeWins: 0,
-        pokeLosses: 0
+        pokename: "stantler",
+        pokepop: 422,
+        pokewins: 0,
+        pokelosses: 0
     },
     {
-        pokeName: "Gothorita",
-        pokePop: 421,
-        pokeWins: 0,
-        pokeLosses: 0
+        pokename: "gothorita",
+        pokepop: 421,
+        pokewins: 0,
+        pokelosses: 0
     },
     {
-        pokeName: "Nidoran ♂",
-        pokePop: 420,
-        pokeWins: 0,
-        pokeLosses: 0
+        pokename: "nidoran ♂",
+        pokepop: 420,
+        pokewins: 0,
+        pokelosses: 0
     },
     {
-        pokeName: "Dogers",
-        pokePop: 419,
-        pokeWins: 0,
-        pokeLosses: 0
+        pokename: "dogers",
+        pokepop: 419,
+        pokewins: 0,
+        pokelosses: 0
     },
     {
-        pokeName: "Goldeen",
-        pokePop: 418,
-        pokeWins: 0,
-        pokeLosses: 0
+        pokename: "goldeen",
+        pokepop: 418,
+        pokewins: 0,
+        pokelosses: 0
     },
     {
-        pokeName: "Dustox",
-        pokePop: 417,
-        pokeWins: 0,
-        pokeLosses: 0
+        pokename: "dustox",
+        pokepop: 417,
+        pokewins: 0,
+        pokelosses: 0
     },
     {
-        pokeName: "Hariyama",
-        pokePop: 416,
-        pokeWins: 0,
-        pokeLosses: 0
+        pokename: "hariyama",
+        pokepop: 416,
+        pokewins: 0,
+        pokelosses: 0
     },
     {
-        pokeName: "Himbus",
-        pokePop: 415,
-        pokeWins: 0,
-        pokeLosses: 0
+        pokename: "himbus",
+        pokepop: 415,
+        pokewins: 0,
+        pokelosses: 0
     },
     {
-        pokeName: "Beldum",
-        pokePop: 414,
-        pokeWins: 0,
-        pokeLosses: 0
+        pokename: "beldum",
+        pokepop: 414,
+        pokewins: 0,
+        pokelosses: 0
     },
     {
-        pokeName: "Cottonee",
-        pokePop: 413,
-        pokeWins: 0,
-        pokeLosses: 0
+        pokename: "cottonee",
+        pokepop: 413,
+        pokewins: 0,
+        pokelosses: 0
     },
     {
-        pokeName: "Dodo",
-        pokePop: 412,
-        pokeWins: 0,
-        pokeLosses: 0
+        pokename: "dodo",
+        pokepop: 412,
+        pokewins: 0,
+        pokelosses: 0
     },
     {
-        pokeName: "Skiploom",
-        pokePop: 411,
-        pokeWins: 0,
-        pokeLosses: 0
+        pokename: "skiploom",
+        pokepop: 411,
+        pokewins: 0,
+        pokelosses: 0
     },
     {
-        pokeName: "Sneasel",
-        pokePop: 410,
-        pokeWins: 0,
-        pokeLosses: 0
+        pokename: "sneasel",
+        pokepop: 410,
+        pokewins: 0,
+        pokelosses: 0
     },
     {
-        pokeName: "Claydol",
-        pokePop: 409,
-        pokeWins: 0,
-        pokeLosses: 0
+        pokename: "claydol",
+        pokepop: 409,
+        pokewins: 0,
+        pokelosses: 0
     },
     {
-        pokeName: "Purugly",
-        pokePop: 408,
-        pokeWins: 0,
-        pokeLosses: 0
+        pokename: "purugly",
+        pokepop: 408,
+        pokewins: 0,
+        pokelosses: 0
     },
     {
-        pokeName: "Venipede",
-        pokePop: 407,
-        pokeWins: 0,
-        pokeLosses: 0
+        pokename: "venipede",
+        pokepop: 407,
+        pokewins: 0,
+        pokelosses: 0
     },
     {
-        pokeName: "Duosion",
-        pokePop: 406,
-        pokeWins: 0,
-        pokeLosses: 0
+        pokename: "duosion",
+        pokepop: 406,
+        pokewins: 0,
+        pokelosses: 0
     },
     {
-        pokeName: "Seviper",
-        pokePop: 405,
-        pokeWins: 0,
-        pokeLosses: 0
+        pokename: "seviper",
+        pokepop: 405,
+        pokewins: 0,
+        pokelosses: 0
     },
     {
-        pokeName: "Hippowdon",
-        pokePop: 404,
-        pokeWins: 0,
-        pokeLosses: 0
+        pokename: "hippowdon",
+        pokepop: 404,
+        pokewins: 0,
+        pokelosses: 0
     },
     {
-        pokeName: "Trimian",
-        pokePop: 403,
-        pokeWins: 0,
-        pokeLosses: 0
+        pokename: "trimian",
+        pokepop: 403,
+        pokewins: 0,
+        pokelosses: 0
     },
     {
-        pokeName: "Grimer",
-        pokePop: 402,
-        pokeWins: 0,
-        pokeLosses: 0
+        pokename: "grimer",
+        pokepop: 402,
+        pokewins: 0,
+        pokelosses: 0
     },
     {
-        pokeName: "Tamanta",
-        pokePop: 401,
-        pokeWins: 0,
-        pokeLosses: 0
+        pokename: "tamanta",
+        pokepop: 401,
+        pokewins: 0,
+        pokelosses: 0
     },
     {
-        pokeName: "Tentacool",
-        pokePop: 400,
-        pokeWins: 0,
-        pokeLosses: 0
+        pokename: "tentacool",
+        pokepop: 400,
+        pokewins: 0,
+        pokelosses: 0
     },
     {
-        pokeName: "Staryu",
-        pokePop: 399,
-        pokeWins: 0,
-        pokeLosses: 0
+        pokename: "staryu",
+        pokepop: 399,
+        pokewins: 0,
+        pokelosses: 0
     },
     {
-        pokeName: "Kabuto",
-        pokePop: 398,
-        pokeWins: 0,
-        pokeLosses: 0
+        pokename: "kabuto",
+        pokepop: 398,
+        pokewins: 0,
+        pokelosses: 0
     },
     {
-        pokeName: "Sunflora",
-        pokePop: 397,
-        pokeWins: 0,
-        pokeLosses: 0
+        pokename: "sunflora",
+        pokepop: 397,
+        pokewins: 0,
+        pokelosses: 0
     },
     {
-        pokeName: "Frillish",
-        pokePop: 396,
-        pokeWins: 0,
-        pokeLosses: 0
+        pokename: "frillish",
+        pokepop: 396,
+        pokewins: 0,
+        pokelosses: 0
     },
     {
-        pokeName: "Mienfoo",
-        pokePop: 395,
-        pokeWins: 0,
-        pokeLosses: 0
+        pokename: "mienfoo",
+        pokepop: 395,
+        pokewins: 0,
+        pokelosses: 0
     },
     {
-        pokeName: "Slakoth",
-        pokePop: 394,
-        pokeWins: 0,
-        pokeLosses: 0
+        pokename: "slakoth",
+        pokepop: 394,
+        pokewins: 0,
+        pokelosses: 0
     },
     {
-        pokeName: "Morphon",
-        pokePop: 393,
-        pokeWins: 0,
-        pokeLosses: 0
+        pokename: "morphon",
+        pokepop: 393,
+        pokewins: 0,
+        pokelosses: 0
     },
     {
-        pokeName: "Solrock",
-        pokePop: 392,
-        pokeWins: 0,
-        pokeLosses: 0
+        pokename: "solrock",
+        pokepop: 392,
+        pokewins: 0,
+        pokelosses: 0
     },
     {
-        pokeName: "Shellos",
-        pokePop: 391,
-        pokeWins: 0,
-        pokeLosses: 0
+        pokename: "shellos",
+        pokepop: 391,
+        pokewins: 0,
+        pokelosses: 0
     },
     {
-        pokeName: "Milhog",
-        pokePop: 390,
-        pokeWins: 0,
-        pokeLosses: 0
+        pokename: "milhog",
+        pokepop: 390,
+        pokewins: 0,
+        pokelosses: 0
     },
     {
-        pokeName: "Musharna",
-        pokePop: 389,
-        pokeWins: 0,
-        pokeLosses: 0
+        pokename: "musharna",
+        pokepop: 389,
+        pokewins: 0,
+        pokelosses: 0
     },
     {
-        pokeName: "Roggenrola",
-        pokePop: 388,
-        pokeWins: 0,
-        pokeLosses: 0
+        pokename: "roggenrola",
+        pokepop: 388,
+        pokewins: 0,
+        pokelosses: 0
     },
     {
-        pokeName: "Trubbish",
-        pokePop: 387,
-        pokeWins: 0,
-        pokeLosses: 0
+        pokename: "trubbish",
+        pokepop: 387,
+        pokewins: 0,
+        pokelosses: 0
     },
     {
-        pokeName: "Alomomola",
-        pokePop: 386,
-        pokeWins: 0,
-        pokeLosses: 0
+        pokename: "alomomola",
+        pokepop: 386,
+        pokewins: 0,
+        pokelosses: 0
     },
     {
-        pokeName: "Klang",
-        pokePop: 385,
-        pokeWins: 0,
-        pokeLosses: 0
+        pokename: "klang",
+        pokepop: 385,
+        pokewins: 0,
+        pokelosses: 0
     },
     {
-        pokeName: "Buffalant",
-        pokePop: 384,
-        pokeWins: 0,
-        pokeLosses: 0
+        pokename: "buffalant",
+        pokepop: 384,
+        pokewins: 0,
+        pokelosses: 0
     },
     {
-        pokeName: "Pow Wow",
-        pokePop: 383,
-        pokeWins: 0,
-        pokeLosses: 0
+        pokename: "pow wow",
+        pokepop: 383,
+        pokewins: 0,
+        pokelosses: 0
     },
     {
-        pokeName: "Whirlipede",
-        pokePop: 382,
-        pokeWins: 0,
-        pokeLosses: 0
+        pokename: "whirlipede",
+        pokepop: 382,
+        pokewins: 0,
+        pokelosses: 0
     },
     {
-        pokeName: "Forretress",
-        pokePop: 381,
-        pokeWins: 0,
-        pokeLosses: 0
+        pokename: "forretress",
+        pokepop: 381,
+        pokewins: 0,
+        pokelosses: 0
     },
     {
-        pokeName: "Whismur",
-        pokePop: 380,
-        pokeWins: 0,
-        pokeLosses: 0
+        pokename: "whismur",
+        pokepop: 380,
+        pokewins: 0,
+        pokelosses: 0
     },
     {
-        pokeName: "Makuhita",
-        pokePop: 379,
-        pokeWins: 0,
-        pokeLosses: 0
+        pokename: "makuhita",
+        pokepop: 379,
+        pokewins: 0,
+        pokelosses: 0
     },
     {
-        pokeName: "Parasect",
-        pokePop: 378,
-        pokeWins: 0,
-        pokeLosses: 0
+        pokename: "parasect",
+        pokepop: 378,
+        pokewins: 0,
+        pokelosses: 0
     },
     {
-        pokeName: "Blue",
-        pokePop: 377,
-        pokeWins: 0,
-        pokeLosses: 0
+        pokename: "blue",
+        pokepop: 377,
+        pokewins: 0,
+        pokelosses: 0
     },
     {
-        pokeName: "Bagon",
-        pokePop: 376,
-        pokeWins: 0,
-        pokeLosses: 0
+        pokename: "bagon",
+        pokepop: 376,
+        pokewins: 0,
+        pokelosses: 0
     },
     {
-        pokeName: "Hippopotas",
-        pokePop: 375,
-        pokeWins: 0,
-        pokeLosses: 0
+        pokename: "hippopotas",
+        pokepop: 375,
+        pokewins: 0,
+        pokelosses: 0
     },
     {
-        pokeName: "Snover",
-        pokePop: 374,
-        pokeWins: 0,
-        pokeLosses: 0
+        pokename: "snover",
+        pokepop: 374,
+        pokewins: 0,
+        pokelosses: 0
     },
     {
-        pokeName: "Yamask",
-        pokePop: 373,
-        pokeWins: 0,
-        pokeLosses: 0
+        pokename: "yamask",
+        pokepop: 373,
+        pokewins: 0,
+        pokelosses: 0
     },
     {
-        pokeName: "Bargina",
-        pokePop: 372,
-        pokeWins: 0,
-        pokeLosses: 0
+        pokename: "bargina",
+        pokepop: 372,
+        pokewins: 0,
+        pokelosses: 0
     },
     {
-        pokeName: "Binacle",
-        pokePop: 371,
-        pokeWins: 0,
-        pokeLosses: 0
+        pokename: "binacle",
+        pokepop: 371,
+        pokewins: 0,
+        pokelosses: 0
     },
     {
-        pokeName: "Skrelp",
-        pokePop: 370,
-        pokeWins: 0,
-        pokeLosses: 0
+        pokename: "skrelp",
+        pokepop: 370,
+        pokewins: 0,
+        pokelosses: 0
     },
     {
-        pokeName: "Spearow",
-        pokePop: 369,
-        pokeWins: 0,
-        pokeLosses: 0
+        pokename: "spearow",
+        pokepop: 369,
+        pokewins: 0,
+        pokelosses: 0
     },
     {
-        pokeName: "Yanma",
-        pokePop: 368,
-        pokeWins: 0,
-        pokeLosses: 0
+        pokename: "yanma",
+        pokepop: 368,
+        pokewins: 0,
+        pokelosses: 0
     },
     {
-        pokeName: "Torkoal",
-        pokePop: 367,
-        pokeWins: 0,
-        pokeLosses: 0
+        pokename: "torkoal",
+        pokepop: 367,
+        pokewins: 0,
+        pokelosses: 0
     },
     {
-        pokeName: "Pigeon",
-        pokePop: 366,
-        pokeWins: 0,
-        pokeLosses: 0
+        pokename: "pigeon",
+        pokepop: 366,
+        pokewins: 0,
+        pokelosses: 0
     },
     {
-        pokeName: "Granbull",
-        pokePop: 365,
-        pokeWins: 0,
-        pokeLosses: 0
+        pokename: "granbull",
+        pokepop: 365,
+        pokewins: 0,
+        pokelosses: 0
     },
     {
-        pokeName: "Magcalgo",
-        pokePop: 364,
-        pokeWins: 0,
-        pokeLosses: 0
+        pokename: "magcalgo",
+        pokepop: 364,
+        pokewins: 0,
+        pokelosses: 0
     },
     {
-        pokeName: "Seedot",
-        pokePop: 363,
-        pokeWins: 0,
-        pokeLosses: 0
+        pokename: "seedot",
+        pokepop: 363,
+        pokewins: 0,
+        pokelosses: 0
     },
     {
-        pokeName: "Nosepass",
-        pokePop: 362,
-        pokeWins: 0,
-        pokeLosses: 0
+        pokename: "nosepass",
+        pokepop: 362,
+        pokewins: 0,
+        pokelosses: 0
     },
     {
-        pokeName: "Snorunt",
-        pokePop: 361,
-        pokeWins: 0,
-        pokeLosses: 0
+        pokename: "snorunt",
+        pokepop: 361,
+        pokewins: 0,
+        pokelosses: 0
     },
     {
-        pokeName: "Dynoze",
-        pokePop: 360,
-        pokeWins: 0,
-        pokeLosses: 0
+        pokename: "dynoze",
+        pokepop: 360,
+        pokewins: 0,
+        pokelosses: 0
     },
     {
-        pokeName: "Spewpa",
-        pokePop: 359,
-        pokeWins: 0,
-        pokeLosses: 0
+        pokename: "spewpa",
+        pokepop: 359,
+        pokewins: 0,
+        pokelosses: 0
     },
     {
-        pokeName: "Slugma",
-        pokePop: 358,
-        pokeWins: 0,
-        pokeLosses: 0
+        pokename: "slugma",
+        pokepop: 358,
+        pokewins: 0,
+        pokelosses: 0
     },
     {
-        pokeName: "Duskull",
-        pokePop: 357,
-        pokeWins: 0,
-        pokeLosses: 0
+        pokename: "duskull",
+        pokepop: 357,
+        pokewins: 0,
+        pokelosses: 0
     },
     {
-        pokeName: "Huntail",
-        pokePop: 356,
-        pokeWins: 0,
-        pokeLosses: 0
+        pokename: "huntail",
+        pokepop: 356,
+        pokewins: 0,
+        pokelosses: 0
     },
     {
-        pokeName: "Shieldon",
-        pokePop: 355,
-        pokeWins: 0,
-        pokeLosses: 0
+        pokename: "shieldon",
+        pokepop: 355,
+        pokewins: 0,
+        pokelosses: 0
     },
     {
-        pokeName: "Boldore",
-        pokePop: 354,
-        pokeWins: 0,
-        pokeLosses: 0
+        pokename: "boldore",
+        pokepop: 354,
+        pokewins: 0,
+        pokelosses: 0
     },
     {
-        pokeName: "Fraxure",
-        pokePop: 353,
-        pokeWins: 0,
-        pokeLosses: 0
+        pokename: "fraxure",
+        pokepop: 353,
+        pokewins: 0,
+        pokelosses: 0
     },
     {
-        pokeName: "Pallas",
-        pokePop: 352,
-        pokeWins: 0,
-        pokeLosses: 0
+        pokename: "pallas",
+        pokepop: 352,
+        pokewins: 0,
+        pokelosses: 0
     },
     {
-        pokeName: "Pupitar",
-        pokePop: 351,
-        pokeWins: 0,
-        pokeLosses: 0
+        pokename: "pupitar",
+        pokepop: 351,
+        pokewins: 0,
+        pokelosses: 0
     },
     {
-        pokeName: "Wingull",
-        pokePop: 350,
-        pokeWins: 0,
-        pokeLosses: 0
+        pokename: "wingull",
+        pokepop: 350,
+        pokewins: 0,
+        pokelosses: 0
     },
     {
-        pokeName: "Electrike",
-        pokePop: 349,
-        pokeWins: 0,
-        pokeLosses: 0
+        pokename: "electrike",
+        pokepop: 349,
+        pokewins: 0,
+        pokelosses: 0
     },
     {
-        pokeName: "Kricketune",
-        pokePop: 348,
-        pokeWins: 0,
-        pokeLosses: 0
+        pokename: "kricketune",
+        pokepop: 348,
+        pokewins: 0,
+        pokelosses: 0
     },
     {
-        pokeName: "Skuntank",
-        pokePop: 347,
-        pokeWins: 0,
-        pokeLosses: 0
+        pokename: "skuntank",
+        pokepop: 347,
+        pokewins: 0,
+        pokelosses: 0
     },
     {
-        pokeName: "Golbat",
-        pokePop: 346,
-        pokeWins: 0,
-        pokeLosses: 0
+        pokename: "golbat",
+        pokepop: 346,
+        pokewins: 0,
+        pokelosses: 0
     },
     {
-        pokeName: "Shellder",
-        pokePop: 345,
-        pokeWins: 0,
-        pokeLosses: 0
+        pokename: "shellder",
+        pokepop: 345,
+        pokewins: 0,
+        pokelosses: 0
     },
     {
-        pokeName: "Remoraid",
-        pokePop: 344,
-        pokeWins: 0,
-        pokeLosses: 0
+        pokename: "remoraid",
+        pokepop: 344,
+        pokewins: 0,
+        pokelosses: 0
     },
     {
-        pokeName: "Simipour",
-        pokePop: 343,
-        pokeWins: 0,
-        pokeLosses: 0
+        pokename: "simipour",
+        pokepop: 343,
+        pokewins: 0,
+        pokelosses: 0
     },
     {
-        pokeName: "Qwilfish",
-        pokePop: 342,
-        pokeWins: 0,
-        pokeLosses: 0
+        pokename: "qwilfish",
+        pokepop: 342,
+        pokewins: 0,
+        pokelosses: 0
     },
     {
-        pokeName: "Sandile",
-        pokePop: 341,
-        pokeWins: 0,
-        pokeLosses: 0
+        pokename: "sandile",
+        pokepop: 341,
+        pokewins: 0,
+        pokelosses: 0
     },
     {
-        pokeName: "Gligar",
-        pokePop: 340,
-        pokeWins: 0,
-        pokeLosses: 0
+        pokename: "gligar",
+        pokepop: 340,
+        pokewins: 0,
+        pokelosses: 0
     },
     {
-        pokeName: "Delville",
-        pokePop: 339,
-        pokeWins: 0,
-        pokeLosses: 0
+        pokename: "delville",
+        pokepop: 339,
+        pokewins: 0,
+        pokelosses: 0
     },
     {
-        pokeName: "Grumpig",
-        pokePop: 338,
-        pokeWins: 0,
-        pokeLosses: 0
+        pokename: "grumpig",
+        pokepop: 338,
+        pokewins: 0,
+        pokelosses: 0
     },
     {
-        pokeName: "Vibrava",
-        pokePop: 337,
-        pokeWins: 0,
-        pokeLosses: 0
+        pokename: "vibrava",
+        pokepop: 337,
+        pokewins: 0,
+        pokelosses: 0
     },
     {
-        pokeName: "Staravia",
-        pokePop: 336,
-        pokeWins: 0,
-        pokeLosses: 0
+        pokename: "staravia",
+        pokepop: 336,
+        pokewins: 0,
+        pokelosses: 0
     },
     {
-        pokeName: "Panpour",
-        pokePop: 335,
-        pokeWins: 0,
-        pokeLosses: 0
+        pokename: "panpour",
+        pokepop: 335,
+        pokewins: 0,
+        pokelosses: 0
     },
     {
-        pokeName: "Ferroseed",
-        pokePop: 334,
-        pokeWins: 0,
-        pokeLosses: 0
+        pokename: "ferroseed",
+        pokepop: 334,
+        pokewins: 0,
+        pokelosses: 0
     },
     {
-        pokeName: "Eelektrik",
-        pokePop: 333,
-        pokeWins: 0,
-        pokeLosses: 0
+        pokename: "eelektrik",
+        pokepop: 333,
+        pokewins: 0,
+        pokelosses: 0
     },
     {
-        pokeName: "Golett",
-        pokePop: 332,
-        pokeWins: 0,
-        pokeLosses: 0
+        pokename: "golett",
+        pokepop: 332,
+        pokewins: 0,
+        pokelosses: 0
     },
     {
-        pokeName: "Vullaby",
-        pokePop: 331,
-        pokeWins: 0,
-        pokeLosses: 0
+        pokename: "vullaby",
+        pokepop: 331,
+        pokewins: 0,
+        pokelosses: 0
     },
     {
-        pokeName: "Nidorina",
-        pokePop: 330,
-        pokeWins: 0,
-        pokeLosses: 0
+        pokename: "nidorina",
+        pokepop: 330,
+        pokewins: 0,
+        pokelosses: 0
     },
     {
-        pokeName: "Taillow",
-        pokePop: 329,
-        pokeWins: 0,
-        pokeLosses: 0
+        pokename: "taillow",
+        pokepop: 329,
+        pokewins: 0,
+        pokelosses: 0
     },
     {
-        pokeName: "Nincada",
-        pokePop: 328,
-        pokeWins: 0,
-        pokeLosses: 0
+        pokename: "nincada",
+        pokepop: 328,
+        pokewins: 0,
+        pokelosses: 0
     },
     {
-        pokeName: "Blitzle",
-        pokePop: 327,
-        pokeWins: 0,
-        pokeLosses: 0
+        pokename: "blitzle",
+        pokepop: 327,
+        pokewins: 0,
+        pokelosses: 0
     },
     {
-        pokeName: "Swoobat",
-        pokePop: 326,
-        pokeWins: 0,
-        pokeLosses: 0
+        pokename: "swoobat",
+        pokepop: 326,
+        pokewins: 0,
+        pokelosses: 0
     },
     {
-        pokeName: "Bulky",
-        pokePop: 325,
-        pokeWins: 0,
-        pokeLosses: 0
+        pokename: "bulky",
+        pokepop: 325,
+        pokewins: 0,
+        pokelosses: 0
     },
     {
-        pokeName: "Silcoon",
-        pokePop: 324,
-        pokeWins: 0,
-        pokeLosses: 0
+        pokename: "silcoon",
+        pokepop: 324,
+        pokewins: 0,
+        pokelosses: 0
     },
     {
-        pokeName: "Barboach",
-        pokePop: 323,
-        pokeWins: 0,
-        pokeLosses: 0
+        pokename: "barboach",
+        pokepop: 323,
+        pokewins: 0,
+        pokelosses: 0
     },
     {
-        pokeName: "Skorupi",
-        pokePop: 322,
-        pokeWins: 0,
-        pokeLosses: 0
+        pokename: "skorupi",
+        pokepop: 322,
+        pokewins: 0,
+        pokelosses: 0
     },
     {
-        pokeName: "Sleep",
-        pokePop: 321,
-        pokeWins: 0,
-        pokeLosses: 0
+        pokename: "sleep",
+        pokepop: 321,
+        pokewins: 0,
+        pokelosses: 0
     },
     {
-        pokeName: "Kodora",
-        pokePop: 320,
-        pokeWins: 0,
-        pokeLosses: 0
+        pokename: "kodora",
+        pokepop: 320,
+        pokewins: 0,
+        pokelosses: 0
     },
     {
-        pokeName: "Volbeat",
-        pokePop: 319,
-        pokeWins: 0,
-        pokeLosses: 0
+        pokename: "volbeat",
+        pokepop: 319,
+        pokewins: 0,
+        pokelosses: 0
     },
     {
-        pokeName: "Baltoy",
-        pokePop: 318,
-        pokeWins: 0,
-        pokeLosses: 0
+        pokename: "baltoy",
+        pokepop: 318,
+        pokewins: 0,
+        pokelosses: 0
     },
     {
-        pokeName: "Gurdurr",
-        pokePop: 317,
-        pokeWins: 0,
-        pokeLosses: 0
+        pokename: "gurdurr",
+        pokepop: 317,
+        pokewins: 0,
+        pokelosses: 0
     },
     {
-        pokeName: "Wrigley",
-        pokePop: 316,
-        pokeWins: 0,
-        pokeLosses: 0
+        pokename: "wrigley",
+        pokepop: 316,
+        pokewins: 0,
+        pokelosses: 0
     },
     {
-        pokeName: "Mankey",
-        pokePop: 315,
-        pokeWins: 0,
-        pokeLosses: 0
+        pokename: "mankey",
+        pokepop: 315,
+        pokewins: 0,
+        pokelosses: 0
     },
     {
-        pokeName: "Lombre",
-        pokePop: 314,
-        pokeWins: 0,
-        pokeLosses: 0
+        pokename: "lombre",
+        pokepop: 314,
+        pokewins: 0,
+        pokelosses: 0
     },
     {
-        pokeName: "Sealeo",
-        pokePop: 313,
-        pokeWins: 0,
-        pokeLosses: 0
+        pokename: "sealeo",
+        pokepop: 313,
+        pokewins: 0,
+        pokelosses: 0
     },
     {
-        pokeName: "Simisage",
-        pokePop: 312,
-        pokeWins: 0,
-        pokeLosses: 0
+        pokename: "simisage",
+        pokepop: 312,
+        pokewins: 0,
+        pokelosses: 0
     },
     {
-        pokeName: "Pansear",
-        pokePop: 311,
-        pokeWins: 0,
-        pokeLosses: 0
+        pokename: "pansear",
+        pokepop: 311,
+        pokewins: 0,
+        pokelosses: 0
     },
     {
-        pokeName: "Drilbur",
-        pokePop: 310,
-        pokeWins: 0,
-        pokeLosses: 0
+        pokename: "drilbur",
+        pokepop: 310,
+        pokewins: 0,
+        pokelosses: 0
     },
     {
-        pokeName: "Zweilous",
-        pokePop: 309,
-        pokeWins: 0,
-        pokeLosses: 0
+        pokename: "zweilous",
+        pokepop: 309,
+        pokewins: 0,
+        pokelosses: 0
     },
     {
-        pokeName: "Pineco",
-        pokePop: 308,
-        pokeWins: 0,
-        pokeLosses: 0
+        pokename: "pineco",
+        pokepop: 308,
+        pokewins: 0,
+        pokelosses: 0
     },
     {
-        pokeName: "Konohana",
-        pokePop: 307,
-        pokeWins: 0,
-        pokeLosses: 0
+        pokename: "konohana",
+        pokepop: 307,
+        pokewins: 0,
+        pokelosses: 0
     },
     {
-        pokeName: "Loudred",
-        pokePop: 306,
-        pokeWins: 0,
-        pokeLosses: 0
+        pokename: "loudred",
+        pokepop: 306,
+        pokewins: 0,
+        pokelosses: 0
     },
     {
-        pokeName: "Numel",
-        pokePop: 305,
-        pokeWins: 0,
-        pokeLosses: 0
+        pokename: "numel",
+        pokepop: 305,
+        pokewins: 0,
+        pokelosses: 0
     },
     {
-        pokeName: "Cranidos",
-        pokePop: 304,
-        pokeWins: 0,
-        pokeLosses: 0
+        pokename: "cranidos",
+        pokepop: 304,
+        pokewins: 0,
+        pokelosses: 0
     },
     {
-        pokeName: "Minomadam (Kusaki no Mino)",
-        pokePop: 303,
-        pokeWins: 0,
-        pokeLosses: 0
+        pokename: "minomadam (kusaki no mino)",
+        pokepop: 303,
+        pokewins: 0,
+        pokelosses: 0
     },
     {
-        pokeName: "Tirtouga",
-        pokePop: 302,
-        pokeWins: 0,
-        pokeLosses: 0
+        pokename: "tirtouga",
+        pokepop: 302,
+        pokewins: 0,
+        pokelosses: 0
     },
     {
-        pokeName: "Honedge",
-        pokePop: 301,
-        pokeWins: 0,
-        pokeLosses: 0
+        pokename: "honedge",
+        pokepop: 301,
+        pokewins: 0,
+        pokelosses: 0
     },
     {
-        pokeName: "Nidoran ♀",
-        pokePop: 300,
-        pokeWins: 0,
-        pokeLosses: 0
+        pokename: "nidoran ♀",
+        pokepop: 300,
+        pokewins: 0,
+        pokelosses: 0
     },
     {
-        pokeName: "Dodrio",
-        pokePop: 299,
-        pokeWins: 0,
-        pokeLosses: 0
+        pokename: "dodrio",
+        pokepop: 299,
+        pokewins: 0,
+        pokelosses: 0
     },
     {
-        pokeName: "Nidorino",
-        pokePop: 298,
-        pokeWins: 0,
-        pokeLosses: 0
+        pokename: "nidorino",
+        pokepop: 298,
+        pokewins: 0,
+        pokelosses: 0
     },
     {
-        pokeName: "Stunky",
-        pokePop: 297,
-        pokeWins: 0,
-        pokeLosses: 0
+        pokename: "stunky",
+        pokepop: 297,
+        pokewins: 0,
+        pokelosses: 0
     },
     {
-        pokeName: "Bronzor",
-        pokePop: 296,
-        pokeWins: 0,
-        pokeLosses: 0
+        pokename: "bronzor",
+        pokepop: 296,
+        pokewins: 0,
+        pokelosses: 0
     },
     {
-        pokeName: "Basculin",
-        pokePop: 295,
-        pokeWins: 0,
-        pokeLosses: 0
+        pokename: "basculin",
+        pokepop: 295,
+        pokewins: 0,
+        pokelosses: 0
     },
     {
-        pokeName: "Kricketot",
-        pokePop: 294,
-        pokeWins: 0,
-        pokeLosses: 0
+        pokename: "kricketot",
+        pokepop: 294,
+        pokewins: 0,
+        pokelosses: 0
     },
     {
-        pokeName: "Vanillish",
-        pokePop: 293,
-        pokeWins: 0,
-        pokeLosses: 0
+        pokename: "vanillish",
+        pokepop: 293,
+        pokewins: 0,
+        pokelosses: 0
     },
     {
-        pokeName: "Shelmet",
-        pokePop: 292,
-        pokeWins: 0,
-        pokeLosses: 0
+        pokename: "shelmet",
+        pokepop: 292,
+        pokewins: 0,
+        pokelosses: 0
     },
     {
-        pokeName: "Graveler",
-        pokePop: 291,
-        pokeWins: 0,
-        pokeLosses: 0
+        pokename: "graveler",
+        pokepop: 291,
+        pokewins: 0,
+        pokelosses: 0
     },
     {
-        pokeName: "Magby",
-        pokePop: 290,
-        pokeWins: 0,
-        pokeLosses: 0
+        pokename: "magby",
+        pokepop: 290,
+        pokewins: 0,
+        pokelosses: 0
     },
     {
-        pokeName: "Mayurd",
-        pokePop: 289,
-        pokeWins: 0,
-        pokeLosses: 0
+        pokename: "mayurd",
+        pokepop: 289,
+        pokewins: 0,
+        pokelosses: 0
     },
     {
-        pokeName: "Shelgon",
-        pokePop: 288,
-        pokeWins: 0,
-        pokeLosses: 0
+        pokename: "shelgon",
+        pokepop: 288,
+        pokewins: 0,
+        pokelosses: 0
     },
     {
-        pokeName: "Karrablast",
-        pokePop: 287,
-        pokeWins: 0,
-        pokeLosses: 0
+        pokename: "karrablast",
+        pokepop: 287,
+        pokewins: 0,
+        pokelosses: 0
     },
     {
-        pokeName: "Timburr",
-        pokePop: 286,
-        pokeWins: 0,
-        pokeLosses: 0
+        pokename: "timburr",
+        pokepop: 286,
+        pokewins: 0,
+        pokelosses: 0
     },
     {
-        pokeName: "Carvanha",
-        pokePop: 285,
-        pokeWins: 0,
-        pokeLosses: 0
+        pokename: "carvanha",
+        pokepop: 285,
+        pokewins: 0,
+        pokelosses: 0
     },
     {
-        pokeName: "Tranquill",
-        pokePop: 284,
-        pokeWins: 0,
-        pokeLosses: 0
+        pokename: "tranquill",
+        pokepop: 284,
+        pokewins: 0,
+        pokelosses: 0
     },
     {
-        pokeName: "Vigoroth",
-        pokePop: 283,
-        pokeWins: 0,
-        pokeLosses: 0
+        pokename: "vigoroth",
+        pokepop: 283,
+        pokewins: 0,
+        pokelosses: 0
     },
     {
-        pokeName: "Woobat",
-        pokePop: 282,
-        pokeWins: 0,
-        pokeLosses: 0
+        pokename: "woobat",
+        pokepop: 282,
+        pokewins: 0,
+        pokelosses: 0
     },
     {
-        pokeName: "Pawniard",
-        pokePop: 281,
-        pokeWins: 0,
-        pokeLosses: 0
+        pokename: "pawniard",
+        pokepop: 281,
+        pokewins: 0,
+        pokelosses: 0
     },
     {
-        pokeName: "Baokki",
-        pokePop: 280,
-        pokeWins: 0,
-        pokeLosses: 0
+        pokename: "baokki",
+        pokepop: 280,
+        pokewins: 0,
+        pokelosses: 0
     }
 ];
 

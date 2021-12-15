@@ -78,9 +78,11 @@ const addPokemon = async function(pokemonID, pokemonName, imageLink,  isShiny, u
 	if(typeof userName !== 'string' || userName.trim() == "") {
 		throw({code: 400, message: "addPokemon: userName must be a string that isn't empty or just spaces"});
 	}
-	if(typeof isHolo !== 'boolean') {
+	if(typeof isShiny !== 'boolean') {
 		throw({code: 400, message: "addPokemon: isShiny must be a boolean"});
 	}
+
+	pokemonName = pokemonName.toLowerCase();
 
 	const usersCollection = await users();
 
@@ -106,15 +108,15 @@ const addPokemon = async function(pokemonID, pokemonName, imageLink,  isShiny, u
 	} 
 }
 
-const addFunds = async function(userName, toAdd){
+const changeFunds = async function(userName, toAdd){
 	if(arguments.length != 2 || toAdd == undefined || userName == undefined) {
 		throw({code: 400, message: "addFunds: you are missing toAdd or userName"});
 	}
 	if(typeof userName !== 'string' || userName.trim() == "") {
 		throw({code: 400, message: "addFunds: userName must be a string that isn't empty or just spaces"});
 	}
-	if(typeof toAdd !== 'number' || toAdd < 1) {
-		throw({code: 400, message: "addFunds: toAdd must be a number greater than 0"});
+	if(typeof toAdd !== 'number' || toAdd == 1) {
+		throw({code: 400, message: "addFunds: toAdd must be a number that isn't zero"});
 	}
 
 	const usersCollection = await users();
@@ -141,5 +143,5 @@ module.exports = {
 	createUser,
 	getUser,
 	addPokemon,
-	addFunds
+	changeFunds
 }
