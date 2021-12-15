@@ -47,7 +47,9 @@ const createBattle = async function(trainerOne, trainerTwo, pokemonOne, pokemonT
         trainerTwo: trainerTwo,
         pokemonOne: pokemonOne,
         pokemonTwo: pokemonTwo,
-        winner: winner,
+        winner: winner, 
+        battleBets: [],
+        payoutGiven: false,
         timeStamp: (nowDate+timePerBattle)
 	};
 	
