@@ -6,7 +6,8 @@ const battleData = require('./dataFunctions/battles');
 
 const typeDefs = gql`
   type Query {
-    users: [User]
+    user: User
+    portfolio: [Pokemon]
   }
 
   type User {
