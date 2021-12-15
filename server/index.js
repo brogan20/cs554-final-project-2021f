@@ -37,6 +37,17 @@ const resolvers = {
   Query: {
     user: async (_, args) => {
       return userData.getUser(args.userName);
+    },
+    portfolio: async(_, args) => {
+      const userName = args.userName;
+      let user;
+      try{
+        user = await userData.getUser(userName);
+      }
+      catch(e){
+        // i'll let you handle error handling
+      }
+      return user.pokemonCollection;
     }
   },
   Mutation: {

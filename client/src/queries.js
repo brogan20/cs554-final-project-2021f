@@ -1,8 +1,8 @@
 import { gql } from '@apollo/client';
 
 const GET_PORTFOLIO = gql`
-    query {
-        pokemon {
+    query getPortfolio($userName: String!) {
+        portfolio(userName: $userName){
             _id
             name
             imageLink
