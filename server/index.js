@@ -67,11 +67,11 @@ server.listen().then(({ url }) => {
   console.log(`🚀  Server ready at ${url} 🚀`);
 });
 
-let resolvedBattles;
-time=setInterval(function(){
-  resolvedBattles = await battleData.payoutAllBattles();
+let resolvedBattleData;
+time=setInterval(async function(){
+  resolvedBattleData = await battleData.payoutAllBattles();
   console.log(`Finished battles have been resolved`);
-  console.log(`${resolvedBattles.deletedCount} battles have been deleted`);
-  console.log(`${resolvedBattles.paidCount} battles have paid out`);
-  console.log(`${resolvedBattles.bettersCount} betters have recieved their funds (or nothing if they suck)`);
+  console.log(`${resolvedBattleData.deletedBattles} battles have been deleted`);
+  console.log(`${resolvedBattleData.paidBattles} battles paid out`);
+  console.log(`${resolvedBattleData.bettersHere} betters have been paid(or not if they suck lamo)`);
   },10000);
