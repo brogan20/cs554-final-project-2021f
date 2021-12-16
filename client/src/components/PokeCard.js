@@ -13,11 +13,11 @@ const PokeCard = ({pokemon}) =>{
       const fetchData = async () =>{
         let res = null;
         try{
-          res = await axios.get(`https://pokeapi.co/api/v2/pokemon/${pokemon.id}/`); 
-          console.log(res.data);
+          res = await axios.get(`https://pokeapi.co/api/v2/pokemon/${pokemon.pokemonID}/`); 
         }
         catch(e){
-          // do nothing
+          // maybe make a placeholder image
+          return;
         }
         setData(res.data);
       }
@@ -57,7 +57,7 @@ const PokeCard = ({pokemon}) =>{
   return(
     <Card ref={cardRef} onMouseMove={rotateCard} onMouseOut={resetCard} className={`poke-card poke-card-${type}`}>
       <Card.Body className="poke-card-body">
-        <Card.Title>{pokemon.name}</Card.Title>
+        <Card.Title>{pokemon.pokemonName}</Card.Title>
         <Card.Img src={sprite} draggable="false"/>
       </Card.Body>
     </Card>

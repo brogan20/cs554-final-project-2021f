@@ -11,12 +11,6 @@ const typeDefs = gql`
     battles: [Battle]
   }
 
-  type Bet {
-    userName: String,
-    predectedWinner: Pokemon,
-    payout: Int
-  }
-
   type Pokemon {
     pokemonID: String
     pokemonName: String

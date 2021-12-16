@@ -7,9 +7,10 @@ const BetListing = ({ battle }) => {
   const getTimeLeft = (timestamp) => {
     // Discard the time and time-zone information.
     const MS_PER_SECOND = 1000;
+    let end = new Date(timestamp);
     let current = new Date();
     const utc1 = Date.UTC(current.getFullYear(), current.getMonth(), current.getDate(), current.getHours(), current.getMinutes(), current.getSeconds());
-    const utc2 = Date.UTC(timestamp.getFullYear(), timestamp.getMonth(), timestamp.getDate(), current.getHours(), timestamp.getMinutes(), timestamp.getSeconds());
+    const utc2 = Date.UTC(end.getFullYear(), end.getMonth(), end.getDate(), current.getHours(), end.getMinutes(), end.getSeconds());
     let secs = (utc2-utc1) / MS_PER_SECOND;
     // console.log(secs);
     return {
@@ -17,12 +18,12 @@ const BetListing = ({ battle }) => {
       seconds: secs%60
     }
   };
-  const [timeLeft, setTimeLeft] = useState(getTimeLeft(battle.timestamp));
+  const [timeLeft, setTimeLeft] = useState(getTimeLeft(battle.timeStamp));
   const [ expired, setExpired ] = useState(false);
   
   useEffect(() => {
     const interval = setInterval(() => {
-      let remainder = getTimeLeft(battle.timestamp);
+      let remainder = getTimeLeft(battle.timeStamp);
       if(remainder.minutes <= 0 && remainder.seconds <= 0){
         setExpired(true);
         // query the database for the winner!!
@@ -38,15 +39,15 @@ const BetListing = ({ battle }) => {
       <Container fluid>
         <Row className="row justify-content-center">
           <Col xs={2}>
-            <p>{battle.player1.displayName}'s</p>
-            <PokeCard pokemon={battle.pokemon1}/>
+            <p>{battle.trainerOne}'s</p>
+            <PokeCard pokemon={battle.pokemonOne}/>
           </Col>
           <Col xs={2}>
             <p>vs.</p>
           </Col>
           <Col xs={2}>
-            <p>{battle.player2.displayName}'s</p>
-            <PokeCard pokemon={battle.pokemon2}/>
+            <p>{battle.trainerTwo}'s</p>
+            <PokeCard pokemon={battle.pokemonTwo}/>
           </Col>
         </Row>
         <Row>
