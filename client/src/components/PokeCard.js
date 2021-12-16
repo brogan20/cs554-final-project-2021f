@@ -42,12 +42,20 @@ const PokeCard = ({pokemon}) =>{
     var tp = (py - 50)/1.5;
     var tx = (lp/1.5) * .5;
     var ty = (tp/1.5) * -1;
-    var tf = `transform: rotateX(${ty}deg) rotateY(${tx}deg)`
+    var tf = `transform: rotateX(${ty}deg) rotateY(${tx}deg)`;
     cardRef.current.style = tf;
+    cardRef.current.firstChild.style = `background-position: ${px}% ${py}%`;
+
+  }
+
+  const setClass = (e) => {
+    cardRef.current.className = cardRef.current.className + " poke-card-active";
   }
 
   const resetCard = (e) => {
     cardRef.current.style="";
+    cardRef.current.firstChild.style = "";
+    cardRef.current.className = cardRef.current.className.replace(' poke-card-active', '');
   }
 
   if(data){
@@ -55,8 +63,8 @@ const PokeCard = ({pokemon}) =>{
     type = data.types[0].type.name;
   }
   return(
-    <Card ref={cardRef} onMouseMove={rotateCard} onMouseOut={resetCard} className={`poke-card poke-card-${type}`}>
-      <Card.Body className="poke-card-body">
+    <Card ref={cardRef} onMouseMove={rotateCard} onMouseOver={setClass} onMouseOut={resetCard} className={`poke-card poke-card-${type}`}>
+      <Card.Body className={`poke-card-body ${pokemon.isShiny ? "poke-card-holo" : ""}`}>
         <Card.Title>{pokemon.pokemonName}</Card.Title>
         <Card.Img src={sprite} draggable="false"/>
       </Card.Body>
