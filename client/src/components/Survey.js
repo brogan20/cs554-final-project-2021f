@@ -23,16 +23,14 @@ const Survey = () => {
       const fetchData = async () =>{
         try{
           let result=new Array();
-          let randOne = Math.floor(Math.random() * 6) + 1
+          let randOne = Math.floor(Math.random() * 898) + 1
           let pokemonOne = await axios.get(`https://pokeapi.co/api/v2/pokemon/${randOne}/`);
-          let randTwo = Math.floor(Math.random() * 6) + 1
+          let randTwo = Math.floor(Math.random() * 898) + 1
           let pokemonTwo = await axios.get(`https://pokeapi.co/api/v2/pokemon/${randTwo}/`);
           result.push(pokemonOne);
           result.push(pokemonTwo);
           setCardData(result);
           setLoading(false);
-          console.log(randOne);
-          console.log(randTwo);
         }
         catch(e){
           console.log(e)
@@ -51,8 +49,10 @@ const Survey = () => {
   }
   else {
     const userCards = (pokemon, e) => {
-      console.log(pokemon);
+      console.log("This is where you change a pokemons popualrity");
       console.log("you should add funds here, like 5 bucks");
+      alert(`You voted for ${pokemon.pokemonName}! You just earned 5 PokeDollars`);
+      window.location.reload(false);
     }
     
     const CardGrid = (pokemon) => {
