@@ -24,19 +24,19 @@ const createBattle = async function(trainerOne, trainerTwo, pokemonOne, pokemonT
     if(typeof trainerTwo !== 'string' || trainerTwo.trim() == "") {
 		throw({code: 400, message: "createBattle: trainerTwo must be a string that isn't empty or just spaces"});
 	}
-    if(typeof pokemonOne.pokemonName !== 'string' || pokemonOne.pokemonName.trim() == "") {
+    if(typeof pokemonOne !== 'string' || pokemonOne.trim() == "") {
 		throw({code: 400, message: "createBattle: pokemonOne's name must be a string that isn't empty or just spaces"});
 	}
-    if(typeof pokemonTwo.pokemonName !== 'string' || pokemonTwo.pokemonName.trim() == "") {
+    if(typeof pokemonTwo !== 'string' || pokemonTwo.trim() == "") {
 		throw({code: 400, message: "createBattle: pokemonTwo's name must be a string that isn't empty or just spaces"});
 	}
 
-    pokemonOne.pokemonName = pokemonOne.pokemonName.toLowerCase();
-    pokemonTwo.pokemonName = pokemonTwo.pokemonName.toLowerCase();
+    pokemonOne = pokemonOne.toLowerCase();
+    pokemonTwo = pokemonTwo.toLowerCase();
 
     let winner = trainerOne;
-    let pokemonOnePop = await popularityData.getPokemonPopularity(pokemonOne.pokemonName);
-    let pokemonTwoPop = await popularityData.getPokemonPopularity(pokemonTwo.pokemonName);
+    let pokemonOnePop = await popularityData.getPokemonPopularity(pokemonOne);
+    let pokemonTwoPop = await popularityData.getPokemonPopularity(pokemonTwo);
     if(pokemonOnePop > pokemonTwoPop) {
         let ourOdds = pokemonOnePop/(pokemonOnePop + pokemonTwoPop);
         if(Math.random <= ourOdds) {winner = trainerOne}
@@ -48,6 +48,15 @@ const createBattle = async function(trainerOne, trainerTwo, pokemonOne, pokemonT
         else {winner = trainerOne}
     }
 	
+    if(winner == trainerTwo) {
+        await popularityData.changePokemonScore(pokemonOne, false);
+        await popularityData.changePokemonScore(pokemonTwo, true);
+    }
+    else {
+        await popularityData.changePokemonScore(pokemonOne, true);
+        await popularityData.changePokemonScore(pokemonTwo, false);
+    }
+
 	const battleCollection = await battles();
     const nowDate = new Date().getTime();
 	
