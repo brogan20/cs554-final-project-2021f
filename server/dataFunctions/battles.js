@@ -178,7 +178,9 @@ const createBet = async function(userName, betAmount, battleID, predectedWinner)
             throw({code: 500, message: "createBet: unable to add that bet to the database"});
         }
         else{
-            return({code: 200, message: "createBet: bet successfully added"});
+            let newBetID = await inIn.insertedId.toString();
+            newBet._id = newBetID;
+            return newBet;
         } 
     }
     else {
