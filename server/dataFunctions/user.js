@@ -99,7 +99,7 @@ const addPokemon = async function(pokemonID, pokemonName, imageLink,  isShiny, u
 		isShiny: isShiny
 	};
 
-	const upin = await usersCollection.updateOne({userName: userName}, {$push: {pokemonCollection: { newPokemon }}});
+	const upin = await usersCollection.updateOne({userName: userName}, {$push: {pokemonCollection: newPokemon }});
 	if (upin === 0) {
 		throw({code: 500, message: "addCard: unable to add that card to the database"});
 	}
