@@ -18,11 +18,17 @@ const typeDefs = gql`
   }
 
   type Pokemon {
-    _id: String
     pokemonID: String
     pokemonName: String
     imageLink: String
     isShiny: Boolean
+  }
+
+  type Bet {
+    _id: ID
+    userName: String
+    predectedWinner: String
+    payout: Int
   }
 
   type Battle {
@@ -55,7 +61,15 @@ const typeDefs = gql`
 const resolvers = {
   Query: {
     user: async (_, args) => {
-      return userData.getUser(args.userName);
+      const userName = args.userName;
+      let user;
+      try{
+        user = await userData.getUser(userName);
+      }
+      catch(e){
+        throw e;
+      }
+      return user;
     },
     portfolio: async(_, args) => {
       const userName = args.userName;

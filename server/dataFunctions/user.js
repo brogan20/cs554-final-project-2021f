@@ -38,7 +38,9 @@ const createUser = async function(userName) {
 		throw({code: 500, message: "createUser: unable to add that user"});
 	}
 	else{
-		return({code: 200, message: "createUser: New user successfully added"});
+        let newUserID = await inIn.insertedId.toString();
+        newUser._id = newUserID;
+		return newUser;
 	}
 }
 
@@ -104,7 +106,7 @@ const addPokemon = async function(pokemonID, pokemonName, imageLink,  isShiny, u
 		throw({code: 500, message: "addPokemon: unable to add that pokemon to the database"});
 	}
 	else{
-		return({code: 200, message: "addPokemon: pokemon successfully added"});
+		return newPokemon;
 	} 
 }
 
@@ -134,7 +136,7 @@ const changeFunds = async function(userName, toAdd){
 		throw({code: 500, message: "addFunds: unable to add to the wallet"});
 	}
 	else{
-		return({code: 200, message: "addFunds: funds successfully added"});
+		return newBalance;
 	} 
 }
 
