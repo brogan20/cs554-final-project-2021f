@@ -101,10 +101,10 @@ const addPokemon = async function(pokemonID, pokemonName, imageLink,  isShiny, u
 
 	const upin = await usersCollection.updateOne({userName: userName}, {$push: {pokemonCollection: newPokemon }});
 	if (upin === 0) {
-		throw({code: 500, message: "addCard: unable to add that card to the database"});
+		throw({code: 500, message: "addPokemon: unable to add that pokemon to the database"});
 	}
 	else{
-		return({code: 200, message: "addCard: card successfully added"});
+		return({code: 200, message: "addPokemon: pokemon successfully added"});
 	} 
 }
 
