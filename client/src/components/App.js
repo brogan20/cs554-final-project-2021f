@@ -1,6 +1,6 @@
 import logo from '../logo.svg';
 import '../App.css';
-import Login from './login';
+import SignUp from './SignUp';
 import Portfolio from './Portfolio';
 import Betting from './Betting';
 import Bet from './Bet';
@@ -30,7 +30,7 @@ function App() {
         </header>
         <div>
           <Routes>
-            <Route exact path="/login" element={<Login/>}/>
+            <Route exact path="/signup" element={<SignUp/>}/>
             <Route exact path ="/portfolio" element={<Portfolio/>}/>
             <Route exact path = "/betting" element={<Betting/>}/>
             <Route exact path="/betting/:id" element={<Bet/>}/>
