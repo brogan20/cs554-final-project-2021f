@@ -2,15 +2,44 @@ const userData = require('./dataFunctions/user');
 const popularityData = require('./dataFunctions/popularity');
 const battleData = require('./dataFunctions/battles');
 
+const dittoData = {
+    pokemonID: 132,
+    pokemonName: "ditto",
+    imageLink: "blankURL",
+    isShiny: false
+}
+const pikachuData = {
+    pokemonID: 25,
+    pokemonName: "pikachu",
+    imageLink: "blankURL",
+    isShiny: false
+}
+const piplupData = {
+    pokemonID: 393,
+    pokemonName: "piplup",
+    imageLink: "blankURL",
+    isShiny: false
+}
+const turtwigData = {
+    pokemonID: 387,
+    pokemonName: "turtwig",
+    imageLink: "blankURL",
+    isShiny: false
+}
+const crobatData = {
+    pokemonID: 196,
+    pokemonName: "crobat",
+    imageLink: "blankURL",
+    isShiny: true
+}
+
 async function main(){
 	try {
 		await popularityData.initPopularity();
         
         await userData.createUser("Red");
-        await userData.addPokemon("25", "pikachu", "blankURL", true, "Red");
         await userData.addPokemon("25", "pikachu", "blankURL", false, "Red");
         await userData.addPokemon("132", "ditto", "blankURL", false, "Red");
-        await userData.addPokemon("25", "pikachu", "blankURL", false, "Red");
         await userData.changeFunds("Red", 50);
         
         await userData.createUser("Dawn");
@@ -18,13 +47,10 @@ async function main(){
         
         await userData.createUser("James");
         await userData.addPokemon("387", "turtwig", "blankURL", false, "James");
-        await userData.addPokemon("196", "crobat", "blankURL", false, "James");
+        await userData.addPokemon("196", "crobat", "blankURL", true, "James");
 
-        let battleOneID = await battleData.createBattle("Red", "Dawn", "pikachu", "piplup");
-
-        await popularityData.changePokemonPopularity("piplup", 1000);
-
-        let battleTwoID = await battleData.createBattle("Red", "Dawn", "pikachu", "piplup");
+        let battleOneID = await battleData.createBattle("Red", "Dawn", pikachuData, piplupData);
+        let battleTwoID = await battleData.createBattle("Red", "James", dittoData, crobatData);
 
 		console.log("database has been populated");
 	}catch(e){
