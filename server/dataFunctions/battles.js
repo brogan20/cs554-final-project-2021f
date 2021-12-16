@@ -173,21 +173,28 @@ const payoutAllBattles = async function() {
     const nowDate = new Date().getTime();
     const battles = await battleCollection.find({timeStamp: {$lt: nowDate} }).toArray();
 
+    let deletedBattleCount = 0;
+    let paidBattleCount = 0;
+    let paidBetsCount = 0;
+
     battles.forEach(async element => {
         if(element.payoutGiven) {
             await battleCollection.deleteOne({_id: element._id});
+            deletedBattleCount++;
         }
         else{
             element.battleBets.forEach(async subElement => {
                 if(subElement.predectedWinner == element.winner) {
                     await userData.changeFunds(subElement.userName, subElement.payout)
                 }
+                paidBetsCount++;
             });
             await battleCollection.updateOne({_id: element._id}, {$set: {payoutGiven: true}});
+            paidBattleCount++;
         }
     });
 
-    return "wow I hated writing this, even though it is so small";
+    return {deletedCount: deletedBattleCount, paidCount: paidBattleCount, bettersCount: paidBetsCount};
 }
 
 module.exports = {

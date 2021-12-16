@@ -67,6 +67,11 @@ server.listen().then(({ url }) => {
   console.log(`🚀  Server ready at ${url} 🚀`);
 });
 
-// time=setInterval(function(){
-//   console.log("hi");  //code to run here, to update bets and stuff, kinda lame but whatever
-//   },3000);
+let resolvedBattles;
+time=setInterval(function(){
+  resolvedBattles = await battleData.payoutAllBattles();
+  console.log(`Finished battles have been resolved`);
+  console.log(`${resolvedBattles.deletedCount} battles have been deleted`);
+  console.log(`${resolvedBattles.paidCount} battles have paid out`);
+  console.log(`${resolvedBattles.bettersCount} betters have recieved their funds (or nothing if they suck)`);
+  },10000);
