@@ -6,19 +6,15 @@ const battleData = require('./dataFunctions/battles');
 
 const typeDefs = gql`
   type Query {
-    user(
-      userName: String!
-    ): User
-    portfolio(
-      userName: String!
-    ): [Pokemon]
+    user(userName: String!): User
+    portfolio(userName: String!): [Pokemon]
+    battles: [Battle]
   }
 
-  type User {
-    _id: String
-    userName: String
-    pokemonCollection: [Pokemon]
-    wallet: Int
+  type Bet {
+    userName: String,
+    predectedWinner: Pokemon,
+    payout: Int
   }
 
   type Pokemon {
@@ -27,6 +23,25 @@ const typeDefs = gql`
     pokemonName: String
     imageLink: String
     isShiny: Boolean
+  }
+
+  type Battle {
+    _id: ID
+    trainerOne: String
+    trainerTwo: String
+    pokemonOne: Pokemon
+    pokemonTwo: Pokemon
+    winner: String
+    battleBets: [Bet]
+    payoutGiven: Boolean
+    timeStamp: Float
+  }
+
+  type User {
+    _id: String
+    userName: String
+    pokemonCollection: [Pokemon]
+    wallet: Int
   }
   
   type Mutation {
@@ -52,6 +67,16 @@ const resolvers = {
         throw e;
       }
       return user.pokemonCollection;
+    },
+    battles: async() => {
+      let ongoing;
+      try{
+        ongoing = await battleData.getCurrentBattles();
+      }
+      catch(e){
+        throw e;
+      }
+      return ongoing;
     }
   },
   Mutation: {
@@ -70,5 +95,5 @@ server.listen().then(({ url }) => {
 let resolvedBattleData;
 time=setInterval(async function(){
   resolvedBattleData = await battleData.payoutAllBattles();
-  console.log(`Finished battles have been resolved`);
-  },10000);
+  // console.log(`Finished battles have been resolved`);
+  }, 10000);

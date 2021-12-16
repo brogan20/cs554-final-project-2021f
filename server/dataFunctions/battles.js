@@ -6,7 +6,7 @@ const { battleCollection } = require('../config/mongoCollections');
 const { usersCollection } = require('../config/mongoCollections');
 const popularityData = require('./popularity');
 const userData = require('./user');
-const timePerBattle = 60000;//in milliseconds 
+const timePerBattle = 1200000;//in milliseconds 
 
 const removeAll = async function() {
 	const battleCollection = await battles();
@@ -110,13 +110,13 @@ const getBattle = async function(battleID) {
 const getCurrentBattles = async function() {
     const battleCollection = await battles();
     const nowDate = new Date().getTime();
-    const battles = await battleCollection.find({timeStamp: {$gt: nowDate} }).toArray();
+    const ongoing = await battleCollection.find({timeStamp: {$gt: nowDate} }).toArray();
 
-    battles.forEach(element => {
+    ongoing.forEach(element => {
         element.winner = "";
     });
 
-    return battles;
+    return ongoing;
 }
 
 const createBet = async function(userName, betAmount, battleID, predectedWinner) {
