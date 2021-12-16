@@ -38,13 +38,13 @@ const getPokemonPopularity = async function(pokemonName) {
 	const pokemon = await popularityCollection.findOne({pokeName: pokemonName});
 
 	if(pokemon == null) {       //if the pokemon does not exist for us yet, I am creating it and starting it at a value of 500
-        let newPokemon = {pokeName: pokemonName, pokePop: 500, pokeWins: 0, pokeLosses: 0};
+        let newPokemon = {pokeName: pokemonName, pokePop: 3500, pokeWins: 0, pokeLosses: 0};
         const inIn = await popularityCollection.insertOne(newPokemon);
         if(inIn.insertCount === 0) {
             throw({code: 500, message: "getPokemonPopularity: pokemon is not in database, and could not add it"});
         }
         else{
-            return 500;
+            return newPokemon.pokePop;
         }
 	}
     else{
@@ -72,8 +72,8 @@ const changePokemonPopularity = async function(pokemonName, toChange) {
 	const pokemon = await popularityCollection.findOne({pokeName: pokemonName});
 
 	if(pokemon == null) {       //if the pokemon does not exist for us yet, I am creating it and starting it at a value of 500
-        if((500 + toChange) <= 0) {finalPop = 1;}
-        else{finalPop += 500;}
+        if((3500 + toChange) <= 0) {finalPop = 1;}
+        else{finalPop += 3500;}
         let newPokemon = {pokeName: pokemonName, pokePop: finalPop, pokeWins: 0, pokeLosses: 0};
         const inIn = await popularityCollection.insertOne(newPokemon);
         if(inIn.insertCount === 0) {
@@ -118,10 +118,10 @@ const changePokemonScore = async function(pokemonName, didWin) {
 	if(pokemon == null) {       //if the pokemon does not exist for us yet, I am creating it and starting it at a value of 500
         let newPokemon;
         if(didWin) {
-            newPokemon = {pokeName: pokemonName, pokePop: 500, pokeWins: 1, pokeLosses: 0};
+            newPokemon = {pokeName: pokemonName, pokePop: 3500, pokeWins: 1, pokeLosses: 0};
         }
         else {
-            newPokemon = {pokeName: pokemonName, pokePop: 500, pokeWins: 0, pokeLosses: 1};
+            newPokemon = {pokeName: pokemonName, pokePop: 3500, pokeWins: 0, pokeLosses: 1};
         }
         const inIn = await popularityCollection.insertOne(newPokemon);
         if(inIn.insertCount === 0) {
