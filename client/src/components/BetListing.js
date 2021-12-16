@@ -35,7 +35,7 @@ const BetListing = ({ battle }) => {
   }, []);
 
   return (
-    <Link className="bet-listing" to={`/betting/${battle.id}`}>
+    <Link className="bet-listing" to={`/betting/${battle._id}`}>
       <Container fluid>
         <Row className="row justify-content-center">
           <Col xs={2}>
