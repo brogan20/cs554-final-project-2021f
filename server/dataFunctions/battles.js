@@ -164,8 +164,8 @@ const createBet = async function(userName, betAmount, battleID, predectedWinner)
         if(user.wallet < betAmount) {
             betAmount = user.wallet;
         }
-        let pokemonOnePop = await popularityData.getPokemonPopularity(battle.pokemonOne);
-        let pokemonTwoPop = await popularityData.getPokemonPopularity(battle.pokemonTwo);    
+        let pokemonOnePop = await popularityData.getPokemonPopularity(battle.pokemonOne.pokemonName);
+        let pokemonTwoPop = await popularityData.getPokemonPopularity(battle.pokemonTwo.pokemonName);    
         let ourPayout = 0;
         if(predectedWinner == battle.trainerOne) {
             ourPayout += (betAmount + (betAmount * (pokemonTwoPop/pokemonOnePop)));

@@ -48,9 +48,12 @@ async function main(){
         await userData.createUser("James");
         await userData.addPokemon("387", "turtwig", "blankURL", false, "James");
         await userData.addPokemon("196", "crobat", "blankURL", true, "James");
+        await userData.changeFunds("James", 50);
 
-        let battleOneID = await battleData.createBattle("Red", "Dawn", pikachuData, piplupData);
-        let battleTwoID = await battleData.createBattle("Red", "James", dittoData, crobatData);
+        let battleOne = await battleData.createBattle("Red", "Dawn", pikachuData, piplupData);
+        let battleTwo = await battleData.createBattle("Red", "James", dittoData, crobatData);
+
+        await battleData.createBet("James", 25, battleOne._id, "Red");
 
 		console.log("database has been populated");
 	}catch(e){
