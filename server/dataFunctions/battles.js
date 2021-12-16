@@ -70,7 +70,7 @@ const createBattle = async function(trainerOne, trainerTwo, pokemonOne, pokemonT
 	else{
         let newBattleID = await inIn.insertedId.toString();
         newBattle._id = newBattleID;
-        newBattle.winner = "To Be Determined";
+        newBattle.winner = "";
 		return newBattle;
 	}
 }
@@ -97,7 +97,7 @@ const getBattle = async function(battleID) {
         else{
             const nowDate = new Date().getTime();
             if(nowDate <= battle.timeStamp){
-                battle.winner = "To Be Determined";
+                battle.winner = "";
             }
             return battle;
         }
@@ -113,7 +113,7 @@ const getCurrentBattles = async function() {
     const battles = await battleCollection.find({timeStamp: {$gt: nowDate} }).toArray();
 
     battles.forEach(element => {
-        element.winner = "To Be Determined";
+        element.winner = "";
     });
 
     return battles;
