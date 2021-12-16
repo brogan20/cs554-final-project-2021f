@@ -37,9 +37,15 @@ const createBattle = async function(trainerOne, trainerTwo, pokemonOne, pokemonT
     let winner = trainerOne;
     let pokemonOnePop = await popularityData.getPokemonPopularity(pokemonOne);
     let pokemonTwoPop = await popularityData.getPokemonPopularity(pokemonTwo);
-
-    if(pokemonTwoPop > pokemonOnePop) {
-        winner = trainerTwo;
+    if(pokemonOnePop > pokemonTwoPop) {
+        let ourOdds = pokemonOnePop/(pokemonOnePop + pokemonTwoPop);
+        if(Math.random <= ourOdds) {winner = trainerOne}
+        else {winner = trainerTwo}
+    }
+    else {
+        let ourOdds = pokemonTwoPop/(pokemonOnePop + pokemonTwoPop);
+        if(Math.random <= ourOdds) {winner = trainerTwo}
+        else {winner = trainerOne}
     }
 	
 	const battleCollection = await battles();
@@ -144,16 +150,28 @@ const createBet = async function(userName, betAmount, battleID, predectedWinner)
         if(battle == null) {
             throw({code: 404, message: "createBet: a battle with that ID does not exist"});
         }
-
         if(user.wallet < betAmount) {
             betAmount = user.wallet;
         }
+        let pokemonOnePop = await popularityData.getPokemonPopularity(battle.pokemonOne);
+        let pokemonTwoPop = await popularityData.getPokemonPopularity(battle.pokemonTwo);    
+        let ourPayout = 0;
+        if(predectedWinner == battle.trainerOne) {
+            ourPayout += (betAmount + (betAmount * (pokemonTwoPop/pokemonOnePop)));
+        }
+        else if(predectedWinner == battle.trainerTwo) {
+            ourPayout += (betAmount + (betAmount * (pokemonOnePop/pokemonTwoPop)));
+        }
+        else {
+            throw({code: 400, message: "createBet: predeictedWinner is neither of the two battle's trainers"});
+        }
+
         await userData.changeFunds(userName, (betAmount * -1))
 
         newBet = {
             userName: userName,
             predectedWinner: predectedWinner,
-            payout: (betAmount * 2)
+            payout: ourPayout
         }
         const upin = await battleCollection.updateOne({_id: battleID}, {$push: {battleBets: newBet }});
         if (upin === 0) {
