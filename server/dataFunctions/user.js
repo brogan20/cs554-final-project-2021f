@@ -66,7 +66,7 @@ const getUser = async function(userName){
 }
 
 const addPokemon = async function(pokemonID, pokemonName, imageLink,  isShiny, userName){		//should I be passed pokemonName and imageLink? or would it be prefered I just get ID and I make a call for
-	if(arguments.length >= 4 || pokemonID == undefined || pokemonName == undefined || isShiny == undefined || userName == undefined) {
+	if(arguments.length != 5 || pokemonID == undefined || pokemonName == undefined || isShiny == undefined || userName == undefined || imageLink == undefined) {
 		throw({code: 400, message: "addPokemon: you are missing pokemonID, pokemonName, imageLink, isShiny, or userName"});
 	}
 	if(typeof pokemonID !== 'string' || pokemonID.trim() == "") {
@@ -76,7 +76,7 @@ const addPokemon = async function(pokemonID, pokemonName, imageLink,  isShiny, u
 		throw({code: 400, message: "addPokemon: pokemonName must be a string that isn't empty or just spaces"});
 	}
 	if(typeof imageLink !== 'string' || imageLink.trim() == "") {
-		imageLink = "https://picsum.photos/200";//we should probably get a test image, just putting here for now
+		throw({code: 400, message: "addPokemon: imageLink must be a string that isn't empty or just spaces"});
 	}
 	if(typeof userName !== 'string' || userName.trim() == "") {
 		throw({code: 400, message: "addPokemon: userName must be a string that isn't empty or just spaces"});
@@ -111,15 +111,15 @@ const addPokemon = async function(pokemonID, pokemonName, imageLink,  isShiny, u
 	} 
 }
 
-const changeFunds = async function(userName, toAdd){
-	if(arguments.length != 2 || toAdd == undefined || userName == undefined) {
+const changeFunds = async function(userName, toChange){
+	if(arguments.length != 2 || toChange == undefined || userName == undefined) {
 		throw({code: 400, message: "addFunds: you are missing toAdd or userName"});
 	}
 	if(typeof userName !== 'string' || userName.trim() == "") {
 		throw({code: 400, message: "addFunds: userName must be a string that isn't empty or just spaces"});
 	}
-	if(typeof toAdd !== 'number' || toAdd == 1) {
-		throw({code: 400, message: "addFunds: toAdd must be a number that isn't zero"});
+	if(typeof toChange !== 'number' || toChange == 0) {
+		throw({code: 400, message: "addFunds: toChange must be a number that isn't zero"});
 	}
 
 	const usersCollection = await users();
@@ -130,7 +130,7 @@ const changeFunds = async function(userName, toAdd){
 		throw({code: 404, message: "addFunds: a user with that display name does not exist"});
 	}
 
-	let newBalance = user.wallet + toAdd;
+	let newBalance = user.wallet + toChange;
 
 	const upin = await usersCollection.updateOne({userName: userName}, {$set: {wallet: newBalance}});
 	if (upin === 0) {
