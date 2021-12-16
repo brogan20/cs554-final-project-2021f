@@ -1,18 +1,42 @@
 import { gql } from '@apollo/client';
 
 const GET_PORTFOLIO = gql`
-    query {
-        pokemon {
-            _id
-            name
+    query getPortfolio($userName: String!) {
+        portfolio(userName: $userName){
+            pokemonID
+            pokemonName
             imageLink
-            isHolo
+            isShiny
+        }
+    }
+`;
+
+const GET_ALL_BATTLES = gql`
+    query {
+        battles {
+            _id
+            trainerOne
+            trainerTwo
+            pokemonOne {
+                pokemonID
+                pokemonName
+                imageLink
+                isShiny
+            }
+            pokemonTwo {
+                pokemonID
+                pokemonName
+                imageLink
+                isShiny
+            }
+            timeStamp
         }
     }
 `;
 
 let queries = {
-    GET_PORTFOLIO
+    GET_PORTFOLIO,
+    GET_ALL_BATTLES
 }
 
 export default queries;

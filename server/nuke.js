@@ -1,6 +1,6 @@
 const userData = require('./dataFunctions/user');
 const popularityData = require('./dataFunctions/popularity');
-const battleData = require('./dataFunctions/bets');
+const battleData = require('./dataFunctions/battles');
 
 async function main(){
 	try {

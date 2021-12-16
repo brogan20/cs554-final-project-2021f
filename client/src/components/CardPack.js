@@ -14,18 +14,32 @@ const useStyles = makeStyles({
 const CardPack = () => {
   const classes = useStyles();
   const [ cardData, setCardData ] = useState(undefined);
-  const { load, err, pokemonData } = useQuery(
-    queries.GET_PORTFOLIO,
+
+  // Query for all pokemon would go here
+  // So something like; 
+  /* const { load, err, pokemonData } = useQuery(
+    queries.GET_ALL_POKEMON,
     {
       fetchPolicy: 'cache-and-network'
     }
-  );
+  ); */
+
+  // Query for Popularity would go here.
+  // So something like
+  /* const { load, err, popularData } = useQuery(
+    queries.GET_POPULAR,
+    {
+      fetchPolicy: 'cache-and-network'
+    }
+  );*/
+
   let card = null;
 
   useEffect(
     () => {
       const fetchData = async () =>{
         try{
+          // Assumes logic for pokemon popularity is implemented and usable, I'll fix it once that's done.
           let result=new Array();
           let popular=0;
           let popularNum=Math.floor(Math.random(100))+1;
@@ -99,11 +113,17 @@ const CardPack = () => {
     },
     []
   )
+
+  const userCards = (pokemon) => {
+    // Adds pokemon that user wants to their set of cards
+    // currentUser.cards.push(pokemon) or something similar
+  }
   
   const CardGrid = (pokemon) => {
     return(
       <Grid item xs={12} sm={6} md={4} lg={3} xl={2} key={pokemon.id}>
         <PokeCard pokemon={pokemon}></PokeCard>
+        <button onClick={userCards(pokemon)}>I want this pokemon</button>
       </Grid>
     )
   }

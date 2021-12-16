@@ -1,37 +1,33 @@
 import React, { useState, useEffect, useRef } from "react";
 import BetListing from "./BetListing";
+import queries from "../queries";
 import { useQuery } from "@apollo/client";
+import { Spinner } from "react-bootstrap";
 import axios from "axios";
 
-const Betting = (props) => {
-  const [data, setData] = useState(null);
+const Betting = () => {
+  // const [data, setData] = useState(null);
+  const { loading, error, data } = useQuery(queries.GET_ALL_BATTLES, {
+    fetchPolicy: "network-only"
+  });
   let betList = null;
-  
-  const tempData = [{
-    id: "1",
-    player1: {displayName: "ash"},
-    player2: {displayName: "gary"},
-    pokemon1: {id: 25, name:"pikachu", isHolo: false},
-    pokemon2: {id: 133, name: "eevee", isHolo: false},
-    winner: null,
-    timestamp: new Date(Date.now()+120000)
-  }];
 
-  useEffect(() => {
-    const fetchData = async () => {
-    };
-    fetchData();
-  }, []);
+  if(error){
+    console.log(error)
+    return <h2>Error</h2>
+  }
+  if(loading){
+    betList = <Spinner animation="border"/>
+  }
 
-  if (tempData) {
-    console.log(tempData)
+  if (data) {
     betList =
-      tempData &&
-      tempData.map((bet) => {
-        if(bet.player1.id == 'userid' || bet.player2.id == 'userid') // replace this with the actual id later
+      data.battles &&
+      data.battles.map((battle) => {
+        if(battle.trainerOne == 'userid' || battle.trainerTwo == 'userid') // replace this with the actual id later
           return;
         else
-          return <BetListing key={bet.id} battle={bet} />;
+          return <BetListing key={battle._id} battle={battle} />;
       });
   }
 

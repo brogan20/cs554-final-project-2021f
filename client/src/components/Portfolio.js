@@ -1,4 +1,5 @@
 import React from "react";
+import queries from '../queries';
 import { useQuery } from '@apollo/client';
 import PokeCard from "./PokeCard";
 import { Link } from 'react-router-dom';
@@ -6,21 +7,27 @@ import { Button, Container, Col, Row, Spinner } from 'react-bootstrap';
 
 const Portfolio = (props) =>{
   // commenting out until functions are made
-  // const { loading, error, data } = useQuery();
-  let data = [{id: 25, name: 'pikachu', image: 'some url', isHolo: false},
-              {id: 1, name: 'bulbasaur', image: 'some url', isHolo: false}];
-  let loading = false;
+  const { loading, error, data } = useQuery(queries.GET_PORTFOLIO, {
+    variables: {userName: "Red"}, // swap "Red" with name given from firebase
+    fetchPolicy: "network-only"
+  });
+  // let data = [{id: 25, name: 'pikachu', image: 'some url', isHolo: false},
+  //             {id: 1, name: 'bulbasaur', image: 'some url', isHolo: false}];
+  // let loading = false;
   let cardList = null; 
 
+  if(error){
+    return <h2>{error.message}</h2>
+  }
   if(loading){
     return(
-      <Spinner/>
+      <Spinner animation="border"/>
     )
   }
 
   cardList =
-    data &&
-    data.map((pokemon) => {
+    data.portfolio &&
+    data.portfolio.map((pokemon) => {
       return(
         <Col xs={2}>
           <PokeCard pokemon={pokemon}/>
