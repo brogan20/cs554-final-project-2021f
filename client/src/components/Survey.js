@@ -1,9 +1,9 @@
 import React, { useState, useEffect } from "react";
 import PokeCard from './PokeCard';
-import { useQuery } from '@apollo/client';
+import { useMutation, useQuery } from '@apollo/client';
 import { Grid, makeStyles } from '@material-ui/core';
-import queries from '../queries';
 import axios from 'axios';
+import mutations from '../mutations';
 
 const useStyles = makeStyles({
   grid: {
@@ -16,6 +16,8 @@ const Survey = () => {
   const classes = useStyles();
   const [ cardData, setCardData ] = useState(undefined);
   const [loading, setLoading] = useState(true);
+  const [changePopularity, {popResults}] = useMutation(mutations.CHANGE_POPULARITY);
+  const [changeFunds, {fundResults}] = useMutation(mutations.CHANGE_FUNDS);
   let card = null;
 
   useEffect(
@@ -48,9 +50,14 @@ const Survey = () => {
     );
   }
   else {
-    const userCards = (pokemon, e) => {
-      console.log("This is where you change a pokemons popualrity");
-      console.log("you should add funds here, like 5 bucks");
+    
+    const ourUsersCards = (pokemon) => {
+      changePopularity({
+        variables: {pokemonName: pokemon.pokemonName, toChange: 5}
+      });
+      changeFunds({
+        variables: {userName: "James", toChange: 5} // swap "James" with name given from firebase
+      });
       alert(`You voted for ${pokemon.pokemonName}! You just earned 5 PokeDollars`);
       window.location.reload(false);
     }
@@ -65,7 +72,7 @@ const Survey = () => {
       return(
         <Grid item xs={12} sm={6} md={4} lg={3} xl={2} key={pokeCardData.pokemonID}>
           <PokeCard pokemon={pokeCardData}></PokeCard>
-          <button onClick={() => userCards(pokeCardData)}>I Like this Pokemon</button>
+          <button onClick={() => ourUsersCards(pokeCardData)}>I Like this Pokemon</button>
         </Grid>
       )
     }

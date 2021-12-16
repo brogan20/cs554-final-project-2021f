@@ -37,7 +37,7 @@ const getPokemonPopularity = async function(pokemonName) {
 
 	const pokemon = await popularityCollection.findOne({pokeName: pokemonName});
 
-	if(pokemon == null) {       //if the pokemon does not exist for us yet, I am creating it and starting it at a value of 500
+	if(pokemon == null) {       //if the pokemon does not exist for us yet, I am creating it and starting it at a value of 3500
         let newPokemon = {pokeName: pokemonName, pokePop: 3500, pokeWins: 0, pokeLosses: 0};
         const inIn = await popularityCollection.insertOne(newPokemon);
         if(inIn.insertCount === 0) {
@@ -71,7 +71,9 @@ const changePokemonPopularity = async function(pokemonName, toChange) {
 
 	const pokemon = await popularityCollection.findOne({pokeName: pokemonName});
 
-	if(pokemon == null) {       //if the pokemon does not exist for us yet, I am creating it and starting it at a value of 500
+    console.log(pokemon);
+
+	if(pokemon == null) {       //if the pokemon does not exist for us yet, I am creating it and starting it at a value of 3500
         if((3500 + toChange) <= 0) {finalPop = 1;}
         else{finalPop += 3500;}
         let newPokemon = {pokeName: pokemonName, pokePop: finalPop, pokeWins: 0, pokeLosses: 0};
@@ -80,6 +82,8 @@ const changePokemonPopularity = async function(pokemonName, toChange) {
             throw({code: 500, message: "changePokemonPopularity: pokemon is not in database, and could not add it"});
         }
         else{
+            console.log("3500");
+            console.log(finalPop);
             return finalPop;
         }
 	}
@@ -93,6 +97,8 @@ const changePokemonPopularity = async function(pokemonName, toChange) {
             throw({code: 500, message: "changePokemonPopularity: failed to update"});
         }
         else{
+            console.log(pokemon.pokePop);
+            console.log(finalPop);
             return finalPop;
         }
 	}
