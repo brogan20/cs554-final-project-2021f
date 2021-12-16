@@ -60,12 +60,13 @@ const getUser = async function(userName){
 		throw({code: 404, message: "getUser: a user with that display name does not exist"});
 	}
     else{
+		user._id = user._id.toString();
 		return user;
 	}
 }
 
 const addPokemon = async function(pokemonID, pokemonName, imageLink,  isShiny, userName){		//should I be passed pokemonName and imageLink? or would it be prefered I just get ID and I make a call for
-	if(arguments.length != 5 || pokemonName == undefined || isShiny == undefined || userName == undefined) {
+	if(arguments.length >= 4 || pokemonID == undefined || pokemonName == undefined || isShiny == undefined || userName == undefined) {
 		throw({code: 400, message: "addPokemon: you are missing pokemonID, pokemonName, imageLink, isShiny, or userName"});
 	}
 	if(typeof pokemonID !== 'string' || pokemonID.trim() == "") {
@@ -75,7 +76,7 @@ const addPokemon = async function(pokemonID, pokemonName, imageLink,  isShiny, u
 		throw({code: 400, message: "addPokemon: pokemonName must be a string that isn't empty or just spaces"});
 	}
 	if(typeof imageLink !== 'string' || imageLink.trim() == "") {
-		throw({code: 400, message: "addPokemon: imageLink must be a string that isn't empty or just spaces"});
+		imageLink = "https://picsum.photos/200";//we should probably get a test image, just putting here for now
 	}
 	if(typeof userName !== 'string' || userName.trim() == "") {
 		throw({code: 400, message: "addPokemon: userName must be a string that isn't empty or just spaces"});

@@ -99,6 +99,7 @@ const getBattle = async function(battleID) {
             if(nowDate <= battle.timeStamp){
                 battle.winner = "";
             }
+            battle._id = battle._id.toString();
             return battle;
         }
     }
@@ -114,6 +115,7 @@ const getCurrentBattles = async function() {
 
     ongoing.forEach(element => {
         element.winner = "";
+        element._id = element._id.toString();
     });
 
     return ongoing;
