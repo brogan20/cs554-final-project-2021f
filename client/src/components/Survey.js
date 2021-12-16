@@ -15,6 +15,7 @@ const useStyles = makeStyles({
 const Survey = () => {
   const classes = useStyles();
   const [ cardData, setCardData ] = useState(undefined);
+  const [loading, setLoading] = useState(true);
   let card = null;
 
   useEffect(
@@ -22,13 +23,16 @@ const Survey = () => {
       const fetchData = async () =>{
         try{
           let result=new Array();
-          let randOne = Math.floor(Math.random(898))+1;
+          let randOne = Math.floor(Math.random() * 6) + 1
           let pokemonOne = await axios.get(`https://pokeapi.co/api/v2/pokemon/${randOne}/`);
-          let randTwo = Math.floor(Math.random(898))+1;
+          let randTwo = Math.floor(Math.random() * 6) + 1
           let pokemonTwo = await axios.get(`https://pokeapi.co/api/v2/pokemon/${randTwo}/`);
           result.push(pokemonOne);
           result.push(pokemonTwo);
           setCardData(result);
+          setLoading(false);
+          console.log(randOne);
+          console.log(randTwo);
         }
         catch(e){
           console.log(e)
@@ -38,38 +42,53 @@ const Survey = () => {
     },
     []
   )
-
-  const userCards = (pokemon) => {
-    console.log(pokemon);
-    console.log("you should add funds here, like 5 bucks");
+  if (loading) {
+    return (
+      <div>
+        <h2>Loading....</h2>
+      </div>
+    );
   }
-  
-  const CardGrid = (pokemon) => {
+  else {
+    const userCards = (pokemon, e) => {
+      console.log(pokemon);
+      console.log("you should add funds here, like 5 bucks");
+    }
+    
+    const CardGrid = (pokemon) => {
+      let pokeCardData = {
+        pokemonID: pokemon.data.id,
+        pokemonName: pokemon.data.name,
+        imageLink: pokemon.data.sprites.front_default,
+        isShiny: false
+      };
+      return(
+        <Grid item xs={12} sm={6} md={4} lg={3} xl={2} key={pokeCardData.pokemonID}>
+          <PokeCard pokemon={pokeCardData}></PokeCard>
+          <button onClick={() => userCards(pokeCardData)}>I Like this Pokemon</button>
+        </Grid>
+      )
+    }
+
+    const carder = () => {
+      card =
+        cardData.map((pokemon) => {
+          return CardGrid(pokemon);
+        })
+    }
+
+    carder();
+
     return(
-      <Grid item xs={12} sm={6} md={4} lg={3} xl={2} key={pokemon.id}>
-        <PokeCard pokemon={pokemon}></PokeCard>
-        <button onClick={userCards(pokemon)}>I Like this Pokemon</button>
-      </Grid>
+      <div>
+        <h1>Pick your favorite pokemon!</h1>
+        <br />
+        <Grid container className={classes.grid} spacing={5}>
+          {card}
+        </Grid>
+      </div>
     )
   }
-
-  const carder = () => {
-    card =
-      cardData.map((pokemon) => {
-        return CardGrid(pokemon);
-      })
-  }
-
-  return(
-    <div>
-      <h1>Pick your favorite pokemon!</h1>
-      <br />
-      <button onClick={carder}>Earn That Money</button>
-      <Grid container className={classes.grid} spacing={5}>
-        {card}
-      </Grid>
-    </div>
-  )
 }
 
 export default Survey;
