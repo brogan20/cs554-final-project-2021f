@@ -38,6 +38,12 @@ const typeDefs = gql`
     pokemonCollection: [Pokemon]
     wallet: Int
   }
+
+  type Bet {
+    userName: String
+    predectedWinner: String
+    payout: Int
+  }
   
   type Mutation {
     addUser(
