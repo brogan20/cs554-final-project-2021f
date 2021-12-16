@@ -41,7 +41,7 @@ const typeDefs = gql`
 
   type Bet {
     userName: String
-    predectedWinner: String
+    predictedWinner: String
     payout: Int
   }
   
@@ -72,7 +72,7 @@ const typeDefs = gql`
       userName: String
       betAmount: Int
       battleID: String
-      predectedWinner: String
+      predictedWinner: String
     ): Bet
   }
 `;
@@ -187,7 +187,7 @@ const resolvers = {
     createBet: async (_, args) => {
       let newBet;
       try{
-        newBet = await battleData.createBet(args.UserName, args.betAmount, args.battleID, args.predectedWinner);
+        newBet = await battleData.createBet(args.userName, args.betAmount, args.battleID, args.predictedWinner);
       }
       catch(e){
         throw e;

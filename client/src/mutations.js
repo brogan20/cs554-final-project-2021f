@@ -12,9 +12,20 @@ const CHANGE_POPULARITY = gql`
     }  
 `;
 
+const PLACE_BET = gql`
+    mutation Mutation($userName: String, $betAmount: Int, $battleId: String, $predictedWinner: String) {
+        createBet(userName: $userName, betAmount: $betAmount, battleID: $battleId, predictedWinner: $predictedWinner) {
+            userName
+            predictedWinner
+            payout
+        }
+  }
+`
+
 let mutations = {
     CHANGE_FUNDS,
-    CHANGE_POPULARITY
+    CHANGE_POPULARITY,
+    PLACE_BET
 }
 
 export default mutations;

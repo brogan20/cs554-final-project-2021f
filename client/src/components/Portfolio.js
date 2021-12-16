@@ -5,7 +5,7 @@ import PokeCard from "./PokeCard";
 import { Link } from 'react-router-dom';
 import { Button, Container, Col, Row, Spinner } from 'react-bootstrap';
 
-const Portfolio = (props) =>{
+const Portfolio = () =>{
   // commenting out until functions are made
   const { loading, error, data } = useQuery(queries.GET_PORTFOLIO, {
     variables: {userName: "James"}, // swap "James" with name given from firebase
