@@ -173,12 +173,12 @@ const payoutAllBattles = async function() {
     const nowDate = new Date().getTime();
     const battles = await battleCollection.find({timeStamp: {$lt: nowDate} }).toArray();
 
-    battles.forEach(element => {
+    battles.forEach(async element => {
         if(element.payoutGiven) {
             await battleCollection.deleteOne({_id: element._id});
         }
         else{
-            element.battleBets.forEach(subElement => {
+            element.battleBets.forEach(async subElement => {
                 if(subElement.predectedWinner == element.winner) {
                     await userData.changeFunds(subElement.userName, subElement.payout)
                 }
