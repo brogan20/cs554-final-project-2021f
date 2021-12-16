@@ -177,6 +177,8 @@ const createBet = async function(userName, betAmount, battleID, predectedWinner)
             throw({code: 400, message: "createBet: predeictedWinner is neither of the two battle's trainers"});
         }
 
+        ourPayout = Math.trunc(ourPayout);
+
         await userData.changeFunds(userName, (betAmount * -1))
 
         newBet = {
