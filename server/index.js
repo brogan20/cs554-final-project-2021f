@@ -102,7 +102,7 @@ const resolvers = {
       }
       return user.pokemonCollection;
     },
-    battles: async() => {
+    battles: async (_, args) => {
       let ongoing;
       try{
         ongoing = await battleData.getCurrentBattles();
@@ -112,7 +112,7 @@ const resolvers = {
       }
       return ongoing;
     },
-    pokemonPopularity: async() => {
+    pokemonPopularity: async (_, args) => {
       let pokePop;
       try{
         pokePop = await popularityData.getPokemonPopularity(args.pokemonName);
@@ -122,7 +122,7 @@ const resolvers = {
       }
       return pokePop;
     },
-    oneBattle: async() => {
+    oneBattle: async (_, args) => {
       let ourBattle;
       try{
         ourBattle = await battleData.getBattle(args.battleID);
