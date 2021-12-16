@@ -71,7 +71,4 @@ let resolvedBattleData;
 time=setInterval(async function(){
   resolvedBattleData = await battleData.payoutAllBattles();
   console.log(`Finished battles have been resolved`);
-  console.log(`${resolvedBattleData.deletedBattles} battles have been deleted`);
-  console.log(`${resolvedBattleData.paidBattles} battles paid out`);
-  console.log(`${resolvedBattleData.bettersHere} betters have been paid(or not if they suck lamo)`);
   },10000);
