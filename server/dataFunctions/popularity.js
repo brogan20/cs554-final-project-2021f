@@ -105,7 +105,7 @@ const changePokemonScore = async function(pokemonName, didWin) {
 	if(typeof pokemonName !== 'string' || pokemonName.trim() == "") {
 		throw({code: 400, message: "changePokemonScore: pokemonName must be a string that isn't empty or just spaces"});
 	}
-    if(typeof didWin !== 'bool') {
+    if(typeof didWin !== 'boolean') {
 		throw({code: 400, message: "changePokemonScore: didWin must be a boolean"});
 	}
 
