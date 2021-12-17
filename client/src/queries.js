@@ -57,10 +57,19 @@ const GET_BETTER_BATTLE = gql`
     }
 `
 
+const GET_POPULARITY = gql`
+    query PokemonPopularity($pokemonName: String!) {
+        pokemonPopularity(pokemonName: $pokemonName) {
+            pokePop
+        }
+    }
+`;
+
 let queries = {
     GET_PORTFOLIO,
     GET_ALL_BATTLES,
-    GET_BETTER_BATTLE
+    GET_BETTER_BATTLE,
+    GET_POPULARITY
 }
 
 export default queries;

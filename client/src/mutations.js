@@ -22,10 +22,20 @@ const PLACE_BET = gql`
   }
 `
 
+const ADD_POKEMON = gql`
+    mutation AddPokemon($pokemonID: String!, $pokemonName: String!, $imageLink: String!, $isShiny: Boolean!, $userName: String!){
+        addPokemon(pokemonID: $pokemonID, pokemonName: $pokemonName, imageLink: $imageLink, isShiny: $isShiny, userName: $userName){
+            userName
+            pokemonName
+        }
+    }
+`;
+
 let mutations = {
     CHANGE_FUNDS,
     CHANGE_POPULARITY,
-    PLACE_BET
+    PLACE_BET,
+    ADD_POKEMON
 }
 
 export default mutations;
