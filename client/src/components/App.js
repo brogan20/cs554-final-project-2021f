@@ -9,6 +9,7 @@ import Survey from './Survey';
 import PokeNav from './PokeNav';
 import CardPack from './CardPack';
 import Battle from './Battle';
+import Home from './Home';
 import '../css/styles.min.css';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import {
@@ -35,6 +36,7 @@ function App() {
         </header>
         <div>
           <Routes>
+            <Route exact path="/" element={<Home/>}/>
             <Route exact path="/signup" element={<SignUp/>}/>
             <Route exact path ="/portfolio" element={<Portfolio/>}/>
             <Route exact path = "/betting" element={<Betting/>}/>
