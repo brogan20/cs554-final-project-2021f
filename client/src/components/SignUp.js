@@ -4,6 +4,8 @@ import {
   signInWithEmailAndPassword,
   onAuthStateChanged,
   signOut,
+  signInWithPopup,
+  GoogleAuthProvider
 } from "firebase/auth";
 import { updateProfile } from "firebase/auth";
 import auth from "../firebase/Firebase";
@@ -51,6 +53,19 @@ function SignUp() {
     }
   };
 
+  const googleLogin = async () => {
+    try {
+      const provider = new GoogleAuthProvider();
+      const result = signInWithPopup(auth, provider);
+      const credential = GoogleAuthProvider.credentialFromResult(result);
+      const token = credential.accessToken;
+      const user = result.user;
+      console.log(user);
+    } catch (error) {
+
+    }
+  }
+
   const logout = async () => {
     await signOut(auth);
   };
@@ -78,9 +93,11 @@ function SignUp() {
           }}
         />
 
-        <button onClick={register}> Create User</button>
+        <button onClick={register}>Create User</button>
       </div>
-
+      <div>
+        <button onClick={googleLogin}>Google</button>
+      </div>
       <div>
         <h3> Login </h3>
         <input
@@ -96,7 +113,7 @@ function SignUp() {
           }}
         />
 
-        <button onClick={login}> Login</button>
+        <button onClick={login}>Login</button>
       </div>
 
       <h4> User Logged In: </h4>
