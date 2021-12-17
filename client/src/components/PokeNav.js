@@ -17,7 +17,7 @@ const PokeNav = () => {
     return(
         <Navbar bg="dark" variant="dark" expand="lg">
             <Container>
-                <Link className="navbar-brand" to="/">Card Fight</Link>
+                <Link className="navbar-brand" to="/">Pokémon Bettles</Link>
                 <Navbar.Toggle aria-controls="basic-navbar-nav" />
                 <Navbar.Collapse id="basic-navbar-nav">
                 <Nav className="me-auto">

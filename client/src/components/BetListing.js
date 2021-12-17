@@ -34,14 +34,14 @@ const BetListing = ({ battle }) => {
     <Link className="bet-listing" to={`/betting/${battle._id}`}>
       <Container fluid>
         <Row className="row justify-content-center">
-          <Col xs={2}>
+          <Col xs={3}>
             <p>{battle.trainerOne}'s</p>
             <PokeCard pokemon={battle.pokemonOne}/>
           </Col>
-          <Col xs={2}>
+          <Col xs={3}>
             <p>vs.</p>
           </Col>
-          <Col xs={2}>
+          <Col xs={3}>
             <p>{battle.trainerTwo}'s</p>
             <PokeCard pokemon={battle.pokemonTwo}/>
           </Col>
