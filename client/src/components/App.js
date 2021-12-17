@@ -6,6 +6,7 @@ import Betting from './Betting';
 import Bet from './Bet';
 import Ranking from './Ranking';
 import Survey from './Survey';
+import PokeNav from './PokeNav';
 import '../css/styles.min.css';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import {
@@ -28,6 +29,7 @@ function App() {
       <BrowserRouter>
       <div className="App">
         <header>
+          <PokeNav/>
         </header>
         <div>
           <Routes>
