@@ -35,7 +35,7 @@ const Portfolio = () =>{
   return(
     <div>
       <h1>Portfolio</h1>
-      <p>{data.length} cards in collection</p>
+      <p>{data.length} cards in your collection</p>
       <Container fluid>
         <Row>
           {cardList}

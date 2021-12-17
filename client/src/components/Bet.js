@@ -60,6 +60,7 @@ const Bet = () => {
   const [expired, setExpired] = useState(false);
   const [selectedTrainer, setSelectedTrainer] = useState(-1);
   const [betAmount, setBetAmount] = useState(0);
+  const [ modal, setModal ] = useState({show: false, title: "", message: ""});
 
   const [placeBet, mutResult] = useMutation(mutations.PLACE_BET)
 
@@ -69,6 +70,7 @@ const Bet = () => {
     fetchPolicy: 'cache-first'
   });
 
+  // Start the countdown timer
   useEffect(() => {
     const interval = setInterval(() => {
       if(data){
@@ -84,39 +86,80 @@ const Bet = () => {
     return () => clearInterval(interval);
   }, [data]);
 
+  // Set which trainer the user wants to bet on
   const setTrainer = (e, num) => {
     e.preventDefault();
     setSelectedTrainer(num);
   };
 
+  // Change the bet amount
   const changeAmount = (e) => {
     e.preventDefault();
     setBetAmount(e.target.value);
   };
 
+  // Close modal
+  const handleClose = () => setModal({...modal, show: false});
+
   const submitBet = (e) => {
     e.preventDefault();
     if (expired) {
-      // do error
+      setModal({show: true, title: "Battle Ended", message: "This battle has ended, please choose another to bet on"});
       return;
     }
     let amt = parseInt(betAmount);
     if (isNaN(amt) || amt <= 0 /*|| amt > max pokeDollars*/) {
-      // do error
+      setModal({show: true, title: "Bad Input", message: "The bet amount must be a number"});
       return;
     }
     if (selectedTrainer !== 1 && selectedTrainer !== 0) {
-      // do error
+      setModal({show: true, title: "Select Trainer", message: "A trainer from this battle must be selected"});
       return;
     }
     let predictedWinner = selectedTrainer == 0 ? data.oneBattle.trainerOne : data.oneBattle.trainerTwo;
-    placeBet({
-      variables: {userName: "James"/*replace with firebase stuff*/, betAmount: amt, battleId: id, predictedWinner: predictedWinner}
-    });
+    try{
+      placeBet({
+        variables: {userName: "James"/*replace with firebase stuff*/, betAmount: amt, battleId: id, predictedWinner: predictedWinner}
+      });
+    }
+    catch(e){
+      setModal({show: true, title: "Betting Error", message: "Something went wrong placing your bet."});
+      return;
+    }
   };
 
   if(mutResult.error){
-    return <h2>Something went wrong uploading your bet</h2>
+    setModal({show: true, title: "Betting Error", message: "Something went wrong placing your bet."});
+  }
+  if(mutResult.data){
+    return (
+      <Modal show={true} backdrop="static" onHide={handleClose}>
+        <Modal.Header>
+          <Modal.Title>Success</Modal.Title>
+        </Modal.Header>
+        <Modal.Body>Your bet has been placed.</Modal.Body>
+        <Modal.Footer>
+          <Link className="btn btn-secondary" to="/betting">
+            Return to Listings
+          </Link>
+        </Modal.Footer>
+      </Modal>
+    )
+  }
+  if(expired){
+    return (
+      <Modal show={true} backdrop="static" onHide={handleClose}>
+        <Modal.Header>
+          <Modal.Title>Expired</Modal.Title>
+        </Modal.Header>
+        <Modal.Body>This bet has expired</Modal.Body>
+        <Modal.Footer>
+          <Link className="btn btn-secondary" to="/betting">
+            Return to Listings
+          </Link>
+        </Modal.Footer>
+      </Modal>
+    )
   }
   if(error){
     console.log(error);
@@ -155,6 +198,17 @@ const Bet = () => {
       <Link to="/betting">
         <Button>Back to listings</Button>
       </Link>
+      <Modal show={modal.show} onHide={handleClose}>
+        <Modal.Header closeButton>
+          <Modal.Title>{modal.title}</Modal.Title>
+        </Modal.Header>
+        <Modal.Body>{modal.message}</Modal.Body>
+        <Modal.Footer>
+          <Button variant="secondary" onClick={handleClose}>
+            Close
+          </Button>
+        </Modal.Footer>
+      </Modal>
     </div>
   );
 };
