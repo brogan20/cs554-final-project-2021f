@@ -1,93 +1,108 @@
-import React, { useContext, useState } from 'react';
-import { Navigate } from 'react-router-dom';
-import { doCreateUserWithEmailAndPassword } from '../firebase/FirebaseFuncs';
-import { AuthContext } from '../firebase/Auth';
+import { useState } from "react";
+import {
+  createUserWithEmailAndPassword,
+  signInWithEmailAndPassword,
+  onAuthStateChanged,
+  signOut,
+} from "firebase/auth";
+import { updateProfile } from "firebase/auth";
+import auth from "../firebase/Firebase";
 
 function SignUp() {
-  const currentUser = useContext(AuthContext);
-  const [pwMatch, setPwMatch] = useState('');
-  const handleSignUp = async (e) => {
-    e.preventDefault();
-    const { displayName, email, passwordOne, passwordTwo } = e.target.elements;
-    if (passwordOne.value !== passwordTwo.value) {
-      setPwMatch('Passwords do not match');
-      return false;
-    }
+  const [registerEmail, setRegisterEmail] = useState("");
+  const [registerDisplayname, setRegisterDisplayname] = useState("");
+  const [registerPassword, setRegisterPassword] = useState("");
+  const [loginEmail, setLoginEmail] = useState("");
+  const [loginPassword, setLoginPassword] = useState("");
 
+  const [user, setUser] = useState({});
+
+  onAuthStateChanged(auth, (currentUser) => {
+    setUser(currentUser);
+  });
+
+  const register = async () => {
     try {
-      await doCreateUserWithEmailAndPassword(
-        email.value,
-        passwordOne.value,
-        displayName
+      let user = await createUserWithEmailAndPassword(
+        auth,
+        registerEmail,
+        registerPassword
       );
+      await updateProfile(auth.currentUser, {
+        displayName: registerDisplayname,
+      });
+      user = auth.currentUser;
+      console.log(user);
     } catch (error) {
-      alert(error);
+      console.log(error.message);
     }
   };
-  console.log(currentUser);
-  if (currentUser) {
-    return <Navigate to="/home" />;
-  }
+
+  const login = async () => {
+    try {
+      const user = await signInWithEmailAndPassword(
+        auth,
+        loginEmail,
+        loginPassword
+      );
+      console.log(user);
+    } catch (error) {
+      console.log(error.message);
+    }
+  };
+
+  const logout = async () => {
+    await signOut(auth);
+  };
 
   return (
-    <div>
-      <h1>Sign up</h1>
-      {pwMatch && <h4 className="error">{pwMatch}</h4>}
-      <form onSubmit={handleSignUp}>
-        <div className="form-group">
-          <label>
-            Name:
-            <input
-              className="form-control"
-              required
-              name="displayName"
-              type="text"
-              placeholder="Name"
-            />
-          </label>
-        </div>
-        <div className="form-group">
-          <label>
-            Email:
-            <input
-              className="form-control"
-              required
-              name="email"
-              type="email"
-              placeholder="Email"
-            />
-          </label>
-        </div>
-        <div className="form-group">
-          <label>
-            Password:
-            <input
-              className="form-control"
-              id="passwordOne"
-              name="passwordOne"
-              type="password"
-              placeholder="Password"
-              required
-            />
-          </label>
-        </div>
-        <div className="form-group">
-          <label>
-            Confirm Password:
-            <input
-              className="form-control"
-              name="passwordTwo"
-              type="password"
-              placeholder="Confirm Password"
-              required
-            />
-          </label>
-        </div>
-        <button id="submitButton" name="submitButton" type="submit">
-          Sign Up
-        </button>
-      </form>
-      <br />
+    <div className="App">
+      <div>
+        <h3> Register User </h3>
+        <input
+          placeholder="Username..."
+          onChange={(event) => {
+            setRegisterDisplayname(event.target.value);
+          }}
+        />
+        <input
+          placeholder="Email..."
+          onChange={(event) => {
+            setRegisterEmail(event.target.value);
+          }}
+        />
+        <input
+          placeholder="Password..."
+          onChange={(event) => {
+            setRegisterPassword(event.target.value);
+          }}
+        />
+
+        <button onClick={register}> Create User</button>
+      </div>
+
+      <div>
+        <h3> Login </h3>
+        <input
+          placeholder="Email..."
+          onChange={(event) => {
+            setLoginEmail(event.target.value);
+          }}
+        />
+        <input
+          placeholder="Password..."
+          onChange={(event) => {
+            setLoginPassword(event.target.value);
+          }}
+        />
+
+        <button onClick={login}> Login</button>
+      </div>
+
+      <h4> User Logged In: </h4>
+      {user?.displayName}
+
+      <button onClick={logout}> Sign Out </button>
     </div>
   );
 }
