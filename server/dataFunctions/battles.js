@@ -48,6 +48,15 @@ const createBattle = async function(trainerOne, trainerTwo, pokemonOne, pokemonT
         else {winner = trainerOne}
     }
 	
+    if(winner == trainerTwo) {
+        await popularityData.changePokemonScore(pokemonOne.pokemonName, false);
+        await popularityData.changePokemonScore(pokemonTwo.pokemonName, true);
+    }
+    else {
+        await popularityData.changePokemonScore(pokemonOne.pokemonName, true);
+        await popularityData.changePokemonScore(pokemonTwo.pokemonName, false);
+    }
+
 	const battleCollection = await battles();
     const nowDate = new Date().getTime();
 	
@@ -131,7 +140,7 @@ const createBet = async function(userName, betAmount, battleID, predectedWinner)
     if(typeof predectedWinner !== 'string' || userName.trim() == "") {
 		throw({code: 400, message: "createBet: predectedWinner must be a string that isn't empty or just spaces"});
 	}
-	if(typeof betAmount !== 'number' || betAmount == 1) {
+	if(typeof betAmount !== 'number' || betAmount == 0) {
 		throw({code: 400, message: "createBet: betAmount must be a number that isn't zero"});
 	}
 	else if (typeof battleID === 'string') {
@@ -155,8 +164,8 @@ const createBet = async function(userName, betAmount, battleID, predectedWinner)
         if(user.wallet < betAmount) {
             betAmount = user.wallet;
         }
-        let pokemonOnePop = await popularityData.getPokemonPopularity(battle.pokemonOne);
-        let pokemonTwoPop = await popularityData.getPokemonPopularity(battle.pokemonTwo);    
+        let pokemonOnePop = await popularityData.getPokemonPopularity(battle.pokemonOne.pokemonName);
+        let pokemonTwoPop = await popularityData.getPokemonPopularity(battle.pokemonTwo.pokemonName);    
         let ourPayout = 0;
         if(predectedWinner == battle.trainerOne) {
             ourPayout += (betAmount + (betAmount * (pokemonTwoPop/pokemonOnePop)));
@@ -167,6 +176,8 @@ const createBet = async function(userName, betAmount, battleID, predectedWinner)
         else {
             throw({code: 400, message: "createBet: predeictedWinner is neither of the two battle's trainers"});
         }
+
+        ourPayout = Math.trunc(ourPayout);
 
         await userData.changeFunds(userName, (betAmount * -1))
 

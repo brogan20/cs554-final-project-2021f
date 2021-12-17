@@ -5,6 +5,8 @@ import Portfolio from './Portfolio';
 import Betting from './Betting';
 import Bet from './Bet';
 import Ranking from './Ranking';
+import Survey from './Survey';
+import PokeNav from './PokeNav';
 import '../css/styles.min.css';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import {
@@ -27,6 +29,7 @@ function App() {
       <BrowserRouter>
       <div className="App">
         <header>
+          <PokeNav/>
         </header>
         <div>
           <Routes>
@@ -35,6 +38,7 @@ function App() {
             <Route exact path = "/betting" element={<Betting/>}/>
             <Route exact path="/betting/:id" element={<Bet/>}/>
             <Route exact path="/rankings" element={<Ranking/>}/>
+            <Route exact path="/survey" element={<Survey/>}/>
           </Routes>
         </div>
       </div>

@@ -10,13 +10,9 @@ const BetListing = ({ battle }) => {
     let end = new Date(timestamp);
     let current = new Date();
     const utc1 = Date.UTC(current.getFullYear(), current.getMonth(), current.getDate(), current.getHours(), current.getMinutes(), current.getSeconds());
-    const utc2 = Date.UTC(end.getFullYear(), end.getMonth(), end.getDate(), current.getHours(), end.getMinutes(), end.getSeconds());
+    const utc2 = Date.UTC(end.getFullYear(), end.getMonth(), end.getDate(), end.getHours(), end.getMinutes(), end.getSeconds());
     let secs = (utc2-utc1) / MS_PER_SECOND;
-    // console.log(secs);
-    return {
-      minutes: Math.floor(secs/60),
-      seconds: secs%60
-    }
+    return secs;
   };
   const [timeLeft, setTimeLeft] = useState(getTimeLeft(battle.timeStamp));
   const [ expired, setExpired ] = useState(false);
@@ -24,7 +20,7 @@ const BetListing = ({ battle }) => {
   useEffect(() => {
     const interval = setInterval(() => {
       let remainder = getTimeLeft(battle.timeStamp);
-      if(remainder.minutes <= 0 && remainder.seconds <= 0){
+      if(remainder <= 0){
         setExpired(true);
         // query the database for the winner!!
         clearInterval(interval);
@@ -35,7 +31,7 @@ const BetListing = ({ battle }) => {
   }, []);
 
   return (
-    <Link className="bet-listing" to={`/betting/${battle.id}`}>
+    <Link className="bet-listing" to={`/betting/${battle._id}`}>
       <Container fluid>
         <Row className="row justify-content-center">
           <Col xs={2}>
@@ -51,7 +47,7 @@ const BetListing = ({ battle }) => {
           </Col>
         </Row>
         <Row>
-          {!expired && <p>Expires: {timeLeft.minutes}m, {timeLeft.seconds}s</p>}
+          {!expired && <p>Expires: {Math.floor(timeLeft/60)}m, {timeLeft%60}s</p>}
           {expired && <p>Expired!</p>}
         </Row>
       </Container>

@@ -1,8 +1,9 @@
 import React, { useState, useEffect } from "react";
 import PokeCard from './PokeCard';
-import { useQuery } from '@apollo/client';
+import { useQuery, useMutation } from '@apollo/client';
 import { Grid, makeStyles } from '@material-ui/core';
 import queries from '../queries';
+import mutations from '../mutations';
 
 const useStyles = makeStyles({
   grid: {
@@ -14,96 +15,64 @@ const useStyles = makeStyles({
 const CardPack = () => {
   const classes = useStyles();
   const [ cardData, setCardData ] = useState(undefined);
-
-  // Query for all pokemon would go here
-  // So something like; 
-  /* const { load, err, pokemonData } = useQuery(
-    queries.GET_ALL_POKEMON,
-    {
-      fetchPolicy: 'cache-and-network'
-    }
-  ); */
-
-  // Query for Popularity would go here.
-  // So something like
-  /* const { load, err, popularData } = useQuery(
-    queries.GET_POPULAR,
-    {
-      fetchPolicy: 'cache-and-network'
-    }
-  );*/
-
+  let popular=0;
+  let popularNum=Math.floor(Math.random(100))+1;
+  if(popularNum==1){
+    popular=3;
+  }
+  else if(popularNum>=2 && popularNum<=4){
+    popular=2;
+  }
+  else if(popularNum>=5 && popularNum<=10){
+    popular=1;
+  }
+  else{
+    popular=0;
+  }
+  const randomOne=Math.floor(Math.random(898))+1;
+  const pokemonOne = await axios.get(`https://pokeapi.co/api/v2/pokemon/${randomOne}/`);
+  const { loading, error, popularOneData } = useQuery(queries.GET_POPULARITY, {
+    variables: {pokemonName: pokemonOne.data.name},
+    fetchPolicy: "network-only"
+  });
+  const randomTwo=Math.floor(Math.random(898))+1;
+  const pokemonTwo = await axios.get(`https://pokeapi.co/api/v2/pokemon/${randomTwo}/`);
+  const { loading1, error1, popularTwoData } = useQuery(queries.GET_POPULARITY, {
+    variables: {pokemonName: pokemonTwo.data.name},
+    fetchPolicy: "network-only"
+  });
+  const randomThree=Math.floor(Math.random(898))+1;
+  const pokemonThree = await axios.get(`https://pokeapi.co/api/v2/pokemon/${randomThree}/`);
+  const { loading2, error2, popularThreeData } = useQuery(queries.GET_POPULARITY, {
+    variables: {pokemonName: pokemonThree.data.name},
+    fetchPolicy: "network-only"
+  });
+  let pokemonList=[pokemonOne, pokemonTwo, pokemonThree];
+  let popularityList=[popularOneData, popularTwoData, popularThreeData];
+  const addPokemon=useMutation(mutations.ADD_POKEMON);
   let card = null;
+
 
   useEffect(
     () => {
       const fetchData = async () =>{
         try{
-          // Assumes logic for pokemon popularity is implemented and usable, I'll fix it once that's done.
           let result=new Array();
-          let popular=0;
-          let popularNum=Math.floor(Math.random(100))+1;
-          if(popularNum==1){
-            popular=3;
-          }
-          else if(popularNum>=2 && popularNum<=4){
-            popular=2;
-          }
-          else if(popularNum>=5 && popularNum<=10){
-            popular=1;
-          }
-          else{
-            popular=0;
-          }
+          if(popularOneData && popularTwoData && popularThreeData){
           for(let i=0; i<3; i++){
-            if(popular>0){
-              popular: while(popular>0){
-                const random=Math.floor(Math.random(898))+1;
-                const res = await axios.get(`https://pokeapi.co/api/v2/pokemon/${random}/`);
-                const pokemon=pokemonData.find(p => p.name==res.results.name);
-                if(pokemon.pokepop>=750){
-                  const holo=Math.floor(Math.random(100));
-                  if(holo<=1){
-                    pokemon.isHolo=true;
-                    result.push(pokemon);
-                  }
-                  else{
-                    pokemon.isHolo=false;
-                    result.push(pokemon);
-                  }
-                  popular--;
-                  break;
-                }
-                else{
-                  continue popular;
-                }
-              }
+            const shiny=Math.floor(Math.random(100));
+            if(shiny<=1){
+              pokemonList[i].data.isShiny=true;
+              result.push(pokemonList[i].data);
             }
             else{
-              random: while(popular==0){
-                const rand=Math.floor(Math.random(898))+1;
-                const res = await axios.get(`https://pokeapi.co/api/v2/pokemon/${rand}/`);
-                const pokemon=pokemonData.find(p => p.name==res.results.name);
-                if(pokemon.pokepop>=750){
-                  continue random;
-                }
-                else{
-                  const holo=Math.floor(Math.random(100));
-                  if(holo<=1){
-                    pokemon.isHolo=true;
-                    result.push(pokemon);
-                  }
-                  else{
-                    pokemon.isHolo=false;
-                    result.push(pokemon);
-                  }
-                  break;
-                }
-              }
+              pokemonList[i].data.isShiny=false;
+              result.push(pokemonList[i].data);
             }
           }
           console.log(result);
           setCardData(result);
+        }
         }
         catch(e){
           console.log(e)
@@ -113,17 +82,17 @@ const CardPack = () => {
     },
     []
   )
-
-  const userCards = (pokemon) => {
-    // Adds pokemon that user wants to their set of cards
-    // currentUser.cards.push(pokemon) or something similar
-  }
   
   const CardGrid = (pokemon) => {
+    const id=pokemon.id;
+    const name=pokemon.name;
+    const image=`https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/${pokemon.id}.png`;
+    const shiny=pokemon.isShiny;
+    const userName="firebase" // Will be received from firebase
     return(
-      <Grid item xs={12} sm={6} md={4} lg={3} xl={2} key={pokemon.id}>
+      <Grid item xs={12} sm={6} md={4} lg={3} xl={2} key={id}>
         <PokeCard pokemon={pokemon}></PokeCard>
-        <button onClick={userCards(pokemon)}>I want this pokemon</button>
+        <button onClick={() => addPokemon({ variables: { id, name, image, shiny, userName }})}>I want this pokemon</button>
       </Grid>
     )
   }

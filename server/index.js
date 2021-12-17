@@ -41,7 +41,7 @@ const typeDefs = gql`
 
   type Bet {
     userName: String
-    predectedWinner: String
+    predictedWinner: String
     payout: Int
   }
   
@@ -72,7 +72,7 @@ const typeDefs = gql`
       userName: String
       betAmount: Int
       battleID: String
-      predectedWinner: String
+      predictedWinner: String
     ): Bet
   }
 `;
@@ -102,7 +102,7 @@ const resolvers = {
       }
       return user.pokemonCollection;
     },
-    battles: async() => {
+    battles: async (_, args) => {
       let ongoing;
       try{
         ongoing = await battleData.getCurrentBattles();
@@ -112,7 +112,7 @@ const resolvers = {
       }
       return ongoing;
     },
-    pokemonPopularity: async() => {
+    pokemonPopularity: async (_, args) => {
       let pokePop;
       try{
         pokePop = await popularityData.getPokemonPopularity(args.pokemonName);
@@ -122,7 +122,7 @@ const resolvers = {
       }
       return pokePop;
     },
-    oneBattle: async() => {
+    oneBattle: async (_, args) => {
       let ourBattle;
       try{
         ourBattle = await battleData.getBattle(args.battleID);
@@ -187,7 +187,7 @@ const resolvers = {
     createBet: async (_, args) => {
       let newBet;
       try{
-        newBet = await battleData.createBet(args.UserName, args.betAmount, args.battleID, args.predectedWinner);
+        newBet = await battleData.createBet(args.userName, args.betAmount, args.battleID, args.predictedWinner);
       }
       catch(e){
         throw e;

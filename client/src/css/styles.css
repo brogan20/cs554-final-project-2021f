@@ -2,7 +2,25 @@
   border: 5px solid #febb46;
   box-shadow: 0 0 5px 0px rgba(255, 255, 255, 0), 20px 55px 35px -20px rgba(0, 0, 0, 0.5); }
 
-.poke-card-active {
+.poke-card::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  top: 0;
+  background-repeat: no-repeat;
+  opacity: .5;
+  mix-blend-mode: color-dodge;
+  transition: all .33s ease; }
+
+.poke-card-holo {
+  animation: none;
+  background-image: linear-gradient(110deg, transparent 25%, #00e7ff 48%, #ff00e7 52%, transparent 75%);
+  background-position: 50% 50%;
+  background-size: 250% 250%;
+  opacity: .88;
+  filter: brightness(0.66) contrast(1.33);
   transition: none; }
 
 .poke-card-body {

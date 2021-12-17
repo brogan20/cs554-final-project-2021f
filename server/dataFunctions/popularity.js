@@ -37,7 +37,7 @@ const getPokemonPopularity = async function(pokemonName) {
 
 	const pokemon = await popularityCollection.findOne({pokeName: pokemonName});
 
-	if(pokemon == null) {       //if the pokemon does not exist for us yet, I am creating it and starting it at a value of 500
+	if(pokemon == null) {       //if the pokemon does not exist for us yet, I am creating it and starting it at a value of 3500
         let newPokemon = {pokeName: pokemonName, pokePop: 3500, pokeWins: 0, pokeLosses: 0};
         const inIn = await popularityCollection.insertOne(newPokemon);
         if(inIn.insertCount === 0) {
@@ -71,7 +71,7 @@ const changePokemonPopularity = async function(pokemonName, toChange) {
 
 	const pokemon = await popularityCollection.findOne({pokeName: pokemonName});
 
-	if(pokemon == null) {       //if the pokemon does not exist for us yet, I am creating it and starting it at a value of 500
+	if(pokemon == null) {       //if the pokemon does not exist for us yet, I am creating it and starting it at a value of 3500
         if((3500 + toChange) <= 0) {finalPop = 1;}
         else{finalPop += 3500;}
         let newPokemon = {pokeName: pokemonName, pokePop: finalPop, pokeWins: 0, pokeLosses: 0};
@@ -105,7 +105,7 @@ const changePokemonScore = async function(pokemonName, didWin) {
 	if(typeof pokemonName !== 'string' || pokemonName.trim() == "") {
 		throw({code: 400, message: "changePokemonScore: pokemonName must be a string that isn't empty or just spaces"});
 	}
-    if(typeof didWin !== 'bool') {
+    if(typeof didWin !== 'boolean') {
 		throw({code: 400, message: "changePokemonScore: didWin must be a boolean"});
 	}
 

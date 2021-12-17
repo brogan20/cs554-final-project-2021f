@@ -5,15 +5,12 @@ import PokeCard from "./PokeCard";
 import { Link } from 'react-router-dom';
 import { Button, Container, Col, Row, Spinner } from 'react-bootstrap';
 
-const Portfolio = (props) =>{
+const Portfolio = () =>{
   // commenting out until functions are made
   const { loading, error, data } = useQuery(queries.GET_PORTFOLIO, {
-    variables: {userName: "Red"}, // swap "Red" with name given from firebase
+    variables: {userName: "James"}, // swap "James" with name given from firebase
     fetchPolicy: "network-only"
   });
-  // let data = [{id: 25, name: 'pikachu', image: 'some url', isHolo: false},
-  //             {id: 1, name: 'bulbasaur', image: 'some url', isHolo: false}];
-  // let loading = false;
   let cardList = null; 
 
   if(error){
@@ -38,7 +35,7 @@ const Portfolio = (props) =>{
   return(
     <div>
       <h1>Portfolio</h1>
-      <p>{data.length} cards in collection</p>
+      <p>{data.length} cards in your collection</p>
       <Container fluid>
         <Row>
           {cardList}
