@@ -7,6 +7,8 @@ import Bet from './Bet';
 import Ranking from './Ranking';
 import Survey from './Survey';
 import PokeNav from './PokeNav';
+import CardPack from './CardPack';
+import Battle from './Battle';
 import '../css/styles.min.css';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import {
@@ -39,6 +41,8 @@ function App() {
             <Route exact path="/betting/:id" element={<Bet/>}/>
             <Route exact path="/rankings" element={<Ranking/>}/>
             <Route exact path="/survey" element={<Survey/>}/>
+            <Route exact path="/cardpack" element={<CardPack/>}/>
+            <Route exact path="/battle" element={<Battle/>}/>
           </Routes>
         </div>
       </div>

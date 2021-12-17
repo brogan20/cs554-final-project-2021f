@@ -11,6 +11,7 @@ const typeDefs = gql`
     battles: [Battle]
     pokemonPopularity(pokemonName: String!): Int
     oneBattle(battleID: String!): Battle
+    allUsers: [User]
   }
 
   type Pokemon {
@@ -131,6 +132,16 @@ const resolvers = {
         throw e;
       }
       return ourBattle;
+    },
+    allUsers: async (_, args) => {
+      let userList;
+      try{
+        userList = await userData.getAllUsers();
+      }
+      catch(e){
+        throw e;
+      }
+      return userList;
     }
   },
   Mutation: {

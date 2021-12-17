@@ -65,11 +65,20 @@ const GET_POPULARITY = gql`
     }
 `;
 
+const GET_ALL_USERS = gql`
+    query {
+        allUsers {
+            userName
+        }
+    }
+`
+
 let queries = {
     GET_PORTFOLIO,
     GET_ALL_BATTLES,
     GET_BETTER_BATTLE,
-    GET_POPULARITY
+    GET_POPULARITY,
+    GET_ALL_USERS
 }
 
 export default queries;

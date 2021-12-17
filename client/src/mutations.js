@@ -31,11 +31,21 @@ const ADD_POKEMON = gql`
     }
 `;
 
+const ADD_BATTLE = gql`
+    mutation CreateBattle($trainers: [String], $givenPokemon: [String]){
+        createBattle(trainers: $trainers, givenPokemon: $givenPokemon){
+            trainers
+            givenPokemon
+        }
+    }
+`
+
 let mutations = {
     CHANGE_FUNDS,
     CHANGE_POPULARITY,
     PLACE_BET,
-    ADD_POKEMON
+    ADD_POKEMON,
+    ADD_BATTLE
 }
 
 export default mutations;

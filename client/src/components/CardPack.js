@@ -1,9 +1,10 @@
 import React, { useState, useEffect } from "react";
 import PokeCard from './PokeCard';
-import { useQuery, useMutation } from '@apollo/client';
+import { useQuery, useMutation, useApolloClient } from '@apollo/client';
 import { Grid, makeStyles } from '@material-ui/core';
 import queries from '../queries';
 import mutations from '../mutations';
+import axios from 'axios';
 
 const useStyles = makeStyles({
   grid: {
@@ -15,64 +16,97 @@ const useStyles = makeStyles({
 const CardPack = () => {
   const classes = useStyles();
   const [ cardData, setCardData ] = useState(undefined);
-  let popular=0;
-  let popularNum=Math.floor(Math.random(100))+1;
-  if(popularNum==1){
-    popular=3;
-  }
-  else if(popularNum>=2 && popularNum<=4){
-    popular=2;
-  }
-  else if(popularNum>=5 && popularNum<=10){
-    popular=1;
-  }
-  else{
-    popular=0;
-  }
-  const randomOne=Math.floor(Math.random(898))+1;
-  const pokemonOne = await axios.get(`https://pokeapi.co/api/v2/pokemon/${randomOne}/`);
-  const { loading, error, popularOneData } = useQuery(queries.GET_POPULARITY, {
-    variables: {pokemonName: pokemonOne.data.name},
-    fetchPolicy: "network-only"
-  });
-  const randomTwo=Math.floor(Math.random(898))+1;
-  const pokemonTwo = await axios.get(`https://pokeapi.co/api/v2/pokemon/${randomTwo}/`);
-  const { loading1, error1, popularTwoData } = useQuery(queries.GET_POPULARITY, {
-    variables: {pokemonName: pokemonTwo.data.name},
-    fetchPolicy: "network-only"
-  });
-  const randomThree=Math.floor(Math.random(898))+1;
-  const pokemonThree = await axios.get(`https://pokeapi.co/api/v2/pokemon/${randomThree}/`);
-  const { loading2, error2, popularThreeData } = useQuery(queries.GET_POPULARITY, {
-    variables: {pokemonName: pokemonThree.data.name},
-    fetchPolicy: "network-only"
-  });
-  let pokemonList=[pokemonOne, pokemonTwo, pokemonThree];
-  let popularityList=[popularOneData, popularTwoData, popularThreeData];
+  const client = useApolloClient();
   const addPokemon=useMutation(mutations.ADD_POKEMON);
-  let card = null;
+  let card=null;
 
+  async function popularQuery(pokemon){
+    const { loading, error, popularData } = await client.query({query: queries.GET_POPULARITY, variables: { pokemonName: pokemon.data.name}});
+    if(error){
+      return `${error.message}`
+    }
+    return popularData;
+  }
 
   useEffect(
     () => {
       const fetchData = async () =>{
         try{
           let result=new Array();
-          if(popularOneData && popularTwoData && popularThreeData){
+          let popular=0;
+          let popularNum=Math.floor(Math.random(100))+1;
+          if(popularNum==1){
+            popular=3;
+          }
+          else if(popularNum>=2 && popularNum<=4){
+            popular=2;
+          }
+          else if(popularNum>=5 && popularNum<=10){
+            popular=1;
+          }
+          else{
+            popular=0;
+          }
           for(let i=0; i<3; i++){
-            const shiny=Math.floor(Math.random(100));
-            if(shiny<=1){
-              pokemonList[i].data.isShiny=true;
-              result.push(pokemonList[i].data);
+            if(popular>0){
+              console.log(popular);
+            pop: while(popular>0){
+              const random=Math.floor(Math.random(898))+1;
+              const pokemon = await axios.get(`https://pokeapi.co/api/v2/pokemon/${random}/`);
+              const popularity=popularQuery(pokemon);
+              if(typeof popularity != 'number'){
+                popular=-1;
+                throw `${popularity}`
+              }
+              else if(popularity<750){
+                continue pop;
+              }
+              else{
+                const shiny=Math.floor(Math.random(100));
+                if(shiny<=1){
+                  pokemon.data.isShiny=true;
+                  result.push(pokemon.data);
+                }
+                else{
+                  pokemon.data.isShiny=false;
+                  result.push(pokemon.data);
+                }
+                break;
+              }
             }
-            else{
-              pokemonList[i].data.isShiny=false;
-              result.push(pokemonList[i].data);
+          }
+          else{
+            random: while(popular==0){
+              const random=Math.floor(Math.random(898))+1;
+              const pokemon = await axios.get(`https://pokeapi.co/api/v2/pokemon/${random}/`);
+              const popularity=popularQuery(pokemon);
+              if(typeof popularity != 'number'){
+                popular=-1;
+                throw `${popularity}`;
+              }
+              else if(popularity>=750){
+                continue random;
+              }
+              else{
+                const shiny=Math.floor(Math.random(100));
+                if(shiny<=1){
+                  pokemon.data.isShiny=true;
+                  result.push(pokemon.data);
+                }
+                else{
+                  pokemon.data.isShiny=false;
+                  result.push(pokemon.data);
+                }
+                break;
+              }
             }
+          }
+          }
+          if(popular==-1){
+            return <h2>Failed to Fetch</h2>
           }
           console.log(result);
           setCardData(result);
-        }
         }
         catch(e){
           console.log(e)
