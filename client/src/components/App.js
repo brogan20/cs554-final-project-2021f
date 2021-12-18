@@ -1,11 +1,15 @@
 import logo from '../logo.svg';
 import '../App.css';
-import Login from './login';
+import SignUp from './SignUp';
 import Portfolio from './Portfolio';
 import Betting from './Betting';
 import Bet from './Bet';
 import Ranking from './Ranking';
 import Survey from './Survey';
+import PokeNav from './PokeNav';
+import CardPack from './CardPack';
+import Battle from './Battle';
+import Home from './Home';
 import '../css/styles.min.css';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import {
@@ -28,15 +32,19 @@ function App() {
       <BrowserRouter>
       <div className="App">
         <header>
+          <PokeNav/>
         </header>
         <div>
           <Routes>
-            <Route exact path="/login" element={<Login/>}/>
+            <Route exact path="/" element={<Home/>}/>
+            <Route exact path="/signup" element={<SignUp/>}/>
             <Route exact path ="/portfolio" element={<Portfolio/>}/>
             <Route exact path = "/betting" element={<Betting/>}/>
             <Route exact path="/betting/:id" element={<Bet/>}/>
             <Route exact path="/rankings" element={<Ranking/>}/>
             <Route exact path="/survey" element={<Survey/>}/>
+            <Route exact path="/cardpack" element={<CardPack/>}/>
+            <Route exact path="/battle" element={<Battle/>}/>
           </Routes>
         </div>
       </div>

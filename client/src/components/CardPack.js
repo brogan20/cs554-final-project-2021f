@@ -1,8 +1,10 @@
 import React, { useState, useEffect } from "react";
 import PokeCard from './PokeCard';
-import { useQuery } from '@apollo/client';
+import { useQuery, useMutation, ApolloClient, HttpLink, InMemoryCache } from '@apollo/client';
 import { Grid, makeStyles } from '@material-ui/core';
 import queries from '../queries';
+import mutations from '../mutations';
+import axios from 'axios';
 
 const useStyles = makeStyles({
   grid: {
@@ -14,35 +16,67 @@ const useStyles = makeStyles({
 const CardPack = () => {
   const classes = useStyles();
   const [ cardData, setCardData ] = useState(undefined);
+  const [ loading, setLoading ] = useState(false);
+  /*const client = new ApolloClient({
+    link: new HttpLink({
+      uri: "http://localhost:4000/"
+    }),
+    cache: new InMemoryCache()
+  });*/
 
-  // Query for all pokemon would go here
-  // So something like; 
-  /* const { load, err, pokemonData } = useQuery(
-    queries.GET_ALL_POKEMON,
-    {
-      fetchPolicy: 'cache-and-network'
+  /*let poke=new Array();
+
+  const getPokemonName = async (r) => {
+    const pokemon=await axios.get(`https://pokeapi.co/api/v2/pokemon/${r}/`);
+    poke.push(pokemon);
+    return pokemon.data.name;
+  }
+
+  const randomOne=Math.floor(Math.random()*898)+1;
+  const randomTwo=Math.floor(Math.random()*898)+1;
+  const randomThree=Math.floor(Math.random()*898)+1;*/
+
+  /*const { popularityOne } = useQuery(queries.GET_POPULARITY, {
+    variables: { pokemonName: getPokemonName(randomOne)}
+  });
+  const { popularityTwo } = useQuery(queries.GET_POPULARITY, {
+    variables: { pokemonName: getPokemonName(randomTwo)}
+  });
+  const { popularityThree } = useQuery(queries.GET_POPULARITY, {
+    variables: { pokemonName: getPokemonName(randomThree)}
+  });*/
+
+  /*if(popularityOne && popularityTwo && popularityThree){
+  for(let i=0; i<3; i++){
+    const shiny=Math.floor(Math.random()*100)+1;
+    if(shiny<=2){
+      poke[i].isShiny=true;
     }
-  ); */
-
-  // Query for Popularity would go here.
-  // So something like
-  /* const { load, err, popularData } = useQuery(
-    queries.GET_POPULAR,
-    {
-      fetchPolicy: 'cache-and-network'
+    else{
+      poke[i].isShiny=false;
     }
-  );*/
+  }
+} */
+  const [addPokemon, {data, load, error}]=useMutation(mutations.ADD_POKEMON);
+  let card=null;
 
-  let card = null;
+  /*async function popularQuery(pokemon){
+    console.log(pokemon)
+    const { popularData } = await client.query({query: queries.GET_POPULARITY, variables: { pokemonName: pokemon.name}});
+    console.log(popularData)
+    return popularData;
+  }*/
 
   useEffect(
     () => {
+      console.log("useEffect fired")
       const fetchData = async () =>{
+        console.log("fetchData fired")
         try{
-          // Assumes logic for pokemon popularity is implemented and usable, I'll fix it once that's done.
+          setLoading(true);
           let result=new Array();
-          let popular=0;
-          let popularNum=Math.floor(Math.random(100))+1;
+          /*let popular=0;
+          let popularNum=Math.floor(Math.random()*100)+1;
           if(popularNum==1){
             popular=3;
           }
@@ -54,92 +88,114 @@ const CardPack = () => {
           }
           else{
             popular=0;
-          }
+          }*/
           for(let i=0; i<3; i++){
-            if(popular>0){
-              popular: while(popular>0){
-                const random=Math.floor(Math.random(898))+1;
-                const res = await axios.get(`https://pokeapi.co/api/v2/pokemon/${random}/`);
-                const pokemon=pokemonData.find(p => p.name==res.results.name);
-                if(pokemon.pokepop>=750){
-                  const holo=Math.floor(Math.random(100));
-                  if(holo<=1){
-                    pokemon.isHolo=true;
-                    result.push(pokemon);
-                  }
-                  else{
-                    pokemon.isHolo=false;
-                    result.push(pokemon);
-                  }
-                  popular--;
-                  break;
-                }
-                else{
-                  continue popular;
-                }
+            /*if(popular>0){
+              console.log(popular);
+            pop: while(popular>0){*/
+              const random=Math.floor(Math.random()*898)+1;
+              console.log(random)
+              const pokemon = await axios.get(`https://pokeapi.co/api/v2/pokemon/${random}/`);
+              console.log(pokemon.data)
+              /*const popularity=await popularQuery(pokemon.data);
+              if(popularity<750){
+                continue pop;
               }
-            }
-            else{
-              random: while(popular==0){
-                const rand=Math.floor(Math.random(898))+1;
-                const res = await axios.get(`https://pokeapi.co/api/v2/pokemon/${rand}/`);
-                const pokemon=pokemonData.find(p => p.name==res.results.name);
-                if(pokemon.pokepop>=750){
-                  continue random;
+              else{*/
+                const shiny=Math.floor(Math.random()*100);
+                if(shiny<=1){
+                  //popular--;
+                  pokemon.data.isShiny=true;
+                  result.push(pokemon.data);
                 }
                 else{
-                  const holo=Math.floor(Math.random(100));
-                  if(holo<=1){
-                    pokemon.isHolo=true;
-                    result.push(pokemon);
-                  }
-                  else{
-                    pokemon.isHolo=false;
-                    result.push(pokemon);
-                  }
-                  break;
+                  //popular--;
+                  pokemon.data.isShiny=false;
+                  result.push(pokemon.data);
                 }
+              //}
+          /*  }
+          }
+          else{
+            random: while(popular==0){
+              const random=Math.floor(Math.random()*898)+1;
+              console.log(random);
+              const pokemon = await axios.get(`https://pokeapi.co/api/v2/pokemon/${random}/`);
+              console.log(pokemon)
+              const popularity=await popularQuery(pokemon);
+              console.log(popularity)
+              if(popularity>=750){
+                continue random;
+              }
+              else{
+                const shiny=Math.floor(Math.random()*100)+1;
+                if(shiny<=2){
+                  pokemon.data.isShiny=true;
+                  result.push(pokemon.data);
+                }
+                else{
+                  pokemon.data.isShiny=false;
+                  result.push(pokemon.data);
+                }
+                break;
               }
             }
           }
+          }
+          if(popular==-1){
+            return <h2>Failed to Fetch</h2>
+          }*/
+        }
           console.log(result);
           setCardData(result);
+          setLoading(false);
         }
         catch(e){
           console.log(e)
         }
       }
-      fetchData()
+      if(!loading){
+      fetchData();
+      }
     },
     []
   )
-
-  const userCards = (pokemon) => {
-    // Adds pokemon that user wants to their set of cards
-    // currentUser.cards.push(pokemon) or something similar
-  }
   
   const CardGrid = (pokemon) => {
+    console.log("cardgrid")
+    const id=pokemon.id;
+    pokemon.pokemonID=id;
+    const name=pokemon.name;
+    pokemon.pokemonName=name;
+    const image=`https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/${pokemon.id}.png`;
+    const shiny=pokemon.isShiny;
+    const userName="firebase" // Will be received from firebase
     return(
-      <Grid item xs={12} sm={6} md={4} lg={3} xl={2} key={pokemon.id}>
+      <Grid item xs={12} sm={6} md={4} lg={3} xl={2} key={id}>
         <PokeCard pokemon={pokemon}></PokeCard>
-        <button onClick={userCards(pokemon)}>I want this pokemon</button>
+        <button onClick={() => addPokemon({ variables: { id, name, image, shiny, userName }})}>I want this pokemon</button>
       </Grid>
     )
   }
 
-  const carder = () => {
-    card =
-      cardData.map((pokemon) => {
-        return CardGrid(pokemon);
-      })
+  console.log(cardData)
+
+  if(cardData){
+
+  card =
+    cardData &&
+    cardData.map((pokemon) => {
+      return CardGrid(pokemon);
+    })
+
+  console.log(card)
   }
 
   return(
     <div>
       <h1>Get a new Card Pack!</h1>
       <br />
-      <button onClick={carder}>Claim Card Pack!</button>
+      <button onClick="">Claim Card Pack!</button>
       <Grid container className={classes.grid} spacing={5}>
         {card}
       </Grid>

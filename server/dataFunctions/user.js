@@ -65,6 +65,19 @@ const getUser = async function(userName){
 	}
 }
 
+const getAllUsers = async function(){
+	
+	const usersCollection = await users();
+
+	const userList = await usersCollection.find({}).toArray();
+
+	userList.forEach((user) => {
+		user._id = user._id.toString();
+	});
+
+	return userList;
+}
+
 const addPokemon = async function(pokemonID, pokemonName, imageLink,  isShiny, userName){		//should I be passed pokemonName and imageLink? or would it be prefered I just get ID and I make a call for
 	if(arguments.length != 5 || pokemonID == undefined || pokemonName == undefined || isShiny == undefined || userName == undefined || imageLink == undefined) {
 		throw({code: 400, message: "addPokemon: you are missing pokemonID, pokemonName, imageLink, isShiny, or userName"});
@@ -145,6 +158,7 @@ module.exports = {
 	removeAll,
 	createUser,
 	getUser,
+	getAllUsers,
 	addPokemon,
 	changeFunds
 }

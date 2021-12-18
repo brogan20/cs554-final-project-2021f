@@ -2,7 +2,7 @@ import React, { useState, useEffect, useRef } from "react";
 import BetListing from "./BetListing";
 import queries from "../queries";
 import { useQuery } from "@apollo/client";
-import { Spinner } from "react-bootstrap";
+import { Container, Row, Col, Spinner } from "react-bootstrap";
 import axios from "axios";
 
 const Betting = () => {
@@ -27,14 +27,18 @@ const Betting = () => {
         if(battle.trainerOne == 'userid' || battle.trainerTwo == 'userid') // replace this with the actual id later
           return;
         else
-          return <BetListing key={battle._id} battle={battle} />;
+          return <Col xs={6}><BetListing key={battle._id} battle={battle} /></Col>;
       });
   }
 
   return (
     <div>
       <h1>Ongoing Bets</h1>
-      <div className="bet-container">{betList}</div>
+      <Container className="bet-container" fluid>
+        <Row>
+          {betList}
+        </Row>
+      </Container>
     </div>
   );
 };
