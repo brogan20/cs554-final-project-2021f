@@ -149,6 +149,7 @@
 .home-banner {
   display: flex;
   color: white;
+  background-color: black;
   font-weight: bold;
   flex-direction: column;
   background-repeat: no-repeat;

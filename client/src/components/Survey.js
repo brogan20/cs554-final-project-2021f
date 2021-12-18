@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import PokeCard from './PokeCard';
 import { useMutation, useQuery } from '@apollo/client';
 import { Grid, makeStyles } from '@material-ui/core';
+import { Modal, Spinner } from 'react-bootstrap';
 import axios from 'axios';
 import mutations from '../mutations';
 
@@ -44,9 +45,7 @@ const Survey = () => {
   )
   if (loading) {
     return (
-      <div>
-        <h2>Loading....</h2>
-      </div>
+      <Spinner animation="border" style={{alignSelf: 'center'}}/>
     );
   }
   else {

@@ -42,8 +42,8 @@ const BetForm = ({submitBet, expired, changeAmount}) => {
 
   return (
     <Form onSubmit={submitBet}>
-      <Form.Group>
-        <Form.Label>Bet Amount</Form.Label>
+      <Form.Group controlId="betForm">
+        <Form.Label for="betForm">Bet Amount</Form.Label>
         <Form.Control
           onChange={changeAmount}
           type="number"
@@ -154,7 +154,7 @@ const Bet = () => {
         </Modal.Header>
         <Modal.Body>This bet has expired</Modal.Body>
         <Modal.Footer>
-          <Link className="btn btn-secondary" to="/betting">
+          <Link className="btn btn-danger" to="/betting">
             Return to Listings
           </Link>
         </Modal.Footer>
