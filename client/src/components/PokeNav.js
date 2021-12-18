@@ -22,7 +22,6 @@ const PokeNav = () => {
                 <Navbar.Collapse id="basic-navbar-nav">
                 <Nav className="me-auto">
                     <NavLink name="Portfolio" to="/portfolio"/>
-                    <NavLink name="Rankings" to="/rankings"/> 
                     <NavDropdown title="Battles" id="basic-nav-dropdown">
                     <Link className="dropdown-item" to="/betting">Betting</Link>
                     <Link className="dropdown-item" to="/survey">Voting</Link>

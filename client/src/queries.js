@@ -59,14 +59,12 @@ const GET_BETTER_BATTLE = gql`
 
 const GET_POPULARITY = gql`
     query PokemonPopularity($pokemonName: String!) {
-        pokemonPopularity(pokemonName: $pokemonName) {
-            pokePop
-        }
+        pokemonPopularity(pokemonName: $pokemonName)
     }
 `;
 
 const GET_ALL_USERS = gql`
-    query {
+    query AllUsers {
         allUsers {
             userName
         }
