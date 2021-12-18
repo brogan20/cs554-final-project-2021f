@@ -1,0 +1,29 @@
+
+// I got these functions from a codepen
+// that I can't find anymore :\
+@function stroke($stroke, $color) {
+  $shadow: ();
+  $from: $stroke*-1;
+  @for $i from $from through $stroke {
+   @for $j from $from through $stroke {
+      $shadow: append($shadow, $i*1px $j*1px 0 $color, comma);
+    }
+  }
+  @return $shadow;
+}
+
+@mixin stroke($stroke, $color) {
+  text-shadow: stroke($stroke, $color);
+}
+
+
+.home-banner {
+    display: flex;
+    color: white;
+    font-weight: bold;
+    flex-direction: column;
+    background-repeat: no-repeat;
+    background-size: cover;
+    @include stroke(2, black)
+}
+
