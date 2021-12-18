@@ -16,25 +16,23 @@ const Battle = () => {
     const classes = useStyles();
     //const [battleData, setBattleData] = useState(undefined);
     // Get the current User's username from firebase
-    const { loading, error, userData } = useQuery(queries.GET_ALL_USERS, {
+    const { loading, error, data } = useQuery(queries.GET_ALL_USERS, {
         fetchPolicy: "network-only"
     });
     console.log(loading);
     console.log(error);
-    console.log(userData);
+    console.log(data);
     let pokemon1=null;
-    const random = Math.floor(Math.random(userData.length));
-    const user2 = userData[random];
-    const { load, err, pokeData } = useQuery(queries.GET_PORTFOLIO, {
-        fetchPolicy: "network-only",
-        variables: { userName: "Red" }
-    })
-    const { l, e, pokemonData } = useQuery(queries.GET_PORTFOLIO, {
-        fetchPolicy: "network-only",
-        variables: { userName: user2 }
-    })
-    const rand = Math.floor(Math.random(pokemonData.length));
-    const pokemon2 = pokemonData[rand];
+    let user2=null;
+    let pokemon2=null;
+    if(!loading){
+        const random = Math.floor(Math.random(data.allUsers.length));
+        console.log(data.allUsers[random]);
+        user2 = data.allUsers[random];
+        console.log(user2);
+        const rand = Math.floor(Math.random(user2.pokemonCollection.length));
+        pokemon2 = user2.pokemonCollection[rand];
+    }
     const [battle, {battleResults}]=useMutation(mutations.ADD_BATTLE);
     let card=null;
 

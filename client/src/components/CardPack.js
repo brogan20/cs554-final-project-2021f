@@ -17,7 +17,7 @@ const CardPack = () => {
   const classes = useStyles();
   const [ cardData, setCardData ] = useState(undefined);
   const [ loading, setLoading ] = useState(false);
-  const [addPokemon, {addResults}]=useMutation(mutations.ADD_POKEMON);
+  const [addPokemon, {data}]=useMutation(mutations.ADD_POKEMON);
   let card=null;
 
   useEffect(
