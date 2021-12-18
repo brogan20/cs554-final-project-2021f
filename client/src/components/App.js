@@ -4,7 +4,6 @@ import SignUp from './SignUp';
 import Portfolio from './Portfolio';
 import Betting from './Betting';
 import Bet from './Bet';
-import Ranking from './Ranking';
 import Survey from './Survey';
 import PokeNav from './PokeNav';
 import CardPack from './CardPack';
@@ -42,7 +41,6 @@ function App() {
             <Route exact path ="/portfolio" element={<Portfolio/>}/>
             <Route exact path = "/betting" element={<Betting/>}/>
             <Route exact path="/betting/:id" element={<Bet/>}/>
-            <Route exact path="/rankings" element={<Ranking/>}/>
             <Route exact path="/survey" element={<Survey/>}/>
             <Route exact path="/cardpack" element={<CardPack/>}/>
             <Route exact path="/battle" element={<Battle/>}/>
