@@ -80,7 +80,7 @@ const typeDefs = gql`
       battleID: String
       predictedWinner: String
     ): Bet
-    popualtePokemonData(): GenericCodeMess
+    popualtePokemonData: GenericCodeMess
   }
 `;
 
