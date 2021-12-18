@@ -10,7 +10,7 @@ const timePerBattle = 1200000;//in milliseconds
 
 const removeAll = async function() {
 	const battleCollection = await battles();
-	battleCollection.deleteMany({});
+	await battleCollection.deleteMany({ });
 	return({code: 200, message: "removeAll: successfully nuked battles database"});
 }
 
@@ -79,7 +79,7 @@ const createBattle = async function(trainerOne, trainerTwo, pokemonOne, pokemonT
 	else{
         let newBattleID = await inIn.insertedId.toString();
         newBattle._id = newBattleID;
-        newBattle.winner = "";
+        newBattle.winner = winner;
 		return newBattle;
 	}
 }

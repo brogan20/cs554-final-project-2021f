@@ -21,6 +21,13 @@ const typeDefs = gql`
     isShiny: Boolean
   }
 
+  input PokemonInput {
+    pokemonID: String
+    pokemonName: String
+    imageLink: String
+    isShiny: Boolean
+  }
+
   type Battle {
     _id: String
     trainerOne: String
@@ -45,6 +52,11 @@ const typeDefs = gql`
     predictedWinner: String
     payout: Int
   }
+
+  type GenericCodeMess {
+    code: Int
+    message: String
+  }
   
   type Mutation {
     addUser(
@@ -67,7 +79,7 @@ const typeDefs = gql`
     ): Int
     createBattle(
       trainers: [String]
-      givenPokemon: [String]
+      givenPokemon: [PokemonInput]
     ): Battle
     createBet(
       userName: String
@@ -75,6 +87,8 @@ const typeDefs = gql`
       battleID: String
       predictedWinner: String
     ): Bet
+    popualtePokemonData: GenericCodeMess
+    wipeEntireDatabase: [GenericCodeMess]
   }
 `;
 
@@ -158,7 +172,7 @@ const resolvers = {
     addPokemon: async (_, args) => {
       let ourPokemon;
       try{
-        ourPokemon = await userData.addPokemon(args.pokemonID, args.pokemonName, args.imageLink, args.isShiny, arrs.userName);
+        ourPokemon = await userData.addPokemon(args.pokemonID, args.pokemonName, args.imageLink, args.isShiny, args.userName);
       }
       catch(e){
         throw e;
@@ -205,6 +219,34 @@ const resolvers = {
       }
       return newBet;
     },
+    popualtePokemonData: async (_, args) => {
+      let genericCodes;
+      try{
+        genericCodes = await popularityData.initPopularity();
+      }
+      catch(e){
+        throw e;
+      }
+      return genericCodes;
+    },
+    wipeEntireDatabase: async (_, args) => {
+      let genericCodesUsers;
+      let genericCodesPopularity;
+      let genericCodesBattles;
+      const ret = new Array();
+      try{
+        genericCodesUsers = await userData.removeAll();
+        genericCodesPopularity = await popularityData.removeAll();
+        genericCodesBattles = await battleData.removeAll();
+        ret.push(genericCodesUsers);
+        ret.push(genericCodesPopularity);
+        ret.push(genericCodesBattles);
+      }
+      catch(e){
+        throw e;
+      }
+      return ret;
+    }
   }
 };
 

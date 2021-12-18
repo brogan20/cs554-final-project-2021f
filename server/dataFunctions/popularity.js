@@ -6,12 +6,14 @@ const pokemonStartingValues = require('./pokemonData');
 
 const removeAll = async function() {
 	const popularityCollection = await popularity();
-	popularityCollection.deleteMany({});
+	await popularityCollection.deleteMany({ });
 	return({code: 200, message: "removeAll: successfully nuked popularity database"});
 }
 
 const initPopularity = async function() {
     const popularityCollection = await popularity();
+
+    await this.removeAll();
 
     const inIn = await popularityCollection.insertMany(pokemonStartingValues.theGoods);
 

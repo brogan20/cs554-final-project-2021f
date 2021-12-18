@@ -17,55 +17,15 @@ const CardPack = () => {
   const classes = useStyles();
   const [ cardData, setCardData ] = useState(undefined);
   const [ loading, setLoading ] = useState(false);
-  /*const client = new ApolloClient({
-    link: new HttpLink({
-      uri: "http://localhost:4000/"
-    }),
-    cache: new InMemoryCache()
-  });*/
-
-  /*let poke=new Array();
-
-  const getPokemonName = async (r) => {
-    const pokemon=await axios.get(`https://pokeapi.co/api/v2/pokemon/${r}/`);
-    poke.push(pokemon);
-    return pokemon.data.name;
-  }
-
-  const randomOne=Math.floor(Math.random()*898)+1;
-  const randomTwo=Math.floor(Math.random()*898)+1;
-  const randomThree=Math.floor(Math.random()*898)+1;*/
-
-  /*const { popularityOne } = useQuery(queries.GET_POPULARITY, {
-    variables: { pokemonName: getPokemonName(randomOne)}
-  });
-  const { popularityTwo } = useQuery(queries.GET_POPULARITY, {
-    variables: { pokemonName: getPokemonName(randomTwo)}
-  });
-  const { popularityThree } = useQuery(queries.GET_POPULARITY, {
-    variables: { pokemonName: getPokemonName(randomThree)}
-  });*/
-
-  /*if(popularityOne && popularityTwo && popularityThree){
-  for(let i=0; i<3; i++){
-    const shiny=Math.floor(Math.random()*100)+1;
-    if(shiny<=2){
-      poke[i].isShiny=true;
-    }
-    else{
-      poke[i].isShiny=false;
-    }
-  }
-} */
-  const [addPokemon, {data, load, error}]=useMutation(mutations.ADD_POKEMON);
+  const [ visibleData, setVisible ] = useState(false);
+  const [addPokemon, {data}]=useMutation(mutations.ADD_POKEMON);
   let card=null;
-
-  /*async function popularQuery(pokemon){
-    console.log(pokemon)
-    const { popularData } = await client.query({query: queries.GET_POPULARITY, variables: { pokemonName: pokemon.name}});
-    console.log(popularData)
-    return popularData;
-  }*/
+  
+  const toggleVisible = () => {
+    setVisible({
+      visibleData: true
+    })
+  }
 
   useEffect(
     () => {
@@ -149,6 +109,7 @@ const CardPack = () => {
           console.log(result);
           setCardData(result);
           setLoading(false);
+          setVisible(false);
         }
         catch(e){
           console.log(e)
@@ -160,6 +121,12 @@ const CardPack = () => {
     },
     []
   )
+
+  const theCard = (pokemon, username) => {
+    addPokemon({
+      variables: {pokemonID: pokemon.pokemonID, pokemonName: pokemon.pokemonName, imageLink: pokemon.imageLink, isShiny: pokemon.isShiny, userName: username}
+    })
+  }
   
   const CardGrid = (pokemon) => {
     console.log("cardgrid")
@@ -168,12 +135,13 @@ const CardPack = () => {
     const name=pokemon.name;
     pokemon.pokemonName=name;
     const image=`https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/${pokemon.id}.png`;
+    pokemon.imageLink=image;
     const shiny=pokemon.isShiny;
-    const userName="firebase" // Will be received from firebase
+    const userName="Red" // Will be received from firebase
     return(
       <Grid item xs={12} sm={6} md={4} lg={3} xl={2} key={id}>
         <PokeCard pokemon={pokemon}></PokeCard>
-        <button onClick={() => addPokemon({ variables: { id, name, image, shiny, userName }})}>I want this pokemon</button>
+        <button onClick={() => theCard(pokemon, userName)}>I want this pokemon</button>
       </Grid>
     )
   }
@@ -189,16 +157,20 @@ const CardPack = () => {
     })
 
   console.log(card)
+
   }
 
   return(
     <div>
       <h1>Get a new Card Pack!</h1>
       <br />
-      <button onClick="">Claim Card Pack!</button>
+      { !visibleData ? <button onClick={toggleVisible.bind(this)}>Claim your Card Pack!</button> : <p>Card Pack Claimed</p> }
+      <br />
+      { visibleData ? 
       <Grid container className={classes.grid} spacing={5}>
         {card}
-      </Grid>
+      </Grid>: null
+      }
     </div>
   )
 }

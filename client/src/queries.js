@@ -66,7 +66,14 @@ const GET_POPULARITY = gql`
 const GET_ALL_USERS = gql`
     query AllUsers {
         allUsers {
+            _id
             userName
+            pokemonCollection {
+                pokemonID
+                pokemonName
+                imageLink
+                isShiny
+            }
         }
     }
 `
