@@ -25,17 +25,32 @@ const PLACE_BET = gql`
 const ADD_POKEMON = gql`
     mutation AddPokemon($pokemonID: String!, $pokemonName: String!, $imageLink: String!, $isShiny: Boolean!, $userName: String!){
         addPokemon(pokemonID: $pokemonID, pokemonName: $pokemonName, imageLink: $imageLink, isShiny: $isShiny, userName: $userName){
-            userName
+            pokemonID
             pokemonName
+            imageLink
+            isShiny
         }
     }
 `;
 
 const ADD_BATTLE = gql`
-    mutation CreateBattle($trainers: [String], $givenPokemon: [String]){
+    mutation CreateBattle($trainers: [String], $givenPokemon: [PokemonInput]){
         createBattle(trainers: $trainers, givenPokemon: $givenPokemon){
-            trainers
-            givenPokemon
+            trainerOne
+            trainerTwo
+            pokemonOne {
+                pokemonID
+                pokemonName
+                imageLink
+                isShiny
+            }
+            pokemonTwo {
+                pokemonID
+                pokemonName
+                imageLink
+                isShiny
+            }
+            winner
         }
     }
 `

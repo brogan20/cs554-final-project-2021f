@@ -79,7 +79,7 @@ const createBattle = async function(trainerOne, trainerTwo, pokemonOne, pokemonT
 	else{
         let newBattleID = await inIn.insertedId.toString();
         newBattle._id = newBattleID;
-        newBattle.winner = "";
+        newBattle.winner = winner;
 		return newBattle;
 	}
 }
