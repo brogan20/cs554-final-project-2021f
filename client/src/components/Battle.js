@@ -6,13 +6,11 @@ import queries from '../queries';
 import mutations from '../mutations';
 
 const Battle = () => {
-    const [battleData, setBattleData] = useState(undefined);
+    //const [battleData, setBattleData] = useState(undefined);
     // Get the current User's username from firebase
     const { loading, error, userData } = useQuery(queries.GET_ALL_USERS, {
         fetchPolicy: "network-only"
     });
-    let trainerList=[];
-    let pokemonList=[];
     console.log(loading);
     console.log(error);
     console.log(userData);
@@ -30,6 +28,7 @@ const Battle = () => {
     const rand = Math.floor(Math.random(pokemonData.length));
     const pokemon2 = pokemonData[rand];
     const [battle, {battleResults}]=useMutation(mutations.ADD_BATTLE);
+    let card=null;
 
     /* useEffect(
         () => {
@@ -57,6 +56,7 @@ const Battle = () => {
     ) */
 
     const theCard = (trainer, pokemons) => {
+        pokemon1=pokemons[0];
         battle({
           variables: {trainers: trainer, givenPokemon: pokemons}
         })
@@ -66,18 +66,27 @@ const Battle = () => {
         return(
             <Grid item xs={12} sm={6} md={4} lg={3} xl={2} key={pokemon.pokemonID}>
                 <PokeCard pokemon={pokemon}></PokeCard>
-                <button onClick={() => theCard(["firebase", user2],[pokemon, pokemon2.pokemonName])}></button>
+                <button onClick={() => theCard(["Red", user2],[pokemon, pokemon2.pokemonName])}></button>
             </Grid>
         )
     }
 
     if (!pokemon1){
         /* Have user choose their pokemon
+        card=
+        pokeData &&
         pokeData.map((pokemon)=>{
             return CardGrid(pokemon)
         })
         */
-       return <h2>Need to implement Firebase</h2>
+        return (
+            <div>
+                <h2>Choose your pokemon for battle</h2>
+                <Grid container className={classes.grid} spacing={5}>
+                    {card}
+                </Grid>
+            </div>
+        )
     }
 
     else if (battle.trainerTwo === battle.winner) {
