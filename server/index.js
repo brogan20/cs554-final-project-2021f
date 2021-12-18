@@ -21,6 +21,13 @@ const typeDefs = gql`
     isShiny: Boolean
   }
 
+  input PokemonInput {
+    pokemonID: String
+    pokemonName: String
+    imageLink: String
+    isShiny: Boolean
+  }
+
   type Battle {
     _id: String
     trainerOne: String
@@ -72,7 +79,7 @@ const typeDefs = gql`
     ): Int
     createBattle(
       trainers: [String]
-      givenPokemon: [String]
+      givenPokemon: [PokemonInput]
     ): Battle
     createBet(
       userName: String
@@ -164,7 +171,7 @@ const resolvers = {
     addPokemon: async (_, args) => {
       let ourPokemon;
       try{
-        ourPokemon = await userData.addPokemon(args.pokemonID, args.pokemonName, args.imageLink, args.isShiny, arrs.userName);
+        ourPokemon = await userData.addPokemon(args.pokemonID, args.pokemonName, args.imageLink, args.isShiny, args.userName);
       }
       catch(e){
         throw e;
