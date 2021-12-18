@@ -45,6 +45,11 @@ const typeDefs = gql`
     predictedWinner: String
     payout: Int
   }
+
+  type GenericCodeMess {
+    code: Int
+    message: String
+  }
   
   type Mutation {
     addUser(
@@ -75,6 +80,7 @@ const typeDefs = gql`
       battleID: String
       predictedWinner: String
     ): Bet
+    popualtePokemonData(): GenericCodeMess
   }
 `;
 
@@ -204,6 +210,16 @@ const resolvers = {
         throw e;
       }
       return newBet;
+    },
+    popualtePokemonData: async (_, args) => {
+      let genericCodes;
+      try{
+        genericCodes = await popularityData.initPopularity();
+      }
+      catch(e){
+        throw e;
+      }
+      return genericCodes;
     },
   }
 };

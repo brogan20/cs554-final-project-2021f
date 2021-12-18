@@ -13,6 +13,8 @@ const removeAll = async function() {
 const initPopularity = async function() {
     const popularityCollection = await popularity();
 
+    //really need to find a way to wipe the database here
+
     const inIn = await popularityCollection.insertMany(pokemonStartingValues.theGoods);
 
 	if(inIn.insertCount === 0) {
