@@ -5,7 +5,7 @@ const { usersCollection } = require('../config/mongoCollections');
 
 const removeAll = async function() {
 	const usersCollection = await users();
-	usersCollection.deleteMany({});
+	await usersCollection.deleteMany({ });
 	return({code: 200, message: "removeAll: successfully nuked users database"});
 }
 

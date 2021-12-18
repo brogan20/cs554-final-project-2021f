@@ -10,7 +10,7 @@ const timePerBattle = 1200000;//in milliseconds
 
 const removeAll = async function() {
 	const battleCollection = await battles();
-	battleCollection.deleteMany({});
+	await battleCollection.deleteMany({ });
 	return({code: 200, message: "removeAll: successfully nuked battles database"});
 }
 
