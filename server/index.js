@@ -88,6 +88,7 @@ const typeDefs = gql`
       predictedWinner: String
     ): Bet
     popualtePokemonData: GenericCodeMess
+    wipeEntireDatabase: [GenericCodeMess]
   }
 `;
 
@@ -228,6 +229,24 @@ const resolvers = {
       }
       return genericCodes;
     },
+    wipeEntireDatabase: async (_, args) => {
+      let genericCodesUsers;
+      let genericCodesPopularity;
+      let genericCodesBattles;
+      const ret = new Array();
+      try{
+        genericCodesUsers = await userData.removeAll();
+        genericCodesPopularity = await popularityData.removeAll();
+        genericCodesBattles = await battleData.removeAll();
+        ret.push(genericCodesUsers);
+        ret.push(genericCodesPopularity);
+        ret.push(genericCodesBattles);
+      }
+      catch(e){
+        throw e;
+      }
+      return ret;
+    }
   }
 };
 
