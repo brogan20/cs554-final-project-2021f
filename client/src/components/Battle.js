@@ -1,11 +1,19 @@
 import React, { useState, useEffect } from "react";
 import PokeCard from './PokeCard';
 import { useQuery, useMutation,  ApolloClient, HttpLink, InMemoryCache} from '@apollo/client';
-import { Grid } from '@material-ui/core';
+import { Grid, makeStyles } from '@material-ui/core';
 import queries from '../queries';
 import mutations from '../mutations';
 
+const useStyles = makeStyles({
+    grid: {
+      flexGrow: 1,
+      flexDirection: 'row'
+    }
+  });
+
 const Battle = () => {
+    const classes = useStyles();
     //const [battleData, setBattleData] = useState(undefined);
     // Get the current User's username from firebase
     const { loading, error, userData } = useQuery(queries.GET_ALL_USERS, {
