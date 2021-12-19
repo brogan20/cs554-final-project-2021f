@@ -39,7 +39,7 @@ const CardPack = () => {
       visibleData: true
     })
     changeFunds({
-      variables: {gid: currentUser.uid, toChange: -5}
+      variables: {gid: currentUser.uid, toChange: -25}
     });
   }
 
@@ -82,11 +82,11 @@ const CardPack = () => {
     []
   )
 
-  // if(!currentUser){
-  //   return(
-  //     <h2>A User Must Sign In Before Getting a Card Pack</h2>
-  //   )
-  // }
+  if(!currentUser){
+     return(
+       <h2>A User Must Sign In Before Getting a Card Pack</h2>
+     )
+   }
 
   const theCard = (pokemon, c) => {
     /*console.log(pokemon.pokemonID);
@@ -159,10 +159,10 @@ const CardPack = () => {
   console.log(userData);
   console.log(userData.user.wallet);
 
-  if(userData.user.wallet<5){
+  if(userData.user.wallet<25){
     return (
       <div>
-        <h2>Must have at least 5 PokéDollars to get a Card Pack.</h2>
+        <h2>You must have at least 25 PokéDollars to get a Card Pack.</h2>
         <br />
         <h3>You can get PokéDollars by Voting.</h3>
       </div>
