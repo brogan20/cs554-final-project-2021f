@@ -17,17 +17,30 @@ const useStyles = makeStyles({
 
 const CardPack = () => {
   const classes = useStyles();
+  const { currentUser } = useContext(AuthContext);
   const [ cardData, setCardData ] = useState(undefined);
   const [ loading, setLoading ] = useState(false);
   const [ visibleData, setVisible ] = useState(false);
+  const [ poke1Data, setOne ]=useState(false);
+  const [ poke2Data, setTwo ]=useState(false);
+  const [ poke3Data, setThree ]=useState(false);
+  const { loading: load, error: err, data: userData } = useQuery(queries.GET_USER, {
+    fetchPolicy: "network-only",
+    variables: { gid: currentUser.uid }
+  }); 
   const [addPokemon, {data}]=useMutation(mutations.ADD_POKEMON);
-  const { currentUser } = useContext(AuthContext);
+  const [changeFunds, {fundResults}] = useMutation(mutations.CHANGE_FUNDS);
   let card=null;
+
+  console.log(currentUser)
   
   const toggleVisible = () => {
     setVisible({
       visibleData: true
     })
+    changeFunds({
+      variables: {gid: currentUser.uid, toChange: -5}
+    });
   }
 
   useEffect(
@@ -75,14 +88,31 @@ const CardPack = () => {
   //   )
   // }
 
-  const theCard = (pokemon) => {
-    console.log(pokemon.pokemonID);
+  const theCard = (pokemon, c) => {
+    /*console.log(pokemon.pokemonID);
     console.log(pokemon.pokemonName);
     console.log(pokemon.imageLink);
     console.log(pokemon.isShiny);
+    console.log(currentUser.uid)*/
     // console.log(username);
+    if(c==1){
+      setOne({
+        poke1Data: true
+      })
+    }
+    else if(c==2){
+      setTwo({
+        poke2Data: true
+      })
+    }
+    else{
+      setThree({
+        poke3Data: true
+      })
+    }
     addPokemon({
-      variables: {pokemonID: pokemon.pokemonID.toString(), 
+      variables: {
+        pokemonID: pokemon.pokemonID.toString(), 
         pokemonName: pokemon.pokemonName, 
         imageLink: pokemon.imageLink, 
         isShiny: pokemon.isShiny, 
@@ -91,6 +121,16 @@ const CardPack = () => {
   }
   
   const CardGrid = (pokemon) => {
+    let count=-1;
+    if(pokemon==cardData[0]){
+      count=1;
+    }
+    else if(pokemon==cardData[1]){
+      count=2;
+    }
+    else{
+      count=3;
+    }
     console.log("cardgrid")
     const id=pokemon.id;
     pokemon.pokemonID=id;
@@ -102,13 +142,32 @@ const CardPack = () => {
     return(
       <Grid item xs={12} sm={6} md={4} lg={3} xl={2} key={id}>
         <PokeCard pokemon={pokemon}></PokeCard>
-        <button onClick={() => theCard(pokemon)}>I want this pokemon</button>
+        { (count==1 && !poke1Data) || (count==2 && !poke2Data) || (count==3 && !poke3Data) ? 
+        <button onClick={() => theCard(pokemon, count)}>I want this pokemon</button>
+        : <p>I caught this Pokemon!</p> }
       </Grid>
     )
   }
 
   console.log(cardData);
   console.log(currentUser);
+
+  if(loading || load){
+    return <h2>Loading...</h2>
+  }
+
+  console.log(userData);
+  console.log(userData.user.wallet);
+
+  if(userData.user.wallet<5){
+    return (
+      <div>
+        <h2>Must have at least 5 PokéDollars to get a Card Pack.</h2>
+        <br />
+        <h3>You can get PokéDollars by Voting.</h3>
+      </div>
+    )
+  }
 
   if(cardData){
 
@@ -121,6 +180,8 @@ const CardPack = () => {
   console.log(card)
 
   }
+
+  console.log(userData)
 
   return(
     <div>
@@ -139,9 +200,13 @@ const CardPack = () => {
         <p>Card Pack Claimed</p>
       }
       { visibleData ? 
+      <div>
       <Grid container className={classes.grid} spacing={5}>
         {card}
-      </Grid>: null
+      </Grid>
+      <button onClick={()=> window.location.reload()}>Get Another Card Pack!</button>
+      </div>
+      : null
       }
     </div>
   )

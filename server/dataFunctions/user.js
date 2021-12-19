@@ -70,17 +70,22 @@ const getUser = async function(gid){
 	}
 }
 
-const getAllUsers = async function(){
-	
+const getAllUsers = async function(gid){
+
 	const usersCollection = await users();
 
 	const userList = await usersCollection.find({}).toArray();
 
+	let userResult=[];
+
 	userList.forEach((user) => {
-		user._id = user._id.toString();
+		if(user.gid!=gid && user.pokemonCollection!=null && user.pokemonCollection!=[]){
+			user._id = user._id.toString();
+			userResult.push(user);
+		}
 	});
 
-	return userList;
+	return userResult;
 }
 
 const addPokemon = async function(pokemonID, pokemonName, imageLink,  isShiny, gid){		//should I be passed pokemonName and imageLink? or would it be prefered I just get ID and I make a call for
