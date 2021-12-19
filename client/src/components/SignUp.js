@@ -31,7 +31,7 @@ function SignUp() {
         typeof registerDisplayname !== "string" ||
         registerDisplayname.trim() == ""
       ) {
-        throw `No display name given`;
+        throw { message: "Username cannot be empty"};
       }
 
       let user = await createUserWithEmailAndPassword(
@@ -43,10 +43,12 @@ function SignUp() {
         displayName: registerDisplayname,
       });
       user = auth.currentUser;
+      
       // console.log(user.localId)
       addUser({
         variables: { userName: registerDisplayname, gid: user.uid },
       });
+      setError("");
     } catch (error) {
       setError(error.message);
     }
@@ -61,6 +63,7 @@ function SignUp() {
       );
       // console.log(user.uid);
       // console.log(user);
+      setError("");
     } catch (error) {
       setError("Invalid email/password");
     }
@@ -73,10 +76,10 @@ function SignUp() {
       // const credential = GoogleAuthProvider.credentialFromResult(result);
       const additionalInfo = getAdditionalUserInfo(result);
       // console.log(credential);
-      console.log(additionalInfo);
-      console.log(result.user);
-
+      // console.log(additionalInfo);
+      // console.log(result.user);
       // const token = credential.accessToken;
+      setError("");
       const user = result.user;
       if (additionalInfo.isNewUser) {
         addUser({
@@ -94,10 +97,12 @@ function SignUp() {
 
   return (
     <div className="App">
-      {error && 
-      <div> 
-        <h1>{error}</h1>  
-      </div>}
+      <br />
+      {error && (
+        <div>
+          <h1>{error}</h1>
+        </div>
+      )}
       <div>
         <h3> Register User </h3>
         <input
@@ -114,17 +119,21 @@ function SignUp() {
         />
         <input
           placeholder="Password..."
+          type="password"
           onChange={(event) => {
             setRegisterPassword(event.target.value);
           }}
         />
 
         <button onClick={register}>Create User</button>
-
+        <br />
+        <br />
         <div>
           <button onClick={googleLogin}>Register with Google</button>
         </div>
       </div>
+      <br />
+      <br />
       <div>
         <h3> Login </h3>
         <input
@@ -135,13 +144,15 @@ function SignUp() {
         />
         <input
           placeholder="Password..."
+          type="password"
           onChange={(event) => {
             setLoginPassword(event.target.value);
           }}
         />
 
         <button onClick={login}>Login</button>
-
+        <br />
+        <br />
         <div>
           <button onClick={googleLogin}>Login with Google</button>
         </div>
