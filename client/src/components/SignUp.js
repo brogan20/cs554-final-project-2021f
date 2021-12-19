@@ -12,6 +12,7 @@ import auth from "../firebase/Firebase";
 import { AuthContext } from "../firebase/AuthContext";
 import mutations from "../mutations";
 import { useMutation } from "@apollo/client";
+import { Navigate } from "react-router-dom";
 
 function SignUp() {
   const [registerEmail, setRegisterEmail] = useState("");
@@ -87,6 +88,12 @@ function SignUp() {
   const logout = async () => {
     await signOut(auth);
   };
+
+  if (currentUser) {
+    return (
+      <Navigate to="/" />
+    )
+  }
 
   return (
     <div className="App">
