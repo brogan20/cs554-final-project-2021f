@@ -25,8 +25,10 @@ const Battle = () => {
         variables: { gid: currentUser.uid }
     })
     const { loading, error, data: userData } = useQuery(queries.GET_ALL_USERS, {
-        fetchPolicy: "network-only"
+        fetchPolicy: "network-only",
+        variables: { gid: currentUser.uid }
     });
+    console.log(currentUser.uid)
     console.log(loading);
     console.log(error);
     console.log(userData);
@@ -40,8 +42,10 @@ const Battle = () => {
         console.log(user2);
         const rand = Math.floor(Math.random()*user2.pokemonCollection.length);
         pokemon2 = user2.pokemonCollection[rand];
+        console.log(pokemon2);
     }
     const [battle, {loading: l, error: e, data: battleData}]=useMutation(mutations.ADD_BATTLE);
+    const [changeFunds, {fundResults}] = useMutation(mutations.CHANGE_FUNDS);
     let card=null;
 
     console.log(battleData);
@@ -53,6 +57,22 @@ const Battle = () => {
           visibleData: true
         })
       }
+
+      useEffect(
+        () => {
+          console.log("useEffect fired")
+          const fetchData = async () =>{
+            console.log("fetchData fired")
+            try{
+            }
+            catch(e){
+              console.log(e)
+            }
+          }
+          fetchData();
+        },
+        []
+      )
 
     if(!currentUser){
         return(
@@ -76,7 +96,7 @@ const Battle = () => {
         pokemon2.pokemonID=pokemon2.pokemonID.toString();
         console.log(pokemon);
         console.log(pokemon2);
-        let catchers = ["James", user2.userName];
+        let catchers = [currentUser.uid, user2._id];
         let poke1 = {pokemonID: pokemon.pokemonID, pokemonName: pokemon.pokemonName, imageLink: pokemon.imageLink, isShiny: pokemon.isShiny};
         let poke2 = {pokemonID: pokemon2.pokemonID, pokemonName: pokemon2.pokemonName, imageLink: pokemon2.imageLink, isShiny: pokemon2.isShiny}
         let p = [poke1, poke2];
@@ -119,18 +139,7 @@ const Battle = () => {
                     {card}
                 </Grid>
             </div> : 
-            <div>
-            <Grid container spacing={5}>
-                <Grid item xs={12} sm={6} md={4} lg={3} xl={2} key={parseInt(pokemon1.pokemonID, 10)}>
-                    <PokeCard pokemon={pokemon1}></PokeCard>
-                </Grid>
-                <p>VS.</p>
-                <Grid item xs={12} sm={6} md={4} lg={3} xl={2} key={parseInt(pokemon2.pokemonID, 10)}>
-                    <PokeCard pokemon={pokemon2}></PokeCard>
-                    <p>Winner!!!</p>
-                </Grid>
-            </Grid>
-            </div> } 
+            null } 
             </div>
         )
     }
@@ -160,6 +169,7 @@ const Battle = () => {
                         <p>Winner!!!</p>
                     </Grid>
                 </Grid>
+                <button onClick={()=> window.location.reload()}>Start a New Battle!</button>
             </div>
         )
     }
@@ -178,6 +188,7 @@ const Battle = () => {
                         <PokeCard pokemon={battleData.createBattle.pokemonTwo}></PokeCard>
                     </Grid>
                 </Grid>
+                <button onClick={()=> window.location.reload()}>Start a New Battle!</button>
             </div>
         )
     }

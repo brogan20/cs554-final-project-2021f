@@ -64,8 +64,8 @@ const GET_POPULARITY = gql`
 `;
 
 const GET_ALL_USERS = gql`
-    query AllUsers {
-        allUsers {
+    query AllUsers($gid: String!) {
+        allUsers(gid: $gid) {
             _id
             userName
             pokemonCollection {
@@ -81,11 +81,16 @@ const GET_ALL_USERS = gql`
 const GET_USER = gql`
     query getUser($gid: String!) {
         user(gid: $gid){
-            _id: String
-            gid: String
-            userName: String
-            # pokemonCollection: [Pokemon]
-            wallet: Int
+            _id
+            gid
+            userName
+            pokemonCollection {
+                pokemonID
+                pokemonName
+                imageLink
+                isShiny
+            }
+            wallet
         }
     }
 `;
@@ -96,7 +101,7 @@ let queries = {
     GET_BETTER_BATTLE,
     GET_POPULARITY,
     GET_ALL_USERS,
-    GET_USER
+    // GET_USER
 }
 
 export default queries;
