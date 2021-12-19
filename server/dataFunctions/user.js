@@ -34,7 +34,7 @@ const createUser = async function(userName, gid) {
 		userName: userName,
 		gid: gid,
         pokemonCollection: [],
-        wallet: 0
+        wallet: 25
 	};
 	
 	const inIn = await usersCollection.insertOne(newUser);
