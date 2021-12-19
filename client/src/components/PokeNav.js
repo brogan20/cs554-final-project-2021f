@@ -5,7 +5,8 @@ import queries from "../queries";
 import { useQuery } from "@apollo/client";
 import { AuthContext } from "../firebase/AuthContext";
 import WalletContext from '../contexts/walletCon';
-
+import auth from "../firebase/Firebase";
+import { signOut } from 'firebase/auth';
 
 const NavLink = ({name, to}) => {
     return(
@@ -18,6 +19,11 @@ const NavLink = ({name, to}) => {
 const PokeNav = () => {
     const { currentUser } = useContext(AuthContext);
     const { userWallet } = useContext(WalletContext);
+
+    const logout = async () => {
+        await signOut(auth);
+    };
+
     if(!currentUser){
 
     };
@@ -37,6 +43,8 @@ const PokeNav = () => {
                     <Link className="dropdown-item" to="/battle">Battle Registration</Link>
                     </NavDropdown>
                     {currentUser && <NavLink name={`${currentUser.displayName}: ${userWallet}$`} to="/payment"/>}
+                    {currentUser && <button onClick={logout}> Sign Out </button>}
+                    {!currentUser && <NavLink name="Sign Up" to="/signup"/>}
                 </Nav>
                 </Navbar.Collapse>
             </Container>
