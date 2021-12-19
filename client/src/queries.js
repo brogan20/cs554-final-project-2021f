@@ -82,9 +82,9 @@ const GET_USER = gql`
     query getUser($gid: String!) {
         user(gid: $gid){
             _id: String
-            gid: String!
+            gid: String
             userName: String
-            pokemonCollection: [Pokemon]
+            # pokemonCollection: [Pokemon]
             wallet: Int
         }
     }
