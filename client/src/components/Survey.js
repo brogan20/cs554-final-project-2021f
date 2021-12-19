@@ -91,7 +91,7 @@ const Survey = () => {
     <div>
       <h1>Pick your favorite Pokémon!</h1>
       <Button className="btn-secondary" onClick={() => setModal({show: true, title: 'About this page', message: 
-      'By voting on a pokémon, you help fuel our ranking system. To award you for your help, you receive 5 free PokéDollars', 
+      'By voting on a pokémon, you help fuel our ranking system. To award you for your help, you receive 5 free PokéDollars. (You must be logged in to recieve any money)', 
       func: closeModal})}>
         ?
       </Button>
