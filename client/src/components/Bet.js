@@ -6,7 +6,7 @@ import queries from "../queries";
 import mutations from "../mutations";
 import { Container, Row, Col, Form, Button, Spinner, Modal } from "react-bootstrap";
 import { AuthContext } from "../firebase/AuthContext";
-
+import WalletContext from "../contexts/walletCon";
 
 const getTimeLeft = (timestamp) => {
   // Discard the time and time-zone information.
@@ -66,6 +66,7 @@ const Bet = () => {
 
   const [placeBet, mutResult] = useMutation(mutations.PLACE_BET)
   const { currentUser } = useContext(AuthContext);
+  const { userWallet } = useContext(WalletContext);
 
 
   let { id } = useParams();

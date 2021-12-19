@@ -4,6 +4,7 @@ import { Nav, Navbar, NavDropdown, Container } from 'react-bootstrap';
 import queries from "../queries";
 import { useQuery } from "@apollo/client";
 import { AuthContext } from "../firebase/AuthContext";
+import WalletContext from '../contexts/walletCon';
 
 
 const NavLink = ({name, to}) => {
@@ -16,9 +17,7 @@ const NavLink = ({name, to}) => {
 
 const PokeNav = () => {
     const { currentUser } = useContext(AuthContext);
-    // const { wallet } = useContext();
-    let userName = "Temp";
-    let wallet = 1;
+    const { userWallet } = useContext(WalletContext);
     if(!currentUser){
 
     };
@@ -37,7 +36,7 @@ const PokeNav = () => {
                     <NavDropdown.Divider />
                     <Link className="dropdown-item" to="/battle">Battle Registration</Link>
                     </NavDropdown>
-                    {currentUser && <NavLink name={`${currentUser.displayName}: ${wallet}$`} to="/payment"/>}
+                    {currentUser && <NavLink name={`${currentUser.displayName}: ${userWallet}$`} to="/payment"/>}
                 </Nav>
                 </Navbar.Collapse>
             </Container>
