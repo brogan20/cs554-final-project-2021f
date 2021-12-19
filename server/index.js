@@ -11,7 +11,7 @@ const typeDefs = gql`
     battles: [Battle]
     pokemonPopularity(pokemonName: String!): Int
     oneBattle(battleID: String!): Battle
-    allUsers: [User]
+    allUsers(gid: String!): [User]
   }
 
   type Pokemon {
@@ -153,7 +153,7 @@ const resolvers = {
     allUsers: async (_, args) => {
       let userList;
       try{
-        userList = await userData.getAllUsers();
+        userList = await userData.getAllUsers(args.gid);
       }
       catch(e){
         throw e;

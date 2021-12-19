@@ -17,17 +17,24 @@ const useStyles = makeStyles({
 
 const CardPack = () => {
   const classes = useStyles();
+  const { currentUser } = useContext(AuthContext);
   const [ cardData, setCardData ] = useState(undefined);
   const [ loading, setLoading ] = useState(false);
   const [ visibleData, setVisible ] = useState(false);
+  const { loading: load, error: err, data: userData } = useQuery(queries.GET_USER, {
+    fetchPolicy: "network-only",
+    variables: { gid: currentUser.uid }
+  }); 
   const [addPokemon, {data}]=useMutation(mutations.ADD_POKEMON);
-  const { currentUser } = useContext(AuthContext);
   let card=null;
+
+  console.log(currentUser)
   
   const toggleVisible = () => {
     setVisible({
       visibleData: true
     })
+    userData.wallet=userData.wallet-5;
   }
 
   useEffect(
@@ -76,13 +83,15 @@ const CardPack = () => {
   // }
 
   const theCard = (pokemon) => {
-    console.log(pokemon.pokemonID);
+    /*console.log(pokemon.pokemonID);
     console.log(pokemon.pokemonName);
     console.log(pokemon.imageLink);
     console.log(pokemon.isShiny);
+    console.log(currentUser.uid)*/
     // console.log(username);
     addPokemon({
-      variables: {pokemonID: pokemon.pokemonID.toString(), 
+      variables: {
+        pokemonID: pokemon.pokemonID.toString(), 
         pokemonName: pokemon.pokemonName, 
         imageLink: pokemon.imageLink, 
         isShiny: pokemon.isShiny, 
@@ -110,6 +119,10 @@ const CardPack = () => {
   console.log(cardData);
   console.log(currentUser);
 
+  if(loading || load){
+    return <h2>Loading...</h2>
+  }
+
   if(cardData){
 
   card =
@@ -121,6 +134,8 @@ const CardPack = () => {
   console.log(card)
 
   }
+
+  console.log(userData)
 
   return(
     <div>

@@ -25,8 +25,10 @@ const Battle = () => {
         variables: { gid: currentUser.uid }
     })
     const { loading, error, data: userData } = useQuery(queries.GET_ALL_USERS, {
-        fetchPolicy: "network-only"
+        fetchPolicy: "network-only",
+        variables: { gid: currentUser.uid }
     });
+    console.log(currentUser.uid)
     console.log(loading);
     console.log(error);
     console.log(userData);
@@ -40,6 +42,7 @@ const Battle = () => {
         console.log(user2);
         const rand = Math.floor(Math.random()*user2.pokemonCollection.length);
         pokemon2 = user2.pokemonCollection[rand];
+        console.log(pokemon2);
     }
     const [battle, {loading: l, error: e, data: battleData}]=useMutation(mutations.ADD_BATTLE);
     let card=null;
@@ -76,7 +79,7 @@ const Battle = () => {
         pokemon2.pokemonID=pokemon2.pokemonID.toString();
         console.log(pokemon);
         console.log(pokemon2);
-        let catchers = ["James", user2.userName];
+        let catchers = [currentUser.uid, user2._id];
         let poke1 = {pokemonID: pokemon.pokemonID, pokemonName: pokemon.pokemonName, imageLink: pokemon.imageLink, isShiny: pokemon.isShiny};
         let poke2 = {pokemonID: pokemon2.pokemonID, pokemonName: pokemon2.pokemonName, imageLink: pokemon2.imageLink, isShiny: pokemon2.isShiny}
         let p = [poke1, poke2];
