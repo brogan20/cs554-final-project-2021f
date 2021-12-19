@@ -36,9 +36,9 @@ const PokeNav = () => {
                 <Nav className="me-auto">
                     <NavLink name="Portfolio" to="/portfolio"/>
                     <NavLink name="New Card Pack" to="/cardpack"/>
+                    <NavLink name="Voting" to="/survey"/>
                     <NavDropdown title="Battles" id="basic-nav-dropdown">
                     <Link className="dropdown-item" to="/betting">Betting</Link>
-                    <Link className="dropdown-item" to="/survey">Voting</Link>
                     <NavDropdown.Divider />
                     <Link className="dropdown-item" to="/battle">Battle Registration</Link>
                     </NavDropdown>
