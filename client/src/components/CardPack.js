@@ -21,6 +21,9 @@ const CardPack = () => {
   const [ cardData, setCardData ] = useState(undefined);
   const [ loading, setLoading ] = useState(false);
   const [ visibleData, setVisible ] = useState(false);
+  const [ poke1Data, setOne ]=useState(false);
+  const [ poke2Data, setTwo ]=useState(false);
+  const [ poke3Data, setThree ]=useState(false);
   const { loading: load, error: err, data: userData } = useQuery(queries.GET_USER, {
     fetchPolicy: "network-only",
     variables: { gid: currentUser.uid }
@@ -82,13 +85,28 @@ const CardPack = () => {
   //   )
   // }
 
-  const theCard = (pokemon) => {
+  const theCard = (pokemon, c) => {
     /*console.log(pokemon.pokemonID);
     console.log(pokemon.pokemonName);
     console.log(pokemon.imageLink);
     console.log(pokemon.isShiny);
     console.log(currentUser.uid)*/
     // console.log(username);
+    if(c==1){
+      setOne({
+        poke1Data: true
+      })
+    }
+    else if(c==2){
+      setTwo({
+        poke2Data: true
+      })
+    }
+    else{
+      setThree({
+        poke3Data: true
+      })
+    }
     addPokemon({
       variables: {
         pokemonID: pokemon.pokemonID.toString(), 
@@ -100,6 +118,16 @@ const CardPack = () => {
   }
   
   const CardGrid = (pokemon) => {
+    let count=-1;
+    if(pokemon==cardData[0]){
+      count=1;
+    }
+    else if(pokemon==cardData[1]){
+      count=2;
+    }
+    else{
+      count=3;
+    }
     console.log("cardgrid")
     const id=pokemon.id;
     pokemon.pokemonID=id;
@@ -111,7 +139,9 @@ const CardPack = () => {
     return(
       <Grid item xs={12} sm={6} md={4} lg={3} xl={2} key={id}>
         <PokeCard pokemon={pokemon}></PokeCard>
-        <button onClick={() => theCard(pokemon)}>I want this pokemon</button>
+        { (count==1 && !poke1Data) || (count==2 && !poke2Data) || (count==3 && !poke3Data) ? 
+        <button onClick={() => theCard(pokemon, count)}>I want this pokemon</button>
+        : <p>I caught this Pokemon!</p> }
       </Grid>
     )
   }
