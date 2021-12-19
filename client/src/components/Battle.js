@@ -22,7 +22,7 @@ const Battle = () => {
     // Get the current User's username from firebase
     const { loading: load, error: err, data: portfolioData } = useQuery(queries.GET_PORTFOLIO, {
         fetchPolicy: "network-only",
-        variables: { userName: currentUser.displayName }
+        variables: { gid: currentUser.uid }
     })
     const { loading, error, data: userData } = useQuery(queries.GET_ALL_USERS, {
         fetchPolicy: "network-only"

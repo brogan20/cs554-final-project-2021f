@@ -1,4 +1,3 @@
-import logo from "../logo.svg";
 import "../App.css";
 import SignUp from "./SignUp";
 import Portfolio from "./Portfolio";
@@ -22,7 +21,7 @@ import { AuthProvider } from "../firebase/AuthContext";
 const client = new ApolloClient({
   cache: new InMemoryCache(),
   link: new HttpLink({
-    uri: "http://localhost:4000",
+    uri: "https://pokeapi.myriaco.re",
   }),
 });
 

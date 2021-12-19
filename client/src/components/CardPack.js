@@ -69,18 +69,18 @@ const CardPack = () => {
     []
   )
 
-  if(!currentUser){
-    return(
-      <h2>A User Must Sign In Before Getting a Card Pack</h2>
-    )
-  }
+  // if(!currentUser){
+  //   return(
+  //     <h2>A User Must Sign In Before Getting a Card Pack</h2>
+  //   )
+  // }
 
-  const theCard = (pokemon, username) => {
+  const theCard = (pokemon) => {
     console.log(pokemon.pokemonID);
     console.log(pokemon.pokemonName);
     console.log(pokemon.imageLink);
     console.log(pokemon.isShiny);
-    console.log(username);
+    // console.log(username);
     addPokemon({
       variables: {pokemonID: pokemon.pokemonID.toString(), 
         pokemonName: pokemon.pokemonName, 
