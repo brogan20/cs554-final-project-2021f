@@ -29,6 +29,8 @@ const Survey = () => {
       let pokemonOne = await axios.get(`https://pokeapi.co/api/v2/pokemon/${randOne}/`);
       let randTwo = Math.floor(Math.random() * 898) + 1
       let pokemonTwo = await axios.get(`https://pokeapi.co/api/v2/pokemon/${randTwo}/`);
+      pokemonOne.data.name = pokemonOne.data.name.toLowerCase();
+      pokemonTwo.data.name = pokemonOne.data.name.toLowerCase();
       result.push(pokemonOne);
       result.push(pokemonTwo);
       setCardData(result);
@@ -57,8 +59,18 @@ const Survey = () => {
     )
   }
   const ourUsersCards = (pokemon) => {
+    if(pokemon.pokemonName == cardData[0].data.name){
+      changePopularity({
+        variables: {pokemonName: cardData[1].data.name, toChange: -2}
+      });
+    }
+    if(pokemon.pokemonName == cardData[1].data.name){
+      changePopularity({
+        variables: {pokemonName: cardData[0].data.name, toChange: -2}
+      });
+    }
     changePopularity({
-      variables: {pokemonName: pokemon.pokemonName, toChange: 5}
+      variables: {pokemonName: pokemon.pokemonName, toChange: 2}
     });
     if(!currentUser){
       setModal({show:true, title: "Success", message: `You voted for ${pokemon.pokemonName}! You must log in to earn any PokéDollars`, func: fetchData});
