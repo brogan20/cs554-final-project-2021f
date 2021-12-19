@@ -9,9 +9,12 @@ import { AuthContext } from "../firebase/AuthContext";
 const Portfolio = () => {
   // commenting out until functions are made
   const { currentUser } = useContext(AuthContext);
+  let gid;
+  if(currentUser)
+    gid = currentUser.uid;
   const { loading, error, data } = useQuery(queries.GET_PORTFOLIO, {
-    variables: { gid: currentUser.uid }, 
     skip: !currentUser,
+    variables: { gid: gid }, 
     fetchPolicy: "network-only",
   });
   let cardList = null;

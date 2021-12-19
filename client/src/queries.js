@@ -78,22 +78,17 @@ const GET_ALL_USERS = gql`
     }
 `
 
-// const GET_USER = gql`
-//     query getUser($gid: String!) {
-//         user(gid: $gid){
-//             _id: String
-//             gid: String
-//             userName: String
-//             pokemonCollection: [{
-//                 pokemonID
-//                 pokemonName
-//                 imageLink
-//                 isShiny
-//             }]
-//             wallet: Int
-//         }
-//     }
-// `;
+const GET_USER = gql`
+    query getUser($gid: String!) {
+        user(gid: $gid){
+            _id: String
+            gid: String
+            userName: String
+            # pokemonCollection: [Pokemon]
+            wallet: Int
+        }
+    }
+`;
 
 let queries = {
     GET_PORTFOLIO,

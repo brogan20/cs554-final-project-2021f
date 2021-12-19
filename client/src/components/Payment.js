@@ -91,7 +91,7 @@ const Payment = () => {
         <input
            type="number"
            name="amount"
-           placeholder="Enter Your Name"
+           placeholder="Amount To Buy"
            onChange={handleAmountChange}
            value={amountBought}
             />
