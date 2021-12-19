@@ -29,6 +29,7 @@ const CardPack = () => {
     variables: { gid: currentUser.uid }
   }); 
   const [addPokemon, {data}]=useMutation(mutations.ADD_POKEMON);
+  const [changeFunds, {fundResults}] = useMutation(mutations.CHANGE_FUNDS);
   let card=null;
 
   console.log(currentUser)
@@ -37,7 +38,9 @@ const CardPack = () => {
     setVisible({
       visibleData: true
     })
-    userData.wallet=userData.wallet-5;
+    changeFunds({
+      variables: {gid: currentUser.uid, toChange: -5}
+    });
   }
 
   useEffect(
@@ -153,6 +156,19 @@ const CardPack = () => {
     return <h2>Loading...</h2>
   }
 
+  console.log(userData);
+  console.log(userData.user.wallet);
+
+  if(userData.user.wallet<5){
+    return (
+      <div>
+        <h2>Must have at least 5 PokéDollars to get a Card Pack.</h2>
+        <br />
+        <h3>You can get PokéDollars by Voting.</h3>
+      </div>
+    )
+  }
+
   if(cardData){
 
   card =
@@ -184,9 +200,13 @@ const CardPack = () => {
         <p>Card Pack Claimed</p>
       }
       { visibleData ? 
+      <div>
       <Grid container className={classes.grid} spacing={5}>
         {card}
-      </Grid>: null
+      </Grid>
+      <button onClick={()=> window.location.reload()}>Get Another Card Pack!</button>
+      </div>
+      : null
       }
     </div>
   )
