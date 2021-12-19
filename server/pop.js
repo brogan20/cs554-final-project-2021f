@@ -37,23 +37,23 @@ async function main(){
 	try {
 		await popularityData.initPopularity();
         
-        await userData.createUser("Red");
-        await userData.addPokemon("25", "pikachu", "blankURL", false, "Red");
-        await userData.addPokemon("132", "ditto", "blankURL", false, "Red");
-        await userData.changeFunds("Red", 50);
+        await userData.createUser("Red", "gidRed");
+        await userData.addPokemon("25", "pikachu", "blankURL", false, "gidRed");
+        await userData.addPokemon("132", "ditto", "blankURL", false, "gidRed");
+        await userData.changeFunds("gidRed", 50);
         
-        await userData.createUser("Dawn");
-        await userData.addPokemon("393", "piplup", "blankURL", false, "Dawn");
+        await userData.createUser("Dawn", "gidDawn");
+        await userData.addPokemon("393", "piplup", "blankURL", false, "gidDawn");
         
-        await userData.createUser("James");
-        await userData.addPokemon("387", "turtwig", "blankURL", false, "James");
-        await userData.addPokemon("196", "crobat", "blankURL", true, "James");
-        await userData.changeFunds("James", 50);
+        await userData.createUser("James", "gidJames");
+        await userData.addPokemon("387", "turtwig", "blankURL", false, "gidJames");
+        await userData.addPokemon("196", "crobat", "blankURL", true, "gidJames");
+        await userData.changeFunds("gidJames", 50);
 
         let battleOne = await battleData.createBattle("Red", "Dawn", pikachuData, piplupData);
         let battleTwo = await battleData.createBattle("Red", "James", dittoData, crobatData);
 
-        await battleData.createBet("James", 25, battleOne._id, "Red");
+        await battleData.createBet("gidJames", 25, battleOne._id, "Red");
 
 		console.log("database has been populated");
 	}catch(e){

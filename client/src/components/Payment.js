@@ -1,10 +1,11 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useContext } from "react";
 import PokeCard from './PokeCard';
 import { useMutation, useQuery } from '@apollo/client';
 import { Grid, makeStyles } from '@material-ui/core';
 import mutations from '../mutations';
 import CreditCardInput from 'react-credit-card-input';
 import { Form, Button, FormGroup, FormControl, ControlLabel, Alert } from "react-bootstrap";
+import { AuthContext } from "../firebase/AuthContext";
 
 const useStyles = makeStyles({
   grid: {
@@ -20,6 +21,7 @@ const Payment = () => {
   const [changeFunds, {fundResults}] = useMutation(mutations.CHANGE_FUNDS);
   const [name, setName] = useState(undefined);
   const [amountBought, setAmountBought] = useState(undefined);
+  const { currentUser } = useContext(AuthContext);
 
 
   useEffect(
@@ -47,7 +49,7 @@ const Payment = () => {
     
     const payOurMan = event => {
       changeFunds({
-        variables: {userName: "James", toChange: amountBought} // swap "James" with name given from firebase
+        variables: {gid: currentUser.uid, toChange: amountBought} // swap "James" with name given from firebase
       });
       alert(`CONGRATULATIONS! You just """earned""" ${amountBought} PokéBucks!!! WE ARE SO PROUD OF YOU!`);
     }

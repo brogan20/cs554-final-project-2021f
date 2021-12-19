@@ -10,8 +10,10 @@ const ADD_USER = gql`
 `;
 
 const CHANGE_FUNDS = gql`
-  mutation ChangeFunds($userName: String, $toChange: Int) {
-    changeFunds(userName: $userName, toChange: $toChange)
+  mutation ChangeFunds($gid: String, $toChange: Int) {
+    changeFunds(gid: $gid, toChange: $toChange) {
+      userName
+    }
   }
 `;
 
@@ -23,13 +25,13 @@ const CHANGE_POPULARITY = gql`
 
 const PLACE_BET = gql`
   mutation Mutation(
-    $userName: String
+    $gid: String
     $betAmount: Int
     $battleId: String
     $predictedWinner: String
   ) {
     createBet(
-      userName: $userName
+      gid: $gid
       betAmount: $betAmount
       battleID: $battleId
       predictedWinner: $predictedWinner
@@ -47,14 +49,14 @@ const ADD_POKEMON = gql`
     $pokemonName: String!
     $imageLink: String!
     $isShiny: Boolean!
-    $userName: String!
+    $gid: String!
   ) {
     addPokemon(
       pokemonID: $pokemonID
       pokemonName: $pokemonName
       imageLink: $imageLink
       isShiny: $isShiny
-      userName: $userName
+      gid: $gid
     ) {
       pokemonID
       pokemonName

@@ -137,7 +137,7 @@ const createBet = async function(gid, betAmount, battleID, predectedWinner) {
     if(typeof gid !== 'string' || gid.trim() == "") {
 		throw({code: 400, message: "createBet: gid must be a string that isn't empty or just spaces"});
 	}
-    if(typeof predectedWinner !== 'string' || gid.trim() == "") {
+    if(typeof predectedWinner !== 'string' || predectedWinner.trim() == "") {
 		throw({code: 400, message: "createBet: predectedWinner must be a string that isn't empty or just spaces"});
 	}
 	if(typeof betAmount !== 'number' || betAmount == 0) {

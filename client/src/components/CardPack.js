@@ -1,10 +1,11 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useContext } from "react";
 import PokeCard from './PokeCard';
 import { useQuery, useMutation, ApolloClient, HttpLink, InMemoryCache } from '@apollo/client';
 import { Grid, makeStyles } from '@material-ui/core';
 import queries from '../queries';
 import mutations from '../mutations';
 import axios from 'axios';
+import {AuthContext} from "../firebase/AuthContext"
 
 const useStyles = makeStyles({
   grid: {
@@ -19,6 +20,7 @@ const CardPack = () => {
   const [ loading, setLoading ] = useState(false);
   const [ visibleData, setVisible ] = useState(false);
   const [addPokemon, {data}]=useMutation(mutations.ADD_POKEMON);
+  const { currentUser } = useContext(AuthContext);
   let card=null;
   
   const toggleVisible = () => {
@@ -122,9 +124,9 @@ const CardPack = () => {
     []
   )
 
-  const theCard = (pokemon, username) => {
+  const theCard = (pokemon) => {
     addPokemon({
-      variables: {pokemonID: pokemon.pokemonID, pokemonName: pokemon.pokemonName, imageLink: pokemon.imageLink, isShiny: pokemon.isShiny, userName: username}
+      variables: {pokemonID: pokemon.pokemonID, pokemonName: pokemon.pokemonName, imageLink: pokemon.imageLink, isShiny: pokemon.isShiny, gid: currentUser.uid}
     })
   }
   
@@ -137,11 +139,10 @@ const CardPack = () => {
     const image=`https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/${pokemon.id}.png`;
     pokemon.imageLink=image;
     const shiny=pokemon.isShiny;
-    const userName="Red" // Will be received from firebase
     return(
       <Grid item xs={12} sm={6} md={4} lg={3} xl={2} key={id}>
         <PokeCard pokemon={pokemon}></PokeCard>
-        <button onClick={() => theCard(pokemon, userName)}>I want this pokemon</button>
+        <button onClick={() => theCard(pokemon)}>I want this pokemon</button>
       </Grid>
     )
   }
