@@ -25,7 +25,7 @@ const client = new ApolloClient({
     uri: "https://pokeapi.myriaco.re",
   }),
 });
-let startWallet = {userWallet: 0};
+let startWallet = {userWallet: null};
 function App() {
   return (
     <ApolloProvider client={client}>
