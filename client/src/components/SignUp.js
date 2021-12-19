@@ -22,6 +22,7 @@ function SignUp() {
   const [loginPassword, setLoginPassword] = useState("");
   const { currentUser } = useContext(AuthContext);
   const [addUser, mutResult] = useMutation(mutations.ADD_USER);
+  const [error, setError] = useState("");
 
   const register = async () => {
     try {
@@ -47,7 +48,7 @@ function SignUp() {
         variables: { userName: registerDisplayname, gid: user.uid },
       });
     } catch (error) {
-      console.log(error.message);
+      setError(error.message);
     }
   };
 
@@ -58,10 +59,10 @@ function SignUp() {
         loginEmail,
         loginPassword
       );
-      console.log(user.uid);
-      console.log(user);
+      // console.log(user.uid);
+      // console.log(user);
     } catch (error) {
-      console.log(error.message);
+      setError("Invalid email/password");
     }
   };
 
@@ -82,21 +83,21 @@ function SignUp() {
           variables: { userName: user.displayName, gid: user.uid },
         });
       }
-    } catch (error) {}
-  };
-
-  const logout = async () => {
-    await signOut(auth);
+    } catch (error) {
+      setError(error.message);
+    }
   };
 
   if (currentUser) {
-    return (
-      <Navigate to="/" />
-    )
+    return <Navigate to="/" />;
   }
 
   return (
     <div className="App">
+      {error && 
+      <div> 
+        <h1>{error}</h1>  
+      </div>}
       <div>
         <h3> Register User </h3>
         <input
