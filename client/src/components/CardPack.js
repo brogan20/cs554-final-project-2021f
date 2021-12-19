@@ -1,7 +1,8 @@
 import React, { useState, useEffect } from "react";
 import PokeCard from './PokeCard';
-import { useQuery, useMutation, ApolloClient, HttpLink, InMemoryCache } from '@apollo/client';
+import { useQuery, useMutation } from '@apollo/client';
 import { Grid, makeStyles } from '@material-ui/core';
+import { Container, Row, Col } from 'react-bootstrap';
 import queries from '../queries';
 import mutations from '../mutations';
 import axios from 'axios';
@@ -163,9 +164,19 @@ const CardPack = () => {
   return(
     <div>
       <h1>Get a new Card Pack!</h1>
-      <br />
-      { !visibleData ? <button onClick={toggleVisible.bind(this)}>Claim your Card Pack!</button> : <p>Card Pack Claimed</p> }
-      <br />
+      { !visibleData ?
+        <Container style={{marginTop: '3rem'}}fluid>
+              <Row className="justify-content-center">
+                <Col xs={2}>
+                  <button className="btn-vote" onClick={toggleVisible.bind(this)}>
+                    <PokeCard pokemon={{isBack: true, isShiny: true}}/>
+                  </button>
+                </Col>
+              </Row>
+        </Container>
+        : 
+        <p>Card Pack Claimed</p>
+      }
       { visibleData ? 
       <Grid container className={classes.grid} spacing={5}>
         {card}

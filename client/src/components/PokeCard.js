@@ -5,11 +5,16 @@ import { Card } from 'react-bootstrap';
 const PokeCard = ({pokemon}) =>{
   const cardRef = useRef();
   const [ data, setData ] = useState(null);
+  const [ isBack, setIsBack ] = useState(false);
   let sprite = null;
   let type = null;
 
   useEffect(
     () => {
+      if(pokemon.isBack){
+        setIsBack(true);
+        return
+      }
       const fetchData = async () =>{
         let res = null;
         try{
@@ -56,6 +61,15 @@ const PokeCard = ({pokemon}) =>{
     cardRef.current.style="";
     cardRef.current.firstChild.style = "";
     cardRef.current.className = cardRef.current.className.replace(' poke-card-active', '');
+  }
+
+  if(isBack){
+    return (
+    <Card ref={cardRef} onMouseMove={rotateCard} onMouseOver={setClass} onMouseOut={resetCard}>
+      <Card.Body className={`poke-card-body ${pokemon.isShiny ? "poke-card-holo" : ""}`}>
+        <img style={{width: '100%'}} src="/cardpack.png" alt="cardpack"/>
+      </Card.Body>
+    </Card>)
   }
 
   if(data){
