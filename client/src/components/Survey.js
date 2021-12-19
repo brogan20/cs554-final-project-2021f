@@ -60,10 +60,15 @@ const Survey = () => {
     changePopularity({
       variables: {pokemonName: pokemon.pokemonName, toChange: 5}
     });
-    changeFunds({
-      variables: {gid: currentUser.uid, toChange: 5} // swap "James" with name given from firebase
-    });
-    setModal({show:true, title: "Success", message: `You voted for ${pokemon.pokemonName}! You just earned 5 PokéDollars`, func: fetchData});
+    if(!currentUser){
+      setModal({show:true, title: "Success", message: `You voted for ${pokemon.pokemonName}! You must log in to earn any PokéDollars`, func: fetchData});
+    }
+    else{
+      changeFunds({
+        variables: {gid: currentUser.uid, toChange: 5} // swap "James" with name given from firebase
+      });
+      setModal({show:true, title: "Success", message: `You voted for ${pokemon.pokemonName}! You just earned 5 PokéDollars`, func: fetchData});
+    }
   }
 
 
@@ -93,7 +98,7 @@ const Survey = () => {
     <div>
       <h1>Pick your favorite Pokémon!</h1>
       <Button className="btn-secondary" onClick={() => setModal({show: true, title: 'About this page', message: 
-      'By voting on a pokémon, you help fuel our ranking system. To award you for your help, you receive 5 free PokéDollars', 
+      'By voting on a pokémon, you help fuel our ranking system. To award you for your help, you receive 5 free PokéDollars. (You must be logged in to recieve any money)', 
       func: closeModal})}>
         ?
       </Button>
