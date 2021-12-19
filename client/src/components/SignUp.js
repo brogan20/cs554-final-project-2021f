@@ -5,10 +5,13 @@ import {
   signOut,
   signInWithPopup,
   GoogleAuthProvider,
+  getAdditionalUserInfo,
 } from "firebase/auth";
 import { updateProfile } from "firebase/auth";
 import auth from "../firebase/Firebase";
 import { AuthContext } from "../firebase/AuthContext";
+import mutations from "../mutations";
+import { useMutation } from "@apollo/client";
 
 function SignUp() {
   const [registerEmail, setRegisterEmail] = useState("");
@@ -17,9 +20,18 @@ function SignUp() {
   const [loginEmail, setLoginEmail] = useState("");
   const [loginPassword, setLoginPassword] = useState("");
   const { currentUser } = useContext(AuthContext);
+  const [addUser, mutResult] = useMutation(mutations.ADD_USER);
 
   const register = async () => {
     try {
+      if (
+        !registerDisplayname ||
+        typeof registerDisplayname !== "string" ||
+        registerDisplayname.trim() == ""
+      ) {
+        throw `No display name given`;
+      }
+
       let user = await createUserWithEmailAndPassword(
         auth,
         registerEmail,
@@ -29,7 +41,10 @@ function SignUp() {
         displayName: registerDisplayname,
       });
       user = auth.currentUser;
-      console.log(currentUser);
+      // console.log(user.localId)
+      addUser({
+        variables: { userName: registerDisplayname, gid: user.uid },
+      });
     } catch (error) {
       console.log(error.message);
     }
@@ -37,12 +52,13 @@ function SignUp() {
 
   const login = async () => {
     try {
-      const user = await signInWithEmailAndPassword(
+      const { user } = await signInWithEmailAndPassword(
         auth,
         loginEmail,
         loginPassword
       );
-      console.log(currentUser.displayName);
+      console.log(user.uid);
+      console.log(user);
     } catch (error) {
       console.log(error.message);
     }
@@ -51,11 +67,21 @@ function SignUp() {
   const googleLogin = async () => {
     try {
       const provider = new GoogleAuthProvider();
-      const result = signInWithPopup(auth, provider);
-      const credential = GoogleAuthProvider.credentialFromResult(result);
-      const token = credential.accessToken;
+      const result = await signInWithPopup(auth, provider);
+      // const credential = GoogleAuthProvider.credentialFromResult(result);
+      const additionalInfo = getAdditionalUserInfo(result)
+      // console.log(credential);
+      console.log(additionalInfo);
+      console.log(result.user);
+
+      // const token = credential.accessToken;
       const user = result.user;
-      console.log(currentUser);
+      if (additionalInfo.isNewUser) {
+        addUser({
+          variables: {userName: user.displayName, gid: user.uid}
+        });
+      }
+      
     } catch (error) {}
   };
 

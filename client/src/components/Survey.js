@@ -1,9 +1,10 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useContext } from "react";
 import PokeCard from './PokeCard';
 import { useMutation, useQuery } from '@apollo/client';
 import { Button, Container, Row, Col, Modal, Spinner } from 'react-bootstrap';
 import axios from 'axios';
 import mutations from '../mutations';
+import { AuthContext } from "../firebase/AuthContext";
 
 const Survey = () => {
   const [ cardData, setCardData ] = useState(undefined);
@@ -12,6 +13,7 @@ const Survey = () => {
   const [ modal, setModal ] = useState({show: false, title: "", message: "", func: null});
   const [changePopularity, {popResults}] = useMutation(mutations.CHANGE_POPULARITY);
   const [changeFunds, {fundResults}] = useMutation(mutations.CHANGE_FUNDS);
+  const { currentUser } = useContext(AuthContext);
   let card = null;
 
   const closeModal = () => {
@@ -59,7 +61,7 @@ const Survey = () => {
       variables: {pokemonName: pokemon.pokemonName, toChange: 5}
     });
     changeFunds({
-      variables: {userName: "James", toChange: 5} // swap "James" with name given from firebase
+      variables: {gid: currentUser.uid, toChange: 5} // swap "James" with name given from firebase
     });
     setModal({show:true, title: "Success", message: `You voted for ${pokemon.pokemonName}! You just earned 5 PokéDollars`, func: fetchData});
   }

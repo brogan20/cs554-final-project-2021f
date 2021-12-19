@@ -1,10 +1,12 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useContext } from "react";
 import PokeCard from "./PokeCard";
 import { Link, useParams } from "react-router-dom";
 import { useQuery, useMutation } from '@apollo/client'
 import queries from "../queries";
 import mutations from "../mutations";
 import { Container, Row, Col, Form, Button, Spinner, Modal } from "react-bootstrap";
+import { AuthContext } from "../firebase/AuthContext";
+
 
 const getTimeLeft = (timestamp) => {
   // Discard the time and time-zone information.
@@ -63,6 +65,8 @@ const Bet = () => {
   const [ modal, setModal ] = useState({show: false, title: "", message: ""});
 
   const [placeBet, mutResult] = useMutation(mutations.PLACE_BET)
+  const { currentUser } = useContext(AuthContext);
+
 
   let { id } = useParams();
   const { loading, error, data } = useQuery(queries.GET_BETTER_BATTLE, {
@@ -119,7 +123,7 @@ const Bet = () => {
     let predictedWinner = selectedTrainer == 0 ? data.oneBattle.trainerOne : data.oneBattle.trainerTwo;
     try{
       placeBet({
-        variables: {userName: "James"/*replace with firebase stuff*/, betAmount: amt, battleId: id, predictedWinner: predictedWinner}
+        variables: {gid: currentUser.uid, betAmount: amt, battleId: id, predictedWinner: predictedWinner}
       });
     }
     catch(e){

@@ -130,14 +130,14 @@ const getCurrentBattles = async function() {
     return ongoing;
 }
 
-const createBet = async function(userName, betAmount, battleID, predectedWinner) {
-	if(arguments.length != 4 || battleID == undefined || userName == undefined || betAmount == undefined || predectedWinner == undefined) {
-		throw({code: 400, message: "createBet: you are missing one of userName, betAmount, predectedWinner, or battleID"});
+const createBet = async function(gid, betAmount, battleID, predectedWinner) {
+	if(arguments.length != 4 || battleID == undefined || gid == undefined || betAmount == undefined || predectedWinner == undefined) {
+		throw({code: 400, message: "createBet: you are missing one of gid, betAmount, predectedWinner, or battleID"});
 	}
-    if(typeof userName !== 'string' || userName.trim() == "") {
-		throw({code: 400, message: "createBet: userName must be a string that isn't empty or just spaces"});
+    if(typeof gid !== 'string' || gid.trim() == "") {
+		throw({code: 400, message: "createBet: gid must be a string that isn't empty or just spaces"});
 	}
-    if(typeof predectedWinner !== 'string' || userName.trim() == "") {
+    if(typeof predectedWinner !== 'string' || predectedWinner.trim() == "") {
 		throw({code: 400, message: "createBet: predectedWinner must be a string that isn't empty or just spaces"});
 	}
 	if(typeof betAmount !== 'number' || betAmount == 0) {
@@ -152,7 +152,7 @@ const createBet = async function(userName, betAmount, battleID, predectedWinner)
 
     if(battleID instanceof ObjectId) {
         const usersCollection = await users();
-        const user = await usersCollection.findOne({userName: userName});
+        const user = await usersCollection.findOne({gid: gid});
         if(user == null) {
             throw({code: 404, message: "createBet: a user with that display name does not exist"});
         }
@@ -179,10 +179,10 @@ const createBet = async function(userName, betAmount, battleID, predectedWinner)
 
         ourPayout = Math.trunc(ourPayout);
 
-        await userData.changeFunds(userName, (betAmount * -1))
+        await userData.changeFunds(gid, (betAmount * -1))
 
         newBet = {
-            userName: userName,
+            gid: gid,
             predectedWinner: predectedWinner,
             payout: ourPayout
         }
@@ -211,7 +211,7 @@ const payoutAllBattles = async function() {
         else{
             element.battleBets.forEach(async subElement => {
                 if(subElement.predectedWinner == element.winner) {
-                    await userData.changeFunds(subElement.userName, subElement.payout)
+                    await userData.changeFunds(subElement.gid, subElement.payout)
                 }
             });
             await battleCollection.updateOne({_id: element._id}, {$set: {payoutGiven: true}});

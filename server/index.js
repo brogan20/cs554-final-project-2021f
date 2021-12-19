@@ -6,8 +6,8 @@ const battleData = require('./dataFunctions/battles');
 
 const typeDefs = gql`
   type Query {
-    user(userName: String!): User
-    portfolio(userName: String!): [Pokemon]
+    user(gid: String!): User
+    portfolio(gid: String!): [Pokemon]
     battles: [Battle]
     pokemonPopularity(pokemonName: String!): Int
     oneBattle(battleID: String!): Battle
@@ -42,6 +42,7 @@ const typeDefs = gql`
 
   type User {
     _id: String
+    gid: String!
     userName: String
     pokemonCollection: [Pokemon]
     wallet: Int
@@ -61,16 +62,17 @@ const typeDefs = gql`
   type Mutation {
     addUser(
       userName: String!
+      gid: String!
     ): User
     addPokemon(
       pokemonID: String!
       pokemonName: String!
       imageLink: String!
       isShiny: Boolean!
-      userName: String!
+      gid: String!
     ): Pokemon
     changeFunds(
-      userName: String
+      gid: String
       toChange: Int
     ): Int
     changePokemonPopularity(
@@ -82,7 +84,7 @@ const typeDefs = gql`
       givenPokemon: [PokemonInput]
     ): Battle
     createBet(
-      userName: String
+      gid: String
       betAmount: Int
       battleID: String
       predictedWinner: String
@@ -96,10 +98,11 @@ const typeDefs = gql`
 const resolvers = {
   Query: {
     user: async (_, args) => {
-      const userName = args.userName;
+      // const userName = args.userName;
+      const gid = args.gid;
       let user;
       try{
-        user = await userData.getUser(userName);
+        user = await userData.getUser(gid);
       }
       catch(e){
         throw e;
@@ -107,10 +110,10 @@ const resolvers = {
       return user;
     },
     portfolio: async(_, args) => {
-      const userName = args.userName;
+      const gid = args.gid;
       let user;
       try{
-        user = await userData.getUser(userName);
+        user = await userData.getUser(gid);
       }
       catch(e){
         throw e;
@@ -162,7 +165,7 @@ const resolvers = {
     addUser: async (_, args) => {
       let ourUser;
       try{
-        ourUser = await userData.createUser(args.userName);
+        ourUser = await userData.createUser(args.userName, args.gid);
       }
       catch(e){
         throw e;
@@ -172,7 +175,7 @@ const resolvers = {
     addPokemon: async (_, args) => {
       let ourPokemon;
       try{
-        ourPokemon = await userData.addPokemon(args.pokemonID, args.pokemonName, args.imageLink, args.isShiny, args.userName);
+        ourPokemon = await userData.addPokemon(args.pokemonID, args.pokemonName, args.imageLink, args.isShiny, args.gid);
       }
       catch(e){
         throw e;
@@ -182,7 +185,7 @@ const resolvers = {
     changeFunds: async (_, args) => {
       let newFunds;
       try{
-        newFunds = await userData.changeFunds(args.userName, args.toChange);
+        newFunds = await userData.changeFunds(args.gid, args.toChange);
       }
       catch(e){
         throw e;
@@ -212,7 +215,7 @@ const resolvers = {
     createBet: async (_, args) => {
       let newBet;
       try{
-        newBet = await battleData.createBet(args.userName, args.betAmount, args.battleID, args.predictedWinner);
+        newBet = await battleData.createBet(args.gid, args.betAmount, args.battleID, args.predictedWinner);
       }
       catch(e){
         throw e;
