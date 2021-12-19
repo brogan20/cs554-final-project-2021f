@@ -14,6 +14,6 @@ Go broke because you thought that emolga was a cool pokemon.
 
 Take surveys in a desperite attempt to gain a pittance of currency, never enough to buy a new back, but enough to go back to the casino!
 
-Live the pokemon life!!
+Live the pokemon life!
 
 (Also we should note that currently our database is set up so it can work with deployment (Check it out here -> https://poke.myriaco.re/) so that means if you try to download and manually run this code it will not immediatly work. To get it working locally simply change line 3 in server/config/settings.json from this `"serverUrl": "mongodb://mongo:27017/",` to this `"serverUrl": "mongodb://localhost:27017/"` and also change line 15 in client/src/components/App.js from `uri: "https://pokeapi.myriaco.re",` to `uri: "http://localhost:4000",`)
