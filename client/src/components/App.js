@@ -21,7 +21,7 @@ import { AuthProvider } from "../firebase/AuthContext";
 const client = new ApolloClient({
   cache: new InMemoryCache(),
   link: new HttpLink({
-    uri: "https://pokeapi.myriaco.re",
+    uri: "http://localhost:4000/",
   }),
 });
 

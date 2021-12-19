@@ -16,40 +16,12 @@ const NavLink = ({name, to}) => {
 
 const PokeNav = () => {
     const { currentUser } = useContext(AuthContext);
+    // const { wallet } = useContext();
+    let userName = "Temp";
+    let wallet = 1;
     if(!currentUser){
-      return(
-        <div>
-          <h2>You must log in to see your portfolio.</h2>
-          <Link className="btn btn-primary" to="/signup">Login / Signup</Link>
-        </div>
-      )
+
     };
-    const { loading, error, data } = useQuery(queries.GET_PORTFOLIO, {
-      variables: { gid: currentUser.uid }, 
-      fetchPolicy: "network-only",
-    });
-    if (error || loading) {
-        return(
-            <Navbar bg="dark" variant="dark" expand="lg">
-                <Container>
-                    <Link className="navbar-brand" to="/">Pokémon Bettles</Link>
-                    <Navbar.Toggle aria-controls="basic-navbar-nav" />
-                    <Navbar.Collapse id="basic-navbar-nav">
-                    <Nav className="me-auto">
-                        <NavLink name="Portfolio" to="/portfolio"/>
-                        <NavLink name="New Card Pack" to="/cardpack"/>
-                        <NavDropdown title="Battles" id="basic-nav-dropdown">
-                        <Link className="dropdown-item" to="/betting">Betting</Link>
-                        <Link className="dropdown-item" to="/survey">Voting</Link>
-                        <NavDropdown.Divider />
-                        <Link className="dropdown-item" to="/battle">Battle Registration</Link>
-                        </NavDropdown>
-                    </Nav>
-                    </Navbar.Collapse>
-                </Container>
-            </Navbar>
-        )
-    }
     return(
         <Navbar bg="dark" variant="dark" expand="lg">
             <Container>
@@ -65,7 +37,7 @@ const PokeNav = () => {
                     <NavDropdown.Divider />
                     <Link className="dropdown-item" to="/battle">Battle Registration</Link>
                     </NavDropdown>
-                    <NavLink name={`${data.userName}: ${data.wallet}$`} to="/payment"/>
+                    {currentUser && <NavLink name={`${currentUser.displayName}: ${wallet}$`} to="/payment"/>}
                 </Nav>
                 </Navbar.Collapse>
             </Container>
