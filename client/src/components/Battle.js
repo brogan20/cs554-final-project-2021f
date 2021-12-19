@@ -35,7 +35,7 @@ const Battle = () => {
     console.log(portfolioData);
     let user2=null;
     let pokemon2=null;
-    if(!loading){
+    if(!loading && !load){
         const random = Math.floor(Math.random()*userData.allUsers.length);
         console.log(userData.allUsers[random]);
         user2 = userData.allUsers[random];
@@ -78,7 +78,19 @@ const Battle = () => {
         return(
           <h2>A User Must Sign In Before They Can Start a Battle</h2>
         )
-      }
+    }
+
+    if(loading || load || l){
+        return(
+            <h2>Loading</h2>
+        )
+    }
+
+    if(e){
+        return(
+            <h2>Error Making Battle</h2>
+        )
+    }
 
     const theCard = (trainer, pokemons) => {
         setPokemon({
@@ -110,19 +122,13 @@ const Battle = () => {
         )
     }
 
-    if(loading || load || l){
-        return(
-            <h2>Loading</h2>
-        )
-    }
-
     if(!load && !portfolioData){
         return(
             <h2>Cannot Start a battle without any pokemon</h2>
         )
     }
 
-    if (!pokemon1 && portfolioData && userData){
+    if (!pokemon1 && pokemon2 && user2 && portfolioData && userData){
         // Have user choose their pokemon
         card=
         portfolioData && userData &&
@@ -192,6 +198,11 @@ const Battle = () => {
             </div>
         )
     }
+    }
+    else{
+        return(
+            <h2>Error Making Battle, please reload the page and try again</h2>
+        )
     }
 }
 

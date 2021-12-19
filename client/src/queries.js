@@ -101,7 +101,7 @@ let queries = {
     GET_BETTER_BATTLE,
     GET_POPULARITY,
     GET_ALL_USERS,
-    // GET_USER
+    GET_USER
 }
 
 export default queries;
