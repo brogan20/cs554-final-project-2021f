@@ -86,6 +86,12 @@ const Battle = () => {
         )
     }
 
+    if(e){
+        return(
+            <h2>Error Making Battle</h2>
+        )
+    }
+
     const theCard = (trainer, pokemons) => {
         setPokemon({
             pokemon1: pokemons[0]
@@ -192,6 +198,11 @@ const Battle = () => {
             </div>
         )
     }
+    }
+    else{
+        return(
+            <h2>Error Making Battle, please reload the page and try again</h2>
+        )
     }
 }
 
