@@ -66,7 +66,7 @@ const Bet = () => {
 
   const [placeBet, mutResult] = useMutation(mutations.PLACE_BET)
   const { currentUser } = useContext(AuthContext);
-  const { userWallet } = useContext(WalletContext);
+  const wallet = useContext(WalletContext);
 
 
   let { id } = useParams();
@@ -113,7 +113,7 @@ const Bet = () => {
       return;
     }
     let amt = parseInt(betAmount);
-    if (isNaN(amt) || amt <= 0 /*|| amt > max pokeDollars*/) {
+    if (isNaN(amt) || amt <= 0 || amt > wallet.userWallet) {
       setModal({show: true, title: "Bad Input", message: "The bet amount must be a number"});
       return;
     }
@@ -137,6 +137,7 @@ const Bet = () => {
     setModal({show: true, title: "Betting Error", message: "Something went wrong placing your bet."});
   }
   if(mutResult.data){
+    wallet.userWallet = wallet.userWallet - parseInt(betAmount);
     return (
       <Modal show={true} backdrop="static" onHide={handleClose}>
         <Modal.Header>

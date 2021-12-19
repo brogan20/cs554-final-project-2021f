@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useContext } from 'react';
-import { Link } from 'react-router-dom';
+import { useLocation, Link } from 'react-router-dom';
 import { Nav, Navbar, NavDropdown, Container } from 'react-bootstrap';
 import queries from "../queries";
 import { useQuery } from "@apollo/client";
@@ -17,7 +17,27 @@ const NavLink = ({name, to}) => {
 
 const PokeNav = () => {
     const { currentUser } = useContext(AuthContext);
-    const { userWallet } = useContext(WalletContext);
+    const wallet = useContext(WalletContext);
+    let gid;
+    if(currentUser)
+        gid = currentUser.uid;
+    const {error, loading, data, refetch} = useQuery(queries.GET_USER, {
+        skip: !currentUser,
+        variables: {gid: gid},
+        fetchPolicy: 'network-only'
+    });
+    const location = useLocation();
+
+    useEffect(
+        () => {
+            refetch();
+        },
+        [location]
+    )
+    if(data){
+        console.log(data);
+        wallet.userWallet = data.wallet;
+    }
     if(!currentUser){
 
     };
@@ -36,7 +56,7 @@ const PokeNav = () => {
                     <NavDropdown.Divider />
                     <Link className="dropdown-item" to="/battle">Battle Registration</Link>
                     </NavDropdown>
-                    {currentUser && <NavLink name={`${currentUser.displayName}: ${userWallet}$`} to="/payment"/>}
+                    {currentUser && <NavLink name={`${currentUser.displayName}: $${wallet.userWallet || 0}`} to="/payment"/>}
                 </Nav>
                 </Navbar.Collapse>
             </Container>
