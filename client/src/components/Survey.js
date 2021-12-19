@@ -60,10 +60,15 @@ const Survey = () => {
     changePopularity({
       variables: {pokemonName: pokemon.pokemonName, toChange: 5}
     });
-    changeFunds({
-      variables: {gid: currentUser.uid, toChange: 5} // swap "James" with name given from firebase
-    });
-    setModal({show:true, title: "Success", message: `You voted for ${pokemon.pokemonName}! You just earned 5 PokéDollars`, func: fetchData});
+    if(!currentUser){
+      setModal({show:true, title: "Success", message: `You voted for ${pokemon.pokemonName}! You must log in to earn any PokéDollars`, func: fetchData});
+    }
+    else{
+      changeFunds({
+        variables: {gid: currentUser.uid, toChange: 5} // swap "James" with name given from firebase
+      });
+      setModal({show:true, title: "Success", message: `You voted for ${pokemon.pokemonName}! You just earned 5 PokéDollars`, func: fetchData});
+    }
   }
 
 
