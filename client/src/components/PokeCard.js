@@ -66,7 +66,7 @@ const PokeCard = ({pokemon}) =>{
     <Card ref={cardRef} onMouseMove={rotateCard} onMouseOver={setClass} onMouseOut={resetCard} className={`poke-card poke-card-${type}`}>
       <Card.Body className={`poke-card-body ${pokemon.isShiny ? "poke-card-holo" : ""}`}>
         <Card.Title>{pokemon.pokemonName}</Card.Title>
-        <Card.Img src={sprite} draggable="false"/>
+        <Card.Img src={sprite} alt={pokemon.pokemonName}draggable="false"/>
       </Card.Body>
     </Card>
   )

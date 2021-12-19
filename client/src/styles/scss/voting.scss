@@ -1,0 +1,11 @@
+.btn-vote{
+    background-color: transparent;
+    border: 0;
+    transition: 0.2s ease;
+}
+
+.btn-vote:hover{
+    background-color: lightblue;
+    box-shadow: 0 0 1rem 1rem lightblue;
+    transform: scale(1.2);
+}

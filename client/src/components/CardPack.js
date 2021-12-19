@@ -17,8 +17,15 @@ const CardPack = () => {
   const classes = useStyles();
   const [ cardData, setCardData ] = useState(undefined);
   const [ loading, setLoading ] = useState(false);
-  const [addPokemon, {addResults}]=useMutation(mutations.ADD_POKEMON);
+  const [ visibleData, setVisible ] = useState(false);
+  const [addPokemon, {data}]=useMutation(mutations.ADD_POKEMON);
   let card=null;
+  
+  const toggleVisible = () => {
+    setVisible({
+      visibleData: true
+    })
+  }
 
   useEffect(
     () => {
@@ -102,6 +109,7 @@ const CardPack = () => {
           console.log(result);
           setCardData(result);
           setLoading(false);
+          setVisible(false);
         }
         catch(e){
           console.log(e)
@@ -149,16 +157,20 @@ const CardPack = () => {
     })
 
   console.log(card)
+
   }
 
   return(
     <div>
       <h1>Get a new Card Pack!</h1>
       <br />
-      <button onClick="">Claim Card Pack!</button>
+      { !visibleData ? <button onClick={toggleVisible.bind(this)}>Claim your Card Pack!</button> : <p>Card Pack Claimed</p> }
+      <br />
+      { visibleData ? 
       <Grid container className={classes.grid} spacing={5}>
         {card}
-      </Grid>
+      </Grid>: null
+      }
     </div>
   )
 }
