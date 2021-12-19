@@ -9,6 +9,7 @@ import CardPack from "./CardPack";
 import Battle from "./Battle";
 import Home from "./Home";
 import Payment from "./Payment";
+import PrivateRoute from "./PrivateRoute";
 import "../css/styles.min.css";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import WalletContext from "../contexts/walletCon";
@@ -25,31 +26,79 @@ const client = new ApolloClient({
     uri: "http://localhost:4000/",
   }),
 });
-let startWallet = {userWallet: null};
+let startWallet = { userWallet: null };
 function App() {
   return (
     <ApolloProvider client={client}>
-      <WalletContext.Provider value = {startWallet}>
-      <AuthProvider>
-        <BrowserRouter>
-          <div className="App">
-            <header>
-              <PokeNav />
-            </header>
-            <Routes>
-              <Route exact path="/" element={<Home />} />
-              <Route exact path="/signup" element={<SignUp />} />
-              <Route exact path="/portfolio" element={<Portfolio />} />
-              <Route exact path="/betting" element={<Betting />} />
-              <Route exact path="/betting/:id" element={<Bet />} />
-              <Route exact path="/survey" element={<Survey />} />
-              <Route exact path="/cardpack" element={<CardPack />} />
-              <Route exact path="/battle" element={<Battle />} />
-              <Route exact path="/payment" element={<Payment />} />
-            </Routes>
-          </div>
-        </BrowserRouter>
-      </AuthProvider>
+      <WalletContext.Provider value={startWallet}>
+        <AuthProvider>
+          <BrowserRouter>
+            <div className="App">
+              <header>
+                <PokeNav />
+              </header>
+              <Routes>
+                <Route exact path="/" element={<Home />} />
+                <Route exact path="/signup" element={<SignUp />} />
+                <Route
+                  exact
+                  path="/portfolio"
+                  element={
+                    <PrivateRoute>
+                      <Portfolio />
+                    </PrivateRoute>
+                  }
+                />
+                <Route
+                  exact
+                  path="/betting"
+                  element={
+                    <PrivateRoute>
+                      <Betting />
+                    </PrivateRoute>
+                  }
+                />
+                <Route
+                  exact
+                  path="/betting/:id"
+                  element={
+                    <PrivateRoute>
+                      <Bet />
+                    </PrivateRoute>
+                  }
+                />
+                <Route exact path="/survey" element={<Survey />} />
+                <Route
+                  exact
+                  path="/cardpack"
+                  element={
+                    <PrivateRoute>
+                      <CardPack />
+                    </PrivateRoute>
+                  }
+                />
+                <Route
+                  exact
+                  path="/battle"
+                  element={
+                    <PrivateRoute>
+                      <Battle />
+                    </PrivateRoute>
+                  }
+                />
+                <Route
+                  exact
+                  path="/payment"
+                  element={
+                    <PrivateRoute>
+                      <Payment />
+                    </PrivateRoute>
+                  }
+                />
+              </Routes>
+            </div>
+          </BrowserRouter>
+        </AuthProvider>
       </WalletContext.Provider>
     </ApolloProvider>
   );
