@@ -1,14 +1,14 @@
-import { useState } from "react";
+import { useContext, useState } from "react";
 import {
   createUserWithEmailAndPassword,
   signInWithEmailAndPassword,
-  onAuthStateChanged,
   signOut,
   signInWithPopup,
-  GoogleAuthProvider
+  GoogleAuthProvider,
 } from "firebase/auth";
 import { updateProfile } from "firebase/auth";
 import auth from "../firebase/Firebase";
+import { AuthContext } from "../firebase/AuthContext";
 
 function SignUp() {
   const [registerEmail, setRegisterEmail] = useState("");
@@ -16,12 +16,7 @@ function SignUp() {
   const [registerPassword, setRegisterPassword] = useState("");
   const [loginEmail, setLoginEmail] = useState("");
   const [loginPassword, setLoginPassword] = useState("");
-
-  const [user, setUser] = useState({});
-
-  onAuthStateChanged(auth, (currentUser) => {
-    setUser(currentUser);
-  });
+  const { currentUser } = useContext(AuthContext);
 
   const register = async () => {
     try {
@@ -34,7 +29,7 @@ function SignUp() {
         displayName: registerDisplayname,
       });
       user = auth.currentUser;
-      console.log(user);
+      console.log(currentUser);
     } catch (error) {
       console.log(error.message);
     }
@@ -47,7 +42,7 @@ function SignUp() {
         loginEmail,
         loginPassword
       );
-      console.log(user);
+      console.log(currentUser.displayName);
     } catch (error) {
       console.log(error.message);
     }
@@ -60,11 +55,9 @@ function SignUp() {
       const credential = GoogleAuthProvider.credentialFromResult(result);
       const token = credential.accessToken;
       const user = result.user;
-      console.log(user);
-    } catch (error) {
-
-    }
-  }
+      console.log(currentUser);
+    } catch (error) {}
+  };
 
   const logout = async () => {
     await signOut(auth);
@@ -115,11 +108,14 @@ function SignUp() {
 
         <button onClick={login}>Login</button>
       </div>
-
-      <h4> User Logged In: </h4>
-      {user?.displayName}
-
-      <button onClick={logout}> Sign Out </button>
+      {currentUser ? (
+        <div>
+          <h4> User Logged In: {currentUser.displayName} </h4>{" "}
+          <button onClick={logout}> Sign Out </button>
+        </div>
+      ) : (
+        <h4>No user logged in</h4>
+      )}
     </div>
   );
 }
