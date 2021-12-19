@@ -9,12 +9,20 @@ import { AuthContext } from "../firebase/AuthContext";
 const Portfolio = () => {
   // commenting out until functions are made
   const { currentUser } = useContext(AuthContext);
+  if(!currentUser){
+    return(
+      <div>
+        <h2>You must log in to see your portfolio.</h2>
+        <Link className="btn btn-primary" to="/signup">Login / Signup</Link>
+      </div>
+    )
+  };
   const { loading, error, data } = useQuery(queries.GET_PORTFOLIO, {
     variables: { gid: currentUser.uid }, 
     fetchPolicy: "network-only",
   });
   let cardList = null;
-  console.log(currentUser)
+  
   if (error) {
     return <h2>{error.message}</h2>;
   }
@@ -36,6 +44,7 @@ const Portfolio = () => {
     <div>
       <h1>Portfolio</h1>
       <p>{data.length} cards in your collection</p>
+      <Link className="btn btn-secondary" to="/cardpack">Get more cards</Link>
       <Container fluid>
         <Row>{cardList}</Row>
       </Container>
