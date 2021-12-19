@@ -16,6 +16,23 @@
   text-shadow: stroke($stroke, $color);
 }
 
+.home-heading{
+  font-size: xx-large;
+  font-weight: bold;
+}
+
+.home-row{
+  background-image: linear-gradient(to right, white, gray);
+  display: flex;
+  height: 100%;
+  flex-wrap: wrap;
+}
+
+.home-col {
+  display: flex;
+  height: 100%;
+  flex-wrap: wrap;
+}
 
 .home-banner {
     display: flex;
@@ -28,3 +45,8 @@
     @include stroke(2, black)
 }
 
+@each $shade, $value in $grays{
+  .gray-#{$shade} {
+      background-color: $value;
+  }
+}
