@@ -35,19 +35,17 @@ function App() {
             <header>
               <PokeNav />
             </header>
-            <div>
-              <Routes>
-                <Route exact path="/" element={<Home />} />
-                <Route exact path="/signup" element={<SignUp />} />
-                <Route exact path="/portfolio" element={<Portfolio />} />
-                <Route exact path="/betting" element={<Betting />} />
-                <Route exact path="/betting/:id" element={<Bet />} />
-                <Route exact path="/survey" element={<Survey />} />
-                <Route exact path="/cardpack" element={<CardPack />} />
-                <Route exact path="/battle" element={<Battle />} />
-                <Route exact path="/payment" element={<Payment />} />
-              </Routes>
-            </div>
+            <Routes>
+              <Route exact path="/" element={<Home />} />
+              <Route exact path="/signup" element={<SignUp />} />
+              <Route exact path="/portfolio" element={<Portfolio />} />
+              <Route exact path="/betting" element={<Betting />} />
+              <Route exact path="/betting/:id" element={<Bet />} />
+              <Route exact path="/survey" element={<Survey />} />
+              <Route exact path="/cardpack" element={<CardPack />} />
+              <Route exact path="/battle" element={<Battle />} />
+              <Route exact path="/payment" element={<Payment />} />
+            </Routes>
           </div>
         </BrowserRouter>
       </AuthProvider>
