@@ -69,7 +69,7 @@ function SignUp() {
       const provider = new GoogleAuthProvider();
       const result = await signInWithPopup(auth, provider);
       // const credential = GoogleAuthProvider.credentialFromResult(result);
-      const additionalInfo = getAdditionalUserInfo(result)
+      const additionalInfo = getAdditionalUserInfo(result);
       // console.log(credential);
       console.log(additionalInfo);
       console.log(result.user);
@@ -78,10 +78,9 @@ function SignUp() {
       const user = result.user;
       if (additionalInfo.isNewUser) {
         addUser({
-          variables: {userName: user.displayName, gid: user.uid}
+          variables: { userName: user.displayName, gid: user.uid },
         });
       }
-      
     } catch (error) {}
   };
 
@@ -113,9 +112,10 @@ function SignUp() {
         />
 
         <button onClick={register}>Create User</button>
-      </div>
-      <div>
-        <button onClick={googleLogin}>Google</button>
+
+        <div>
+          <button onClick={googleLogin}>Register with Google</button>
+        </div>
       </div>
       <div>
         <h3> Login </h3>
@@ -133,15 +133,11 @@ function SignUp() {
         />
 
         <button onClick={login}>Login</button>
-      </div>
-      {currentUser ? (
+
         <div>
-          <h4> User Logged In: {currentUser.displayName} </h4>{" "}
-          <button onClick={logout}> Sign Out </button>
+          <button onClick={googleLogin}>Login with Google</button>
         </div>
-      ) : (
-        <h4>No user logged in</h4>
-      )}
+      </div>
     </div>
   );
 }
