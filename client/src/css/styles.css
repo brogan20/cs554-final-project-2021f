@@ -2,6 +2,9 @@
   border: 5px solid #febb46;
   box-shadow: 0 0 5px 0px rgba(255, 255, 255, 0), 20px 55px 35px -20px rgba(0, 0, 0, 0.5); }
 
+.poke-card-back {
+  padding: 0; }
+
 .poke-card::before {
   content: "";
   position: absolute;
@@ -145,16 +148,6 @@
 
 .bet-button-selected {
   background-color: gray; }
-
-.home-banner {
-  display: flex;
-  color: white;
-  background-color: black;
-  font-weight: bold;
-  flex-direction: column;
-  background-repeat: no-repeat;
-  background-size: cover;
-  text-shadow: -2px -2px 0 black, -2px -1px 0 black, -2px 0px 0 black, -2px 1px 0 black, -2px 2px 0 black, -1px -2px 0 black, -1px -1px 0 black, -1px 0px 0 black, -1px 1px 0 black, -1px 2px 0 black, 0px -2px 0 black, 0px -1px 0 black, 0px 0px 0 black, 0px 1px 0 black, 0px 2px 0 black, 1px -2px 0 black, 1px -1px 0 black, 1px 0px 0 black, 1px 1px 0 black, 1px 2px 0 black, 2px -2px 0 black, 2px -1px 0 black, 2px 0px 0 black, 2px 1px 0 black, 2px 2px 0 black; }
 
 .btn-vote {
   background-color: transparent;
@@ -7665,6 +7658,58 @@ textarea.form-control-lg {
     display: inline-flex !important; }
   .d-print-none {
     display: none !important; } }
+
+.home-heading {
+  font-size: xx-large;
+  font-weight: bold; }
+
+.home-row {
+  background-image: linear-gradient(to right, white, gray);
+  display: flex;
+  height: 100%;
+  flex-wrap: wrap; }
+
+.home-col {
+  display: flex;
+  height: 100%;
+  flex-wrap: wrap; }
+
+.home-banner {
+  display: flex;
+  color: white;
+  background-color: black;
+  font-weight: bold;
+  flex-direction: column;
+  background-repeat: no-repeat;
+  background-size: cover;
+  text-shadow: -2px -2px 0 black, -2px -1px 0 black, -2px 0px 0 black, -2px 1px 0 black, -2px 2px 0 black, -1px -2px 0 black, -1px -1px 0 black, -1px 0px 0 black, -1px 1px 0 black, -1px 2px 0 black, 0px -2px 0 black, 0px -1px 0 black, 0px 0px 0 black, 0px 1px 0 black, 0px 2px 0 black, 1px -2px 0 black, 1px -1px 0 black, 1px 0px 0 black, 1px 1px 0 black, 1px 2px 0 black, 2px -2px 0 black, 2px -1px 0 black, 2px 0px 0 black, 2px 1px 0 black, 2px 2px 0 black; }
+
+.gray-100 {
+  background-color: #f8f9fa; }
+
+.gray-200 {
+  background-color: #e9ecef; }
+
+.gray-300 {
+  background-color: #dee2e6; }
+
+.gray-400 {
+  background-color: #ced4da; }
+
+.gray-500 {
+  background-color: #adb5bd; }
+
+.gray-600 {
+  background-color: #6c757d; }
+
+.gray-700 {
+  background-color: #495057; }
+
+.gray-800 {
+  background-color: #343a40; }
+
+.gray-900 {
+  background-color: #212529; }
 
 /*!
  * Bootstrap v5.0.2 (https://getbootstrap.com/)

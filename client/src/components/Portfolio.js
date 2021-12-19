@@ -9,14 +9,14 @@ import { AuthContext } from "../firebase/AuthContext";
 const Portfolio = () => {
   // commenting out until functions are made
   const { currentUser } = useContext(AuthContext);
-  if(!currentUser){
-    return(
-      <div>
-        <h2>You must log in to see your portfolio.</h2>
-        <Link className="btn btn-primary" to="/signup">Login / Signup</Link>
-      </div>
-    )
-  };
+  // if(!currentUser){
+  //   return(
+  //     <div>
+  //       <h2>You must log in to see your portfolio.</h2>
+  //       <Link className="btn btn-primary" to="/signup">Login / Signup</Link>
+  //     </div>
+  //   )
+  // };
   const { loading, error, data } = useQuery(queries.GET_PORTFOLIO, {
     variables: { gid: currentUser.uid }, 
     fetchPolicy: "network-only",
