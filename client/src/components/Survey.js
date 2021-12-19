@@ -30,7 +30,7 @@ const Survey = () => {
       let randTwo = Math.floor(Math.random() * 898) + 1
       let pokemonTwo = await axios.get(`https://pokeapi.co/api/v2/pokemon/${randTwo}/`);
       pokemonOne.data.name = pokemonOne.data.name.toLowerCase();
-      pokemonTwo.data.name = pokemonOne.data.name.toLowerCase();
+      pokemonTwo.data.name = pokemonTwo.data.name.toLowerCase();
       result.push(pokemonOne);
       result.push(pokemonTwo);
       setCardData(result);
