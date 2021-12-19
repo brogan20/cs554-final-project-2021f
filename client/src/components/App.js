@@ -11,6 +11,7 @@ import Home from "./Home";
 import Payment from "./Payment";
 import "../css/styles.min.css";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
+import WalletContext from "../contexts/walletCon";
 import {
   ApolloClient,
   HttpLink,
@@ -24,10 +25,11 @@ const client = new ApolloClient({
     uri: "https://pokeapi.myriaco.re",
   }),
 });
-
+let startWallet = {userWallet: 0};
 function App() {
   return (
     <ApolloProvider client={client}>
+      <WalletContext.Provider value = {startWallet}>
       <AuthProvider>
         <BrowserRouter>
           <div className="App">
@@ -48,6 +50,7 @@ function App() {
           </div>
         </BrowserRouter>
       </AuthProvider>
+      </WalletContext.Provider>
     </ApolloProvider>
   );
 }
