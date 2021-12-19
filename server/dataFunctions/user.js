@@ -50,7 +50,7 @@ const createUser = async function(userName, gid) {
 }
 
 const getUser = async function(gid){
-    if(arguments.length != 2 || gid == undefined) {
+    if(arguments.length != 1 || gid == undefined) {
 		throw({code: 400, message: "getUser: you are missing GID"});
 	}
 	if(typeof gid !== 'string' || gid.trim() == "") {
@@ -120,7 +120,7 @@ const addPokemon = async function(pokemonID, pokemonName, imageLink,  isShiny, g
 		isShiny: isShiny
 	};
 
-	const upin = await usersCollection.updateOne({gi: gid}, {$push: {pokemonCollection: newPokemon }});
+	const upin = await usersCollection.updateOne({gid: gid}, {$push: {pokemonCollection: newPokemon }});
 	if (upin === 0) {
 		throw({code: 500, message: "addPokemon: unable to add that pokemon to the database"});
 	}

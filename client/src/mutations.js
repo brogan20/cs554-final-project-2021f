@@ -11,9 +11,7 @@ const ADD_USER = gql`
 
 const CHANGE_FUNDS = gql`
   mutation ChangeFunds($gid: String, $toChange: Int) {
-    changeFunds(gid: $gid, toChange: $toChange) {
-      userName
-    }
+    changeFunds(gid: $gid, toChange: $toChange)
   }
 `;
 
