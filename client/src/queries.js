@@ -68,6 +68,7 @@ const GET_ALL_USERS = gql`
     query AllUsers($gid: String!) {
         allUsers(gid: $gid) {
             _id
+            gid
             userName
             pokemonCollection {
                 pokemonID

@@ -126,7 +126,7 @@ const Battle = () => {
         pokemon2.pokemonID=pokemon2.pokemonID.toString();
         // console.log(pokemon);
         // console.log(pokemon2);
-        let catchers = [currentUser.uid, user2._id];
+        let catchers = [currentUser.uid, user2.gid];
         let poke1 = {pokemonID: pokemon.pokemonID, pokemonName: pokemon.pokemonName, imageLink: pokemon.imageLink, isShiny: pokemon.isShiny};
         let poke2 = {pokemonID: pokemon2.pokemonID, pokemonName: pokemon2.pokemonName, imageLink: pokemon2.imageLink, isShiny: pokemon2.isShiny}
         let p = [poke1, poke2];
