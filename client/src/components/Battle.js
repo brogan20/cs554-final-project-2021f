@@ -29,6 +29,7 @@ const Battle = () => {
         variables: { gid: currentUser.uid }
     });
     console.log(currentUser.uid)
+    console.log(currentUser);
     console.log(loading);
     console.log(error);
     console.log(userData);
@@ -131,9 +132,9 @@ const Battle = () => {
         )
     }
 
-    if(!load && !portfolioData){
+    if(!load && portfolioData.portfolio.length<=0){
         return(
-            <h2>Cannot Start a battle without any pokemon</h2>
+            <h2>Cannot Start a battle without any pokemon in your portfolio</h2>
         )
     }
 
@@ -172,6 +173,7 @@ const Battle = () => {
             <div>
                 <Grid container spacing={5}>
                     <Grid item xs={12} sm={6} md={4} lg={3} xl={2} key={battleData.createBattle.pokemonOne.pokemonID}>
+                        <h4>{currentUser.displayName}</h4>
                         <PokeCard pokemon={battleData.createBattle.pokemonOne}></PokeCard>
                     </Grid>
                     <br />
@@ -180,6 +182,7 @@ const Battle = () => {
                     </Grid>
                     <br />
                     <Grid item xs={12} sm={6} md={4} lg={3} xl={2} key={battleData.createBattle.pokemonTwo.pokemonID}>
+                        <h4>{user2.userName}</h4>
                         <PokeCard pokemon={battleData.createBattle.pokemonTwo}></PokeCard>
                         <p>Winner!!!</p>
                     </Grid>
@@ -193,6 +196,7 @@ const Battle = () => {
             <div>
                 <Grid container spacing={5}>
                     <Grid item xs={12} sm={6} md={4} lg={3} xl={2} key={battleData.createBattle.pokemonOne.pokemonID}>
+                        <h4>{currentUser.displayName}</h4>
                         <PokeCard pokemon={battleData.createBattle.pokemonOne}></PokeCard>
                         <p>Winner!!!</p>
                     </Grid>
@@ -200,6 +204,7 @@ const Battle = () => {
                         <h2>VS.</h2>
                     </Grid>
                     <Grid item xs={12} sm={6} md={4} lg={3} xl={2} key={battleData.createBattle.pokemonTwo.pokemonID}>
+                        <h4>{user2.userName}</h4>
                         <PokeCard pokemon={battleData.createBattle.pokemonTwo}></PokeCard>
                     </Grid>
                 </Grid>
