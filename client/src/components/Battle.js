@@ -28,12 +28,12 @@ const Battle = () => {
         fetchPolicy: "network-only",
         variables: { gid: currentUser.uid }
     });
-    console.log(currentUser.uid)
-    console.log(currentUser);
-    console.log(loading);
-    console.log(error);
-    console.log(userData);
-    console.log(portfolioData);
+    // console.log(currentUser.uid)
+    // console.log(currentUser);
+    // console.log(loading);
+    // console.log(error);
+    // console.log(userData);
+    // console.log(portfolioData);
     let user2=null;
     let pokemon2=null;
     if(!loading && !load && userData){
@@ -45,6 +45,14 @@ const Battle = () => {
         console.log(user2);
         const rand = Math.floor(Math.random()*user2.pokemonCollection.length);
         pokemon2 = user2.pokemonCollection[rand];
+        if (!pokemon2) {
+            pokemon2 = {
+                pokemonName: "haunter",
+                pokemonID: "93",
+                isShiny: false,
+                imageLink: "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/93.png"
+            }
+        }
         console.log(pokemon2);
     }
     }
@@ -52,9 +60,9 @@ const Battle = () => {
     const [changeFunds, {fundResults}] = useMutation(mutations.CHANGE_FUNDS);
     let card=null;
 
-    console.log(battleData);
-    console.log(l);
-    console.log(e);
+    // console.log(battleData);
+    // console.log(l);
+    // console.log(e);
 
     const toggleVisible = () => {
         setVisible({
@@ -64,9 +72,9 @@ const Battle = () => {
 
       useEffect(
         () => {
-          console.log("useEffect fired")
+        //   console.log("useEffect fired")
           const fetchData = async () =>{
-            console.log("fetchData fired")
+            // console.log("fetchData fired")
             try{
             }
             catch(e){
@@ -113,17 +121,17 @@ const Battle = () => {
       }
 
     const CardGrid = (pokemon) => {
-        console.log(user2.userName);
+        // console.log(user2.userName);
         pokemon.pokemonID=pokemon.pokemonID.toString();
         pokemon2.pokemonID=pokemon2.pokemonID.toString();
-        console.log(pokemon);
-        console.log(pokemon2);
+        // console.log(pokemon);
+        // console.log(pokemon2);
         let catchers = [currentUser.uid, user2._id];
         let poke1 = {pokemonID: pokemon.pokemonID, pokemonName: pokemon.pokemonName, imageLink: pokemon.imageLink, isShiny: pokemon.isShiny};
         let poke2 = {pokemonID: pokemon2.pokemonID, pokemonName: pokemon2.pokemonName, imageLink: pokemon2.imageLink, isShiny: pokemon2.isShiny}
         let p = [poke1, poke2];
-        console.log(catchers);
-        console.log(p);
+        // console.log(catchers);
+        // console.log(p);
         return(
             <Grid item xs={12} sm={6} md={4} lg={3} xl={2} key={pokemon.pokemonID}>
                 <PokeCard pokemon={pokemon}></PokeCard>
@@ -145,7 +153,7 @@ const Battle = () => {
         portfolioData.portfolio.map((pokemon)=>{
             return CardGrid(pokemon)
         })
-        console.log(battleData);
+        // console.log(battleData);
         return (
             <div>
             {!visibleData ?
@@ -160,11 +168,11 @@ const Battle = () => {
         )
     }
 
-    console.log(pokemon1);
-    console.log(battle);
-    console.log(battleData);
-    console.log(l);
-    console.log(e);
+    // console.log(pokemon1);
+    // console.log(battle);
+    // console.log(battleData);
+    // console.log(l);
+    // console.log(e);
 
     if(battleData){
 
@@ -184,7 +192,6 @@ const Battle = () => {
                     <Grid item xs={12} sm={6} md={4} lg={3} xl={2} key={battleData.createBattle.pokemonTwo.pokemonID}>
                         <h4>{user2.userName}</h4>
                         <PokeCard pokemon={battleData.createBattle.pokemonTwo}></PokeCard>
-                        <p>Winner!!!</p>
                     </Grid>
                 </Grid>
                 <button onClick={()=> window.location.reload()}>Start a New Battle!</button>
@@ -198,7 +205,6 @@ const Battle = () => {
                     <Grid item xs={12} sm={6} md={4} lg={3} xl={2} key={battleData.createBattle.pokemonOne.pokemonID}>
                         <h4>{currentUser.displayName}</h4>
                         <PokeCard pokemon={battleData.createBattle.pokemonOne}></PokeCard>
-                        <p>Winner!!!</p>
                     </Grid>
                     <Grid item xs={12} sm={6} md={4} lg={3} xl={2} key="vs">
                         <h2>VS.</h2>
