@@ -41,7 +41,6 @@ const Home = () => {
                 <Row>
                     <p className='home-heading'>Live the pokemon life!</p>
                 </Row>
-                <Link className="btn btn-primary" to="/signup">Login / Signup</Link>
             </Container>
 
         </div>
