@@ -78,6 +78,7 @@ const Bet = () => {
   let gid;
   if(currentUser)
     gid = currentUser.uid
+  console.log(currentUser.uid);
   const userData = useQuery(queries.GET_USER, {
     skip: !currentUser,
     variables: {gid: gid},
@@ -99,6 +100,11 @@ const Bet = () => {
     }, 1000);
     return () => clearInterval(interval);
   }, [data]);
+
+  useEffect(() => {
+    if(userData.data)
+      setWallet(userData.data.user.wallet);
+  }, [userData]);
 
   // Set which trainer the user wants to bet on
   const setTrainer = (e, num) => {
