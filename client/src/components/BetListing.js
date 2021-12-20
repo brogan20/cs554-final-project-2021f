@@ -27,9 +27,6 @@ const BetListing = ({ battle }) => {
   const [timeLeft, setTimeLeft] = useState(getTimeLeft(battle.timeStamp));
   const [ expired, setExpired ] = useState(false);
   let winner=null;
-
-  console.log(user1Data);
-  console.log(user2Data);
   
   useEffect(() => {
     const interval = setInterval(() => {
