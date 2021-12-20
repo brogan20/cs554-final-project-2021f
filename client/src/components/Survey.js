@@ -4,6 +4,7 @@ import { useMutation, useQuery } from '@apollo/client';
 import { Button, Container, Row, Col, Modal, Spinner } from 'react-bootstrap';
 import axios from 'axios';
 import mutations from '../mutations';
+import WalletContext from "../contexts/walletCon";
 import { AuthContext } from "../firebase/AuthContext";
 
 const Survey = () => {
@@ -14,6 +15,7 @@ const Survey = () => {
   const [changePopularity, {popResults}] = useMutation(mutations.CHANGE_POPULARITY);
   const [changeFunds, {fundResults}] = useMutation(mutations.CHANGE_FUNDS);
   const { currentUser } = useContext(AuthContext);
+  const { userWallet } = useContext(WalletContext);
   let card = null;
 
   const closeModal = () => {
@@ -48,6 +50,12 @@ const Survey = () => {
     []
   )
 
+  useEffect(
+    () => {
+
+    }, [cardData]
+  )
+
   if (loading) {
     return (
       <Spinner animation="border" />
@@ -79,6 +87,8 @@ const Survey = () => {
       changeFunds({
         variables: {gid: currentUser.uid, toChange: 5} // swap "James" with name given from firebase
       });
+      // old wallet context stuff
+      // changeWallet(wallet+5);
       setModal({show:true, title: "Success", message: `You voted for ${pokemon.pokemonName}! You just earned 5 PokéDollars`, func: fetchData});
     }
   }

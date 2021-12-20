@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useContext } from 'react';
-import { Link } from 'react-router-dom';
+import { useLocation, Link } from 'react-router-dom';
 import { Nav, Navbar, NavDropdown, Container } from 'react-bootstrap';
 import queries from "../queries";
 import { useQuery } from "@apollo/client";
@@ -18,7 +18,32 @@ const NavLink = ({name, to}) => {
 
 const PokeNav = () => {
     const { currentUser } = useContext(AuthContext);
-    const { userWallet } = useContext(WalletContext);
+    // THIS IS OLD CONTEXT WALLET STUFF
+    // const [ firstLoad, setFirstLoad ] = useState(true);
+    // const { wallet, changeWallet } = useContext(WalletContext);
+    // let gid;
+    // if(currentUser)
+    //     gid = currentUser.uid;
+    // const {error, loading, data, refetch} = useQuery(queries.GET_USER, {
+    //     skip: !currentUser,
+    //     variables: {gid: gid},
+    //     fetchPolicy: 'network-only'
+    // });
+    // const location = useLocation();
+
+    // useEffect(
+    //     () => {
+    //         refetch();
+    //         setFirstLoad(true);
+    //     },
+    //     [location]
+    // )
+
+    // if(firstLoad && data){
+    //     console.log(`new user: ${data}`);
+    //     changeWallet(data.user.wallet);
+    //     setFirstLoad(false);
+    // }
 
     const logout = async () => {
         await signOut(auth);
@@ -42,7 +67,7 @@ const PokeNav = () => {
                     <NavDropdown.Divider />
                     <Link className="dropdown-item" to="/battle">Battle Registration</Link>
                     </NavDropdown>
-                    {currentUser && <NavLink name={`${currentUser.displayName}: ${userWallet}$`} to="/payment"/>}
+                    {currentUser && <NavLink name={`${currentUser.displayName}`} to="/payment"/>}
                     {currentUser && <button onClick={logout}> Sign Out </button>}
                     {!currentUser && <NavLink name="Sign Up" to="/signup"/>}
                 </Nav>

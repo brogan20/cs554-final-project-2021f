@@ -63,16 +63,25 @@ const Bet = () => {
   const [selectedTrainer, setSelectedTrainer] = useState(-1);
   const [betAmount, setBetAmount] = useState(0);
   const [ modal, setModal ] = useState({show: false, title: "", message: ""});
+  const [ wallet, setWallet ] = useState(null);
 
   const [placeBet, mutResult] = useMutation(mutations.PLACE_BET)
   const { currentUser } = useContext(AuthContext);
-  const { userWallet } = useContext(WalletContext);
+  // const { wallet } = useContext(WalletContext);
 
 
   let { id } = useParams();
   const { loading, error, data } = useQuery(queries.GET_BETTER_BATTLE, {
     variables: {battleId: id},
     fetchPolicy: 'cache-first'
+  });
+  let gid;
+  if(currentUser)
+    gid = currentUser.uid
+  const userData = useQuery(queries.GET_USER, {
+    skip: !currentUser,
+    variables: {gid: gid},
+    fetchPolicy: 'network-only'
   });
 
   // Start the countdown timer
@@ -113,7 +122,7 @@ const Bet = () => {
       return;
     }
     let amt = parseInt(betAmount);
-    if (isNaN(amt) || amt <= 0 /*|| amt > max pokeDollars*/) {
+    if (isNaN(amt) || amt <= 0 || amt > wallet) {
       setModal({show: true, title: "Bad Input", message: "The bet amount must be a number"});
       return;
     }
@@ -137,6 +146,7 @@ const Bet = () => {
     setModal({show: true, title: "Betting Error", message: "Something went wrong placing your bet."});
   }
   if(mutResult.data){
+    // wallet.userWallet = wallet.userWallet - parseInt(betAmount);
     return (
       <Modal show={true} backdrop="static" onHide={handleClose}>
         <Modal.Header>
@@ -166,17 +176,22 @@ const Bet = () => {
       </Modal>
     )
   }
+  if(userData.error){
+    console.log(userData.error);
+    return <h2>Could not get user data.</h2>
+  }
   if(error){
     console.log(error);
     return <h2>That battle does not exist or has expired.</h2>
   }
-  if(loading){
+  if(loading || userData.loading){
     return <Spinner animation="border"/>
   }
   const battle = data.oneBattle;
   return (
     <div>
       <h1>Betting</h1>
+      <p>Total: ${wallet}</p>
       <Container fluid>
         <Row className="row justify-content-center">
           <Col xs={2}>
