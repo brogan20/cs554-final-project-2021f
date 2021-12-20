@@ -12,6 +12,7 @@ import auth from "../firebase/Firebase";
 import { AuthContext } from "../firebase/AuthContext";
 import mutations from "../mutations";
 import { useMutation } from "@apollo/client";
+import { Navigate } from "react-router-dom";
 
 function SignUp() {
   const [registerEmail, setRegisterEmail] = useState("");
@@ -21,6 +22,7 @@ function SignUp() {
   const [loginPassword, setLoginPassword] = useState("");
   const { currentUser } = useContext(AuthContext);
   const [addUser, mutResult] = useMutation(mutations.ADD_USER);
+  const [error, setError] = useState("");
 
   const register = async () => {
     try {
@@ -29,7 +31,7 @@ function SignUp() {
         typeof registerDisplayname !== "string" ||
         registerDisplayname.trim() == ""
       ) {
-        throw `No display name given`;
+        throw { message: "Username cannot be empty"};
       }
 
       let user = await createUserWithEmailAndPassword(
@@ -41,12 +43,14 @@ function SignUp() {
         displayName: registerDisplayname,
       });
       user = auth.currentUser;
+      
       // console.log(user.localId)
       addUser({
         variables: { userName: registerDisplayname, gid: user.uid },
       });
+      setError("");
     } catch (error) {
-      console.log(error.message);
+      setError(error.message);
     }
   };
 
@@ -57,10 +61,11 @@ function SignUp() {
         loginEmail,
         loginPassword
       );
-      console.log(user.uid);
-      console.log(user);
+      // console.log(user.uid);
+      // console.log(user);
+      setError("");
     } catch (error) {
-      console.log(error.message);
+      setError("Invalid email/password");
     }
   };
 
@@ -69,28 +74,35 @@ function SignUp() {
       const provider = new GoogleAuthProvider();
       const result = await signInWithPopup(auth, provider);
       // const credential = GoogleAuthProvider.credentialFromResult(result);
-      const additionalInfo = getAdditionalUserInfo(result)
+      const additionalInfo = getAdditionalUserInfo(result);
       // console.log(credential);
-      console.log(additionalInfo);
-      console.log(result.user);
-
+      // console.log(additionalInfo);
+      // console.log(result.user);
       // const token = credential.accessToken;
+      setError("");
       const user = result.user;
       if (additionalInfo.isNewUser) {
         addUser({
-          variables: {userName: user.displayName, gid: user.uid}
+          variables: { userName: user.displayName, gid: user.uid },
         });
       }
-      
-    } catch (error) {}
+    } catch (error) {
+      setError(error.message);
+    }
   };
 
-  const logout = async () => {
-    await signOut(auth);
-  };
+  if (currentUser) {
+    return <Navigate to="/" />;
+  }
 
   return (
     <div className="App">
+      <br />
+      {error && (
+        <div>
+          <h1>{error}</h1>
+        </div>
+      )}
       <div>
         <h3> Register User </h3>
         <input
@@ -107,16 +119,21 @@ function SignUp() {
         />
         <input
           placeholder="Password..."
+          type="password"
           onChange={(event) => {
             setRegisterPassword(event.target.value);
           }}
         />
 
         <button onClick={register}>Create User</button>
+        <br />
+        <br />
+        <div>
+          <button onClick={googleLogin}>Register with Google</button>
+        </div>
       </div>
-      <div>
-        <button onClick={googleLogin}>Google</button>
-      </div>
+      <br />
+      <br />
       <div>
         <h3> Login </h3>
         <input
@@ -127,21 +144,19 @@ function SignUp() {
         />
         <input
           placeholder="Password..."
+          type="password"
           onChange={(event) => {
             setLoginPassword(event.target.value);
           }}
         />
 
         <button onClick={login}>Login</button>
-      </div>
-      {currentUser ? (
+        <br />
+        <br />
         <div>
-          <h4> User Logged In: {currentUser.displayName} </h4>{" "}
-          <button onClick={logout}> Sign Out </button>
+          <button onClick={googleLogin}>Login with Google</button>
         </div>
-      ) : (
-        <h4>No user logged in</h4>
-      )}
+      </div>
     </div>
   );
 }

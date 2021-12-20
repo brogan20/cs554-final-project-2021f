@@ -1,3 +1,4 @@
+import React, {useState} from 'react';
 import "../App.css";
 import SignUp from "./SignUp";
 import Portfolio from "./Portfolio";
@@ -28,6 +29,12 @@ const client = new ApolloClient({
 });
 let startWallet = { userWallet: null };
 function App() {
+  // THIS IS OLD WALLET STUFF
+  // const [wallet, setWallet] = useState(0);
+  // function changeWallet(amt){
+  //   setWallet(amt);
+  // }
+  // const value = {wallet, changeWallet}
   return (
     <ApolloProvider client={client}>
       <WalletContext.Provider value={startWallet}>

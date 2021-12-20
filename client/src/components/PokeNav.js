@@ -5,7 +5,8 @@ import queries from "../queries";
 import { useQuery } from "@apollo/client";
 import { AuthContext } from "../firebase/AuthContext";
 import WalletContext from '../contexts/walletCon';
-
+import auth from "../firebase/Firebase";
+import { signOut } from 'firebase/auth';
 
 const NavLink = ({name, to}) => {
     return(
@@ -17,27 +18,37 @@ const NavLink = ({name, to}) => {
 
 const PokeNav = () => {
     const { currentUser } = useContext(AuthContext);
-    const wallet = useContext(WalletContext);
-    let gid;
-    if(currentUser)
-        gid = currentUser.uid;
-    const {error, loading, data, refetch} = useQuery(queries.GET_USER, {
-        skip: !currentUser,
-        variables: {gid: gid},
-        fetchPolicy: 'network-only'
-    });
-    const location = useLocation();
+    // THIS IS OLD CONTEXT WALLET STUFF
+    // const [ firstLoad, setFirstLoad ] = useState(true);
+    // const { wallet, changeWallet } = useContext(WalletContext);
+    // let gid;
+    // if(currentUser)
+    //     gid = currentUser.uid;
+    // const {error, loading, data, refetch} = useQuery(queries.GET_USER, {
+    //     skip: !currentUser,
+    //     variables: {gid: gid},
+    //     fetchPolicy: 'network-only'
+    // });
+    // const location = useLocation();
 
-    useEffect(
-        () => {
-            refetch();
-        },
-        [location]
-    )
-    if(data){
-        console.log(data);
-        wallet.userWallet = data.wallet;
-    }
+    // useEffect(
+    //     () => {
+    //         refetch();
+    //         setFirstLoad(true);
+    //     },
+    //     [location]
+    // )
+
+    // if(firstLoad && data){
+    //     console.log(`new user: ${data}`);
+    //     changeWallet(data.user.wallet);
+    //     setFirstLoad(false);
+    // }
+
+    const logout = async () => {
+        await signOut(auth);
+    };
+
     if(!currentUser){
 
     };
@@ -56,7 +67,9 @@ const PokeNav = () => {
                     <NavDropdown.Divider />
                     <Link className="dropdown-item" to="/battle">Battle Registration</Link>
                     </NavDropdown>
-                    {currentUser && <NavLink name={`${currentUser.displayName}: $${wallet.userWallet || 0}`} to="/payment"/>}
+                    {currentUser && <NavLink name={`${currentUser.displayName}`} to="/payment"/>}
+                    {currentUser && <button onClick={logout}> Sign Out </button>}
+                    {!currentUser && <NavLink name="Sign Up" to="/signup"/>}
                 </Nav>
                 </Navbar.Collapse>
             </Container>

@@ -14,6 +14,10 @@ const useStyles = makeStyles({
   }
 });
 
+const inputStyle = {
+  padding: '1%'
+};
+
 const Payment = () => {
   const classes = useStyles();
   const [ cardData, setCardData ] = useState(undefined);
@@ -67,7 +71,10 @@ const Payment = () => {
         <h1>Real winners swipe! Just enter your credit card information below to earn fat PokéBucks</h1>
         <br />
         <Form onSubmit={payOurMan}>
-        <label>Card Owner's Name
+        <div style={inputStyle}>
+          <input className="btn btn-primary" type="submit" value="EARN IT!"/>
+        </div>
+        <label style={inputStyle}>Card Owner's Name
           <input
            type="text"
            name="name"
@@ -76,18 +83,9 @@ const Payment = () => {
            value={name}
             />
         </label>
-        <br />
-        <br />
-        <br />
-        <label>
-          <CreditCardInput
-            fieldClassName="input"
-          />
-        </label>
-        <br />
-        <br />
-        <br />
-        <label>How much do you want to buy
+        <br>
+        </br>
+        <label style={inputStyle}>How much do you want to buy
         <input
            type="number"
            name="amount"
@@ -97,7 +95,11 @@ const Payment = () => {
             />
         </label>
         <br />
-        <input type="submit" value="Submit"/>
+        <label style={inputStyle}>
+          <CreditCardInput
+            fieldClassName="input"
+          />
+        </label>
         </Form>
       </div>
     )
