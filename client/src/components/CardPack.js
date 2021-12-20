@@ -27,7 +27,7 @@ const CardPack = () => {
   const { loading: load, error: err, data: userData } = useQuery(queries.GET_USER, {
     fetchPolicy: "network-only",
     variables: { gid: currentUser.uid }
-  }); 
+  });
   const [addPokemon, {data}]=useMutation(mutations.ADD_POKEMON);
   const [changeFunds, {fundResults}] = useMutation(mutations.CHANGE_FUNDS);
   let card=null;

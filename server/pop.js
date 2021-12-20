@@ -37,6 +37,9 @@ async function main(){
 	try {
 		await popularityData.initPopularity();
 		console.log("database has been populated");
+        let dummyUser = await userData.createUser("Dummy", "dummyGID");
+        let dummyPokemon = await userData.addPokemon("257", "blaziken", "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/257.png", true, dummyUser.gid);
+        
 	}catch(e){
 		console.log(e);
 	}

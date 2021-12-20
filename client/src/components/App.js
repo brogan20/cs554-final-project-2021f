@@ -1,3 +1,4 @@
+import React, {useState} from 'react';
 import "../App.css";
 import SignUp from "./SignUp";
 import Portfolio from "./Portfolio";
@@ -23,11 +24,17 @@ import { AuthProvider } from "../firebase/AuthContext";
 const client = new ApolloClient({
   cache: new InMemoryCache(),
   link: new HttpLink({
-    uri: "https://pokeapi.myriaco.re",
+    uri: "http://localhost:4000/",
   }),
 });
 let startWallet = { userWallet: null };
 function App() {
+  // THIS IS OLD WALLET STUFF
+  // const [wallet, setWallet] = useState(0);
+  // function changeWallet(amt){
+  //   setWallet(amt);
+  // }
+  // const value = {wallet, changeWallet}
   return (
     <ApolloProvider client={client}>
       <WalletContext.Provider value={startWallet}>
