@@ -96,6 +96,7 @@ const Survey = () => {
 
     
   const CardGrid = (pokemon) => {
+    console.log(pokemon.data);
     let pokeCardData = {
       pokemonID: pokemon.data.id,
       pokemonName: pokemon.data.name,

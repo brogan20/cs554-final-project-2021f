@@ -29,13 +29,16 @@ const Battle = () => {
         variables: { gid: currentUser.uid }
     });
     console.log(currentUser.uid)
+    console.log(currentUser);
     console.log(loading);
     console.log(error);
     console.log(userData);
     console.log(portfolioData);
     let user2=null;
     let pokemon2=null;
-    if(!loading && !load){
+    if(!loading && !load && userData){
+        console.log(userData.allUsers);
+    if(!loading && !load && userData.allUsers.length>0){
         const random = Math.floor(Math.random()*userData.allUsers.length);
         console.log(userData.allUsers[random]);
         user2 = userData.allUsers[random];
@@ -43,6 +46,7 @@ const Battle = () => {
         const rand = Math.floor(Math.random()*user2.pokemonCollection.length);
         pokemon2 = user2.pokemonCollection[rand];
         console.log(pokemon2);
+    }
     }
     const [battle, {loading: l, error: e, data: battleData}]=useMutation(mutations.ADD_BATTLE);
     const [changeFunds, {fundResults}] = useMutation(mutations.CHANGE_FUNDS);
@@ -92,6 +96,12 @@ const Battle = () => {
         )
     }
 
+    if(userData.allUsers.length<=0 && !loading){
+        return(
+            <h2>I'm sorry, there are no other users in the database to battle.</h2>
+        )
+    }
+
     const theCard = (trainer, pokemons) => {
         setPokemon({
             pokemon1: pokemons[0]
@@ -122,9 +132,9 @@ const Battle = () => {
         )
     }
 
-    if(!load && !portfolioData){
+    if(!load && portfolioData.portfolio.length<=0){
         return(
-            <h2>Cannot Start a battle without any pokemon</h2>
+            <h2>Cannot Start a battle without any pokemon in your portfolio</h2>
         )
     }
 
@@ -163,6 +173,7 @@ const Battle = () => {
             <div>
                 <Grid container spacing={5}>
                     <Grid item xs={12} sm={6} md={4} lg={3} xl={2} key={battleData.createBattle.pokemonOne.pokemonID}>
+                        <h4>{currentUser.displayName}</h4>
                         <PokeCard pokemon={battleData.createBattle.pokemonOne}></PokeCard>
                     </Grid>
                     <br />
@@ -171,6 +182,7 @@ const Battle = () => {
                     </Grid>
                     <br />
                     <Grid item xs={12} sm={6} md={4} lg={3} xl={2} key={battleData.createBattle.pokemonTwo.pokemonID}>
+                        <h4>{user2.userName}</h4>
                         <PokeCard pokemon={battleData.createBattle.pokemonTwo}></PokeCard>
                         <p>Winner!!!</p>
                     </Grid>
@@ -184,6 +196,7 @@ const Battle = () => {
             <div>
                 <Grid container spacing={5}>
                     <Grid item xs={12} sm={6} md={4} lg={3} xl={2} key={battleData.createBattle.pokemonOne.pokemonID}>
+                        <h4>{currentUser.displayName}</h4>
                         <PokeCard pokemon={battleData.createBattle.pokemonOne}></PokeCard>
                         <p>Winner!!!</p>
                     </Grid>
@@ -191,6 +204,7 @@ const Battle = () => {
                         <h2>VS.</h2>
                     </Grid>
                     <Grid item xs={12} sm={6} md={4} lg={3} xl={2} key={battleData.createBattle.pokemonTwo.pokemonID}>
+                        <h4>{user2.userName}</h4>
                         <PokeCard pokemon={battleData.createBattle.pokemonTwo}></PokeCard>
                     </Grid>
                 </Grid>

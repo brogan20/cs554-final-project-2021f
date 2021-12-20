@@ -53,7 +53,7 @@ const Payment = () => {
     
     const payOurMan = event => {
       changeFunds({
-        variables: {gid: currentUser.uid, toChange: amountBought} // swap "James" with name given from firebase
+        variables: {gid: currentUser.uid, toChange: Number.parseInt(amountBought)} // swap "James" with name given from firebase
       });
       alert(`CONGRATULATIONS! You just """earned""" ${amountBought} PokéBucks!!! WE ARE SO PROUD OF YOU!`);
     }
