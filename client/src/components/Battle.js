@@ -35,7 +35,9 @@ const Battle = () => {
     console.log(portfolioData);
     let user2=null;
     let pokemon2=null;
-    if(!loading && !load){
+    if(!loading && !load && userData){
+        console.log(userData.allUsers);
+    if(!loading && !load && userData.allUsers.length>0){
         const random = Math.floor(Math.random()*userData.allUsers.length);
         console.log(userData.allUsers[random]);
         user2 = userData.allUsers[random];
@@ -43,6 +45,7 @@ const Battle = () => {
         const rand = Math.floor(Math.random()*user2.pokemonCollection.length);
         pokemon2 = user2.pokemonCollection[rand];
         console.log(pokemon2);
+    }
     }
     const [battle, {loading: l, error: e, data: battleData}]=useMutation(mutations.ADD_BATTLE);
     const [changeFunds, {fundResults}] = useMutation(mutations.CHANGE_FUNDS);
@@ -89,6 +92,12 @@ const Battle = () => {
     if(e){
         return(
             <h2>Error Making Battle</h2>
+        )
+    }
+
+    if(userData.allUsers.length<=0 && !loading){
+        return(
+            <h2>I'm sorry, there are no other users in the database to battle.</h2>
         )
     }
 
