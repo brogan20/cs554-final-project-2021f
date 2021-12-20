@@ -123,7 +123,6 @@ const getCurrentBattles = async function() {
     const ongoing = await battleCollection.find({timeStamp: {$gt: nowDate} }).toArray();
 
     ongoing.forEach(element => {
-        element.winner = "";
         element._id = element._id.toString();
     });
 

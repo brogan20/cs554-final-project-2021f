@@ -192,7 +192,6 @@ const Battle = () => {
                     <Grid item xs={12} sm={6} md={4} lg={3} xl={2} key={battleData.createBattle.pokemonTwo.pokemonID}>
                         <h4>{user2.userName}</h4>
                         <PokeCard pokemon={battleData.createBattle.pokemonTwo}></PokeCard>
-                        <p>Winner!!!</p>
                     </Grid>
                 </Grid>
                 <button onClick={()=> window.location.reload()}>Start a New Battle!</button>
@@ -206,7 +205,6 @@ const Battle = () => {
                     <Grid item xs={12} sm={6} md={4} lg={3} xl={2} key={battleData.createBattle.pokemonOne.pokemonID}>
                         <h4>{currentUser.displayName}</h4>
                         <PokeCard pokemon={battleData.createBattle.pokemonOne}></PokeCard>
-                        <p>Winner!!!</p>
                     </Grid>
                     <Grid item xs={12} sm={6} md={4} lg={3} xl={2} key="vs">
                         <h2>VS.</h2>

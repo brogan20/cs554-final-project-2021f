@@ -48,7 +48,7 @@ const BetListing = ({ battle }) => {
         </Row>
         <Row>
           {!expired && <p>Expires: {Math.floor(timeLeft/60)}m, {timeLeft%60}s</p>}
-          {expired && <p>Expired!</p>}
+          {expired && <p>Expired! Winner: {battle.winner}</p>}
         </Row>
       </Container>
     </Link>

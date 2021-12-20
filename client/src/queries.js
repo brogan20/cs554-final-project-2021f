@@ -30,6 +30,7 @@ const GET_ALL_BATTLES = gql`
                 isShiny
             }
             timeStamp
+            winner
         }
     }
 `;
