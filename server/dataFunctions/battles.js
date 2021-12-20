@@ -6,7 +6,7 @@ const { battleCollection } = require('../config/mongoCollections');
 const { usersCollection } = require('../config/mongoCollections');
 const popularityData = require('./popularity');
 const userData = require('./user');
-const timePerBattle = 1200000;//in milliseconds 
+const timePerBattle = 60000;//in milliseconds 
 
 const removeAll = async function() {
 	const battleCollection = await battles();
