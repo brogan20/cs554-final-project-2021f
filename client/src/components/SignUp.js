@@ -2,7 +2,6 @@ import { useContext, useState } from "react";
 import {
   createUserWithEmailAndPassword,
   signInWithEmailAndPassword,
-  signOut,
   signInWithPopup,
   GoogleAuthProvider,
   getAdditionalUserInfo,
@@ -42,13 +41,15 @@ function SignUp() {
       await updateProfile(auth.currentUser, {
         displayName: registerDisplayname,
       });
+      auth.currentUser.displayName = registerDisplayname;
       user = auth.currentUser;
       
       // console.log(user.localId)
-      addUser({
+      await addUser({
         variables: { userName: registerDisplayname, gid: user.uid },
       });
       setError("");
+      window.location.reload(false);
     } catch (error) {
       setError(error.message);
     }
@@ -91,7 +92,7 @@ function SignUp() {
     }
   };
 
-  if (currentUser) {
+  if (currentUser && currentUser.displayName) {
     return <Navigate to="/" />;
   }
 
