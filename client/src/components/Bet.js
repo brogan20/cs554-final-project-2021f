@@ -128,8 +128,12 @@ const Bet = () => {
       return;
     }
     let amt = parseInt(betAmount);
-    if (isNaN(amt) || amt <= 0 || amt > wallet) {
+    if (isNaN(amt) || amt <= 0) {
       setModal({show: true, title: "Bad Input", message: "The bet amount must be a number"});
+      return;
+    }
+    if(amt > wallet){
+      setModal({show: true, title: "Low Funds", message: "Not enough money. Try voting to earn more."});
       return;
     }
     if (selectedTrainer !== 1 && selectedTrainer !== 0) {
