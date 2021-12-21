@@ -17,6 +17,7 @@ const Battle = () => {
     const classes = useStyles();
     const { currentUser }=useContext(AuthContext);
     const [ visibleData, setVisible ] = useState(false);
+    const [ badRefresh, setbadRefresh ] = useState(true);
     const [ pokemon1, setPokemon ]=useState(0);
     //const [battleData, setBattleData] = useState(undefined);
     // Get the current User's username from firebase
@@ -140,6 +141,11 @@ const Battle = () => {
         )
     }
 
+    const badRefreshFunct = () => {
+        if(setbadRefresh){setbadRefresh(false)}
+        else{setbadRefresh(true)}
+    }
+
     if(!load && portfolioData.portfolio.length<=0){
         return(
             <h2>Cannot Start a battle without any pokemon in your portfolio</h2>
@@ -194,7 +200,7 @@ const Battle = () => {
                         <PokeCard pokemon={battleData.createBattle.pokemonTwo}></PokeCard>
                     </Grid>
                 </Grid>
-                <button onClick={()=> window.location.reload()}>Start a New Battle!</button>
+                <button onClick={()=> badRefreshFunct}>Start a New Battle!</button>
             </div>
         )
     }
@@ -214,7 +220,7 @@ const Battle = () => {
                         <PokeCard pokemon={battleData.createBattle.pokemonTwo}></PokeCard>
                     </Grid>
                 </Grid>
-                <button onClick={()=> window.location.reload()}>Start a New Battle!</button>
+                <button onClick={()=> badRefreshFunct}>Start a New Battle!</button>
             </div>
         )
     }
